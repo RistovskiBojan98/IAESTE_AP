@@ -1,0 +1,38 @@
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 10fr 1fr;
+  gap: 1rem;
+}
+
+.cards {
+  display: grid;
+  /* grid-template-columns: repeat(3, 1fr); */
+  position: relative;
+  z-index: 1;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+}
+
+.next-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
