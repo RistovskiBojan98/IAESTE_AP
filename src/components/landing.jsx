@@ -31,13 +31,11 @@ export default function Landing({ countriesRef }) {
                   <div
                     className={`flex w-full items-center justify-between md:w-auto ${classes.logo}`}
                   >
-                    <a href="#">
-                      <img
-                        alt="CER Summer App"
-                        className="md:mt-20 h-24 w-auto"
-                        src={cerLogo}
-                      />
-                    </a>
+                    <img
+                      alt="CER Summer App"
+                      className="md:mt-20 h-24 w-auto"
+                      src={cerLogo}
+                    />
                   </div>
                 </div>
               </nav>

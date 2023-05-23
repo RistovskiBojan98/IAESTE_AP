@@ -4,13 +4,14 @@ export const transport = {
         title: "Public transport",
         description: "Public transport in Vienna, Graz and Linz:",
         features: [
-          <a className="" href="https://www.wienerlinien.at/" target={"_blank"}>
-            Vienna
+          <a className="" href="https://www.wienerlinien.at/" 
+          // target={"_blank"}
+          >Vienna
           </a>,
           <a
             className=""
             href="https://www.holding-graz.at/graz-linien/graz-linien.html"
-            target={"_blank"}
+            // target={"_blank"}
           >
             {" "}
             Graz
@@ -18,7 +19,7 @@ export const transport = {
           <a
             className=""
             href="https://www.linzag.at/portal/de/privatkunden/unterwegs"
-            target={"_blank"}
+            // target={"_blank"}
           >
             Linz{" "}
           </a>,
@@ -32,7 +33,7 @@ export const transport = {
           <a
             className=""
             href="https://www.oebb.at/de/tickets-kundenkarten/kundenkarten/vorteilscard "
-            target={"_blank"}
+            // target={"_blank"}
           >
             {" "}
             OEBB Vorteilscard{" "}
@@ -40,7 +41,7 @@ export const transport = {
           <a
             className=""
             href="https://www.oebb.at/de/tickets-kundenkarten/schueler-gruppen/gruppenreisen  "
-            target={"_blank"}
+            // target={"_blank"}
           >
             {" "}
             Grupenreisen Ticket -group tickets{" "}
@@ -60,13 +61,19 @@ export const transport = {
           <a className="" href="www.westbahn.at" target={"_blank"}>
             WEST BAHN
           </a>,
-          <a className="" href="https://www.regiojet.de/" target={"_blank"}>
+          <a className="" href="https://www.regiojet.de/" 
+          // target={"_blank"}
+          >
             Regiojet
           </a>,
-          <a className="" href="https://www.flixbus.at/" target={"_blank"}>
+          <a className="" href="https://www.flixbus.at/" 
+          // target={"_blank"}
+          >
             Flixbus
           </a>,
-          <a className="" href="https://www.postbus.at/" target={"_blank"}>
+          <a className="" href="https://www.postbus.at/" 
+          // target={"_blank"}
+          >
             Postbus
           </a>,
         ],
