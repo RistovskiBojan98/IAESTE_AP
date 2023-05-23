@@ -16,7 +16,6 @@ import Navbar from "./navbar/Navbar.jsx";
 
 const Country = () => {
   const { id } = useParams();
-  console.log(id);
 
   const transportRef = useRef(null);
   const citiesRef = useRef(null);
