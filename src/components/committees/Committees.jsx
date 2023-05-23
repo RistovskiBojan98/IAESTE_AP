@@ -51,6 +51,7 @@ const Committees = ({ country }) => {
                   if (index <= 5) {
                     return <li style={{fontSize: '24px'}} key={com}>{com}</li>;
                   }
+                  return <></>;
                 })}
               {countryCommittees.lcs.length > 5 && (
                 <Disclosure as="div">
@@ -61,6 +62,7 @@ const Committees = ({ country }) => {
                           if (index > 5) {
                             return <li style={{fontSize: '24px'}} key={com}>{com}</li>;
                           }
+                          return <></>;
                         })}
                       </Disclosure.Panel>
                       <dt className="text-lg">
