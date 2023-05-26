@@ -162,7 +162,7 @@ export const countries = [
     imageSrc: sloveniaLogo,
     imageAlt:
       "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
-      pdf: slovakia_pdf
+      pdf: slovenia_pdf
   },
   {
     id: 18,

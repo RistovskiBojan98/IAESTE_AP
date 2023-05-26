@@ -18,14 +18,6 @@ const Countries = ({ passRef }) => {
     }
   };
 
-  const handleDownload = (country_name, pdf) => {
-    const fileUrl = pdf; // Replace with the actual path to your PDF file
-    const link = document.createElement('a');
-    link.href = fileUrl;
-    link.download = country_name + '.pdf'; // Set the desired file name
-    link.click();
-  };
-
   return (
     <div className="bg-white" ref={passRef} id="countries-div" style={{overflowX: 'hidden'}}>
       <div className="mx-auto max-w-2xl py-16 px-4 sm:py-16 sm:px-6 lg:max-w-7xl lg:px-8">
