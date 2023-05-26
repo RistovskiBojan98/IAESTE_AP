@@ -496,41 +496,41 @@ export const cities = [
       },
     ],
   },
-  {
-    country: "Tunisia",
-    cities: [
-      {
-        question: "Djerba",
-        answer:
-          "Djerba is an island with a picture-perfect beach escape. The island town of Houmt Souk is the main point of interest off the beach, with an old town district that is a muddle of whitewashed houses. Houmt Souk's shopping is an attraction in itself, with plenty of handicraft vendors for browsing and haggling opportunities off the beach.",
-      },
-      {
-        question: "Carthage",
-        answer:
-          "Once Rome's major rival, Carthage was the city of the seafaring Phoenicians forever memorialized in the Punic Wars. The atmospheric ruins of this ancient town now sit beside the sea amid the suburbs of Tunis, a warning that even the greatest cities can be reduced to rubble.",
-      },
-      {
-        question: "Sidi Bou Said",
-        answer:
-          "Impossibly cute, and amazingly photogenic, Sidi Bou Said is a clifftop village of petite dimensions that seem to have fallen off an artist's canvas. Unsurprisingly, artists have feted this little hamlet for decades. The whitewashed alleyways, wrought-iron window frames, and colorful blue doors are Tunisian village architecture at their finest, while the Mediterranean backdrop is the cherry on top.",
-      },
-      {
-        question: "Sousse",
-        answer:
-          "Overlooked by the mighty fortifications of the Ribat and Kasbah, the medina in Sousse just begs to be explored. This lovely old town district is a warren of looping lanes, rimmed by whitewashed houses, and a shopping paradise with a tempting selection of ceramics, leatherwork, and metalwork on display.",
-      },
-      {
-        question: "Chott el Djerid",
-        answer:
-          "The moonscape surroundings of the Chott el Djerid are a storybook panorama brought to life; filled with shimmering mirages on the horizon and jigsaw puzzle pieces of blindingly white cracked land under foot.",
-      },
-      {
-        question: "Hammamet",
-        answer:
-          "Hammamet is all about the beach. This is Tunisia's top sun-and-sea resort; a dreamy place dotted with pristine white buildings set beside a bright blue sea. It's a no stress kind of place that sums up the pleasures of Tunisia in one pretty package.",
-      },
-    ],
-  },
+  // {
+  //   country: "Tunisia",
+  //   cities: [
+  //     {
+  //       question: "Djerba",
+  //       answer:
+  //         "Djerba is an island with a picture-perfect beach escape. The island town of Houmt Souk is the main point of interest off the beach, with an old town district that is a muddle of whitewashed houses. Houmt Souk's shopping is an attraction in itself, with plenty of handicraft vendors for browsing and haggling opportunities off the beach.",
+  //     },
+  //     {
+  //       question: "Carthage",
+  //       answer:
+  //         "Once Rome's major rival, Carthage was the city of the seafaring Phoenicians forever memorialized in the Punic Wars. The atmospheric ruins of this ancient town now sit beside the sea amid the suburbs of Tunis, a warning that even the greatest cities can be reduced to rubble.",
+  //     },
+  //     {
+  //       question: "Sidi Bou Said",
+  //       answer:
+  //         "Impossibly cute, and amazingly photogenic, Sidi Bou Said is a clifftop village of petite dimensions that seem to have fallen off an artist's canvas. Unsurprisingly, artists have feted this little hamlet for decades. The whitewashed alleyways, wrought-iron window frames, and colorful blue doors are Tunisian village architecture at their finest, while the Mediterranean backdrop is the cherry on top.",
+  //     },
+  //     {
+  //       question: "Sousse",
+  //       answer:
+  //         "Overlooked by the mighty fortifications of the Ribat and Kasbah, the medina in Sousse just begs to be explored. This lovely old town district is a warren of looping lanes, rimmed by whitewashed houses, and a shopping paradise with a tempting selection of ceramics, leatherwork, and metalwork on display.",
+  //     },
+  //     {
+  //       question: "Chott el Djerid",
+  //       answer:
+  //         "The moonscape surroundings of the Chott el Djerid are a storybook panorama brought to life; filled with shimmering mirages on the horizon and jigsaw puzzle pieces of blindingly white cracked land under foot.",
+  //     },
+  //     {
+  //       question: "Hammamet",
+  //       answer:
+  //         "Hammamet is all about the beach. This is Tunisia's top sun-and-sea resort; a dreamy place dotted with pristine white buildings set beside a bright blue sea. It's a no stress kind of place that sums up the pleasures of Tunisia in one pretty package.",
+  //     },
+  //   ],
+  // },
   {
     country: "Turkiye",
     cities: [

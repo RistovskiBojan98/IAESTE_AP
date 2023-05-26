@@ -174,11 +174,11 @@ export const committees = [
     lcs: ["Luleå", "Stockholm", "Linköping", "Gothenburg", "Lund"],
     page: "https://iaeste.se/",
   },
-  {
-    country: "Tunisia",
-    lcs: ["Tunis"],
-    page: "http://www.iaeste.tn/tunisia/",
-  },
+  // {
+  //   country: "Tunisia",
+  //   lcs: ["Tunis"],
+  //   page: "http://www.iaeste.tn/tunisia/",
+  // },
   {
     country: "Turkiye",
     lcs: ["İstanbul", "Ankara", "Kocaeli", "İzmir"],

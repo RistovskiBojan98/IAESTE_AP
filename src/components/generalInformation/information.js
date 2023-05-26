@@ -1,3 +1,7 @@
+import voltage from "../../images/voltage1.jpg"
+import country_code from "../../images/country_dialing_code.jpg"
+import population from "../../images/population2.jpg"
+
 export const information = [
   {
     country: "Austria",
@@ -30,13 +34,31 @@ export const information = [
         name: "Voltage",
         role: "230V",
         imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+          voltage,
       },
       {
         name: "Climate",
         role: "Moderate continental climate (colder in the west)",
         imageUrl:
           "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      },
+      {
+        name: "country dialing code",
+        role: "+43",
+        imageUrl:
+          country_code,
+      },
+      // {
+      //   name: "SIM card providers",
+      //   role: "something",
+      //   imageUrl:
+      //     "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+      // },
+      {
+        name: "Population",
+        role: "8.9 million",
+        imageUrl:
+          population,
       },
     ],
   },
@@ -71,7 +93,7 @@ export const information = [
         name: "Voltage",
         role: "230V",
         imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+          voltage,
       },
       {
         name: "Climate",
@@ -83,7 +105,7 @@ export const information = [
         name: "country dialing code",
         role: "+387",
         imageUrl:
-          "https://images.unsplash.com/photo-1585159650922-4f7e634cefbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          country_code,
       },
       {
         name: "SIM card providers",
@@ -95,7 +117,7 @@ export const information = [
         name: "Population",
         role: "the cities",
         imageUrl:
-          "https://images.unsplash.com/photo-1586426006315-b11fa075a76a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          population,
       },
     ],
   },
@@ -130,7 +152,7 @@ export const information = [
         name: "Voltage",
         role: "220V",
         imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+          voltage,
       },
       {
         name: "Climate",
@@ -142,7 +164,7 @@ export const information = [
         name: "country dialing code",
         role: "+32",
         imageUrl:
-          "https://images.unsplash.com/photo-1585159650922-4f7e634cefbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          country_code,
       },
       {
         name: "SIM card providers",
@@ -154,7 +176,7 @@ export const information = [
         name: "Population",
         role: "the cities",
         imageUrl:
-          "https://images.unsplash.com/photo-1586426006315-b11fa075a76a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          population,
       },
     ],
   },
@@ -189,13 +211,31 @@ export const information = [
         name: "Voltage",
         role: "230V (type C and F sockets)",
         imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+          voltage,
       },
       {
         name: "Climate",
         role: "Hot summers and milder winters",
         imageUrl:
           "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      },
+      {
+        name: "country dialing code",
+        role: "+385",
+        imageUrl:
+          country_code,
+      },
+      // {
+      //   name: "SIM card providers",
+      //   role: "something",
+      //   imageUrl:
+      //     "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+      // },
+      {
+        name: "Population",
+        role: "4.07 million",
+        imageUrl:
+          population,
       },
     ],
   },
@@ -230,13 +270,31 @@ export const information = [
         name: "Voltage",
         role: "230V",
         imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+          voltage,
       },
       {
         name: "Climate",
         role: "null",
         imageUrl:
           "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      },
+      {
+        name: "country dialing code",
+        role: "+420",
+        imageUrl:
+          country_code,
+      },
+      // {
+      //   name: "SIM card providers",
+      //   role: "something",
+      //   imageUrl:
+      //     "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+      // },
+      {
+        name: "Population",
+        role: "10.5 million",
+        imageUrl:
+          population,
       },
     ],
   },
@@ -271,7 +329,7 @@ export const information = [
         name: "Voltage",
         role: "230V",
         imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+          voltage,
       },
       {
         name: "Climate",
@@ -283,7 +341,7 @@ export const information = [
         name: "country dialing code",
         role: "+33",
         imageUrl:
-          "https://images.unsplash.com/photo-1585159650922-4f7e634cefbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          country_code,
       },
       {
         name: "SIM card providers",
@@ -295,7 +353,7 @@ export const information = [
         name: "Population",
         role: "the cities",
         imageUrl:
-          "https://images.unsplash.com/photo-1586426006315-b11fa075a76a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          population,
       },
     ],
   },
@@ -330,13 +388,31 @@ export const information = [
         name: "Voltage",
         role: "220-230V",
         imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+          voltage,
       },
       {
         name: "Climate",
-        role: "TBD",
+        role: "In most of Germany: moderately continental, unstable weather, northernmost area: humid, rainy, windy, cloudy southcentral, Alps: mountainous climate, snowy in winter",
         imageUrl:
           "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      },
+      {
+        name: "country dialing code",
+        role: "+49",
+        imageUrl:
+          country_code,
+      },
+      // {
+      //   name: "SIM card providers",
+      //   role: "something",
+      //   imageUrl:
+      //     "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+      // },
+      {
+        name: "Population",
+        role: "83.1 million",
+        imageUrl:
+          population,
       },
     ],
   },
@@ -371,13 +447,31 @@ export const information = [
         name: "Voltage",
         role: "230V",
         imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+          voltage,
       },
       {
         name: "Climate",
         role: "TBD",
         imageUrl:
           "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      },
+      {
+        name: "country dialing code",
+        role: "+36",
+        imageUrl:
+          country_code,
+      },
+      {
+        name: "SIM card providers",
+        role: "something",
+        imageUrl:
+          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+      },
+      {
+        name: "Population",
+        role: "9.8 million",
+        imageUrl:
+          population,
       },
     ],
   },
@@ -412,7 +506,7 @@ export const information = [
         name: "Voltage",
         role: "220V",
         imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+          voltage,
       },
       {
         name: "Climate",
@@ -424,7 +518,7 @@ export const information = [
         name: "country dialing code",
         role: "+389",
         imageUrl:
-          "https://images.unsplash.com/photo-1585159650922-4f7e634cefbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          country_code,
       },
       {
         name: "SIM card providers",
@@ -436,7 +530,7 @@ export const information = [
         name: "Population",
         role: "the cities",
         imageUrl:
-          "https://images.unsplash.com/photo-1586426006315-b11fa075a76a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          population,
       },
     ],
   },
@@ -471,7 +565,7 @@ export const information = [
         name: "Voltage",
         role: "230V",
         imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+          voltage,
       },
       {
         name: "Climate",
@@ -483,7 +577,7 @@ export const information = [
         name: "country dialing code",
         role: "+356",
         imageUrl:
-          "https://images.unsplash.com/photo-1585159650922-4f7e634cefbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          country_code,
       },
       {
         name: "SIM card providers",
@@ -495,7 +589,7 @@ export const information = [
         name: "Population",
         role: "the cities",
         imageUrl:
-          "https://images.unsplash.com/photo-1586426006315-b11fa075a76a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          population,
       },
     ],
   },
@@ -530,7 +624,7 @@ export const information = [
         name: "Voltage",
         role: "240V (type F)",
         imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+          voltage,
       },
       {
         name: "Climate",
@@ -542,7 +636,7 @@ export const information = [
         name: "country dialing code",
         role: "+47",
         imageUrl:
-          "https://images.unsplash.com/photo-1585159650922-4f7e634cefbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          country_code,
       },
       {
         name: "SIM card providers",
@@ -554,7 +648,7 @@ export const information = [
         name: "Population",
         role: "the cities",
         imageUrl:
-          "https://images.unsplash.com/photo-1586426006315-b11fa075a76a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          population,
       },
     ],
   },
@@ -589,7 +683,7 @@ export const information = [
         name: "Voltage",
         role: "220V",
         imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+          voltage,
       },
       {
         name: "Climate",
@@ -601,7 +695,7 @@ export const information = [
         name: "country dialing code",
         role: "+48",
         imageUrl:
-          "https://images.unsplash.com/photo-1585159650922-4f7e634cefbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          country_code,
       },
       {
         name: "SIM card providers",
@@ -613,7 +707,7 @@ export const information = [
         name: "Population",
         role: "the cities",
         imageUrl:
-          "https://images.unsplash.com/photo-1586426006315-b11fa075a76a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          population,
       },
     ],
   },
@@ -648,7 +742,7 @@ export const information = [
         name: "Voltage",
         role: "230V",
         imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+          voltage,
       },
       {
         name: "Climate",
@@ -660,7 +754,7 @@ export const information = [
         name: "country dialing code",
         role: "+421",
         imageUrl:
-          "https://images.unsplash.com/photo-1585159650922-4f7e634cefbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          country_code,
       },
       {
         name: "SIM card providers",
@@ -672,7 +766,7 @@ export const information = [
         name: "Population",
         role: "37,8 mln",
         imageUrl:
-          "https://images.unsplash.com/photo-1586426006315-b11fa075a76a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          population,
       },
     ],
   },
@@ -707,13 +801,31 @@ export const information = [
         name: "Voltage",
         role: "230V",
         imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+          voltage,
       },
       {
         name: "Climate",
         role: "Moderate continental climate. Cold winters. The climate changes with the landscape as well.",
         imageUrl:
           "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+      },
+      {
+        name: "country dialing code",
+        role: "+386",
+        imageUrl:
+          country_code,
+      },
+      {
+        name: "SIM card providers",
+        role: "something",
+        imageUrl:
+          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+      },
+      {
+        name: "Population",
+        role: "2 million",
+        imageUrl:
+          population,
       },
     ],
   },
@@ -748,7 +860,7 @@ export const information = [
         name: "Voltage",
         role: "230V",
         imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+          voltage,
       },
       {
         name: "Climate",
@@ -760,7 +872,7 @@ export const information = [
         name: "country dialing code",
         role: "+34",
         imageUrl:
-          "https://images.unsplash.com/photo-1585159650922-4f7e634cefbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          country_code,
       },
       {
         name: "SIM card providers",
@@ -772,7 +884,7 @@ export const information = [
         name: "Population",
         role: "the cities",
         imageUrl:
-          "https://images.unsplash.com/photo-1586426006315-b11fa075a76a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          population,
       },
     ],
   },
@@ -807,7 +919,7 @@ export const information = [
         name: "Voltage",
         role: null,
         imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+          voltage,
       },
       {
         name: "Climate",
@@ -819,7 +931,7 @@ export const information = [
         name: "country dialing code",
         role: "+41",
         imageUrl:
-          "https://images.unsplash.com/photo-1585159650922-4f7e634cefbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          country_code,
       },
       {
         name: "SIM card providers",
@@ -831,7 +943,7 @@ export const information = [
         name: "Population",
         role: "the cities",
         imageUrl:
-          "https://images.unsplash.com/photo-1586426006315-b11fa075a76a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          population,
       },
     ],
   },
@@ -866,7 +978,7 @@ export const information = [
         name: "Voltage",
         role: "230V",
         imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+          voltage,
       },
       {
         name: "Climate",
@@ -878,7 +990,7 @@ export const information = [
         name: "country dialing code",
         role: "+216",
         imageUrl:
-          "https://images.unsplash.com/photo-1585159650922-4f7e634cefbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          country_code,
       },
       {
         name: "SIM card providers",
@@ -890,69 +1002,69 @@ export const information = [
         name: "Population",
         role: "the cities",
         imageUrl:
-          "https://images.unsplash.com/photo-1586426006315-b11fa075a76a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          population,
       },
     ],
   },
-  {
-    country: "Tunisia",
-    data: [
-      {
-        name: "Capital city",
-        role: "Tunis",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
-      },
-      {
-        name: "Language",
-        role: "Tunisian Arabic and French",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
-      },
-      {
-        name: "Time zone",
-        role: "UTC+1",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-      },
-      {
-        name: "Currency",
-        role: "Tunisian Dinar (TND)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
-      },
-      {
-        name: "Voltage",
-        role: "230V",
-        imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
-      },
-      {
-        name: "Climate",
-        role: "Mediterranean climate, with highs around 16/18 °C in winter and 32/33 °C in summer.",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-      },
-      {
-        name: "country dialing code",
-        role: "+216",
-        imageUrl:
-          "https://images.unsplash.com/photo-1585159650922-4f7e634cefbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-      },
-      {
-        name: "SIM card providers",
-        role: "something",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
-      },
-      {
-        name: "Population",
-        role: "the cities",
-        imageUrl:
-          "https://images.unsplash.com/photo-1586426006315-b11fa075a76a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
-      },
-    ],
-  },
+  // {
+  //   country: "Tunisia",
+  //   data: [
+  //     {
+  //       name: "Capital city",
+  //       role: "Tunis",
+  //       imageUrl:
+  //         "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+  //     },
+  //     {
+  //       name: "Language",
+  //       role: "Tunisian Arabic and French",
+  //       imageUrl:
+  //         "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
+  //     },
+  //     {
+  //       name: "Time zone",
+  //       role: "UTC+1",
+  //       imageUrl:
+  //         "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+  //     },
+  //     {
+  //       name: "Currency",
+  //       role: "Tunisian Dinar (TND)",
+  //       imageUrl:
+  //         "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+  //     },
+  //     {
+  //       name: "Voltage",
+  //       role: "230V",
+  //       imageUrl:
+  //         voltage,
+  //     },
+  //     {
+  //       name: "Climate",
+  //       role: "Mediterranean climate, with highs around 16/18 °C in winter and 32/33 °C in summer.",
+  //       imageUrl:
+  //         "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+  //     },
+  //     {
+  //       name: "country dialing code",
+  //       role: "+216",
+  //       imageUrl:
+  //         country_code,
+  //     },
+  //     {
+  //       name: "SIM card providers",
+  //       role: "something",
+  //       imageUrl:
+  //         "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+  //     },
+  //     {
+  //       name: "Population",
+  //       role: "the cities",
+  //       imageUrl:
+  //         population,
+  //     },
+  //   ],
+  // },
   {
     country: "Turkiye",
     data: [
@@ -984,7 +1096,7 @@ export const information = [
         name: "Voltage",
         role: "220V",
         imageUrl:
-          "https://images.unsplash.com/photo-1565049981953-379c9c2a5d48?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1469&q=80",
+          voltage,
       },
       {
         name: "Climate",
@@ -996,7 +1108,7 @@ export const information = [
         name: "country dialing code",
         role: "+90",
         imageUrl:
-          "https://images.unsplash.com/photo-1585159650922-4f7e634cefbc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          country_code,
       },
       {
         name: "SIM card providers",
@@ -1008,7 +1120,7 @@ export const information = [
         name: "Population",
         role: "the cities",
         imageUrl:
-          "https://images.unsplash.com/photo-1586426006315-b11fa075a76a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80",
+          population,
       },
     ],
   },

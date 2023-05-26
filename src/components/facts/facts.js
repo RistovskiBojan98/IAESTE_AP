@@ -182,16 +182,16 @@ export const funfacts = [
       "Charlie Chaplin spent the last 25 years of his life in Switzerland.",
     ],
   },
-  {
-    country: "Tunisia",
-    facts: [
-      "The network of protected areas in Tunisia covers about 8% of the national territory. It is made up of 17 national park, plus other types of protected areas.",
-      "Ichkeul National Park is a UNESCO World Heritage Site located in the north of Tunisia Ichkeul is the last remaining lake in a chain that once extended across North Africa.",
-      "The Medina of Tunis is the Medina quarter of Tunis, capital of Tunisia. The Medina contains some 700 monuments, including palaces, mosques, mausoleums, madrasas and fountains dating from the Almohad and the Hafsid periods. It has been a UNESCO World Heritage Site since 1979.",
-      "Tunisia has served as a popular location for some of Hollywood’s biggest movies, such as Jesus of Nazareth, The English Patient, Raiders of the Lost Ark and Star Wars!",
-      "Fans of Star Wars have flocked to Tunisia to spot numerous filmmaking sites, including: Djerba (Episode IV), Tozeur, Lars Homestead Exterior (Luke’s home), Mos Espa, Tataouine...and so many more.",
-    ],
-  },
+  // {
+  //   country: "Tunisia",
+  //   facts: [
+  //     "The network of protected areas in Tunisia covers about 8% of the national territory. It is made up of 17 national park, plus other types of protected areas.",
+  //     "Ichkeul National Park is a UNESCO World Heritage Site located in the north of Tunisia Ichkeul is the last remaining lake in a chain that once extended across North Africa.",
+  //     "The Medina of Tunis is the Medina quarter of Tunis, capital of Tunisia. The Medina contains some 700 monuments, including palaces, mosques, mausoleums, madrasas and fountains dating from the Almohad and the Hafsid periods. It has been a UNESCO World Heritage Site since 1979.",
+  //     "Tunisia has served as a popular location for some of Hollywood’s biggest movies, such as Jesus of Nazareth, The English Patient, Raiders of the Lost Ark and Star Wars!",
+  //     "Fans of Star Wars have flocked to Tunisia to spot numerous filmmaking sites, including: Djerba (Episode IV), Tozeur, Lars Homestead Exterior (Luke’s home), Mos Espa, Tataouine...and so many more.",
+  //   ],
+  // },
   {
     country: "Turkiye",
     facts: [

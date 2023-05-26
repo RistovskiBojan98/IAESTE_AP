@@ -441,56 +441,56 @@ export const food = [
       },
     ],
   },
-  {
-    country: "Tunisia",
-    content: [
-      {
-        title: "Bambaloni",
-        description:
-          "A sweet Tunisian donut. It can be made at home or bought from fast food shops. It is prepared with a flour dough fried in oil. The bambaloni is eaten sprinkled with sugar or soaked in honey. It can be eaten at any time of day.",
-      },
-      {
-        title: "Brik",
-        description:
-          "A Tunisian dish consisting of thin pastry around a filling, commonly deep fried. The best-known version is the egg brik, a whole egg in a triangular pastry pocket with chopped onion, tuna, harissa and parsley.",
-      },
-      {
-        title: "Couscous",
-        description:
-          "The national dish of Tunisia, and can be prepared in many ways. It is cooked in a special kind of double boiler called a kiska:s in Arabic or couscoussière in French, resembling a Chinese steamer atop a Mongolian pot.",
-      },
-      {
-        title: "Chakchouka",
-        description:
-          "A dish of eggs poached in a sauce of tomatoes, chili peppers, and onions, commonly spiced with cumin, paprika, cayenne pepper, and nutmeg. Less commonly used ingredients include Tabasco sauce and honey.",
-      },
-      {
-        title: "Fricasse",
-        description:
-          "A savory donut often filled with tuna, boiled egg, olives, harissa, and boiled potato usually purchased from a traditional Tunisian food vendor. It can be made at home or in fast food restaurants.",
-      },
-      {
-        title: "Makroudh",
-        description:
-          "A Maghrebi sweet pastry filled with dates and nuts or almond paste, that has a diamond shape – the name derives from this characteristic shape.",
-      },
-      {
-        title: "Ojja",
-        description:
-          "A scrambled egg dish made of tomatoes and mild green chillies supplemented with various meats and harissa.",
-      },
-      {
-        title: "Samsa",
-        description:
-          "Layers of thin pastry alternated with layers of ground roast almonds, and sesame seeds, baked in lemon and rosewater syrup.",
-      },
-      {
-        title: "Yo-yo",
-        description:
-          "A donut made with orange juice, deep fried, then dipped in honey syrup.",
-      },
-    ],
-  },
+  // {
+  //   country: "Tunisia",
+  //   content: [
+  //     {
+  //       title: "Bambaloni",
+  //       description:
+  //         "A sweet Tunisian donut. It can be made at home or bought from fast food shops. It is prepared with a flour dough fried in oil. The bambaloni is eaten sprinkled with sugar or soaked in honey. It can be eaten at any time of day.",
+  //     },
+  //     {
+  //       title: "Brik",
+  //       description:
+  //         "A Tunisian dish consisting of thin pastry around a filling, commonly deep fried. The best-known version is the egg brik, a whole egg in a triangular pastry pocket with chopped onion, tuna, harissa and parsley.",
+  //     },
+  //     {
+  //       title: "Couscous",
+  //       description:
+  //         "The national dish of Tunisia, and can be prepared in many ways. It is cooked in a special kind of double boiler called a kiska:s in Arabic or couscoussière in French, resembling a Chinese steamer atop a Mongolian pot.",
+  //     },
+  //     {
+  //       title: "Chakchouka",
+  //       description:
+  //         "A dish of eggs poached in a sauce of tomatoes, chili peppers, and onions, commonly spiced with cumin, paprika, cayenne pepper, and nutmeg. Less commonly used ingredients include Tabasco sauce and honey.",
+  //     },
+  //     {
+  //       title: "Fricasse",
+  //       description:
+  //         "A savory donut often filled with tuna, boiled egg, olives, harissa, and boiled potato usually purchased from a traditional Tunisian food vendor. It can be made at home or in fast food restaurants.",
+  //     },
+  //     {
+  //       title: "Makroudh",
+  //       description:
+  //         "A Maghrebi sweet pastry filled with dates and nuts or almond paste, that has a diamond shape – the name derives from this characteristic shape.",
+  //     },
+  //     {
+  //       title: "Ojja",
+  //       description:
+  //         "A scrambled egg dish made of tomatoes and mild green chillies supplemented with various meats and harissa.",
+  //     },
+  //     {
+  //       title: "Samsa",
+  //       description:
+  //         "Layers of thin pastry alternated with layers of ground roast almonds, and sesame seeds, baked in lemon and rosewater syrup.",
+  //     },
+  //     {
+  //       title: "Yo-yo",
+  //       description:
+  //         "A donut made with orange juice, deep fried, then dipped in honey syrup.",
+  //     },
+  //   ],
+  // },
   {
     country: "Bosnia-and-Herzegovina",
     content: [
@@ -765,8 +765,8 @@ export const tipping = [
     country: "Switzerland",
     info: "Not usual, unless very happy with the service",
   },
-  {
-    country: "Tunisia",
-    info: "Tipping is optional in Tunisia and it is rather occasional.",
-  },
+  // {
+  //   country: "Tunisia",
+  //   info: "Tipping is optional in Tunisia and it is rather occasional.",
+  // },
 ];

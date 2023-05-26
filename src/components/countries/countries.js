@@ -15,7 +15,7 @@ import sloveniaLogo from "./IAESTElogos/IAESTE_SLOVENIA.png";
 import spainlogo from "./IAESTElogos/IAESTE_SPAIN.png";
 import swedenLogo from "./IAESTElogos/IAESTE_SWEDEN.png";
 import swissLogo from "./IAESTElogos/IAESTE_SWITZERLAND.png";
-import tunisLogo from "./IAESTElogos/IAESTE_TUNISIA.png";
+// import tunisLogo from "./IAESTElogos/IAESTE_TUNISIA.png";
 import turkLogo from "./IAESTElogos/IAESTE_TURKIYE.png";
 
 export const countries = [
@@ -155,14 +155,14 @@ export const countries = [
     imageAlt:
       "Hand holding black machined steel mechanical pencil with brass tip and top.",
   },
-  {
-    id: 25,
-    name: "Tunisia",
-    href: "/Tunisia",
-    imageSrc: tunisLogo,
-    imageAlt:
-      "Hand holding black machined steel mechanical pencil with brass tip and top.",
-  },
+  // {
+  //   id: 25,
+  //   name: "Tunisia",
+  //   href: "/Tunisia",
+  //   imageSrc: tunisLogo,
+  //   imageAlt:
+  //     "Hand holding black machined steel mechanical pencil with brass tip and top.",
+  // },
   {
     id: 10,
     name: "Turkiye",
