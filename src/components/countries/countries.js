@@ -17,6 +17,25 @@ import swedenLogo from "./IAESTElogos/IAESTE_SWEDEN.png";
 import swissLogo from "./IAESTElogos/IAESTE_SWITZERLAND.png";
 // import tunisLogo from "./IAESTElogos/IAESTE_TUNISIA.png";
 import turkLogo from "./IAESTElogos/IAESTE_TURKIYE.png";
+// pdf imports
+import austria_pdf from "./pdfs/Austria.pdf";
+import belgium_pdf from "./pdfs/Belgium.pdf";
+import bosnia_pdf from "./pdfs/Bosnia.pdf";
+import croatia_pdf from "./pdfs/Croatia.pdf";
+import czech_pdf from "./pdfs/Czech.pdf";
+import france_pdf from "./pdfs/France.pdf";
+import germany_pdf from "./pdfs/Germany.pdf";
+import hungary_pdf from "./pdfs/Hungary.pdf";
+import macedonia_pdf from "./pdfs/Macedonia.pdf";
+import malta_pdf from "./pdfs/Malta.pdf";
+import norway_pdf from "./pdfs/Norway.pdf";
+import poland_pdf from "./pdfs/Poland.pdf";
+import slovakia_pdf from "./pdfs/Slovakia.pdf";
+import slovenia_pdf from "./pdfs/Slovenia.pdf";
+import spain_pdf from "./pdfs/Spain.pdf";
+import sweden_pdf from "./pdfs/Sweden.pdf";
+import swiss_pdf from "./pdfs/Switzerland.pdf";
+import turkey_pdf from "./pdfs/Turkey.pdf";
 
 export const countries = [
   {
@@ -26,6 +45,7 @@ export const countries = [
     imageSrc: austriaLogo,
     imageAlt:
       "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
+    pdf: austria_pdf
   },
   {
     id: 11,
@@ -34,6 +54,7 @@ export const countries = [
     imageSrc: belgiumLogo,
     imageAlt:
       "Person using a pen to cross a task off a productivity paper card.",
+      pdf: belgium_pdf
   },
   {
     id: 2,
@@ -42,6 +63,7 @@ export const countries = [
     imageSrc: bosniaLogo,
     imageAlt:
       "Olive drab green insulated bottle with flared screw lid and flat top.",
+      pdf: bosnia_pdf
   },
   {
     id: 3,
@@ -50,6 +72,7 @@ export const countries = [
     imageSrc: croatiaLogo,
     imageAlt:
       "Person using a pen to cross a task off a productivity paper card.",
+      pdf: croatia_pdf
   },
   {
     id: 4,
@@ -58,6 +81,7 @@ export const countries = [
     imageSrc: czechLogo,
     imageAlt:
       "Hand holding black machined steel mechanical pencil with brass tip and top.",
+      pdf: czech_pdf
   },
   {
     id: 24,
@@ -66,6 +90,7 @@ export const countries = [
     imageSrc: franceLogo,
     imageAlt:
       "Hand holding black machined steel mechanical pencil with brass tip and top.",
+      pdf: france_pdf
   },
   {
     id: 5,
@@ -74,6 +99,7 @@ export const countries = [
     imageSrc: germanyLogo,
     imageAlt:
       "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
+      pdf: germany_pdf
   },
   {
     id: 6,
@@ -82,6 +108,7 @@ export const countries = [
     imageSrc: hungaryLogo,
     imageAlt:
       "Olive drab green insulated bottle with flared screw lid and flat top.",
+      pdf: hungary_pdf
   },
   {
     id: 7,
@@ -90,6 +117,7 @@ export const countries = [
     imageSrc: macedoniaLogo,
     imageAlt:
       "Person using a pen to cross a task off a productivity paper card.",
+      pdf: macedonia_pdf
   },
   {
     id: 17,
@@ -98,6 +126,7 @@ export const countries = [
     imageSrc: maltaLogo,
     imageAlt:
       "Hand holding black machined steel mechanical pencil with brass tip and top.",
+      pdf: malta_pdf
   },
   {
     id: 15,
@@ -106,6 +135,7 @@ export const countries = [
     imageSrc: norwayLogo,
     imageAlt:
       "Hand holding black machined steel mechanical pencil with brass tip and top.",
+      pdf: norway_pdf
   },
   {
     id: 26,
@@ -114,6 +144,7 @@ export const countries = [
     imageSrc: polandLogo,
     imageAlt:
       "Hand holding black machined steel mechanical pencil with brass tip and top.",
+      pdf: poland_pdf
   },
   {
     id: 8,
@@ -122,6 +153,7 @@ export const countries = [
     imageSrc: slovakiaLogo,
     imageAlt:
       "Hand holding black machined steel mechanical pencil with brass tip and top.",
+      pdf: slovakia_pdf
   },
   {
     id: 9,
@@ -130,6 +162,7 @@ export const countries = [
     imageSrc: sloveniaLogo,
     imageAlt:
       "Tall slender porcelain bottle with natural clay textured body and cork stopper.",
+      pdf: slovakia_pdf
   },
   {
     id: 18,
@@ -138,6 +171,7 @@ export const countries = [
     imageSrc: spainlogo,
     imageAlt:
       "Hand holding black machined steel mechanical pencil with brass tip and top.",
+      pdf: spain_pdf
   },
   {
     id: 13,
@@ -146,6 +180,7 @@ export const countries = [
     imageSrc: swedenLogo,
     imageAlt:
       "Hand holding black machined steel mechanical pencil with brass tip and top.",
+      pdf: sweden_pdf
   },
   {
     id: 16,
@@ -154,6 +189,7 @@ export const countries = [
     imageSrc: swissLogo,
     imageAlt:
       "Hand holding black machined steel mechanical pencil with brass tip and top.",
+      pdf: swiss_pdf
   },
   // {
   //   id: 25,
@@ -170,5 +206,6 @@ export const countries = [
     imageSrc: turkLogo,
     imageAlt:
       "Olive drab green insulated bottle with flared screw lid and flat top.",
+      pdf: turkey_pdf
   },
 ];
