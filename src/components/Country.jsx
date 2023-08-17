@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 import Footer from "./footer.js";
 import Transport from "./transport/Transport.jsx";
 import Cities from "./cities/Cities.jsx";
-// import Gallery from "./gallery/Gallery.jsx";
+import Gallery from "./gallery/Gallery.jsx";
 import Facts from "./facts/Facts.jsx";
 import Food from "./food/Food.jsx";
 import GeneralInformation from "./generalInformation/GeneralInformation.jsx";
@@ -53,7 +53,7 @@ const Country = () => {
       <ImageSection selectedCountry={id} />
       <Transport transportRef={transportRef} />
       <Cities country={id} citiesRef={citiesRef} />
-      {/* <Gallery country={id} /> */}
+      <Gallery country={id} />
       <Food country={id} foodRef={foodRef} />
       <Footer />
     </>

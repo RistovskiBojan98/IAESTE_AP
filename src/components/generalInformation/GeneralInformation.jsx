@@ -17,7 +17,7 @@ const GeneralInformation = ({ country }) => {
               <li key={info.name}>
                 <div className="space-y-6">
                   <img
-                    className="mx-auto h-40 w-40 rounded-full xl:h-40 xl:w-40"
+                    className="mx-auto h-40 w-40 rounded-full"
                     src={info.imageUrl}
                     alt=""
                   />

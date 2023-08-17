@@ -1,6 +1,7 @@
 import voltage from "../../images/voltage1.jpg"
 import country_code from "../../images/country_dialing_code.jpg"
 import population from "../../images/population2.jpg"
+import flag_austria from "./images/Austria/austria_flag.png"
 
 export const information = [
   {
@@ -9,8 +10,7 @@ export const information = [
       {
         name: "Capital city",
         role: "Vienna",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+        imageUrl: flag_austria
       },
       {
         name: "Language",
@@ -48,12 +48,12 @@ export const information = [
         imageUrl:
           country_code,
       },
-      // {
-      //   name: "SIM card providers",
-      //   role: "something",
-      //   imageUrl:
-      //     "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
-      // },
+      {
+        name: "SIM card providers",
+        role: "something",
+        imageUrl:
+          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+      },
       {
         name: "Population",
         role: "8.9 million",
@@ -225,12 +225,12 @@ export const information = [
         imageUrl:
           country_code,
       },
-      // {
-      //   name: "SIM card providers",
-      //   role: "something",
-      //   imageUrl:
-      //     "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
-      // },
+      {
+        name: "SIM card providers",
+        role: "something",
+        imageUrl:
+          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+      },
       {
         name: "Population",
         role: "4.07 million",
@@ -284,12 +284,12 @@ export const information = [
         imageUrl:
           country_code,
       },
-      // {
-      //   name: "SIM card providers",
-      //   role: "something",
-      //   imageUrl:
-      //     "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
-      // },
+      {
+        name: "SIM card providers",
+        role: "something",
+        imageUrl:
+          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+      },
       {
         name: "Population",
         role: "10.5 million",
@@ -402,12 +402,12 @@ export const information = [
         imageUrl:
           country_code,
       },
-      // {
-      //   name: "SIM card providers",
-      //   role: "something",
-      //   imageUrl:
-      //     "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
-      // },
+      {
+        name: "SIM card providers",
+        role: "something",
+        imageUrl:
+          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+      },
       {
         name: "Population",
         role: "83.1 million",
