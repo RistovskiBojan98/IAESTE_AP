@@ -28,8 +28,8 @@ const Gallery = ({ country }) => {
   return (
     <section className="relative mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:py-32 lg:px-8">
       <Carousel
-        showArrows={false}
-        autoPlay={false}
+        showArrows={true}
+        autoPlay={true}
         infiniteLoop={true}
         selectedItem={images[currIndex]}
         onChange={handleChange}
