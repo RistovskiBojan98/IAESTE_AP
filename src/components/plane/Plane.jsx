@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 
-const Plane = ({ }) => {
+const Plane = () => {
     const [isLoading, setIsLoading] = useState(true);
-    const [countryHref, setCountryHref] = useState("");
+    const [countryHref, setCountryHref] = useState("")
     const [countryName, setCountryName] = useState("");
 
   useEffect(() => {
@@ -30,6 +30,7 @@ const Plane = ({ }) => {
         {isLoading ? (
             <div>
                 <p>Loading...</p>
+                <p>Entering {{countryName, countryHref}}</p>
             </div>
         ) : null}
     </div>

@@ -239,7 +239,7 @@ export const transport = {
           <a
             className=""
             target="_blank"
-            href="javascript:void(0)"
+            href="https://www.isic.cz/"
             rel="noopener noreferrer"
           >
             {" "}

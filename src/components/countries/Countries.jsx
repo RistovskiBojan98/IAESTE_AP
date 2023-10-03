@@ -53,7 +53,7 @@ const Countries = ({ passRef }) => {
           {displayedCountries.map((country) => (
             <div className="text-center">
               <a key={country.id}
-                href="javascript:void(0)"
+                href="/"
                 className="group items-center"
                 onClick={() => redirectToCountry(country.href, country.name)}>
                 <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-white-200 xl:aspect-w-7 xl:aspect-h-7 left-12">
