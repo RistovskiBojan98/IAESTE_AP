@@ -51,7 +51,7 @@ const Country = () => {
       <Committees country={id} />
       <Facts country={id} />
       <ImageSection selectedCountry={id} />
-      <Transport transportRef={transportRef} />
+      <Transport transportRef={transportRef} country={id} />
       <Cities country={id} citiesRef={citiesRef} />
       <Gallery country={id} />
       <Food country={id} foodRef={foodRef} />

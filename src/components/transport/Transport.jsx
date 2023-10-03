@@ -1,7 +1,16 @@
+import React, { useState, useEffect } from "react";
 import { CheckIcon } from "@heroicons/react/24/outline";
 import { transport } from "./transport";
 
-const Transport = ({ transportRef }) => {
+const Transport = ({ transportRef, country }) => {
+  const [transportProps, setTransportProps] = useState([]);
+  console.log(transportProps)
+
+  useEffect(() => {
+    const loadedTransportProps = transport[country];
+    setTransportProps(loadedTransportProps);
+  }, [country]);
+
   return (
     <div
       className="mx-auto max-w-7xl bg-white py-24 px-4 sm:px-6 lg:px-8"
@@ -12,8 +21,8 @@ const Transport = ({ transportRef }) => {
       </h4>
 
       {/* Tiers */}
-      <div className="mt-24 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:space-y-0">
-        {transport.tiers.map((tier) => (
+      <div className="mt-24 space-y-12 lg:grid lg:grid-cols-2 lg:gap-x-8 lg:space-y-0">
+        {transportProps?.tiers?.map((tier) => (
           <div
             key={tier.title}
             className="relative flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm"
@@ -32,8 +41,8 @@ const Transport = ({ transportRef }) => {
 
               {/* Feature list */}
               <ul className="mt-6 space-y-6">
-                {tier.features.map((feature) => (
-                  <li key={feature} className="flex">
+                {tier.features.map((feature, index) => (
+                  <li key={feature + "-" + index} className="flex">
                     <CheckIcon
                       className="h-6 w-6 flex-shrink-0 text-[#0B3D59]"
                       aria-hidden="true"

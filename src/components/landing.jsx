@@ -12,7 +12,7 @@ export default function Landing({ countriesRef }) {
           style={{ paddingBottom: "80px"}}
         >
           <svg
-            className="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white lg:block"
+            className="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white xl:block"
             fill="currentColor"
             viewBox="0 0 100 100"
             preserveAspectRatio="none"

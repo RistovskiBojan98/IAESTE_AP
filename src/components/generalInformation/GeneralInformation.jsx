@@ -20,6 +20,7 @@ const GeneralInformation = ({ country }) => {
                     className="mx-auto h-40 w-40 rounded-full"
                     src={info.imageUrl}
                     alt=""
+                    style={{ objectFit: 'cover' }}
                   />
                   <div className="space-y-2">
                     <div className="space-y-1 text-lg font-medium leading-6">
