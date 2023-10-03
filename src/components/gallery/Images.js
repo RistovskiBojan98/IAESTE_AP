@@ -128,7 +128,7 @@ import Norway2 from "./images/Norway/2.jpg";
 import Norway3 from "./images/Norway/3.jpg";
 import Norway4 from "./images/Norway/4.jpg";
 import Norway5 from "./images/Norway/5.jpg";
-import Norway6 from "./images/Norway/6.jpg";
+import Norway6 from "./images/Norway/6.JPG";
 import Norway7 from "./images/Norway/7.jpg";
 import Norway8 from "./images/Norway/8.jpg";
 
