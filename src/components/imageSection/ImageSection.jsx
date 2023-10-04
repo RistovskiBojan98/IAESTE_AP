@@ -2,14 +2,11 @@ import austriaImg from "./Austria.png";
 import { secondImage } from "./secondImage";
 
 const ImageSection = ({ selectedCountry }) => {
-  console.log(selectedCountry);
   const selectedImg = secondImage.find(
     (item) => item.country.toLowerCase() === selectedCountry.toLowerCase()
   )
     ? secondImage.find((item) => item.country === selectedCountry).image
     : austriaImg;
-
-  console.log(selectedImg);
 
   return (
     <div className="relative bg-[#0B3D59] h-[700px]">

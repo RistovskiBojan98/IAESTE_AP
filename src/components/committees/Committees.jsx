@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import { committees } from "./committees";
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
+import { secondImage } from "../imageSection/secondImage";
+
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
@@ -13,12 +15,14 @@ const Committees = ({ country }) => {
   }
   const countryCommittees = committees.find((obj) => obj.country === country);
 
+  const selectedImg = secondImage.find((item) => item.country === country).image ?? ''
+
   return (
     <div className="relative bg-gray-900">
       <div className="relative h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
         <img
           className="h-full w-full object-cover"
-          src="https://www.iaeste.at/wp-content/uploads/DSC_0517-1536x1020.jpg"
+          src={selectedImg}
           alt=""
         />
         <div

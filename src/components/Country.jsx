@@ -1,4 +1,4 @@
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Footer from "./footer.js";
@@ -13,9 +13,11 @@ import EmergencyContacts from "./emergencyContacts/EmergencyContacts.jsx";
 import Hero from "./hero/Hero.jsx";
 import ImageSection from "./imageSection/ImageSection.jsx";
 import Navbar from "./navbar/Navbar.jsx";
+import Plane from "./plane/Plane.jsx";
 
 const Country = () => {
   const { id } = useParams();
+  const [isLoading, setIsLoading] = useState(true);
 
   const transportRef = useRef(null);
   const citiesRef = useRef(null);
@@ -33,8 +35,22 @@ const Country = () => {
     foodRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
+  useEffect(() => {
+    // Simulate a delay (you can adjust the duration as needed)
+    const timer = setTimeout(() => {
+      // Hide the loading screen after a delay
+      setIsLoading(false);
+    }, 1000); // Adjust the delay duration as needed (1000ms = 1 second)
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
+    {isLoading ? (
+      <Plane country={id}></Plane>
+    ) : (
+      <div>
       <Helmet>
         <meta charSet="utf-8" />
         <title>IAESTE | Across {id.replace(/-/g, " ")}</title>
@@ -50,12 +66,15 @@ const Country = () => {
       <GeneralInformation country={id} />
       <Committees country={id} />
       <Facts country={id} />
-      <ImageSection selectedCountry={id} />
+      {/* <ImageSection selectedCountry={id} /> */}
       <Transport transportRef={transportRef} country={id} />
       <Cities country={id} citiesRef={citiesRef} />
       <Gallery country={id} />
       <Food country={id} foodRef={foodRef} />
       <Footer />
+      </div>
+    )}
+
     </>
   );
 };

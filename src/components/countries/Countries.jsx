@@ -18,12 +18,6 @@ const Countries = ({ passRef }) => {
     }
   };
 
-  const redirectToCountry = (countryHref, countryName) => {
-    const loadingUrl = `/loading?countryHref=${encodeURIComponent(countryHref)}&countryName=${encodeURIComponent(countryName)}`;
-    window.location.href = loadingUrl;
-  };
-
-
   return (
     <div className="bg-white" ref={passRef} id="countries-div" style={{ overflowX: 'hidden' }}>
       <div className="mx-auto max-w-2xl py-16 px-4 sm:py-16 sm:px-6 lg:max-w-7xl lg:px-8">
@@ -53,9 +47,8 @@ const Countries = ({ passRef }) => {
           {displayedCountries.map((country) => (
             <div className="text-center">
               <a key={country.id}
-                href="/"
                 className="group items-center"
-                onClick={() => redirectToCountry(country.href, country.name)}>
+                href={country.href}>
                 <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-white-200 xl:aspect-w-7 xl:aspect-h-7 left-12">
                   <img
                     src={country.imageSrc}
