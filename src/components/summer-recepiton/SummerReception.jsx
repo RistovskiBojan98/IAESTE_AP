@@ -15,11 +15,11 @@ const SummerReception = ({ country, summerReceptionRef }) => {
         setWeekends(data);
         const names = data?.map((weekend) => weekend.name) ?? [];
         setWeekendsNames(names);
-        setWeekend(data[0]);
+        setWeekend(data ? data[0] : undefined);
         setLoading(false); // Mark data as loaded
 
         // Automatically select the first weekend after data is loaded
-        if (data.length > 0) setSelectedButtonIndex(0);
+        if (data?.length > 0) setSelectedButtonIndex(0);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
@@ -28,7 +28,7 @@ const SummerReception = ({ country, summerReceptionRef }) => {
     fetchData();
   }, [country]);
 
-  if (!loading && weekends.length && weekend) {
+  if (!loading && weekends?.length && weekend) {
     const smCols = weekends.length < 2 ? weekends.length : 2;
     const mdCols = weekends.length < 4 ? weekends.length : 4;
 
@@ -82,7 +82,6 @@ const SummerReception = ({ country, summerReceptionRef }) => {
       </section>
     );
   }
-  return <div>Loading...</div>;
 };
 
 export default SummerReception;

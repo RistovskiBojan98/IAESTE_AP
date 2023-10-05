@@ -14,8 +14,8 @@ const Committees = ({ country }) => {
     setIsOpen(prev => !prev)
   }
   const countryCommittees = committees.find((obj) => obj.country === country);
-
-  const selectedImg = secondImage.find((item) => item.country === country).image ?? ''
+  
+  const selectedImg = secondImage.find((item) => item.country === country)?.image ?? ''
 
   return (
     <div className="relative bg-gray-900">
