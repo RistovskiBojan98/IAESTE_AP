@@ -11,7 +11,7 @@ import GeneralInformation from "./generalInformation/GeneralInformation.jsx";
 import Committees from "./committees/Committees.jsx";
 import EmergencyContacts from "./emergencyContacts/EmergencyContacts.jsx";
 import Hero from "./hero/Hero.jsx";
-import ImageSection from "./imageSection/ImageSection.jsx";
+// import ImageSection from "./imageSection/ImageSection.jsx";
 import Navbar from "./navbar/Navbar.jsx";
 import Plane from "./plane/Plane.jsx";
 
