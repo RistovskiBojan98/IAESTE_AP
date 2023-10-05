@@ -3,7 +3,7 @@ import austria from "./austria.jpg";
 import { countryImages } from "./heroImages";
 import classes from "./Hero.module.css";
 
-const Hero = ({ country, scrollToCities, scrollToFood, scrollToTransport }) => {
+const Hero = ({ country, scrollToCities, scrollToFood, scrollToTransport, scrollToSummerReception }) => {
   const heroImg = countryImages.find((item) => item.country === country)
     ? countryImages.find((item) => item.country === country).image
     : austria;
@@ -52,9 +52,8 @@ const Hero = ({ country, scrollToCities, scrollToFood, scrollToTransport }) => {
                   Food&Drinks
                 </button>
                 <button
-                  disabled
-                  onClick={scrollToFood}
-                  className={`${classes['sr-button']} flex items-center justify-center rounded-md border border-transparent bg-white bg-opacity-60 px-4 py-3 text-base font-medium text-[#0B3D59] shadow-sm hover:bg-opacity-70 sm:px-8`}
+                  onClick={scrollToSummerReception}
+                  className="flex items-center justify-center rounded-md border border-transparent bg-white bg-opacity-60 px-4 py-3 text-base font-medium text-[#0B3D59] shadow-sm hover:bg-opacity-70 sm:px-8"
                 >
                   SR weekends
                 </button>

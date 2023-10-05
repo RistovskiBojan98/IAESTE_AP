@@ -26,15 +26,21 @@ const Gallery = ({ country }) => {
     );
 
   return (
-    <section className="relative mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:py-32 lg:px-8">
+    <section className="relative mx-auto max-w-7xl px-4 sm:px-6 py-12 lg:px-8">
+      <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl mb-5">
+        <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          Gallery
+        </h2>
+      </div>
       <Carousel
         showArrows={true}
         autoPlay={true}
         infiniteLoop={true}
+        interval={5000} 
         selectedItem={images[currIndex]}
         onChange={handleChange}
         className="carousel-container"
-        renderThumbs={() => {}}
+        renderThumbs={() => { }}
       >
         {images.map((image, index) => (
           <div key={index} className="slide">
@@ -47,15 +53,15 @@ const Gallery = ({ country }) => {
         ))}
       </Carousel>
       <button className="custom-button custom-button-prev" onClick={handlePrev}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-          </svg>
-        </button>
-        <button className="custom-button custom-button-next" onClick={handleNext}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z" />
-          </svg>
-        </button>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
+        </svg>
+      </button>
+      <button className="custom-button custom-button-next" onClick={handleNext}>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z" />
+        </svg>
+      </button>
     </section>
   );
 };

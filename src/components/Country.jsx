@@ -14,6 +14,7 @@ import Hero from "./hero/Hero.jsx";
 // import ImageSection from "./imageSection/ImageSection.jsx";
 import Navbar from "./navbar/Navbar.jsx";
 import Plane from "./plane/Plane.jsx";
+import SummerReception from "./summer-recepiton/SummerReception.jsx"
 
 const Country = () => {
   const { id } = useParams();
@@ -22,6 +23,7 @@ const Country = () => {
   const transportRef = useRef(null);
   const citiesRef = useRef(null);
   const foodRef = useRef(null);
+  const summerReceptionRef = useRef(null)
 
   const scrollToTransport = () => {
     transportRef.current.scrollIntoView({ behavior: "smooth" });
@@ -35,12 +37,16 @@ const Country = () => {
     foodRef.current.scrollIntoView({ behavior: "smooth" });
   };
 
+  const scrollToSummerReception = () => {
+    summerReceptionRef.current.scrollIntoView({ behavior: "smooth" });
+  };
+
   useEffect(() => {
     // Simulate a delay (you can adjust the duration as needed)
     const timer = setTimeout(() => {
       // Hide the loading screen after a delay
       setIsLoading(false);
-    }, 1000); // Adjust the delay duration as needed (1000ms = 1 second)
+    }, 1500); // Adjust the delay duration as needed (1000ms = 1 second)
 
     return () => clearTimeout(timer);
   }, []);
@@ -61,10 +67,12 @@ const Country = () => {
         scrollToCities={scrollToCities}
         scrollToFood={scrollToFood}
         scrollToTransport={scrollToTransport}
+        scrollToSummerReception={scrollToSummerReception}
       />
       <EmergencyContacts country={id} />
       <GeneralInformation country={id} />
       <Committees country={id} />
+      <SummerReception country={id} summerReceptionRef={summerReceptionRef} />
       <Facts country={id} />
       {/* <ImageSection selectedCountry={id} /> */}
       <Transport transportRef={transportRef} country={id} />

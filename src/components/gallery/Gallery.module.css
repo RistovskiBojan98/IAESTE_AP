@@ -19,11 +19,11 @@
   justify-content: center;
   width: 40px;
   height: 40px;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.5) !important;
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  /* Remove transition */
 }
 
 .carousel .custom-button svg {
@@ -32,9 +32,10 @@
   height: 20px;
 }
 
-.carousel .custom-button:hover {
+/* Remove hover styles for always visible arrows */
+/* .carousel .custom-button:hover {
   background-color: rgba(0, 0, 0, 0.7);
-}
+} */
 
 .carousel .custom-button-prev {
   left: 15px;
@@ -43,4 +44,3 @@
 .carousel .custom-button-next {
   right: 15px;
 }
-
