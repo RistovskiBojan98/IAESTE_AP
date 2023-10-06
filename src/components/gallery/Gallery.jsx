@@ -32,6 +32,7 @@ const Gallery = ({ country }) => {
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Gallery
           </h2>
+          <p>Click on the right for more incredible views!</p>
         </div>
         <Carousel
           showArrows={true}

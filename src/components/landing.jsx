@@ -57,7 +57,7 @@ export default function Landing({ countriesRef }) {
               <p className="mt-3 text-base text-[#0B3D59] md:mx-auto sm:mt-5 md:max-w-xl md:text-lg md:mt-5 md:text-xl lg:mx-0">
                 We hope you will have a great time discovering foreign places,
                 and this application will help you find all information needed
-                during travelling across the globe with IAESTE.
+                while travelling across the globe with IAESTE.
               </p>
               <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
                 <div className="rounded-md shadow">
