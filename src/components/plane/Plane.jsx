@@ -16,7 +16,7 @@ const Plane = ({ country }) => {
       aria-hidden="true"
     >
       <div className="text-white text-center space-y-4">
-        <p className="text-3xl font-semibold">Entering</p>
+        <p className="text-3xl font-semibold">Flying to</p>
         <p className="text-7xl font-semibold">{name}</p>
         <div className="flex justify-center"> {/* Container for centering the image */}
           <img src={planeImg} alt="" />

@@ -7,6 +7,9 @@ import polandImg from "./Poland.jpg";
 import spainImg from "./Spain.jpg";
 import swedenImg from "./Sweden.jpg";
 import switzerlandImg from "./Switzerland.jpg";
+import macedoniaImg from "./macedonia.jpg";
+import germanyImg from "./Germany.jpg";
+import czechiaImg from "./Czech-Republic.jpg";
 
 export const countryImages = [
   {
@@ -44,5 +47,17 @@ export const countryImages = [
   {
     country: "Switzerland",
     image: switzerlandImg,
+  },
+  {
+    country: "Macedonia",
+    image: macedoniaImg,
+  },
+  {
+    country: "Germany",
+    image: germanyImg,
+  },
+  {
+    country: "Czech-Republic",
+    image: czechiaImg,
   },
 ];

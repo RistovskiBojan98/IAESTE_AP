@@ -72,7 +72,6 @@ const SummerReception = ({ country, summerReceptionRef }) => {
                 <img
                   src={weekend.img}
                   alt=""
-                  className="w-32 h-32 object-cover rounded-lg"
                 />
               </div>
             </div>

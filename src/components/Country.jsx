@@ -46,7 +46,7 @@ const Country = () => {
     const timer = setTimeout(() => {
       // Hide the loading screen after a delay
       setIsLoading(false);
-    }, 1500); // Adjust the delay duration as needed (1000ms = 1 second)
+    }, 1100); // Adjust the delay duration as needed (1000ms = 1 second)
 
     return () => clearTimeout(timer);
   }, []);

@@ -49,7 +49,7 @@ const footerNavigation = {
     social: [
         {
             name: 'Facebook',
-            href: '#',
+            href: 'https://www.facebook.com/iaestecer',
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
                     <path
@@ -62,7 +62,7 @@ const footerNavigation = {
         },
         {
             name: 'Instagram',
-            href: '#',
+            href: 'https://www.instagram.com/iaestecer.official/',
             icon: (props) => (
                 <svg fill="currentColor" viewBox="0 0 24 24" {...props}>
                     <path
@@ -105,7 +105,7 @@ export default function Footer() {
                             cer-core.iaeste.org</a>
                     </p>
                     <p className="mt-8 text-center text-base text-gray-400">
-                        &copy; 2020 Your Company, Inc. All rights reserved.
+                        &copy;IAESTE Central European Region
                     </p>
                 </div>
             </footer>

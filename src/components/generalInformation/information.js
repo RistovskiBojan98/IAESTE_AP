@@ -2,6 +2,16 @@ import voltage from "../../images/voltage1.jpg"
 import country_code from "../../images/country_dialing_code.jpg"
 import population from "../../images/population2.jpg"
 import flag_austria from "./images/Austria/austria_flag.png"
+import flag_bosnia from "./images/Bosnia/bosna_and_herzcegovina_flag.png"
+import flag_croatia from "./images/Croatia/croatia_flag.png"
+import flag_czechia from "./images/Czechia/czechia_flag.png"
+import flag_germany from "./images/Germany/germany_flag.png"
+import flag_hungary from "./images/Hungary/hungary_flag.png"
+import flag_macedonia from "./images/Macedonia/macedonia_flag.png"
+import flag_poland from "./images/Poland/poland_flag.png"
+import flag_slovakia from "./images/Slovakia/slovakia_flag.png"
+import flag_slovenia from "./images/Slovenia/slovenia_flag.png"
+import flag_turkey from "./images/Turkey/turkey_flag.png"
 
 export const information = [
   {
@@ -68,8 +78,7 @@ export const information = [
       {
         name: "Capital city",
         role: "Sarajevo",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+        imageUrl: flag_bosnia      
       },
       {
         name: "Language",
@@ -186,8 +195,7 @@ export const information = [
       {
         name: "Capital city",
         role: "Zagreb",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+        imageUrl: flag_croatia
       },
       {
         name: "Language",
@@ -245,8 +253,7 @@ export const information = [
       {
         name: "Capital city",
         role: "Prague",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+        imageUrl: flag_czechia
       },
       {
         name: "Language",
@@ -363,8 +370,7 @@ export const information = [
       {
         name: "Capital city",
         role: "Berlin",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+        imageUrl: flag_germany
       },
       {
         name: "Language",
@@ -422,8 +428,7 @@ export const information = [
       {
         name: "Capital city",
         role: "Budapest",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+        imageUrl: flag_hungary
       },
       {
         name: "Language",
@@ -481,8 +486,7 @@ export const information = [
       {
         name: "Capital city",
         role: "Skopje",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+        imageUrl: flag_macedonia
       },
       {
         name: "Language",
@@ -658,8 +662,7 @@ export const information = [
       {
         name: "Capital city",
         role: "Warsaw",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+        imageUrl: flag_poland
       },
       {
         name: "Language",
@@ -717,8 +720,7 @@ export const information = [
       {
         name: "Capital city",
         role: "Bratislava",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+        imageUrl: flag_slovakia
       },
       {
         name: "Language",
@@ -776,8 +778,7 @@ export const information = [
       {
         name: "Capital city",
         role: "Ljubljana",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+        imageUrl: flag_slovenia
       },
       {
         name: "Language",
@@ -1071,8 +1072,7 @@ export const information = [
       {
         name: "Capital city",
         role: "Ankara",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+        imageUrl: flag_turkey
       },
       {
         name: "Language",
