@@ -16,12 +16,14 @@ const GeneralInformation = ({ country }) => {
             {countryInfo.data.map((info) => (
               <li key={info.name}>
                 <div className="space-y-6">
+                  <div className="mx-auto h-40 w-40">
                   <img
-                    className="mx-auto h-40 w-40 rounded-full"
+                    className="rounded-full"
                     src={info.imageUrl}
                     alt=""
-                    style={{ objectFit: 'cover' }}
+                    style={{width:'100%', height:'100%'}}
                   />
+                  </div>
                   <div className="space-y-2">
                     <div className="space-y-1 text-lg font-medium leading-6">
                       <h3>{info.name}</h3>

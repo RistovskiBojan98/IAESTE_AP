@@ -12,6 +12,13 @@ import flag_poland from "./images/Poland/poland_flag.png"
 import flag_slovakia from "./images/Slovakia/slovakia_flag.png"
 import flag_slovenia from "./images/Slovenia/slovenia_flag.png"
 import flag_turkey from "./images/Turkey/turkey_flag.png"
+import flag_belgium from "./images/Belgium/belgium_flag.jpg"
+import flag_norway from "./images/Norway/norway_flag.jpg"
+import flag_sweden from "./images/Sweden/sweden_flag.jpg"
+import flag_switzerland from "./images/Switzerland/switzerland_flag.jpg"
+import flag_spain from "./images/Spain/spain_flag.jpg"
+import flag_malta from "./images/Malta/malta_flag.png"
+import flag_france from "./images/France/france_flag.jpg"
 
 export const information = [
   {
@@ -136,8 +143,7 @@ export const information = [
       {
         name: "Capital city",
         role: "Brussels",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+        imageUrl: flag_belgium
       },
       {
         name: "Language",
@@ -311,8 +317,7 @@ export const information = [
       {
         name: "Capital city",
         role: "Paris",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+        imageUrl: flag_france
       },
       {
         name: "Language",
@@ -544,8 +549,7 @@ export const information = [
       {
         name: "Capital city",
         role: "Valletta",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+        imageUrl: flag_malta
       },
       {
         name: "Language",
@@ -603,8 +607,7 @@ export const information = [
       {
         name: "Capital city",
         role: "Oslo",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+        imageUrl: flag_norway
       },
       {
         name: "Language",
@@ -836,8 +839,7 @@ export const information = [
       {
         name: "Capital city",
         role: "Madrid",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+        imageUrl: flag_spain
       },
       {
         name: "Language",
@@ -895,8 +897,7 @@ export const information = [
       {
         name: "Capital city",
         role: "Bern",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+        imageUrl: flag_switzerland
       },
       {
         name: "Language",
@@ -954,8 +955,7 @@ export const information = [
       {
         name: "Capital city",
         role: "Stockholm",
-        imageUrl:
-          "https://images.unsplash.com/photo-1663643633001-4fe66fc06377?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1024&q=80",
+        imageUrl: flag_sweden
       },
       {
         name: "Language",
