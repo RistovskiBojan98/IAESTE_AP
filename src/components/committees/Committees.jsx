@@ -45,7 +45,13 @@ const Committees = ({ country }) => {
             In {country.replace(/-/g, " ")} we have {countryCommittees.lcs.length} local commitees:
           </p>
           <p className="mt-3 text-3xl text-gray-300 sm:text-4xl">
-            <ul>
+            {countryCommittees.hasCommiteesWebsite? 
+               <div>
+               <p style={{ fontSize: "24px", paddingTop: "1rem" }}>You can visit a full list of the IAESTE local commitees for {country} here:</p>
+               <a style={{fontSize: "23px", fontStyle: "italic", textDecoration:"underline"}} href={countryCommittees.page}>Local commitees {country}</a>
+               </div>
+              :
+              <ul>
               {countryCommittees.lcs.length <= 5 &&
                 countryCommittees.lcs.map((committee) => {
                   return <li style={{fontSize: '24px'}} key={committee}>LC {committee}</li>;
@@ -91,10 +97,12 @@ const Committees = ({ country }) => {
                 </Disclosure>
               )}
             </ul>
+            }
             <p style={{ fontSize: "24px", paddingTop: "1rem" }}>
               You can also visit IAESTE {country} here:
             </p>
-            <a style={{fontSize: "24px"}} href={countryCommittees.page}>{countryCommittees.page}</a>
+            <a style={{fontSize: "23px"}} href={countryCommittees.page}>{countryCommittees.page}</a>
+        
           </p>
         </div>
       </div>

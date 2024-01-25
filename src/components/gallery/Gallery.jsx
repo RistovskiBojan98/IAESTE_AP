@@ -8,6 +8,15 @@ const Gallery = ({ country }) => {
   const [images, setImages] = useState([]);
   const [currIndex, setCurrIndex] = useState(0);
 
+const handleArrowStyle = (event) =>{
+  let arrow = event.target
+  arrow.style.backgroundColor = 'rgba(12, 8, 71, 100)'; 
+}
+const setDefaultArrowStyle = (event) =>{
+  let arrow = event.target
+  arrow.style.backgroundColor = 'rgba(12, 8, 71, 85)'; 
+}
+
   useEffect(() => {
     const loadedImages = Images[country];
     setImages(loadedImages);
@@ -43,6 +52,8 @@ const Gallery = ({ country }) => {
           onChange={handleChange}
           className="carousel-container"
           renderThumbs={() => { }}
+          renderArrowNext={(handleNext) => <button type="button" onClick={handleNext} aria-label="next slide / item" class="control-arrow control-next" onMouseOver={handleArrowStyle} onMouseOut={setDefaultArrowStyle} style={{backgroundColor: "rgba(12, 8, 71, 85)"}}></button>}
+          renderArrowPrev={(handlePrev) => <button type="button" onClick={handlePrev} aria-label="previous slide / item" class="control-arrow control-prev" style={{backgroundColor: "rgba(12, 8, 71, 85)"}}></button>}
         >
           {images.map((image, index) => (
             <div key={index} className="slide">

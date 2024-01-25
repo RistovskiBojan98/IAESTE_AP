@@ -92,7 +92,8 @@ export const committees = [
       "Wismar",
       "Zittau",
     ],
-    page: "https://www.iaeste.de/en/",
+    page: "https://www.iaeste.de/",
+    hasCommiteesWebsite: true
   },
   {
     country: "Hungary",
