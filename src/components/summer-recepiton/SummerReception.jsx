@@ -51,7 +51,10 @@ const SummerReception = ({ country, summerReceptionRef }) => {
                   index === selectedButtonIndex ? 'bg-[#0B3D59] text-white' : ''
                 }`}
                 style={{ fontSize: '18px' }}
-                onClick={() => setSelectedButtonIndex(index)}
+                onClick={() => {
+                  setSelectedButtonIndex(index)
+                  setWeekend(weekends[index])
+                }}
               >
                 {name}
               </button>
