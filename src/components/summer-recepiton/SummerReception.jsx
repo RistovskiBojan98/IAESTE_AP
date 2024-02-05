@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { summerReception } from "./summerReception"
 
 const SummerReception = ({ country, summerReceptionRef }) => {
+  let smCols = 2;
+  let mdCols = 4
   const [weekend, setWeekend] = useState({});
   const [weekends, setWeekends] = useState([]);
   const [weekendsNames, setWeekendsNames] = useState([]);
@@ -29,8 +31,8 @@ const SummerReception = ({ country, summerReceptionRef }) => {
   }, [country]);
 
   if (!loading && weekends?.length && weekend) {
-    const smCols = weekends.length < 2 ? weekends.length : 2;
-    const mdCols = weekends.length < 4 ? weekends.length : 4;
+    smCols = weekends.length < 2 ? weekends.length : 2;
+    mdCols = weekends.length < 4 ? weekends.length : 4;
 
     return (
       <section className="my-10 flex flex-col border-b border-gray-300" ref={summerReceptionRef}>
@@ -43,7 +45,7 @@ const SummerReception = ({ country, summerReceptionRef }) => {
           </p>
         </div>
         <div className="flex flex-col items-center">
-          <div className={`flex grid md:grid-cols-${mdCols} grid-cols-${smCols} gap-4 text-center my-2`}>
+          <div className={`grid md:grid-cols-${mdCols} grid-cols-${smCols} gap-4 text-center my-2`}>
             {weekendsNames.map((name, index) => (
               <button
                 key={index}
@@ -63,17 +65,17 @@ const SummerReception = ({ country, summerReceptionRef }) => {
           <div className="border border-gray-300">
             <div className="flex flex-col md:flex-row">
               <div className="w-full md:w-1/2 bg-[#0B3D59] p-6 text-white">
-                <h3 className="text-lg ">{weekend.name}</h3>
-                <p className='text-md mt-4'>Date: {weekend.date}</p>
-                <p className='text-md'>Location: {weekend.location}</p>
-                <p className='text-md'>Link: {weekend.link}</p>
-                <p className='text-md mt-4'>
+                <h3 className="text-4xl font-bold">{weekend.name}</h3>
+                <p className='text-2xl mt-4 font-semibold'>Date: {weekend.date}</p>
+                <p className='text-2xl mt-2 font-semibold'>Location: {weekend.location}</p>
+                <p className='text-2xl mt-2 font-semibold'>Link: {weekend.link}</p>
+                <p className='text-xl mt-4'>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
               </div>
               <div className="w-full md:w-1/2">
                 <img
-                  src={weekend.img}
+                  src={weekend.image}
                   alt=""
                 />
               </div>

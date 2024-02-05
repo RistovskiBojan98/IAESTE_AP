@@ -1,3 +1,5 @@
+import srImg from "./Vienna_autumn.jpg"
+
 export const summerReception = {
     "Germany": [
         {
@@ -6,7 +8,7 @@ export const summerReception = {
             location: "Munich",
             link: "",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            image: ""
+            image: srImg
         },
         {
             name: "Nuremberg Weekend",
@@ -14,7 +16,7 @@ export const summerReception = {
             location: "Nuremberg",
             link: "",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            image: ""
+            image: srImg
         },
     ],
     "Austria": [
@@ -24,7 +26,7 @@ export const summerReception = {
             location: "Vienna",
             link: "",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            image: ""
+            image: srImg
         }
     ],
     "Poland": [
@@ -34,7 +36,7 @@ export const summerReception = {
             location: "Warsaw",
             link: "",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            image: ""
+            image: srImg
         },
         {
             name: "Gdansk Baywatch Weekend",
@@ -42,7 +44,7 @@ export const summerReception = {
             location: "Gdansk",
             link: "",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            image: ""
+            image: srImg
         },
         {
             name: "IAESTE Central European Meeting",
@@ -50,7 +52,7 @@ export const summerReception = {
             location: "Krakow",
             link: "",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            image: ""
+            image: srImg
         },
         {
             name: "Magic Wroclaw Weekend",
@@ -58,7 +60,7 @@ export const summerReception = {
             location: "Wroclaw",
             link: "",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            image: ""
+            image: srImg
         },
     ],
     "Czech-Republic": [
@@ -68,7 +70,7 @@ export const summerReception = {
             location: "Pilsen",
             link: "",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            image: ""
+            image: srImg
         },
         {
             name: "Prague Challenge",
@@ -76,7 +78,7 @@ export const summerReception = {
             location: "Prague",
             link: "",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            image: ""
+            image: srImg
         },
         {
             name: "Moravian Weekend",
@@ -84,7 +86,7 @@ export const summerReception = {
             location: "Brno",
             link: "",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            image: ""
+            image: srImg
         },
     ],
     "Slovakia": [
@@ -94,7 +96,7 @@ export const summerReception = {
             location: "Tatra mountains",
             link: "",
             description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-            image: ""
+            image: srImg
         },
     ],
 }
