@@ -6,7 +6,7 @@ function classNames(...classes) {
 }
 
 const metrics = [
-  { id: 1, stat: "21", emphasis: "Member countries" },
+  { id: 1, stat: "18", emphasis: "Member countries" },
   { id: 2, stat: "50+", emphasis: "Local Committes" },
   { id: 3, stat: "1K+", emphasis: "Internships" },
   { id: 4, stat: "1500+", emphasis: "Student Members" },
