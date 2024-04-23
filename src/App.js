@@ -4,6 +4,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import Layout from "./components/layout.js";
 import Country from "./components/Country.jsx";
 import Plane from "./components/plane/Plane";
+import SRWeekends from "./components/sr-weekends/sr-weekends.js";
 
 function App() {
   const queryClient = new QueryClient();
@@ -16,6 +17,7 @@ function App() {
               <Route path="/" element={<Layout />} />
               <Route path="/loading" element={ <Plane />} />
               <Route path="/:id" element={<Country />} />
+              <Route path="/sr-weekends" element={ <SRWeekends />} />
             </Routes>
           </header>
         </QueryClientProvider>
