@@ -111,7 +111,7 @@ const footerNavigation = {
 
 export default function Footer() {
     return (
-        <footer className="bg-gray-900 mt-12" style={{ backgroundColor: "#0A3D58" }}>
+        <footer className="bg-gray-900" style={{ backgroundColor: "#0A3D58" }}>
         <div className="mx-auto max-w-md overflow-hidden px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-20">
                 <div className="mb-1 sm:mb-0">

@@ -41,7 +41,7 @@ const Food = ({ country, foodRef }) => {
     <section
       style={{ padding: "0 2rem" }}
       ref={foodRef}
-      className="relative mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:py-32 lg:px-8"
+      className="relative mb-12 mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:py-32 lg:px-8"
     >
       <h2 style={{fontSize: '36px'}} className="font-bold tracking-tight text-gray-900 mb-6">
         Traditional food and drinks

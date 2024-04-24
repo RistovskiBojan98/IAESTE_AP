@@ -4,7 +4,7 @@ import { QueryClient, QueryClientProvider } from "react-query";
 import Layout from "./components/layout.js";
 import Country from "./components/Country.jsx";
 import Plane from "./components/plane/Plane";
-import SRWeekends from "./components/sr-weekends/sr-weekends.js";
+import SRWeekends from "./components/sr-weekends/sr-weekends.jsx";
 
 function App() {
   const queryClient = new QueryClient();
