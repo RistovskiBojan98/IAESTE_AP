@@ -1,0 +1,7 @@
+body {
+    background-image: url('./summerbg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    /* background: rgba(255,255,255,0.1) */
+}

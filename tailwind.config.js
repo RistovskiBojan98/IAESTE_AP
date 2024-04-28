@@ -6,5 +6,8 @@ module.exports = {
   theme: {
     extend: {},
   },
+  styles: {
+    'react-big-calendar': ['react-big-calendar/lib/css/react-big-calendar.css']
+  },
   plugins: [require('@tailwindcss/aspect-ratio'),],
 }
