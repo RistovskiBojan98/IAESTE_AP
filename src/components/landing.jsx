@@ -70,6 +70,16 @@ export default function Landing({ countriesRef }) {
                   </Link>
                 </div>
               </div>
+              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                <div className="rounded-md shadow">
+                  <a
+                    href="/sr-weekends"
+                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#0B3D59] px-8 py-3 text-base font-medium text-white hover:bg-[#1d5b80] md:py-4 md:px-10 md:text-lg"
+                  >
+                    SUMMER RECEPTION WEEKENDS
+                  </a>
+                </div>
+              </div>
             </div>
           </main>
         </div>
