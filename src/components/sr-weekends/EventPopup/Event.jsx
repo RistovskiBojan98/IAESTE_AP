@@ -29,11 +29,11 @@ const EventPopup = ({ event, onClose }) => {
 
     return (
         <div className={css.overlay}>
-            <div className={css.popup} ref={popupRef}>
+            <div className={css.popup} ref={popupRef} style={{maxWidth: '800px'}}>
                 <button onClick={onClose} className={css.closeButton}>
                     <i class="fa-solid fa-x"></i>
                 </button>
-                <div className="w-full md:w-1/2 bg-[#0B3D59] p-6 text-white">
+                <div className="w-full bg-[#0B3D59] p-6 text-white">
                     <h3 className="text-4xl font-bold">{event.name}</h3>
                     <hr className='mt-4'></hr>
                     <div className="flex items-center text-2xl mt-4">
@@ -46,13 +46,14 @@ const EventPopup = ({ event, onClose }) => {
                         <i className="fas fa-link text-white mr-2"></i> {event.link}
                     </div>
                     <hr className='mt-4'></hr>
-                    <p className='text-xl mt-4'>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                    <p className='text-xl mt-4'> {event.description.split('\n').map((paragraph, index) => (
+                            <p key={index}>{paragraph}<br></br></p>
+                        ))}
                     </p>
                 </div>
-                <div className="w-full md:w-1/2">
+                {/* <div className="w-full md:w-1/2">
                     <img src={event.image} alt="" />
-                </div>
+                </div> */}
             </div>
         </div>
     );
