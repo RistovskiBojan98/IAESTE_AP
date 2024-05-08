@@ -42,7 +42,7 @@ const Committees = ({ country }) => {
             Cities with IAESTE LCs
           </h2>
           <p className="mt-2 font-bold tracking-tight text-white" style={{fontSize: '18px'}}>
-            In {country.replace(/-/g, " ")} we have {countryCommittees.lcs.length} local commitees:
+            In {country.replace(/-/g, " ")} we have {countryCommittees.lcs.length} cities with local commitees:
           </p>
           <p className="mt-3 text-3xl text-gray-300 sm:text-4xl">
             {countryCommittees.hasCommiteesWebsite? 
@@ -54,7 +54,7 @@ const Committees = ({ country }) => {
               <ul>
               {countryCommittees.lcs.length <= 5 &&
                 countryCommittees.lcs.map((committee) => {
-                  return <li style={{fontSize: '24px'}} key={committee}>LC {committee}</li>;
+                  return <li style={{fontSize: '24px'}} key={committee}>{committee}</li>;
                 })}
               {countryCommittees.lcs.length > 5 &&
                 countryCommittees.lcs.map((com, index) => {

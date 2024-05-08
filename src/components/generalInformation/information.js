@@ -55,7 +55,11 @@ export const information = [
       },
       {
         name: "Climate",
-        role: "Moderate continental climate (colder in the west)",
+        role: "Moderate continental climate (colder in the west (alps)). ",
+        // "Spring: warm, low temperatures above 0°C, occasional typical strong warm winds (called Foehn)." +
+        // "Summer: pleasant warm, sometimes hot beyond 35°C especially in the east, mostly sunny with some short heavy rains"+
+        // "Autumn: moderate low temperatures above 0°C, sometimes windy"+
+        // "Winter: low temperatures, can (rarely) get very cold down to -20°C, regular snowfalls, especially in the west.",
         imageUrl:
           "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
       },
@@ -67,7 +71,7 @@ export const information = [
       },
       {
         name: "SIM card providers",
-        role: "something",
+        role: "HoT, Drei, A1, Lidl",
         imageUrl:
           "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
@@ -241,7 +245,7 @@ export const information = [
       },
       {
         name: "SIM card providers",
-        role: "something",
+        role: "Hrvatski Telekom (T-Mobile brand), A1, Telemach",
         imageUrl:
           "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
@@ -299,7 +303,7 @@ export const information = [
       },
       {
         name: "SIM card providers",
-        role: "something",
+        role: "Vodafone, T-mobile, O2",
         imageUrl:
           "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
@@ -473,7 +477,7 @@ export const information = [
       },
       {
         name: "SIM card providers",
-        role: "something",
+        role: "Telekom (30), Telenor (20), Vodafone (70)",
         imageUrl:
           "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
@@ -531,7 +535,7 @@ export const information = [
       },
       {
         name: "SIM card providers",
-        role: "something",
+        role: "Lyca mobile, T-mobile, A1",
         imageUrl:
           "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
@@ -705,7 +709,7 @@ export const information = [
       },
       {
         name: "SIM card providers",
-        role: "something",
+        role: "Orange, Play, T-Mobile, Plus",
         imageUrl:
           "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },

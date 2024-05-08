@@ -58,14 +58,14 @@ export const summerReception = {
             "Join us for an unforgettable journey through the pirate trails of the Caribbean! IAESTE has prepared a special event that will transport you to a world full of mysteries and adventures. Embrace the role of pirates, search for treasures, compete in thrilling challenges, and participate in extraordinary workshops. It will be a time of fun and memories you won't forget! Join us and immerse yourself in the atmosphere of a real pirate adventure!",
             image: srImg
         },
-        // {
-        //     name: "Gdansk Baywatch Weekend",
-        //     date: "14.07 - 16.07",
-        //     location: "Gdansk",
-        //     link: "",
-        //     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        //     image: srImg
-        // },
+        {
+            name: "Baywatch Weekend",
+            date: "09.08 - 11.08",
+            location: "Gdansk",
+            link: "",
+            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            image: srImg
+        },
         // {
         //     name: "IAESTE Central European Meeting",
         //     date: "14.07 - 16.07",
