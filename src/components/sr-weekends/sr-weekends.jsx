@@ -7,6 +7,9 @@ import Loader from "./Loader";
 import css from "./sr-weekends.module.css";
 
 export default function SRWeekends() {
+  // Remove filter from storage when accessing this component for the first time
+  localStorage.removeItem('filterValues')
+
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -24,7 +27,7 @@ export default function SRWeekends() {
       {isLoading ? (
         <Loader />
       ) : (
-        <div className={css.body}>
+        <div className={css.bg}>
           <Helmet>
             <meta charSet="utf-8" />
             <title>IAESTE | Across the Planet | Summer Reception </title>

@@ -35,23 +35,23 @@ const SummerReception = ({ country, summerReceptionRef }) => {
     mdCols = weekends.length < 4 ? weekends.length : 4;
 
     return (
-      <section className="my-10 flex flex-col border-b border-gray-300" ref={summerReceptionRef}>
+      <section className="flex flex-col my-10 border-b botder-t border-gray-300" ref={summerReceptionRef}>
+        <hr className='my-5 bg-black'></hr>
         <div className="lg:space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl mb-5">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
-            Summer Reception 2023
+            Summer Reception 2024
           </h2>
           <p className='mt-2 mb-8'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At elementum eu facilisis sed odio morbi. In est ante in nibh mauris. Suscipit adipiscing bibendum est ultricies integer quis auctor elit sed. Varius duis at consectetur lorem donec massa sapien. Molestie a iaculis at erat pellentesque. Massa eget egestas purus viverra accumsan in.
           </p>
         </div>
         <div className="flex flex-col items-center">
-          <div className={`grid md:grid-cols-${mdCols} grid-cols-${smCols} gap-4 text-center my-2`}>
+          <div className={`grid md:grid-cols-${mdCols} grid-cols-${smCols} gap-4 text-center my-5`}>
             {weekendsNames.map((name, index) => (
               <button
                 key={index}
-                className={`flex rounded border border-gray-300 shadow-md bg-white-300 hover:bg-gray-400 focus:bg-[#0B3D59] focus:text-white focus:outline-none w-40 h-20 justify-center items-center ${
-                  index === selectedButtonIndex ? 'bg-[#0B3D59] text-white' : ''
-                }`}
+                className={`flex rounded border border-gray-300 shadow-md bg-white-300 hover:bg-gray-400 focus:bg-[#0B3D59] focus:text-white focus:outline-none w-40 h-20 justify-center items-center ${index === selectedButtonIndex ? 'bg-[#0B3D59] text-white' : ''
+                  }`}
                 style={{ fontSize: '18px' }}
                 onClick={() => {
                   setSelectedButtonIndex(index)
@@ -66,9 +66,18 @@ const SummerReception = ({ country, summerReceptionRef }) => {
             <div className="flex flex-col md:flex-row">
               <div className="w-full md:w-1/2 bg-[#0B3D59] p-6 text-white">
                 <h3 className="text-4xl font-bold">{weekend.name}</h3>
-                <p className='text-2xl mt-4 font-semibold'>Date: {weekend.date}</p>
-                <p className='text-2xl mt-2 font-semibold'>Location: {weekend.location}</p>
-                <p className='text-2xl mt-2 font-semibold'>Link: {weekend.link}</p>
+                <hr className='mt-4'></hr>
+                <div className="flex items-center text-2xl mt-4">
+                  <i className="far fa-calendar-alt mr-2 text-white"></i> {weekend.date}
+                </div>
+                <div className="flex items-center text-2xl mt-4">
+                  <i className="fas fa-map-marker-alt text-white mr-2"></i> {weekend.location}
+                </div>
+                <div className="flex items-center text-2xl mt-4">
+                  <i className="fas fa-link text-white mr-2"></i> {weekend.link}
+                </div>
+                <hr className='mt-4'></hr>
+
                 <p className='text-xl mt-4'>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
