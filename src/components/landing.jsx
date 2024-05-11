@@ -16,7 +16,6 @@ export default function Landing({ countriesRef }) {
             fill="currentColor"
             viewBox="0 0 100 100"
             preserveAspectRatio="none"
-            aria-hidden="true"
             style={{zIndex: "1"}}
           >
             <polygon points="10,0 100,0 33,100 10,100" />
@@ -86,12 +85,12 @@ export default function Landing({ countriesRef }) {
       </div>
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
         <img
-          className="h-56 w-full object-cover md:h-72 md:h-96 lg:h-full lg:w-full"
+          className="h-56 w-full object-cover md:h-72 md:h-96 lg:h-full lg:w-full "
           src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
           alt=""
         />
         <div
-          className="absolute inset-0 bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] mix-blend-multiply"
+          className="xl:absolute inset-0 bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] mix-blend-multiply"
           aria-hidden="true"
         />
       </div>

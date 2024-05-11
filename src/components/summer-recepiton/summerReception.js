@@ -52,7 +52,7 @@ export const summerReception = {
             "Friday 5.7.24 : Prelude Picnic | Check-in | Barbecue Evening | After Party\n"+
             "Saturday 6.7.24 : Vienna City Challenge | Beer Garden | Austrian Dinner | Club Party\n"+
             "Sunday 7.7.24 : Small Sightseeing Tour | Check-out | Post event picnic\n"+
-            "The first Registration round will be open from today until 31.o5.2024.\n\n"+
+            "The first Registration round will be open from today until 31.05.2024.\n\n"+
             
             
             "For any further information, please do not hesitate to contact us viennaweekend@iaeste.at\n\n"+
