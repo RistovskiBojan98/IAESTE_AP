@@ -3,7 +3,7 @@ import cerLogo from "../navbar/cer-logo.png";
 
 const SRNavbar = () => {
   return (
-    <div className="">
+    <div className="bg-white">
       <div className="relative overflow-hidden">
         <div className="mx-auto max-w-7xl">
           <div className="relative z-10  w-full">
@@ -22,9 +22,9 @@ const SRNavbar = () => {
                           src={cerLogo}
                         />
                       </a>
-                      <h1 className="text-3xl text-white font-bold italic ml-auto" style={{ textShadow: '0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5)' }}>
+                      {/* <h1 className="text-3xl text-white font-bold italic ml-auto" style={{ textShadow: '0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5)' }}>
                         Summer Reception Weekends 2024
-                    </h1>
+                    </h1> */}
                     </div>
                   </div>
                 </nav>

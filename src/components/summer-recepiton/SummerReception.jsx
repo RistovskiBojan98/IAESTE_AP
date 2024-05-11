@@ -41,9 +41,9 @@ const SummerReception = ({ country, summerReceptionRef }) => {
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Summer Reception 2024
           </h2>
-          <p className='mt-2 mb-8'>
+          {/* <p className='mt-2 mb-8'>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At elementum eu facilisis sed odio morbi. In est ante in nibh mauris. Suscipit adipiscing bibendum est ultricies integer quis auctor elit sed. Varius duis at consectetur lorem donec massa sapien. Molestie a iaculis at erat pellentesque. Massa eget egestas purus viverra accumsan in.
-          </p>
+          </p> */}
         </div>
         <div className="flex flex-col items-center">
           <div className={`grid md:grid-cols-${mdCols} grid-cols-${smCols} gap-4 text-center my-5`}>

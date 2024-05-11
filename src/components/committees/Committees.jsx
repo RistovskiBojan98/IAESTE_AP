@@ -19,7 +19,7 @@ const Committees = ({ country }) => {
 
   return (
     <div className="relative bg-gray-900">
-      <div className="relative h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
+      {/* <div className="relative h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
         <img
           className="h-full w-full object-cover"
           src={selectedImg}
@@ -29,12 +29,12 @@ const Committees = ({ country }) => {
           aria-hidden="true"
           className="absolute inset-0 bg-gradient-to-r from-teal-500 to-cyan-600 mix-blend-multiply"
         />
-      </div>
+      </div> */}
       <div
         className="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl sm:px-6 sm:py-20 md:py-28 lg:px-8 lg:py-32"
         style={{ paddingTop: "3rem", paddingBottom: "3rem" }}
       >
-        <div className="md:ml-auto md:w-1/2 md:pl-10">
+        <div className="md:ml-auto md:pl-10 text-center"> {/* md:w-1/2 */}
           <h2
             className="text-lg font-semibold text-gray-300"
             style={{ fontSize: "36px" }}
@@ -98,11 +98,11 @@ const Committees = ({ country }) => {
               )}
             </ul>
             }
-            <p style={{ fontSize: "24px", paddingTop: "1rem" }}>
+            {/* <p style={{ fontSize: "24px", paddingTop: "1rem" }}>
               You can also visit IAESTE {country} here:
             </p>
             <a style={{fontSize: "23px"}} href={countryCommittees.page}>{countryCommittees.page}</a>
-        
+         */}
           </p>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useRef, useEffect }  from 'react';
+import React, { useRef, useEffect } from 'react';
 import css from "./event-popup.module.css"
 
 const EventPopup = ({ event, onClose }) => {
@@ -29,7 +29,7 @@ const EventPopup = ({ event, onClose }) => {
 
     return (
         <div className={css.overlay}>
-            <div className={css.popup} ref={popupRef} style={{maxWidth: '800px'}}>
+            <div className={css.popup} ref={popupRef} style={{ maxWidth: '800px', maxHeight: '600px' }}>
                 <button onClick={onClose} className={css.closeButton}>
                     <i class="fa-solid fa-x"></i>
                 </button>
@@ -42,13 +42,15 @@ const EventPopup = ({ event, onClose }) => {
                     <div className="flex items-center text-2xl mt-4">
                         <i className="fas fa-map-marker-alt text-white mr-2"></i> {event.location}
                     </div>
-                    <div className="flex items-center text-2xl mt-4">
-                        <i className="fas fa-link text-white mr-2"></i> {event.link}
+                    <div className="flex items-center text-2xl mt-4 hover:text-sky-500">
+                        <a href={event.link} target='_blank'>
+                            <i className="fas fa-link text-white mr-2"></i> Registration link
+                        </a>
                     </div>
                     <hr className='mt-4'></hr>
-                    <p className='text-xl mt-4'> {event.description.split('\n').map((paragraph, index) => (
-                            <p key={index}>{paragraph}<br></br></p>
-                        ))}
+                    <p className='text-xl my-4 pb-10'> {event.description.split('\n').map((paragraph, index) => (
+                        <p key={index}>{paragraph}<br></br></p>
+                    ))}
                     </p>
                 </div>
                 {/* <div className="w-full md:w-1/2">
