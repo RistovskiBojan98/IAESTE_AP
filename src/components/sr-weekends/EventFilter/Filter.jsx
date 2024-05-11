@@ -65,21 +65,21 @@ const FilterPopup = ({ onClose, events }) => {
         );
     };
 
-    const handleStartDateChange = (event) => {
-        const { value } = event.target;
-        setStartDate(value);
-        if (value > endDate) {
-            setEndDate(value);
-        }
-    };
+    // const handleStartDateChange = (event) => {
+    //     const { value } = event.target;
+    //     setStartDate(value);
+    //     if (value > endDate) {
+    //         setEndDate(value);
+    //     }
+    // };
 
-    const handleEndDateChange = (event) => {
-        const { value } = event.target;
-        setEndDate(value);
-        if (value < startDate) {
-            setStartDate(value);
-        }
-    };
+    // const handleEndDateChange = (event) => {
+    //     const { value } = event.target;
+    //     setEndDate(value);
+    //     if (value < startDate) {
+    //         setStartDate(value);
+    //     }
+    // };
 
     const handleResetFilter = () => {
         localStorage.removeItem('filterValues');
@@ -118,10 +118,10 @@ const FilterPopup = ({ onClose, events }) => {
                         <input
                             type="date"
                             value={startDate}
-                            onChange={handleStartDateChange}
+                            // onChange={handleStartDateChange}
                             className='text-black text-lg font-semibold w-full md:w-1/2'
-                            min={new Date().toISOString().split("T")[0]} // Minimum date is today
-                            max={endDate || undefined} // Maximum date is the selected end date, if any
+                            // min={new Date().toISOString().split("T")[0]} // Minimum date is today
+                            // max={endDate || undefined} // Maximum date is the selected end date, if any
                         />
                     </div>
                     <div className="mb-4">
@@ -129,9 +129,9 @@ const FilterPopup = ({ onClose, events }) => {
                         <input
                             type="date"
                             value={endDate}
-                            onChange={handleEndDateChange}
+                            // onChange={handleEndDateChange}
                             className='text-black text-lg font-semibold w-full md:w-1/2'
-                            min={startDate || new Date().toISOString().split("T")[0]} // Minimum date is the selected start date, if any
+                            // min={startDate || new Date().toISOString().split("T")[0]} // Minimum date is the selected start date, if any
                         />
                     </div>
                     <div className="mt-10 flex gap-5">

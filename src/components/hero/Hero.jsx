@@ -43,7 +43,7 @@ const Hero = ({
                             >
                                 <div className="flex items-center">
                                     <a
-                                        href={socialLinks.insta}
+                                        href={socialLinks?.insta ?? ''}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -52,7 +52,7 @@ const Hero = ({
                                 </div>
                                 <div className="flex items-center">
                                     <a
-                                        href={socialLinks.facebook}
+                                        href={socialLinks?.facebook ?? ''}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -61,7 +61,7 @@ const Hero = ({
                                 </div>
                                 <div className="flex items-center">
                                     <a
-                                        href={socialLinks.website}
+                                        href={socialLinks?.website ?? ''}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
@@ -77,25 +77,25 @@ const Hero = ({
                             >
                                 <button
                                     onClick={scrollToTransport}
-                                    className="flex items-center justify-center rounded-md border border-transparent bg-white bg-opacity-60 px-4 py-3 text-base font-medium text-[#0B3D59] shadow-sm hover:bg-opacity-70 sm:px-8"
+                                    className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-[#0B3D59] shadow-sm sm:px-8"
                                 >
                                     Transport
                                 </button>
                                 <button
                                     onClick={scrollToCities}
-                                    className="flex items-center justify-center rounded-md border border-transparent bg-white bg-opacity-60 px-4 py-3 text-base font-medium text-[#0B3D59] shadow-sm hover:bg-opacity-70 sm:px-8"
+                                    className="flex items-center justify-center rounded-md border border-transparent bg-white  px-4 py-3 text-base font-medium text-[#0B3D59] shadow-sm  sm:px-8"
                                 >
                                     Travel
                                 </button>
                                 <button
                                     onClick={scrollToFood}
-                                    className="flex items-center justify-center rounded-md border border-transparent bg-white bg-opacity-60 px-4 py-3 text-base font-medium text-[#0B3D59] shadow-sm hover:bg-opacity-70 sm:px-8"
+                                    className="flex items-center justify-center rounded-md border border-transparent bg-white  px-4 py-3 text-base font-medium text-[#0B3D59] shadow-sm  sm:px-8"
                                 >
                                     Food&Drinks
                                 </button>
                                 <button
                                     onClick={scrollToSummerReception}
-                                    className="flex items-center justify-center rounded-md border border-transparent bg-white bg-opacity-60 px-4 py-3 text-base font-medium text-[#0B3D59] shadow-sm hover:bg-opacity-70 sm:px-8"
+                                    className="flex items-center justify-center rounded-md border border-transparent bg-white  px-4 py-3 text-base font-medium text-[#0B3D59] shadow-sm  sm:px-8"
                                 >
                                     SR weekends
                                 </button>

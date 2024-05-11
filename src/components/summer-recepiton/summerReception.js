@@ -43,8 +43,26 @@ export const summerReception = {
             name: "Vienna Weekend",
             date: "05.07 - 07.07",
             location: "Vienna",
-            link: "",
-            description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            link: "https://forms.gle/A1v4PYM7zhtFaAjQA",
+            description: "Dear IAESTE Friends!\n\n"+
+            "As the sun starts to shine brighter and the days grow longer, we are thrilled to announce our biggest summer reception event Vienna Weekend 2024. The event will take place in various locations inside Vienna and will be organised jointly by IAESTE Vienna and IAESTE BOKU.\n"+            
+            "So prepare yourself for a weekend filled with fun, laughter, good company, and the spirit of summer on 5th till 7th July (Friday, Saturday and Sunday).\n"+
+            "A quick out look of the programme:\n\n"+
+            
+            "Friday 5.7.24 : Prelude Picnic | Check-in | Barbecue Evening | After Party\n"+
+            "Saturday 6.7.24 : Vienna City Challenge | Beer Garden | Austrian Dinner | Club Party\n"+
+            "Sunday 7.7.24 : Small Sightseeing Tour | Check-out | Post event picnic\n"+
+            "The first Registration round will be open from today until 31.o5.2024.\n\n"+
+            
+            
+            "For any further information, please do not hesitate to contact us viennaweekend@iaeste.at\n\n"+
+            
+            
+            
+            "Sincerely,\n"+
+            "On behalf of Vienna weekend organising team\n\n"+
+            
+            "Jismon Joseph",
             image: srImg
         }
     ],

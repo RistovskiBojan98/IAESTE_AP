@@ -33,7 +33,7 @@ export default function SRWeekends() {
             <title>IAESTE | Across the Planet | Summer Reception </title>
           </Helmet>
           <SRNavbar />
-           <EventList />
+          <EventList />
           <Footer />
         </div>
       )}
