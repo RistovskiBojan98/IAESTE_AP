@@ -43,7 +43,7 @@ const EventPopup = ({ event, onClose }) => {
                         <i className="fas fa-map-marker-alt text-white mr-2"></i> {event.location}
                     </div>
                     <div className="flex items-center text-2xl mt-4 hover:text-sky-500">
-                        <a href={event.link} target='_blank'>
+                        <a href={event.link} target='_blank' rel="noreferrer">
                             <i className="fas fa-link text-white mr-2"></i> Registration link
                         </a>
                     </div>

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import { committees } from "./committees";
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-import { secondImage } from "../imageSection/secondImage";
+// import { secondImage } from "../imageSection/secondImage";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -15,7 +15,7 @@ const Committees = ({ country }) => {
   }
   const countryCommittees = committees.find((obj) => obj.country === country);
   
-  const selectedImg = secondImage.find((item) => item.country === country)?.image ?? ''
+  // const selectedImg = secondImage.find((item) => item.country === country)?.image ?? ''
 
   return (
     <div className="relative bg-gray-900">
