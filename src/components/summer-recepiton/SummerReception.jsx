@@ -64,7 +64,7 @@ const SummerReception = ({ country, summerReceptionRef }) => {
           </div>
           <div className="border border-gray-300">
             <div className="flex flex-col md:flex-row">
-              <div className="w-full md:w-1/2 bg-[#0B3D59] p-6 text-white">
+              <div className="w-full bg-[#0B3D59] p-6 text-white">
                 <h3 className="text-4xl font-bold">{weekend.name}</h3>
                 <hr className='mt-4'></hr>
                 <div className="flex items-center text-2xl mt-4">
@@ -78,16 +78,17 @@ const SummerReception = ({ country, summerReceptionRef }) => {
                 </div>
                 <hr className='mt-4'></hr>
 
-                <p className='text-xl mt-4'>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
+                <p className='text-xl my-4 pb-10'> {weekend.description.split('\n').map((paragraph, index) => (
+                        <p key={index}>{paragraph}<br></br></p>
+                    ))}
+                    </p>
               </div>
-              <div className="w-full md:w-1/2">
+              {/* <div className="w-full md:w-1/2">
                 <img
                   src={weekend.image}
                   alt=""
                 />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
