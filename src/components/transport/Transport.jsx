@@ -12,7 +12,9 @@ const Transport = ({ transportRef, country }) => {
   }, [country]);
 
   return (
-    <div
+    <>
+    { transportProps?.tiers?.length ? (
+      <div
       className="mx-auto max-w-7xl bg-white py-24 px-4 sm:px-6 lg:px-8"
       ref={transportRef}
     >
@@ -56,6 +58,9 @@ const Transport = ({ transportRef, country }) => {
         ))}
       </div>
     </div>
+    ): (<></>)}
+    </>
+    
   );
 };
 
