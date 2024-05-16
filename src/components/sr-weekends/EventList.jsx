@@ -37,6 +37,8 @@ const EventList = () => {
 
     const [filteredEvents, setFilteredEvents] = useState([...transformedEvents]);
 
+    const [filter, setFilter] = useState([])
+
     // State for controlling the index of the first event to be displayed
     const [startIndex, setStartIndex] = useState(0);
 
@@ -69,27 +71,55 @@ const EventList = () => {
 
     // Function to toggle the visibility of the filter popup
     const toggleFilterPopup = () => {
+        // helper function
+        const formatDate = (date) => {
+            const splitDateT = date.split('T')[0];
+            const splitDate = splitDateT.split('-');
+            // Create a Date object with the split date parts
+            const formattedDate = new Date(splitDate[0], splitDate[1] - 1, splitDate[2]);
+            // Increase the date by one day
+            formattedDate.setDate(formattedDate.getDate() + 1);
+            // Get the formatted date parts
+            const day = formattedDate.getDate();
+            const month = formattedDate.getMonth() + 1;
+            const year = formattedDate.getFullYear();
+            // Return the formatted date in the dd/mm/yy format
+            return `${day}/${month}/${year}`;
+        };
+
         setIsFilterPopupOpen(!isFilterPopupOpen);
         if (isFilterPopupOpen) {
             const savedFilterValues = localStorage.getItem('filterValues');
             let events = [...transformedEvents]
+            let filter = []
             if (savedFilterValues) {
                 const filterValues = JSON.parse(savedFilterValues);
-
+                console.log(filterValues)
                 if (filterValues.selectedCountries) {
                     const selectedCountries = filterValues.selectedCountries;
-                    events = selectedCountries.length ? events.filter(event => selectedCountries.includes(event.country)) : events;
+                    if (selectedCountries.length) {
+                        events = events.filter(event => selectedCountries.includes(event.country))
+                        let countriesInFilter = ""
+                        selectedCountries.forEach((country, index) => {
+                            countriesInFilter += country
+                            if (index < selectedCountries.length - 1) countriesInFilter += ", "
+                        })
+                        filter.push({ "Countries": countriesInFilter })
+                    }
                 }
                 if (filterValues.startDate) {
                     const startDate = new Date(filterValues.startDate);
                     events = events.filter(event => new Date(event.start) >= startDate);
+                    filter.push({ "From date": formatDate(filterValues.startDate) })
                 }
                 if (filterValues.endDate) {
                     const endDate = new Date(filterValues.endDate);
                     events = events.filter(event => new Date(event.end) <= endDate);
+                    filter.push({ "To date": formatDate(filterValues.endDate) })
                 }
             }
             setFilteredEvents(events)
+            setFilter(filter)
         }
     };
 
@@ -168,17 +198,35 @@ const EventList = () => {
             {selectedEvent && (<EventPopup event={selectedEvent} onClose={closePopup} />)}
             <div className="mx-auto max-w-7xl mt-10 border-solid border-b-2 pb-3 border-[#0B3D59]">
                 <div className="w-full px-10 flex justify-start items-center">
-                    <h2 className="text-3xl font-bold tracking-tight text-[#0B3D59] sm:text-4xl">
-                        {maxEventsToShow === 3 ? 'Summer Reception Weekends 2024' : 'SR Weekends 2024'}
+                    <h2 className="text-3xl font-bold tracking-tight text-[#0B3D59] sm:text-4xl" style={{ textShadow: '0 0 5px rgba(255,255,255,1' }}>
+                        {maxEventsToShow === 3 ? 'Summer Reception Weekends 2024' : 'SR 2024'}
                     </h2>
                     <div className='ml-auto'>
-                        {/* <button onClick={toggleFilterPopup} className="bg-[#0B3D59] hover:bg-sky-700 text-white font-bold py-3 px-10 text-2xl rounded-full">
-                            <i class="fa fa-filter"></i> {maxEventsToShow === 3 ? 'Filter' : '' }
-                        </button> */}
+                        <button onClick={toggleFilterPopup} className="bg-[#0B3D59] hover:bg-sky-700 text-white font-bold py-3 px-10 text-2xl rounded-full">
+                            <i class="fa fa-filter"></i> {maxEventsToShow === 3 ? 'Filter' : ''}
+                        </button>
                         {/* Filter Popup */}
                         {isFilterPopupOpen && <FilterPopup onClose={toggleFilterPopup} events={transformedEvents} />}
                     </div>
                 </div>
+                {/* Filter values */}
+                {filter.length > 0 && (
+                    <div className="flex justify-start items-center mt-3 max-w-7xl px-10">
+                        <span className="text-lg font-semibold text-[#0B3D59] hidden md:block"><i class="fa fa-filter"></i></span>
+                        <div className='flex flex-col md:flex-row gap-3'>
+                            {filter.map((filterItem, index) => (
+                                <div key={index} onClick={toggleFilterPopup} className="flex flex-row items-center bg-[#0B3D59] hover:bg-sky-700 cursor-pointer text-white rounded-full px-3 py-1 ml-2">
+                                    {Object.entries(filterItem).map(([key, value]) => (
+                                        <span key={key}>
+                                            {key}: <b className='font-semibold'>{value}</b>
+                                        </span>
+                                    ))}
+                                </div>
+                            ))}
+                        </div>
+
+                    </div>
+                )}
             </div>
             <div className="mb-10">
                 <div className=' gap-5 mx-auto max-w-7xl'>
@@ -205,7 +253,7 @@ const EventList = () => {
                                     </button>
                                     <div className='flex gap-4 w-full px-5'>
                                         {eventsToShow.map(event => (
-                                            <div key={event.name} className="w-full card mb-3 bg-white rounded-lg shadow-md p-3 cursor-pointer h-40 hover:bg-sky-100">
+                                            <div key={event.name} className="w-full card mb-3 bg-white rounded-lg shadow-md p-3 cursor-pointer h-auto md:h-40 hover:bg-sky-100">
                                                 <div className="card-body text-black flex flex-col justify-between h-full" onClick={() => handleEventClick(event)}>
                                                     <h2 className="card-title font-semibold text-2xl border-b-2 pb-2">{event.name}</h2>
                                                     <div className='flex flex-col'>
@@ -239,7 +287,7 @@ const EventList = () => {
                                 </div>
                             ) : (
                                 <div className="flex justify-center items-center h-full">
-                                    <h2 className="text-3xl text-center font-semibold text-[#0B3D59]"><i class="fa-solid fa-circle-exclamation"></i> No events found from the filter parameters!</h2>
+                                    <h2 className="text-3xl text-center font-semibold text-[#0B3D59]" style={{ textShadow: '0 0 5px rgba(255,255,255,1' }}><i class="fa-solid fa-circle-exclamation"></i> No events found from the filter parameters!</h2>
                                 </div>
                             )}
 
@@ -264,7 +312,7 @@ const EventList = () => {
                                         />
                                     </svg>
                                 </button>
-                                <h2 className="text-3xl text-center w-60 font-bold text-[#0B3D59]">{currentDate.format('MMMM YYYY')}</h2>
+                                <h2 className="text-3xl text-center w-60 font-bold text-[#0B3D59]" style={{ textShadow: '0 0 5px rgba(255,255,255,1' }}>{currentDate.format('MMMM YYYY')}</h2>
                                 <button onClick={handleNextMonth} className="text-lg font-bold p-3 border-solid border-2 border-sky-500 rounded-full bg-white">
                                     <svg
                                         width="20"
