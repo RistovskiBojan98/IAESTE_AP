@@ -51,12 +51,12 @@ const EventList = () => {
 
     // Function to handle the previous button click
     const handlePrevious = () => {
-        setStartIndex(Math.max(startIndex -maxEventsToShow, 0));
+        setStartIndex(Math.max(startIndex - 1, 0));
     };
 
     // Function to handle the next button click
     const handleNext = () => {
-        setStartIndex(Math.min(startIndex + maxEventsToShow, filteredEvents.length - 1));
+        setStartIndex(Math.min(startIndex + 1, filteredEvents.length - 1));
     };
 
     useEffect(() => {
@@ -122,7 +122,7 @@ const EventList = () => {
         style: {
             backgroundColor: 'lightblue',
             borderRadius: '20px',
-            color: 'white',
+            color: 'blue',
             border: '1px solid transparent',
             display: 'block',
         }
@@ -168,7 +168,7 @@ const EventList = () => {
             <div className="mx-auto max-w-7xl mt-10 border-solid border-b-2 pb-3 border-[#0B3D59]">
                 <div className="w-full px-10 flex justify-start items-center">
                     <h2 className="text-3xl font-bold tracking-tight text-[#0B3D59] sm:text-4xl">
-                    {maxEventsToShow === 3 ? 'Summer Reception Weekends 2024' : 'SR 2024' }
+                    {maxEventsToShow === 3 ? 'Summer Reception Weekends 2024' : 'SR Weekends 2024' }
                     </h2>
                     <div className='ml-auto'>
                         {/* <button onClick={toggleFilterPopup} className="bg-[#0B3D59] hover:bg-sky-700 text-white font-bold py-3 px-10 text-2xl rounded-full">

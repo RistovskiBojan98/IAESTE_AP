@@ -63,9 +63,10 @@ export default function Landing({ countriesRef }) {
                   <Link
                     to="countries-div"
                     smooth={true}
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#0B3D59] px-8 py-3 text-base font-medium text-white hover:bg-[#1d5b80] md:py-4 md:px-10 md:text-lg"
+                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#0B3D59] px-8 py-3 text-base font-medium text-white hover:bg-[#1d5b80] md:py-4 md:px-10 md:text-lg cursor-pointer"
                   >
                     DISCOVER A COUNTRY
+                    <i class="fa-solid fa-magnifying-glass ml-2"></i>
                   </Link>
                 </div>
               </div>
@@ -76,6 +77,7 @@ export default function Landing({ countriesRef }) {
                     className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#0B3D59] px-8 py-3 text-base font-medium text-white hover:bg-[#1d5b80] md:py-4 md:px-10 md:text-lg"
                   >
                     SUMMER RECEPTION WEEKENDS
+                    <i class="fa-solid fa-umbrella-beach ml-2"></i>
                   </a>
                 </div>
               </div>
