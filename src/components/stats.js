@@ -9,7 +9,7 @@ const metrics = [
   { id: 1, stat: "18", emphasis: "Member countries" },
   { id: 2, stat: "50+", emphasis: "Local Committes" },
   { id: 3, stat: "1K+", emphasis: "Internships" },
-  { id: 4, stat: "1500+", emphasis: "Student Members" },
+  { id: 4, stat: "1.5K+", emphasis: "Student Members" },
 ];
 
 export default function Stats() {
@@ -20,7 +20,7 @@ export default function Stats() {
         <div className="relative bg-[#0B3D59]">
           <div className="absolute inset-x-0 bottom-0 h-80 xl:top-0 xl:h-full">
             <div className="h-full w-full xl:grid xl:grid-cols-2">
-              <div className="h-full xl:relative xl:col-start-2">
+              <div className="h-full xl:relative xl:col-start-2 hidden xl:block">
                 <img
                   className="h-full w-full object-cover opacity-25 xl:absolute xl:inset-0"
                   src="https://images.unsplash.com/photo-1521737852567-6949f3f9f2b5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2830&q=80&sat=-100"
@@ -35,66 +35,89 @@ export default function Stats() {
           </div>
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 xl:grid xl:grid-flow-col-dense xl:grid-cols-2 xl:gap-x-8">
             <div
-              className="relative pt-12 pb-64 sm:pt-24 sm:pb-64 xl:col-start-1 xl:pb-24"
-              style={{ paddingTop: "80px", paddingBottom: "60px" }}
+              className="relative py-12 xl:col-start-1"
             >
               <h2 className="text-base font-semibold">
                 {/* absolute inset-0 bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] mix-blend-multiply" aria-hidden="true" */}
                 <span
-                  className="bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] bg-clip-text text-transparent"
-                  style={{ fontSize: "1.5rem" }}
+                  className="text-white text-3xl"
                 >
                   About us
                 </span>
               </h2>
-              <p
-                className="mt-3 text-3xl font-bold tracking-tight text-white"
-                style={{ fontSize: "2rem" }}
-              >
-                CER & CoRe
-              </p>
-              <p
-                className="mt-5 text-lg text-gray-300"
-                style={{ fontSize: "1rem" }}
-              >
-                The International Association for the Exchange of Students for
-                Technical Experience (IAESTE) provides young science and
-                engineering students with career-focused professional
-                internships abroad and employers with highly skilled, highly
-                motivated trainees. IAESTE Central European Region (IAESTE CER)
-                and Connect Region (CoRe) are two regional initiatives, focused
-                on the development of IAESTE in Europe.
-              </p>
-              <p
-                className="mt-5 text-lg text-gray-300"
-                style={{ fontSize: "1rem" }}
-              >
-                <b>
-                  Feel like applying to one of the hundreds of our internships?
-                </b>
-                <br />
-                Visit:{" "}
-                <a
-                  href="https://iaeste.org/internships"
-                  className="text-white font-medium underline"
-                >
-                  IAESTE.org/internships
-                </a>
-              </p>
+              <Disclosure as="div">
+                {({ open }) => (
+                  <>
+                    <dt className="text-lg">
+                      <Disclosure.Button
+                        className="flex w-full items-start justify-between text-left text-gray-400 mt-5"
+                        style={{ width: "16.5rem" }}
+                      >
+                        <span
+                          className="bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] bg-clip-text text-transparent"
+                          style={{
+                            fontSize: "1.5rem",
+                            fontWeight: "600",
+                          }}
+                        >
+                          IAESTE CER & CoRe
+                        </span>
+                        <span className="ml-6 flex h-7 items-center">
+                          <ChevronDownIcon
+                            className={classNames(
+                              open ? "-rotate-180" : "rotate-0",
+                              "h-6 w-6 transform"
+                            )}
+                            aria-hidden="true"
+                          />
+                        </span>
+                      </Disclosure.Button>
+                    </dt>
+                    <Disclosure.Panel as="dd" className="mt-2 pr-12">
+                      <p
+                        className="mt-5 text-lg text-gray-300"
+                        style={{ fontSize: "1rem" }}
+                      >
+                        The International Association for the Exchange of Students for
+                        Technical Experience (IAESTE) provides young science and
+                        engineering students with career-focused professional
+                        internships abroad and employers with highly skilled, highly
+                        motivated trainees. IAESTE Central European Region (IAESTE CER)
+                        and Connect Region (CoRe) are two regional initiatives, focused
+                        on the development of IAESTE in Europe.
+                      </p>
+                      <p
+                        className="mt-5 text-lg text-gray-300"
+                        style={{ fontSize: "1rem" }}
+                      >
+                        <b>
+                          Feel like applying to one of the hundreds of our internships?
+                        </b>
+                        <br />
+                        Visit:{" "}
+                        <a
+                          href="https://iaeste.org/internships"
+                          className="text-white font-medium underline"
+                        >
+                          IAESTE.org/internships
+                        </a>
+                      </p>
+                    </Disclosure.Panel>
+                  </>
+                )}
+              </Disclosure>
 
-              <div className="mt-12 grid grid-cols-1 gap-y-12 gap-x-6 sm:grid-cols-2">
+              <div className="mt-12 grid grid-cols-2 gap-y-12 gap-x-6 sm:grid-cols-2">
                 {metrics.map((item) => (
                   <p key={item.id}>
                     <span
-                      className="block text-2xl font-bold text-white"
-                      style={{ fontSize: "1.875rem" }}
+                      className="block text-4xl font-semibold text-white"
                     >
                       {item.stat}
                     </span>
                     <span className="mt-1 block text-base text-gray-300">
                       <span
                         className="font-medium text-white"
-                        style={{ fontSize: "1rem" }}
                       >
                         {item.emphasis}
                       </span>{" "}

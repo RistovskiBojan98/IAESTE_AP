@@ -43,22 +43,24 @@ const Countries = ({ passRef }) => {
             }}
           />
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+        <div className="mt-12 grid grid-cols-1 gap-y-20 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
           {displayedCountries.map((country) => (
             <div className="text-center">
               <a key={country.id}
                 className="group items-center"
                 href={country.href}>
-                <div className="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-lg bg-white-200 xl:aspect-w-7 xl:aspect-h-7 left-12">
+                  <div className="mx-auto h-40 w-40">
                   <img
                     src={country.imageSrc}
                     alt={country.imageAlt}
-                    className={`h-full w-full object-cover object-center group-hover:opacity-75 ${classes.imgHover}`}
+                    className={`group-hover:opacity-75 rounded-full ${classes.imgHover}`}
+                    style={{width:'100%', height:'100%'}}
                   />
                 </div>
               </a>
+              <a href={country.href}><h1 className="my-5 font-semibold text-xl text-[#0B3D59] hover:text-sky-700">IAESTE {country.name}</h1></a>
               <button className="btn text-center text-sm w-1/2 py-2" style={{ backgroundColor: '#0B3D59', color: 'white', borderRadius: '19px' }}>
-                <a href={country.pdf} target='_blank' rel="noreferrer">Download PDF</a>
+                <a href={country.pdf} target='_blank' rel="noreferrer"><i class="fa-solid fa-download text-white text-lg mr-2"></i>Download PDF</a>
               </button>
             </div>
           ))}
