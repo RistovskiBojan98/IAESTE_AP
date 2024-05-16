@@ -47,6 +47,12 @@ const EventPopup = ({ event, onClose }) => {
                             <i className="fas fa-link text-white mr-1"></i> Registration link
                         </a>
                     </div>
+                    {/* {event.limit && (
+                        <div className="flex items-center text-lg md:text-2xl mt-4">
+                            <i className="fas fa-users text-white mr-3"></i> Maximum participants: {event.limit}
+                        </div>
+                    )} */}
+
                     <hr className='mt-4'></hr>
                     <div className={css.overflowDescription}>
                         <p className='text-lg md:text-xl my-4'> {event.description.split('\n').map((paragraph, index) => (

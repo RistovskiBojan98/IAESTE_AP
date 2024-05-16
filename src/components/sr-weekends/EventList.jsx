@@ -21,7 +21,7 @@ const customLocalizer = momentLocalizer(moment, {
 });
 
 const EventList = () => {
-    const {width} = useWindowSize();
+    const { width } = useWindowSize();
     // Transform the existing events data to match the new structure
     const transformedEvents = Object.keys(summerReception).reduce((acc, country) => {
         const countryEvents = summerReception[country].map(event => ({
@@ -48,6 +48,7 @@ const EventList = () => {
 
     // Events to display based on the start and end index
     const eventsToShow = filteredEvents.slice(startIndex, endIndex);
+    // const eventsToShow = []
 
     // Function to handle the previous button click
     const handlePrevious = () => {
@@ -168,7 +169,7 @@ const EventList = () => {
             <div className="mx-auto max-w-7xl mt-10 border-solid border-b-2 pb-3 border-[#0B3D59]">
                 <div className="w-full px-10 flex justify-start items-center">
                     <h2 className="text-3xl font-bold tracking-tight text-[#0B3D59] sm:text-4xl">
-                    {maxEventsToShow === 3 ? 'Summer Reception Weekends 2024' : 'SR Weekends 2024' }
+                        {maxEventsToShow === 3 ? 'Summer Reception Weekends 2024' : 'SR Weekends 2024'}
                     </h2>
                     <div className='ml-auto'>
                         {/* <button onClick={toggleFilterPopup} className="bg-[#0B3D59] hover:bg-sky-700 text-white font-bold py-3 px-10 text-2xl rounded-full">
@@ -184,59 +185,68 @@ const EventList = () => {
                     {/* event list */}
                     <div className='w-full' style={{ maxHeight: '650px' }}>
                         <div className='py-10 px-1 mx-auto max-w-7xl'>
-                            <div className="flex justify-between items-center">
-                                <button onClick={handlePrevious} disabled={startIndex === 0}
-                                    className={`p-3 border-solid border-2 border-sky-500 rounded-full ${startIndex === 0 ? 'bg-gray-500' : 'bg-white'}`}
-                                >
-                                    <svg
-                                        width="20"
-                                        height="20"
-                                        viewBox="0 0 30 35"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
+                            {eventsToShow.length ? (
+                                <div className="flex justify-between items-center">
+                                    <button onClick={handlePrevious} disabled={startIndex === 0}
+                                        className={`p-3 border-solid border-2 border-sky-500 rounded-full ${startIndex === 0 ? 'bg-gray-500' : 'bg-white'}`}
                                     >
-                                        <path
-                                            d="M4.76 17.6L19.448 32.288L17.672 34.304L0.872 17.6L17.432 0.847998L19.208 2.864L4.76 17.6Z"
-                                            fill="blue"
-                                        />
-                                    </svg>
-                                </button>
-                                <div className='flex gap-4 w-full px-5'>
-                                    {eventsToShow.map(event => (
-                                        <div key={event.name} className="w-full card mb-3 bg-white rounded-lg shadow-md p-3 cursor-pointer hover:bg-sky-100">
-                                            <div className="card-body text-black" onClick={() => handleEventClick(event)}>
-                                                <h2 className="card-title font-bold text-xl">{event.name}</h2>
-                                                <div className="flex items-center text-lg">
-                                                    <i className="far fa-calendar-alt mr-2 text-blue-700"></i> {event.date}
-                                                </div>
-                                                <div className="flex items-center text-lg">
-                                                    <i className="fas fa-map-marker-alt text-blue-700 mr-2"></i> {event.location}
+                                        <svg
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 30 35"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M4.76 17.6L19.448 32.288L17.672 34.304L0.872 17.6L17.432 0.847998L19.208 2.864L4.76 17.6Z"
+                                                fill="blue"
+                                            />
+                                        </svg>
+                                    </button>
+                                    <div className='flex gap-4 w-full px-5'>
+                                        {eventsToShow.map(event => (
+                                            <div key={event.name} className="w-full card mb-3 bg-white rounded-lg shadow-md p-3 cursor-pointer h-40 hover:bg-sky-100">
+                                                <div className="card-body text-black flex flex-col justify-between h-full" onClick={() => handleEventClick(event)}>
+                                                    <h2 className="card-title font-semibold text-2xl border-b-2 pb-2">{event.name}</h2>
+                                                    <div className='flex flex-col'>
+                                                        <div className="flex items-center text-lg">
+                                                            <i className="far fa-calendar-alt mr-2 text-blue-700"></i> {event.date}
+                                                        </div>
+                                                        <div className="flex items-center text-lg">
+                                                            <i className="fas fa-map-marker-alt text-blue-700 mr-2"></i> {event.location}
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    ))}
-                                </div>
-                                <button onClick={handleNext} disabled={endIndex >= filteredEvents.length}
-                                    className={`p-3 border-solid border-2 border-sky-500 rounded-full ${endIndex >= filteredEvents.length ? 'bg-gray-500' : 'bg-white'}`}
-                                >
-                                    <svg
-                                        width="20"
-                                        height="20"
-                                        viewBox="0 0 15 35"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
+                                        ))}
+                                    </div>
+                                    <button onClick={handleNext} disabled={endIndex >= filteredEvents.length}
+                                        className={`p-3 border-solid border-2 border-sky-500 rounded-full ${endIndex >= filteredEvents.length ? 'bg-gray-500' : 'bg-white'}`}
                                     >
-                                        <path
-                                            d="M2.66588 0.847998L19.1779 17.6L2.42588 34.304L0.601875 32.288L15.3379 17.6L0.841875 2.864L2.66588 0.847998Z"
-                                            fill="blue"
-                                        />
-                                    </svg>
-                                </button>
-                            </div>
+                                        <svg
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 15 35"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                d="M2.66588 0.847998L19.1779 17.6L2.42588 34.304L0.601875 32.288L15.3379 17.6L0.841875 2.864L2.66588 0.847998Z"
+                                                fill="blue"
+                                            />
+                                        </svg>
+                                    </button>
+                                </div>
+                            ) : (
+                                <div className="flex justify-center items-center h-full">
+                                    <h2 className="text-3xl text-center font-semibold text-[#0B3D59]"><i class="fa-solid fa-circle-exclamation"></i> No events found from the filter parameters!</h2>
+                                </div>
+                            )}
+
                         </div>
                     </div>
                     {/* calendar */}
-                    <div className='w-full'> 
+                    <div className='w-full'>
                         <div className='w-full'>
                             {/* Custom toolbar */}
                             <div className="flex justify-center gap-10 items-center py-5 px-1">
