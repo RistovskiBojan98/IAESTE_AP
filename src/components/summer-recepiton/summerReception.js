@@ -71,7 +71,7 @@ export const summerReception = {
     ],
     "Poland": [
         {
-            name: "Treasures of Warsaw Pirates. Weekend expedition",
+            name: "Treasures of Warsaw Pirates",
             date: "26.07 - 28.07",
             location: "Warsaw",
             link: "",

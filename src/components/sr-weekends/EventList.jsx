@@ -192,6 +192,12 @@ const EventList = () => {
         return {};
     };
 
+    const handleNavigate = (date) => {
+        setCurrentDate(moment(date));
+    };
+    
+
+
     return (
         <div>
             {selectedEvent && (<EventPopup event={selectedEvent} onClose={closePopup} />)}
@@ -202,7 +208,7 @@ const EventList = () => {
                     </h2>
                     <div className='ml-auto'>
                         <button onClick={toggleFilterPopup} className="bg-[#0B3D59] hover:bg-sky-700 text-white font-bold py-3 px-10 text-2xl rounded-full">
-                            <i class="fa fa-filter"></i> {maxEventsToShow === 3 ? 'Filter' : ''}
+                            <i className="fa fa-filter"></i> {maxEventsToShow === 3 ? 'Filter' : ''}
                         </button>
                         {/* Filter Popup */}
                         {isFilterPopupOpen && <FilterPopup onClose={toggleFilterPopup} events={transformedEvents} />}
@@ -211,7 +217,7 @@ const EventList = () => {
                 {/* Filter values */}
                 {filter.length > 0 && (
                     <div className="flex justify-start items-center mt-3 max-w-7xl px-10">
-                        <span className="text-lg font-semibold text-[#0B3D59] hidden md:block"><i class="fa fa-filter"></i></span>
+                        <span className="text-lg font-semibold text-[#0B3D59] hidden md:block"><i className="fa fa-filter"></i></span>
                         <div className='flex flex-col md:flex-row gap-3'>
                             {filter.map((filterItem, index) => (
                                 <div key={index} onClick={toggleFilterPopup} className="flex flex-row items-center bg-[#0B3D59] hover:bg-sky-700 cursor-pointer text-white rounded-full px-3 py-1 ml-2">
@@ -286,7 +292,7 @@ const EventList = () => {
                                 </div>
                             ) : (
                                 <div className="flex justify-center items-center h-full">
-                                    <h2 className="text-3xl text-center font-semibold text-[#0B3D59]" style={{ textShadow: '0 0 5px rgba(255,255,255,1' }}><i class="fa-solid fa-circle-exclamation"></i> No events found from the filter parameters!</h2>
+                                    <h2 className="text-3xl text-center font-semibold text-[#0B3D59]" style={{ textShadow: '0 0 5px rgba(255,255,255,1' }}><i className="fa-solid fa-circle-exclamation"></i> No events found from the filter parameters!</h2>
                                 </div>
                             )}
 
@@ -344,6 +350,7 @@ const EventList = () => {
                             components={{
                                 eventWrapper: CustomEventWrapper // Use the custom event wrapper component
                             }}
+                            onNavigate={handleNavigate}
                         />
                     </div>
                     {/* Subscribe */}

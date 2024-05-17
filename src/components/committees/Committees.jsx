@@ -51,15 +51,15 @@ const Committees = ({ country }) => {
                <a style={{fontSize: "23px", fontStyle: "italic", textDecoration:"underline"}} href={countryCommittees.page}>Local commitees {country}</a>
                </div>
               :
-              <ul>
+              <ul className="items-center flex flex-col">
               {countryCommittees.lcs.length <= 5 &&
-                countryCommittees.lcs.map((committee) => {
-                  return <li style={{fontSize: '24px'}} key={committee}>{committee}</li>;
+                countryCommittees.lcs.map((committee, index) => {
+                  return <li style={{fontSize: '24px'}} key={index}>{committee}</li>;
                 })}
               {countryCommittees.lcs.length > 5 &&
                 countryCommittees.lcs.map((com, index) => {
-                  if (index <= 5) {
-                    return <li style={{fontSize: '24px'}} key={com}>{com}</li>;
+                  if (index < 5) {
+                    return <li style={{fontSize: '24px'}} key={index}>{com}</li>;
                   }
                   return <></>;
                 })}
@@ -67,10 +67,10 @@ const Committees = ({ country }) => {
                 <Disclosure as="div">
                   {({ open }) => (
                     <>
-                      <Disclosure.Panel as="dd" className="mt-2 pr-12">
+                      <Disclosure.Panel as="dd" className="">
                         {countryCommittees.lcs.map((com, index) => {
-                          if (index > 5) {
-                            return <li style={{fontSize: '24px'}} key={com}>{com}</li>;
+                          if (index >= 5) {
+                            return <li style={{fontSize: '24px'}} key={index}>{com}</li>;
                           }
                           return <></>;
                         })}
