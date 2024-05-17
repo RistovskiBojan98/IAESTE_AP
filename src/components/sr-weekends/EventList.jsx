@@ -94,7 +94,6 @@ const EventList = () => {
             let filter = []
             if (savedFilterValues) {
                 const filterValues = JSON.parse(savedFilterValues);
-                console.log(filterValues)
                 if (filterValues.selectedCountries) {
                     const selectedCountries = filterValues.selectedCountries;
                     if (selectedCountries.length) {
@@ -109,12 +108,12 @@ const EventList = () => {
                 }
                 if (filterValues.startDate) {
                     const startDate = new Date(filterValues.startDate);
-                    events = events.filter(event => new Date(event.start) >= startDate);
+                    events = events.filter(event => new Date(event.start) >= startDate || new Date(event.end));
                     filter.push({ "From date": formatDate(filterValues.startDate) })
                 }
                 if (filterValues.endDate) {
                     const endDate = new Date(filterValues.endDate);
-                    events = events.filter(event => new Date(event.end) <= endDate);
+                    events = events.filter(event => new Date(event.end) <= endDate || new Date(event.start) <= endDate);
                     filter.push({ "To date": formatDate(filterValues.endDate) })
                 }
             }
