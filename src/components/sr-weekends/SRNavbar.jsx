@@ -18,7 +18,7 @@ const SRNavbar = () => {
                       <a href="/">
                         <img
                           alt="CER Summer App"
-                          className="w-auto h-24 mt-8"
+                          className="w-auto h-24"
                           src={cerLogo}
                         />
                       </a>

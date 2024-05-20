@@ -14,14 +14,14 @@ const Food = ({ country, foodRef }) => {
     drinks.find((obj) => obj.country === country).content;
 
   const countryData = countryDrinks ? countryFood.concat(countryDrinks) : countryFood;
-  const counter = !!countryData.length
+  const maxItemsToShow = countryData && countryData.length >= 3 ? 3 : countryData.length
 
   const [startIndex, setStartIndex] = useState(0);
 
   const cards =
     countryData.length > 0 &&
     countryData
-      .slice(startIndex, startIndex + (width >= 768 ?  3 : 1))
+      .slice(startIndex, startIndex + (width >= 768 ?  maxItemsToShow : 1))
       .map((item) => (
         <FoodCard
           key={item.id}
@@ -40,7 +40,7 @@ const Food = ({ country, foodRef }) => {
 
   return (
     <>
-    { counter ? (
+    { countryData.length ? (
       <section
       style={{ padding: "0 2rem" }}
       ref={foodRef}
@@ -64,7 +64,7 @@ const Food = ({ country, foodRef }) => {
           </svg>
         </button>
         <div className={classes.cards} 
-          style={{gridTemplateColumns: width >= 768 ? 'repeat(3, 1fr)' : ''}}>{cards}</div>
+          style={{gridTemplateColumns: width >= 768 ? `repeat(${maxItemsToShow}, 1fr)` : ''}}>{cards}</div>
         <button
           onClick={showNext}
           disabled={startIndex + 3 >= countryData.length}

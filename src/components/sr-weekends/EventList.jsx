@@ -92,6 +92,7 @@ const EventList = () => {
             const savedFilterValues = localStorage.getItem('filterValues');
             let events = [...transformedEvents]
             let filter = []
+            let date = null
             if (savedFilterValues) {
                 const filterValues = JSON.parse(savedFilterValues);
                 if (filterValues.selectedCountries) {
@@ -110,15 +111,19 @@ const EventList = () => {
                     const startDate = new Date(filterValues.startDate);
                     events = events.filter(event => new Date(event.start) >= startDate || new Date(event.end));
                     filter.push({ "From date": formatDate(filterValues.startDate) })
+                    date = filterValues.startDate
                 }
                 if (filterValues.endDate) {
                     const endDate = new Date(filterValues.endDate);
                     events = events.filter(event => new Date(event.end) <= endDate || new Date(event.start) <= endDate);
                     filter.push({ "To date": formatDate(filterValues.endDate) })
+                    if (!date) date = filterValues.endDate
                 }
             }
             setFilteredEvents(events)
             setFilter(filter)
+            console.log(date)
+            if (date) setCurrentDate(moment(date))
         }
     };
 
