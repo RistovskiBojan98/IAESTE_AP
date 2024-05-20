@@ -134,7 +134,7 @@ const EventList = () => {
         setSelectedEvent(event);
         setCurrentDate(moment(event.start)); // Set the current date to the event's start date
     };
-    
+
 
     // Function to close the popup
     const closePopup = () => {
@@ -202,8 +202,6 @@ const EventList = () => {
     const handleNavigate = (date) => {
         setCurrentDate(moment(date));
     };
-    
-
 
     return (
         <div>
@@ -268,7 +266,7 @@ const EventList = () => {
                                             <div key={event.name} className="w-full card mb-3 bg-white rounded-lg shadow-md p-3 cursor-pointer h-auto md:h-40 hover:bg-sky-100">
                                                 <div className="card-body text-black flex flex-col justify-between h-full" onClick={() => handleEventClick(event)}>
                                                     <h2 className="card-title font-semibold text-2xl border-b-2 pb-2">{event.name}</h2>
-                                                    <div className='flex flex-col'>
+                                                    <div className='flex flex-col mt-2 sm:mt-0'>
                                                         <div className="flex items-center text-lg">
                                                             <i className="far fa-calendar-alt mr-2 text-blue-700"></i> {event.date}
                                                         </div>
@@ -341,24 +339,27 @@ const EventList = () => {
                                 </button>
                             </div>
                         </div>
-                        <Calendar
-                            className='bg-[#0B3D59] border-solid border-2 border-black text-white'
-                            localizer={customLocalizer} // Use the custom localizer
-                            events={filteredEvents}
-                            startAccessor="start"
-                            endAccessor="end"
-                            views={['month']} // Display only the month view
-                            toolbar={false}
-                            style={{ height: 800 }}
-                            onSelectEvent={handleEventClick} // Handle event click
-                            date={currentDate.toDate()}
-                            eventPropGetter={eventStyleGetter}
-                            dayPropGetter={dayStyleGetter}
-                            components={{
-                                eventWrapper: CustomEventWrapper // Use the custom event wrapper component
-                            }}
-                            onNavigate={handleNavigate}
-                        />
+                        <div className='w-full flex justify-center'>
+                            <Calendar
+                                className='bg-[#0B3D59] border-solid border-2 border-black text-white'
+                                localizer={customLocalizer} // Use the custom localizer
+                                events={filteredEvents}
+                                startAccessor="start"
+                                endAccessor="end"
+                                views={['month']} // Display only the month view
+                                toolbar={false}
+                                style={{ height: 800, width: '90%' }}
+                                onSelectEvent={handleEventClick} // Handle event click
+                                date={currentDate.toDate()}
+                                eventPropGetter={eventStyleGetter}
+                                dayPropGetter={dayStyleGetter}
+                                components={{
+                                    eventWrapper: CustomEventWrapper // Use the custom event wrapper component
+                                }}
+                                onNavigate={handleNavigate}
+                            />
+                        </div>
+
                     </div>
                     {/* Subscribe */}
                     {/* <div className='w-full px-10 py-5'>
