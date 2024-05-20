@@ -9,12 +9,10 @@ const SRNavbar = () => {
           <div className="relative z-10  w-full">
             <Popover>
               <div className="relative px-4  sm:px-6 lg:px-8">
-                <nav
-                  className=" flex items-center justify-between sm:h-24"
-                  aria-label="Global"
+                <nav className="w-full flex items-center justify-between sm:h-24" aria-label="Global"
                 >
                   <div className="w-full flex items-center">
-                    <div className="flex w-full items-center justify-between text-center">
+                    <div className="flex w-full items-center justify-center text-center">
                       <a href="/">
                         <img
                           alt="CER Summer App"

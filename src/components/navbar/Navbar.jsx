@@ -7,14 +7,14 @@ const Navbar = () => {
     <div className="bg-white">
       <div className="relative overflow-hidden bg-white">
         <div className="mx-auto max-w-7xl">
-          <div className="relative z-10 pt-3 bg-white md:pb-20 lg:w-full lg:max-w-2xl">
+          <div className="relative z-10 bg-white md:pb-20 lg:w-full lg:max-w-2xl">
             <Popover>
               <div className="relative lg:px-8">
                 <nav
                   className="relative flex items-center justify-between md:h-10"
                   aria-label="Global"
                 >
-                  <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
+                  <div className="flex flex-shrink-0 flex-grow items-center md:flex-grow-0">
                     <div
                       className={`flex w-full items-center justify-between md:w-auto ${classes.logo}`}
                     >
