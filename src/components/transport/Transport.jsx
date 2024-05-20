@@ -4,7 +4,6 @@ import { transport } from "./transport";
 
 const Transport = ({ transportRef, country }) => {
   const [transportProps, setTransportProps] = useState([]);
-  console.log(transportProps)
 
   useEffect(() => {
     const loadedTransportProps = transport[country];
@@ -15,7 +14,7 @@ const Transport = ({ transportRef, country }) => {
     <>
     { transportProps?.tiers?.length ? (
       <div
-      className="mx-auto max-w-7xl bg-white py-24 px-4 sm:px-6 lg:px-8"
+      className="mx-auto max-w-7xl bg-white py-10 px-4 sm:px-6 lg:px-8"
       ref={transportRef}
     >
       <h4 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-5xl sm:leading-none lg:text-4xl">

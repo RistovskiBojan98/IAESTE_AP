@@ -31,7 +31,7 @@ const EventPopup = ({ event, onClose }) => {
         <div className={css.overlay}>
             <div className={css.popup} ref={popupRef} style={{ maxWidth: '800px', maxHeight: '600px' }}>
                 <button onClick={onClose} className={css.closeButton}>
-                    <i class="fa-solid fa-x"></i>
+                    <i className="fa-solid fa-x"></i>
                 </button>
                 <div className="w-full h-full bg-[#0B3D59] p-6 text-white">
                     <h3 className="text-2xl md:text-4xl font-bold">{event.name}</h3>

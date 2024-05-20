@@ -69,7 +69,6 @@ const FilterPopup = ({ onClose, events }) => {
 
     const handleStartDateChange = (event) => {
         setStartDate(event);
-        console.log(event, startDate)
         const date = new Date(event)
         const value = date
         // setStartDate(value);
@@ -97,7 +96,7 @@ const FilterPopup = ({ onClose, events }) => {
         <div className={css.overlay}>
             <div className={css.popup} ref={popupRef}>
                 <button onClick={onClose} className={css.closeButton}>
-                    <i class="fa-solid fa-x"></i>
+                    <i className="fa-solid fa-x"></i>
                 </button>
                 <div className="w-full bg-[#0B3D59] p-6 text-white">
                     <h3 className="text-4xl font-bold mb-4">Filter Events</h3>

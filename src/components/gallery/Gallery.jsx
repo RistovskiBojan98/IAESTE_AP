@@ -47,13 +47,13 @@ const setDefaultArrowStyle = (event) =>{
           showArrows={true}
           autoPlay={true}
           infiniteLoop={true}
-          interval={5000}
+          interval={2500}
           selectedItem={images[currIndex]}
           onChange={handleChange}
           className="carousel-container"
           renderThumbs={() => { }}
-          renderArrowNext={(handleNext) => <button type="button" onClick={handleNext} aria-label="next slide / item" class="control-arrow control-next" onMouseOver={handleArrowStyle} onMouseOut={setDefaultArrowStyle} style={{backgroundColor: "rgba(11, 61, 89, 85)"}}></button>}
-          renderArrowPrev={(handlePrev) => <button type="button" onClick={handlePrev} aria-label="previous slide / item" class="control-arrow control-prev" style={{backgroundColor: "rgba(11, 61, 89, 85)"}}></button>}
+          renderArrowNext={(handleNext) => <button type="button" onClick={handleNext} aria-label="next slide / item" className="control-arrow control-next" onMouseOver={handleArrowStyle} onMouseOut={setDefaultArrowStyle} style={{backgroundColor: "rgba(11, 61, 89, 85)"}}></button>}
+          renderArrowPrev={(handlePrev) => <button type="button" onClick={handlePrev} aria-label="previous slide / item" className="control-arrow control-prev" style={{backgroundColor: "rgba(11, 61, 89, 85)"}}></button>}
         >
           {images.map((image, index) => (
             <div key={index} className="slide">

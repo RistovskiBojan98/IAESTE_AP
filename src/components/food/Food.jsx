@@ -14,6 +14,7 @@ const Food = ({ country, foodRef }) => {
     drinks.find((obj) => obj.country === country).content;
 
   const countryData = countryDrinks ? countryFood.concat(countryDrinks) : countryFood;
+  const counter = !!countryData.length
 
   const [startIndex, setStartIndex] = useState(0);
 
@@ -38,7 +39,9 @@ const Food = ({ country, foodRef }) => {
   };
 
   return (
-    <section
+    <>
+    { counter ? (
+      <section
       style={{ padding: "0 2rem" }}
       ref={foodRef}
       className="relative mb-12 mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:py-32 lg:px-8"
@@ -81,6 +84,8 @@ const Food = ({ country, foodRef }) => {
         </button>
       </div>
     </section>
+    ) : (<></>) }
+    </>
   );
 };
 
