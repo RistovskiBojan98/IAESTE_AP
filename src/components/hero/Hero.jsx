@@ -1,8 +1,8 @@
 import React from 'react';
-import austria from './austria.jpg';
 import { countryImages } from './heroImages';
 import classes from './Hero.module.css';
 import { countrySocialLinks } from './socialLinks';
+import { information } from '../generalInformation/information';
 
 const Hero = ({
     country,
@@ -11,9 +11,8 @@ const Hero = ({
     scrollToTransport,
     scrollToSummerReception,
 }) => {
-    const heroImg = countryImages.find((item) => item.country === country)
-        ? countryImages.find((item) => item.country === country).image
-        : austria;
+    const heroImg = countryImages.find((item) => item.country === country)?.image 
+        ?? information.find((obj) => obj.country === country).data[0].imageUrl
 
     const socialLinks = countrySocialLinks.find((item) => item.country === country)
 

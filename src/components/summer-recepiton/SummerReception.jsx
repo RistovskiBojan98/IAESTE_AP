@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { summerReception } from "./summerReception"
+import css from "../sr-weekends/EventPopup/event-popup.module.css"
 
 const SummerReception = ({ country, summerReceptionRef }) => {
   let smCols = 2;
@@ -65,30 +66,32 @@ const SummerReception = ({ country, summerReceptionRef }) => {
           <div className="border border-gray-300 w-full max-w-7xl shadow-xl sm:overflow-hidden sm:rounded-2xl">
             <div className="flex flex-col md:flex-row">
               <div className="w-full bg-[#0B3D59] p-6 text-white">
-                <h3 className="text-4xl font-bold">{weekend.name}</h3>
+                <h3 className="text-2xl md:text-4xl font-bold">{weekend.name}</h3>
                 <hr className='mt-4'></hr>
-                <div className="flex items-center text-2xl mt-4">
+                <div className="flex items-center text-lg md:text-2xl mt-4">
                   <i className="far fa-calendar-alt mr-2 text-white"></i> {weekend.date}
                 </div>
-                <div className="flex items-center text-2xl mt-4">
-                  <i className="fas fa-map-marker-alt text-white mr-2"></i> {weekend.location}
+                <div className="flex items-center text-lg md:text-2xl mt-4">
+                  <i className="fas fa-map-marker-alt text-white mr-2"></i> {weekend.location + ", " + country}
                 </div>
-                <div className="flex items-center text-2xl mt-4 hover:text-sky-500">
+                <div className="flex items-center text-lg md:text-2xl mt-4 hover:text-sky-500">
                   <a href={weekend.link} target='_blank' rel="noreferrer">
                     <i className="fas fa-link text-white mr-1"></i> Registration link
                   </a>
                 </div>
-                 {weekend.limit && (
-                        <div className="flex items-center text-lg md:text-2xl mt-4">
-                            <i className="fas fa-users text-white mr-3"></i> Maximum participants: {weekend.limit}
-                        </div>
-                    )}
+                {weekend.limit && (
+                  <div className="flex items-center text-lg md:text-2xl mt-4">
+                    <i className="fas fa-users text-white mr-3"></i> Maximum participants: {weekend.limit}
+                  </div>
+                )}
                 <hr className='mt-4'></hr>
+                <div className={css.overflowDescription} style={{maxHeight: '300px'}}>
+                  <p className='text-lg md:text-xl my-4 pb-10'> {weekend.description.split('\n').map((paragraph, index) => (
+                    <p key={index}>{paragraph}<br></br></p>
+                  ))}
+                  </p>
+                </div>
 
-                <p className='text-xl my-4 pb-10'> {weekend.description.split('\n').map((paragraph, index) => (
-                  <p key={index}>{paragraph}<br></br></p>
-                ))}
-                </p>
               </div>
               {/* <div className="w-full md:w-1/2">
                 <img

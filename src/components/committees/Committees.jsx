@@ -35,10 +35,7 @@ const Committees = ({ country }) => {
         style={{ paddingTop: "3rem", paddingBottom: "3rem" }}
       >
         <div className="md:ml-auto md:pl-10 text-center"> {/* md:w-1/2 */}
-          <h2
-            className="text-lg font-semibold text-gray-300"
-            style={{ fontSize: "36px" }}
-          >
+          <h2 className="text-3xl md:text-4xl font-semibold text-gray-300">
             Cities with IAESTE LCs
           </h2>
           <p className="mt-2 font-bold tracking-tight text-white" style={{fontSize: '18px'}}>
