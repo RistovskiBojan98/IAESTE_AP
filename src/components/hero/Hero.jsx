@@ -37,17 +37,17 @@ const Hero = ({
                                 IAESTE {country.replace(/-/g, ' ')}
                             </span>
                         </h1>
-                        <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
+                        <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none justify-center">
                             <div
-                                className="space-y-2 sm:flex sm:space-y-0 sm:space-x-2 gap-5 font-bold" style={{ textShadow: '0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5)' }}
+                                className="justify-center space-y-2 flex sm:space-y-0 sm:space-x-2 gap-5 font-bold" style={{ textShadow: '0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5)' }}
                             >
-                                <div className="flex items-center">
+                                <div className="flex items-center text-center">
                                     <a
                                         href={socialLinks?.insta ?? ''}
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <i className="fab fa-instagram mr-2 text-white text-4xl"></i>
+                                        <i className="fab fa-instagram mx-2 mt-2 sm:mt-0 text-white text-4xl"></i>
                                     </a>
                                 </div>
                                 <div className="flex items-center">
@@ -56,7 +56,7 @@ const Hero = ({
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <i className="fab fa-facebook mr-2 text-white text-4xl"></i>
+                                        <i className="fab fa-facebook mx-2 text-white text-4xl"></i>
                                     </a>
                                 </div>
                                 <div className="flex items-center">
@@ -65,7 +65,7 @@ const Hero = ({
                                         target="_blank"
                                         rel="noopener noreferrer"
                                     >
-                                        <i className="fas fa-globe mr-2 text-white text-4xl"></i>
+                                        <i className="fas fa-globe mx-2 text-white text-4xl"></i>
                                     </a>
                                 </div>
                             </div>

@@ -387,13 +387,13 @@ export const cities = [
           "The city of Prešov is the third largest. In addition to the historic center, the most important salt deposit is the Solivar part with a number of preserved technical monuments related to salt mining. There are several castle ruins around the city.",
       },
       {
-        answer: "Banská Štiavnica",
-        question:
+        question: "Banská Štiavnica",
+        answer:
           "Banská Štiavnica, located in central Slovakia, is a city included in the UNESCO World Heritage List. The former mining town is one of the most beautiful and historically most interesting towns in Slovakia.",
       },
       {
-        answer: "Trnava",
-        question:
+        question: "Trnava",
+        answer:
           "The oldest free royal borough TRNAVA was the Church 'capital' of the Kingdom of Hungary for several centuries in the past. Only a few towns of central Europe can boast such a large section of town walls. For their high level of preservation, Trnava town walls are unique from the construction point of view and rank among the most significant monuments of the kind in Europe.",
       },
     ],

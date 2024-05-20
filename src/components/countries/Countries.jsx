@@ -7,7 +7,6 @@ const Countries = ({ passRef }) => {
 
   const onFilterCountriesHandler = (e) => {
     let typedCountry = e.target.value;
-    console.log(typeof typedCountry); // string
     if (typedCountry.trim().length > 0) {
       let newCountriesList = countries.filter((country) =>
         country.name.toLowerCase().includes(typedCountry.toLowerCase())

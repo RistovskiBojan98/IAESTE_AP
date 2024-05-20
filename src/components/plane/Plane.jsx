@@ -2,7 +2,6 @@ import React from "react";
 
 const Plane = ({ country }) => {
   const strings = country.split('-')
-  console.log(strings)
   let name = strings[0]
   if (strings.length) 
     for (let i = 1; i < strings.length; i++)

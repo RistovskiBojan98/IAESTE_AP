@@ -127,7 +127,9 @@ const EventList = () => {
     // Function to handle event click and open the popup
     const handleEventClick = (event) => {
         setSelectedEvent(event);
+        setCurrentDate(moment(event.start)); // Set the current date to the event's start date
     };
+    
 
     // Function to close the popup
     const closePopup = () => {

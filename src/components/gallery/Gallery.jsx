@@ -47,7 +47,7 @@ const setDefaultArrowStyle = (event) =>{
           showArrows={true}
           autoPlay={true}
           infiniteLoop={true}
-          interval={5000}
+          interval={2500}
           selectedItem={images[currIndex]}
           onChange={handleChange}
           className="carousel-container"

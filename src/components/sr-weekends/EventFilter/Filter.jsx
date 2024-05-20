@@ -69,7 +69,6 @@ const FilterPopup = ({ onClose, events }) => {
 
     const handleStartDateChange = (event) => {
         setStartDate(event);
-        console.log(event, startDate)
         const date = new Date(event)
         const value = date
         // setStartDate(value);

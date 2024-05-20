@@ -31,7 +31,7 @@ const SummerReception = ({ country, summerReceptionRef }) => {
   }, [country]);
 
   if (!loading && weekends?.length && weekend) {
-    smCols = weekends.length < 3 ? 2 : 3;
+    smCols = weekends.length < 3 ? weekends.length : 3;
     mdCols = weekends.length < 4 ? weekends.length : 4;
 
     return (
@@ -62,7 +62,7 @@ const SummerReception = ({ country, summerReceptionRef }) => {
               </button>
             ))}
           </div>
-          <div className="border border-gray-300 w-full">
+          <div className="border border-gray-300 w-full max-w-7xl shadow-xl sm:overflow-hidden sm:rounded-2xl">
             <div className="flex flex-col md:flex-row">
               <div className="w-full bg-[#0B3D59] p-6 text-white">
                 <h3 className="text-4xl font-bold">{weekend.name}</h3>
