@@ -14,6 +14,8 @@
 .popup {
     max-width: 800px;
     max-height: 800px;
+    width: 400px;
+    height: 70%;
     position: relative;
     background-color: #0B3D59;
     border-radius: 8px;
@@ -21,8 +23,9 @@
     display: flex;
     flex-direction: column;
 
-    @media (min-width: 768px) {
+    @media (max-width: 768px) {
         flex-direction: row;
+        max-width: 350px;
     }
 }
 
@@ -42,6 +45,14 @@
     font-size: 20px;
     cursor: pointer;
     margin-top: 5px;
+
+    @media (max-width: 768px) {
+        font-size: 15px;
+        background-color: transparent;
+        color: #ccc;
+        top: 0px;
+        right: 0px
+    }
 }
 
 .closeButton:hover {
@@ -49,10 +60,10 @@
 }
 
 .overflow {
-    max-height: 800px;
+    max-height: 90%;
 
     @media (max-width: 768px) {
         overflow-y: scroll;
-        max-height: 300px;
+        max-height: 75%;
     }
 }

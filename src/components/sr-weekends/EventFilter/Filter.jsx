@@ -98,15 +98,18 @@ const FilterPopup = ({ onClose, events }) => {
                 <button onClick={onClose} className={css.closeButton}>
                     <i className="fa-solid fa-x"></i>
                 </button>
-                <div className="w-full bg-[#0B3D59] p-6 text-white">
-                    <h3 className="text-4xl font-bold mb-4">Filter Events</h3>
-                    <h3 className="text-lg">Select the properties to filter the events</h3>
+                <div className="w-full bg-[#0B3D59] p-2 md:p-4 text-white flex flex-col justify-between">
+                    <h3 className="text-2xl md:text-4xl font-bold mb-1 md:mb-4">Filter Events</h3>
+                    <h3 className="text-sm">Select the properties to filter the events</h3>
                     <hr className='mt-4'></hr>
                     <div className={css.overflow}>
-                        <div className="my-6">
-                            <h4 className="text-2xl font-bold mb-2">Countries:</h4>
+                        <div className="my-2 md:my-4">
+                            <div className='flex flex-row w-full justify-start items-center gap-1'>
+                                <i className='fas fa-calendar-alt text-lg md:text-2xl px-2 py-1' />
+                                <h4 className="text-lg md:text-2xl font-bold">Countries:</h4>
+                            </div>
                             {countries.map((country, index) => (
-                                <div key={index} className="flex items-center ml-2 mt-2 text-lg">
+                                <div key={index} className="flex items-center ml-6 mt-2 text-base md:text-lg">
                                     <input
                                         type="checkbox"
                                         id={country}
@@ -116,38 +119,43 @@ const FilterPopup = ({ onClose, events }) => {
                                         onChange={handleCountryChange}
                                         style={{ transform: "scale(1.5)" }}
                                     />
-                                    <label htmlFor={country} className="ml-2 font-semibold">{country}</label>
+                                    <label htmlFor={country} className="ml-2">{country}</label>
                                 </div>
                             ))}
                         </div>
-                        <div className="mb-4">
-                            <h4 className="text-2xl font-bold mb-2">Start Date:</h4>
+                        <div className="mt-4">
+                            <div className='flex flex-row w-full justify-start items-center gap-1'>
+                                <i className='fas fa-calendar-alt text-lg md:text-2xl px-2 py-1' />
+                                <h4 className="text-lg md:text-2xl font-bold">Start Date:</h4>
+                            </div>
                             <div className='flex flex-row items-center'>
                                 <DatePicker selected={startDate} onChange={handleStartDateChange}
                                     dateFormat="dd/MM/yyyy"
-                                    className='text-black p-1 font-semibold text-lg' />
-                                <i className='fas fa-calendar-alt text-2xl px-2 py-1' />
+                                    className='text-black p-1 font-semibold text-base md:text-lg' />
+
                                 <i className='fas fa-trash-can text-2xl text-red-500 px-2 py-1 ml-auto cursor-pointer' onClick={handleResetStartDate} />
                             </div>
                         </div>
                         <div className="mb-4">
-                            <h4 className="text-2xl font-bold mb-2">End Date:</h4>
+                            <div className='flex flex-row w-full justify-start items-center gap-1'>
+                                <i className='fas fa-calendar-alt text-lg md:text-2xl px-2 py-1' />
+                                <h4 className="text-lg md:text-2xl font-bold">End Date:</h4>
+                            </div>
                             <div className='flex flex-row items-center'>
                                 <DatePicker selected={endDate} onChange={handleEndDateChange}
                                     dateFormat="dd/MM/yyyy"
                                     minDate={startDate ?? undefined}
-                                    className='text-black p-1 font-semibold text-lg' />
-                                <i className='fas fa-calendar-alt text-2xl px-2 py-1' />
+                                    className='text-black p-1 font-semibold text-base md:text-lg' />
                                 <i className='fas fa-trash-can text-2xl text-red-500 px-2 py-1 ml-auto cursor-pointer' onClick={handleResetEndDate} />
                             </div>
                         </div>
                     </div>
 
                     <hr></hr>
-                    <div className="mt-5 flex gap-5">
-                        <button className="bg-white text-red-500 border-solid border-2 border-red-500 font-bold text-lg py-1 px-3 rounded-full" onClick={onClose}>Cancel</button>
-                        <button className="bg-white text-[#0B3D59] font-bold text-lg py-1 px-3 rounded-full" onClick={handleResetFilter}>Reset</button>
-                        <button className="bg-white text-green-500 font-bold border-solid border-2 border-green-500 text-lg py-1 px-3 rounded-full ml-auto" onClick={handleApplyFilter}>Apply</button>
+                    <div className="mt-4 flex gap-5">
+                        <button className="bg-white text-red-500 border-solid border-2 border-red-500 font-semibold text-base md:text-lg py-1 px-3 rounded-full" onClick={onClose}>Cancel</button>
+                        <button className="bg-white text-[#0B3D59] font-semibold text-base md:text-lg py-1 px-3 rounded-full" onClick={handleResetFilter}>Reset</button>
+                        <button className="bg-white text-green-500 font-semibold text-base md:text-lg border-solid border-2 border-green-500 py-1 px-3 rounded-full ml-auto" onClick={handleApplyFilter}>Apply</button>
                     </div>
 
                 </div>

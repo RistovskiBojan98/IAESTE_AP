@@ -8,7 +8,7 @@ export default function Landing({ countriesRef }) {
     <div className="relative overflow-hidden bg-white">
       <div className="mx-auto max-w-7xl">
         <div
-          className="relative bg-white pb-8 sm:pb-16 md:pb-20 lg:w-full lg:max-w-2xl lg:pb-28 xl:pb-32"
+          className="relative bg-white pb-8 sm:pb-16 md:pb-20 lg:w-full xl:max-w-2xl lg:pb-28 xl:pb-32"
           style={{ paddingBottom: "80px"}}
         >
           <svg
@@ -24,7 +24,7 @@ export default function Landing({ countriesRef }) {
           <Popover>
             <div className="relative px-4 pt-6 sm:px-6 lg:px-8">
               <nav
-                className="relative flex items-center justify-between sm:h-10 lg:justify-start"
+                className="relative flex items-center justify-between sm:h-10 xl:justify-start"
                 aria-label="Global"
               >
                 <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
@@ -42,8 +42,8 @@ export default function Landing({ countriesRef }) {
             </div>
           </Popover>
 
-          <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-            <div className="sm:text-center lg:text-left">
+          <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-20 lg:mt-24 lg:px-8 xl:mt-36">
+            <div className="md:text-center xl:text-left w-full flex flex-col items-start md:items-center xl:items-start">
               <h1
                 className={`text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl leading-10 ${classes.title}`}
               >
@@ -85,9 +85,9 @@ export default function Landing({ countriesRef }) {
           </main>
         </div>
       </div>
-      <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+      <div className="xl:absolute xl:inset-y-0 xl:right-0 xl:w-1/2">
         <img
-          className="h-56 w-full object-cover md:h-72 md:h-96 lg:h-full lg:w-full "
+          className="h-56 w-full object-cover lg:h-72 lg:h-96 xl:h-full xl:w-full "
           src="https://images.unsplash.com/photo-1543269865-cbf427effbad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80"
           alt=""
         />
