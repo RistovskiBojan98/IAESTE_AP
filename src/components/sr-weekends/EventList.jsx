@@ -122,7 +122,6 @@ const EventList = () => {
             }
             setFilteredEvents(events)
             setFilter(filter)
-            console.log(date)
             if (date) setCurrentDate(moment(date))
         }
     };
@@ -208,11 +207,11 @@ const EventList = () => {
             {selectedEvent && (<EventPopup event={selectedEvent} onClose={closePopup} />)}
             <div className="mx-auto max-w-7xl mt-10 border-solid border-b-2 pb-3 border-[#0B3D59]">
                 <div className="w-full px-10 flex justify-start items-center">
-                    <h2 className="text-3xl font-bold tracking-tight text-[#0B3D59] sm:text-4xl" style={{ textShadow: '0 0 5px rgba(255,255,255,1' }}>
-                        {maxEventsToShow === 3 ? 'Summer Reception Weekends 2024' : 'SR 2024'}
+                    <h2 className="text-lg md:text-3xl font-bold tracking-tight text-[#0B3D59] sm:text-4xl" style={{ textShadow: '0 0 5px rgba(255,255,255,1' }}>
+                        Summer Reception Weekends 2024
                     </h2>
                     <div className='ml-auto'>
-                        <button onClick={toggleFilterPopup} className="bg-[#0B3D59] hover:bg-sky-700 text-white font-bold py-3 px-10 text-2xl rounded-full">
+                        <button onClick={toggleFilterPopup} className="bg-[#0B3D59] hover:bg-sky-700 text-white font-bold py-3 px-6 text-xl rounded-full">
                             <i className="fa fa-filter"></i> {maxEventsToShow === 3 ? 'Filter' : ''}
                         </button>
                         {/* Filter Popup */}
