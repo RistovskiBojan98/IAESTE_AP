@@ -22,9 +22,9 @@ const Food = ({ country, foodRef }) => {
     countryData.length > 0 &&
     countryData
       .slice(startIndex, startIndex + (width >= 768 ?  maxItemsToShow : 1))
-      .map((item) => (
+      .map((item, index) => (
         <FoodCard
-          key={item.id}
+          key={index}
           title={item.title}
           description={item.description}
         />
@@ -46,7 +46,7 @@ const Food = ({ country, foodRef }) => {
       ref={foodRef}
       className="relative mb-12 mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:py-32 lg:px-8"
     >
-      <h2 style={{fontSize: '36px'}} className="font-bold tracking-tight text-gray-900 mb-6">
+      <h2 className="font-bold tracking-tight text-gray-900 mb-6 text-3xl md:text-4xl">
         Traditional food and drinks
       </h2>
       <div className={classes.grid}>
@@ -64,10 +64,11 @@ const Food = ({ country, foodRef }) => {
           </svg>
         </button>
         <div className={classes.cards} 
-          style={{gridTemplateColumns: width >= 768 ? `repeat(${maxItemsToShow}, 1fr)` : ''}}>{cards}</div>
+          style={{gridTemplateColumns: width >= 768 ? `repeat(${maxItemsToShow}, 1fr)` : ''}}>{cards}
+        </div>
         <button
           onClick={showNext}
-          disabled={startIndex + 3 >= countryData.length}
+          disabled={(countryData.length > 3 && startIndex + 3 >= countryData.length) || (countryData.length <=3 && startIndex === 3) }
           className={classes["next-button"]}
         >
           <svg

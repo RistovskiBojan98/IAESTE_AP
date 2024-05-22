@@ -130,7 +130,7 @@ export const committees = [
       "Szczecin",
       "Krakow",
       "Lodz",
-      "Wroclowe",
+      "Wroclaw",
       "Gliwice",
       "Rzeszow",
       "Gdansk",

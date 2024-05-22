@@ -36,7 +36,7 @@ const setDefaultArrowStyle = (event) =>{
 
   if (images?.length)
     return (
-      <section className="relative mx-auto max-w-7xl px-4 sm:px-6 py-12 lg:px-8">
+      <section className="relative mx-auto max-w-7xl px-4 sm:px-6 pb-8 lg:px-8">
         <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl mb-5">
           <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
             Gallery

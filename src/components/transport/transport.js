@@ -535,23 +535,10 @@ export const transport = {
         cta: "Monthly billing",
         mostPopular: false,
       },
-      // {
-      //   title: "",
-      //   description: "For the national railway system discount cards:",
-      //   features: [
-      //     <a
-      //       className=""
-      //       href="https://www.sncf-connect.com/app/catalogue/description/carte-avantage-jeune"
-      //       target="_blank"
-      //       rel="noopener noreferrer"
-      //     >
-      //       {" "}
-      //       Carte Jeune{" "}
-      //     </a>,
-      //   ],
-      //   cta: "Monthly billing",
-      //   mostPopular: true,
-      // },
+      {
+        title: "Discounts",
+        description: "50% discount for transportation for students under 26, also discounts in museums and other venues. Discount for transport mostly applies only of the students with polish ID cards, museum and other venues usually accept ISIC (International Student Identity Card).",
+      },
     ]
   },
   "Slovakia": {

@@ -93,16 +93,32 @@ export const cities = [
     cities: [
       {
         question: "Sarajevo",
-        answer: "",
+        answer: "The capital city of Bosnia and Herzegovina has a unique mix of traditional charms and modern influences. Within a few minutes’ walk you can find the Catholic cathedral, the Orthodox cathedral, the mosque, and the synagogue. The city and its population suffered grave humanitarian crisis during the ‘Siege of Sarajevo’ for three difficult years during the Balkan Wars of the 1990s. Today, the bullet holes arecovered and debris have disappeared and instead cafes, restaurants, lodges, guest houses and art galleries have sprung up amidst the Ottoman and Austro-Hungarian heritage buildings. The city is often credited as being the flash point of starting the devastating World War I. Very few cities in the world can offer such a variety of interesting things in such a small area as Sarajevo does. Historical attractions, natural beauty and unique experience of a place where „East meets West“ are all reasons which attract and continue to bring so many visitors to Sarajevo. Winter offers plenty of opportunities for winter sports and recreation in the snow. Spring and autumn, with their mild climate offer opportunities for pleasant exploration of natural beauty of the outskirts and a vibrant programme of cultural events in the city. Summer is a time when the city, its squares and streets become an on-the-go holiday; it is the time when the city lives twenty-four seven. Sarajevo has its own specific gravity, so a single visit very often becomes the start of a more permanent attachment to this city and its people. So the best thing to do is to visit because we’d like to hear if you fell in love with Sarajevo too! *Landmarks: Baščaršija (Old Town), Gazi Husrevbeg’s Mosque, Spring of Bosnia river…",
       },
       {
         question: "Banja Luka",
-        answer: "",
+        answer: "Banja Luka is the administrative capital of the Republika Srpska, the second largest city in Bosnia. Roman trade route from Salona to Servitium passed through it. To protect this route (and to enjoy the healing water springs they had discovered in the area) the Romans built a fortress here, the walls of which encompassed an entire miniature town. When the Roman Empire collapsed, the Slavs took over. Once the Ottomans finally controlled the town, they gave it a distinct oriental flavor. The Ottoman governor for Bosnia had his headquarters here for a while, building bridges and mills, and in its Ottoman glory days the town had some 40 mosques. In the course of the Ottoman centuries, Banja Luka was destroyed repeatedly by Ottoman-Austrian warfare (as well as earthquakes and plagues) until eventually the Austrian-Hungarian Empire absorbed Banja Luka peacefully in the 19th century. They rapidly modernized the town, building factories and connecting it to Vienna and other capital cities. The town expanded tremendously in the 20th century. *Landmarks: Kastel fortress, Ferhadija Mosque, Cathedral of Christ the Saviour, Banj Hill…",
       },
       {
         question: "Mostar",
-        answer: "",
+        answer: "Mostar is the chief city and, historically, the capital of Herzegovina. It is situated in mountainous country along the Neretva River and lies on the Sarajevo-Ploče rail line. First mentioned in 1452, Mostar became a Turkish garrison town in the 16th century. In 1566 the Turks replaced the town’s wooden suspension bridge over the Neretva with a stone arch one, hence the name Mostar (from Serbo-Croatian most, “bridge”). This stone bridge had a single arch 90 feet (27 metres) wide and was a masterpiece of Ottoman engineering. In November 1993, during the Bosnian civil war, the bridge was destroyed by artillery fire from Bosnian Croat forces. A major rebuilding project was undertaken to restore the bridge and nearby buildings that had also been damaged; the bridge reopened in 2004. The bridge and the surrounding area were added to UNESCO’s World Heritage list in 2005.",
       },
+      {
+        question: "Trebinje",
+        answer: "By far the prettiest city in Republika Srpska, Trebinje has a compact centre with a tiny walled Old Town flanked by a leafy market square. The Trebišnjica River is slow and shallow as it passes through, its banks lined with swimming spots and replicas of waterwheels which were once used for irrigation. Mountains provide a sun-baked backdrop, while hills topped with Orthodox churches punctuate the suburbs."
+      },
+      {
+        question: "Jajce",
+        answer: "A historical gem, with a highly evocative walled Old Town clinging to a steep rocky knoll with rivers on two sides. The Pliva River tumbles into the Vrbas River by way of an impressive urban waterfallright at the very foot of the town walls. Immediately to the west, the Pliva is dammed to form two pretty lakes which are popular with swimmers, strollers, bikers and boaters"
+      },
+      {
+        question: "Kravica Waterfall",
+        answer: "An unreal Disney-esque quality to this outstanding natural attraction, where the Trebižat River plummets in a broad 25m-high arc into an emerald pool. In spring, this gorgeous mini-Niagara pounds itself into a dramatic, steamy fury. In summer it's a more gentle cascade, but the basin offers an idyllic respite from the sweltering heat for hundreds of locals and tourists"
+      },
+      {
+        question: "Epic Yugoslav monument - Tjentište",
+        answer: "Memorial in Sutjeska National Park"
+      }
     ],
   },
   {
@@ -338,7 +354,7 @@ export const cities = [
           "Capital city of Poland, you should see there Palace of Culture and Science, Belweder Palace and Wilanow Palace.",
       },
       {
-        question: "Cracow",
+        question: "Krakow",
         answer:
           "Former capitals of Poland.  You should visit Wawel Castel and grab a coffee at beautiful square.",
       },
@@ -348,13 +364,53 @@ export const cities = [
           " One of the favorite cities amongst young poles. Can you find all dwarves hidden in the city?",
       },
       {
-        question: "Lodz",
+        question: "Łódź",
         answer: "City full of history, museums and theaters",
+      },
+      {
+        question: "Poznań",
+        answer:
+          "a city with very colorful and charming square, you should try a famous St. Martin croissant while visiting.",
       },
       {
         question: "Tricity",
         answer:
           "If you want to see beautiful oldtown, swim in the sea, and party the same very day this is place for you.",
+      },
+      {
+        question: "Zakopane",
+        answer:
+          "Nestled at the foothills of the Tatra Mountains, Zakopane is a popular destination for outdoor enthusiasts. In addition to hiking and skiing opportunities, the town is known for its unique wooden architecture and vibrant folk culture.",
+      },
+      {
+        question: "Tatra Mountains",
+        answer:
+          "It is a mountain range that forms a natural border between Slovakia and Poland. They are the highest mountain range in the Carpathian Mountains Bieszczady Mountains - is a mountain range that runs from the extreme south-east of Poland and north-east of Slovakia through to western Ukraine. Great place to take a brake from civilization",
+      },
+      {
+        question: "Baltic Sea",
+        answer:
+          "Shaped like a crocodile Mediterranean Sea of Atlantic. Beautiful coast line with sandy beaches and beautiful dunes.",
+      },
+      { 
+        question: "Mazury",
+        answer:
+          "Great place in northwestern part of Poland full of lakes and forests",
+      },
+      {
+        question: "Słowiński National Park",
+        answer:
+          " Situated along the Baltic coast, Słowiński National Park is known for its shifting sand dunes, which create a unique and ever-changing landscape. The park also encompasses Lake Łebsko and Lake Gardno, providing habitats for various bird species",
+      },
+      {
+        question: "Hel Peninsula",
+        answer:
+          "Jutting out into the Baltic Sea, the Hel Peninsula offers picturesque beaches, sand dunes, and opportunities for water sports such as windsurfing and kitesurfing. It's also known for its fishing villages and fresh seafood.",
+      },
+      {
+        question: "Białowieża Forest",
+        answer:
+          "Located on the border between Poland and Belarus, Białowieża, Forest is one of the last and largest remaining parts of the immense primeval forest that once stretched across the European Plain. It's a UNESCO World Heritage site and home to the European bison, as well as diverse flora and fauna.",
       },
     ],
   },

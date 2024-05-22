@@ -12,9 +12,9 @@ const Cities = ({ country, citiesRef }) => {
   return (
     <>
       <div className="bg-gray-50" ref={citiesRef}>
-        <div className="mx-auto max-w-7xl py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
+        <div className="mb-12 mx-auto max-w-7xl py-12 px-4 sm:py-16 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl divide-y-2 divide-gray-200">
-            <h2 style={{fontSize: '36px'}} className="text-center font-bold tracking-tight text-gray-900">
+            <h2 className="text-center font-bold tracking-tight text-gray-900 text-3xl md:text-4xl">
               Places that we recommend visiting:
             </h2>
             <dl className="mt-6 space-y-6 divide-y divide-gray-200">

@@ -56,6 +56,50 @@ export const food = [
         description:
           "It is considered to be the oldest cake in the world - dating back to the 16th century.Its base is a shortcrust pastry made with ground nuts,filled with red currant or plum jam and with a decorative dough lattice pattern on top.",
       },
+      {
+        title: "Sturm",
+        description: "Unfiltered ‘young’ wine (alcoholic fermentation just started)",
+      },
+      {
+        title: "Most",
+        description: "Apple cider",
+      },
+      {
+        title: "Spritzer",
+        description: "Mixture of white wine and sparkling water",
+      },
+      {
+        title: "Radler",
+        description: "Mix of lemonade (usually lemon) and beer",
+      },
+      {
+        title: "Beer",
+        description: "Various breweries (small local as well as bigger ones) can be found throughout Austria",
+      },
+      {
+        title: "Wine",
+        description: "There are several regions especially in the east of Austria well known for producing several different kinds of wine.",
+      },
+      {
+        title: "Coffee",
+        description: "Various kinds of coffee are served in Austrian cafes",
+      },
+      {
+        title: "Almdudler",
+        description: "A herbal lemonade",
+      },
+      {
+        title: "Red Bull",
+        description: " A famous energy drink you might have heard of already."
+      },
+      {
+        title: "Gurkthaler",
+        description: "Being the reasonable financial alternative to Jaegermeister, this liquor has become kind of the unofficial signature drink of IAESTE Austria",
+      },
+      {
+        title: "Stroh 80",
+        description: "A typical regional rum, used for baking and of course the most famous ‘Burning Mozart’ tradition.",
+      },
     ],
   },
   {
@@ -103,6 +147,30 @@ export const food = [
       {
         title: "Pierogi",
         description: "Dumplings with various fillings",
+      },
+      {
+        title: "Bigos",
+        description: "A traditional Polish meat dish, also known as 'hunter's stew' or 'cabbage stew', made with sauerkraut, meat, sausage, and sometimes mushrooms and other vegetables",
+      },
+      {
+        title: "Żurek",
+        description: " A thick soup made from sourdough rye flour with added white sausage, eggs, and potatoes, often served with a slice of bread with lard.",
+      },
+      {
+        title: "Kotlet schabowy",
+        description: " Breaded pork cutlet, often served with potatoes and carrot salad.",
+      },
+      {
+        title: "Kompot",
+        description: " A traditional Polish beverage made from cooked fruits, typically apples, plums, pears, or cherries, with added sugar and spices.",
+      },
+      {
+        title: "Żubrówka",
+        description: "A popular Polish vodka flavored with bison grass, giving it a distinctive taste",
+      },
+      {
+        title: "Beer",
+        description: "Polish beers are known for their rich flavors and variety. You can try different local brands such as Żywiec, Tyskie, or Lech.",
       },
     ],
   },

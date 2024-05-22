@@ -6,10 +6,10 @@ const Facts = ({ country }) => {
 
   return (
     <>
-    { facts.length ? (
+    { facts ? (
     <section
     aria-labelledby="testimonial-heading"
-    className="relative mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:py-32 lg:px-8"
+    className="relative mx-auto max-w-7xl p-4 sm:px-6 mb-10 "
   >
     <div className="mx-auto max-w-2xl lg:max-w-none">
       <h2
@@ -19,9 +19,9 @@ const Facts = ({ country }) => {
         Did you know?
       </h2>
 
-      <div className="mt-4 space-y-16 lg:grid lg:grid-cols-3 lg:gap-8 lg:space-y-0">
-        {facts.facts.map((fact) => (
-          <FactCard fact={fact} />
+      <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:space-y-0">
+        {facts.facts.map((fact, index) => (
+          <FactCard fact={fact} key={index}/>
         ))}
       </div>
     </div>

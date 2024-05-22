@@ -715,7 +715,7 @@ export const information = [
       },
       {
         name: "Population",
-        role: "the cities",
+        role: "38 million",
         imageUrl:
           population,
       },

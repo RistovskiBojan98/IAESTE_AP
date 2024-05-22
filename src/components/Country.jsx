@@ -15,6 +15,7 @@ import Hero from "./hero/Hero.jsx";
 import Navbar from "./navbar/Navbar.jsx";
 import Plane from "./plane/Plane.jsx";
 import SummerReception from "./summer-recepiton/SummerReception.jsx"
+import Other from "./otherInformation/Other.jsx";
 
 const Country = () => {
   const { id } = useParams();
@@ -79,6 +80,7 @@ const Country = () => {
       <Cities country={id} citiesRef={citiesRef} />
       <Gallery country={id} />
       <Food country={id} foodRef={foodRef} />
+      <Other country={id} />
       <Footer />
       </div>
     )}
