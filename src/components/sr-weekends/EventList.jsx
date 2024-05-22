@@ -207,11 +207,11 @@ const EventList = () => {
             {selectedEvent && (<EventPopup event={selectedEvent} onClose={closePopup} />)}
             <div className="mx-auto max-w-7xl mt-10 border-solid border-b-2 pb-3 border-[#0B3D59]">
                 <div className="w-full px-10 flex justify-start items-center">
-                    <h2 className="text-lg md:text-3xl font-bold tracking-tight text-[#0B3D59] sm:text-4xl" style={{ textShadow: '0 0 5px rgba(255,255,255,1' }}>
+                    <h2 className="text-xl md:text-3xl font-bold tracking-tight text-[#0B3D59] sm:text-4xl" style={{ textShadow: '0 0 5px rgba(255,255,255,1' }}>
                         Summer Reception Weekends 2024
                     </h2>
                     <div className='ml-auto'>
-                        <button onClick={toggleFilterPopup} className="bg-[#0B3D59] hover:bg-sky-700 text-white font-bold py-3 px-6 text-xl rounded-full">
+                        <button onClick={toggleFilterPopup} className="bg-[#0B3D59] hover:bg-sky-700 text-white font-bold py-3 px-6 text-lg md:text-xl rounded-full">
                             <i className="fa fa-filter"></i> {maxEventsToShow === 3 ? 'Filter' : ''}
                         </button>
                         {/* Filter Popup */}
@@ -220,8 +220,8 @@ const EventList = () => {
                 </div>
                 {/* Filter values */}
                 {filter.length > 0 && (
-                    <div className="flex justify-start items-center mt-3 max-w-7xl px-10">
-                        <span className="text-lg font-semibold text-[#0B3D59] hidden md:block"><i className="fa fa-filter"></i></span>
+                    <div className="flex justify-start items-center mt-3 max-w-7xl px-10 border-solid border-t-2 border-[#0B3D59] pt-3">
+                        <span className="text-lg font-semibold text-[#0B3D59]"><i className="fa fa-filter"></i></span>
                         <div className='flex flex-col md:flex-row gap-3'>
                             {filter.map((filterItem, index) => (
                                 <div key={index} onClick={toggleFilterPopup} className="flex flex-row items-center bg-[#0B3D59] hover:bg-sky-700 cursor-pointer text-white rounded-full px-3 py-1 ml-2">
@@ -264,7 +264,7 @@ const EventList = () => {
                                         {eventsToShow.map(event => (
                                             <div key={event.name} className="w-full card mb-3 bg-white rounded-lg shadow-md p-3 cursor-pointer h-auto md:h-40 hover:bg-sky-100">
                                                 <div className="card-body text-black flex flex-col justify-between h-full" onClick={() => handleEventClick(event)}>
-                                                    <h2 className="card-title font-semibold text-2xl border-b-2 pb-2">{event.name}</h2>
+                                                    <h2 className="card-title font-semibold text-xl md:text-2xl border-b-2 pb-2">{event.name}</h2>
                                                     <div className='flex flex-col mt-2 sm:mt-0'>
                                                         <div className="flex items-center text-lg">
                                                             <i className="far fa-calendar-alt mr-2 text-blue-700"></i> {event.date}
@@ -296,7 +296,7 @@ const EventList = () => {
                                 </div>
                             ) : (
                                 <div className="flex justify-center items-center h-full">
-                                    <h2 className="text-3xl text-center font-semibold text-[#0B3D59]" style={{ textShadow: '0 0 5px rgba(255,255,255,1' }}><i className="fa-solid fa-circle-exclamation"></i> No events found from the filter parameters!</h2>
+                                    <h2 className="text-lg md:text-3xl text-center font-bold text-[#0B3D59]" style={{ textShadow: '0 0 5px rgba(255,255,255,1' }}><i className="fa-solid fa-circle-exclamation"></i> No events found from the filter parameters!</h2>
                                 </div>
                             )}
 
@@ -321,7 +321,7 @@ const EventList = () => {
                                         />
                                     </svg>
                                 </button>
-                                <h2 className="text-3xl text-center w-60 font-bold text-[#0B3D59]" style={{ textShadow: '0 0 5px rgba(255,255,255,1' }}>{currentDate.format('MMMM YYYY')}</h2>
+                                <h2 className="text-xl md:text-2xl text-center w-60 font-bold text-[#0B3D59]" style={{ textShadow: '0 0 5px rgba(255,255,255,1' }}>{currentDate.format('MMMM YYYY')}</h2>
                                 <button onClick={handleNextMonth} className="text-lg font-bold p-3 border-solid border-2 border-sky-500 rounded-full bg-white">
                                     <svg
                                         width="20"
