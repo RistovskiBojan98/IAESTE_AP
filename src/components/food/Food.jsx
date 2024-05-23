@@ -68,7 +68,7 @@ const Food = ({ country, foodRef }) => {
         </div>
         <button
           onClick={showNext}
-          disabled={(countryData.length > 3 && startIndex + 3 >= countryData.length) || (countryData.length <=3 && startIndex === 3) }
+          disabled={(countryData.length > 3 && startIndex + 3 >= countryData.length) || (countryData.length <= maxItemsToShow) }
           className={classes["next-button"]}
         >
           <svg

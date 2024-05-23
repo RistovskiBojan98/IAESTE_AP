@@ -5,7 +5,9 @@ const OtherInfoCard = ({ title, description }) => {
   return (
     <div className={classes.container}>
       <h3>{title}</h3>
-      <p>{description}</p>
+      <p> {description.split('\n').map((paragraph, index) => (
+        <p key={index}>{paragraph}<br></br></p>
+      ))}</p>
     </div>
   );
 };

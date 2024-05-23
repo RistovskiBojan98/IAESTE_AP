@@ -1,35 +1,19 @@
 export const transport = {
   "Austria": {
     tiers: [
-      // {
-      //   title: "Public transport",
-      //   description: "Public transport in Vienna, Graz and Linz:",
-      //   features: [
-      //     <a className="" href="https://www.wienerlinien.at/"
-      //       target="_blank"
-      //       rel="noopener noreferrer"
-      //     >Vienna
-      //     </a>,
-      //     <a
-      //       className=""
-      //       href="https://www.holding-graz.at/graz-linien/graz-linien.html"
-      //       target="_blank"
-      //       rel="noopener noreferrer"
-      //     >
-      //       {" "}
-      //       Graz
-      //     </a>,
-      //     <a
-      //       className=""
-      //       href="https://www.linzag.at/portal/de/privatkunden/unterwegs"
-      //       target="_blank"
-      //       rel="noopener noreferrer"
-      //     >
-      //       Linz{" "}
-      //     </a>,
-      //   ],
-      //   mostPopular: false,
-      // },
+      {
+        title: "Airports with budget airlines",
+        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        features: [
+          <p> Vienna International Airport (VIA)</p>,
+          <p> Bratislava Airport (BTS)</p>,
+          <p>Munich (MUN)</p>,
+          <p> Beside that we have in every bigger city (especially all our LCs city) an
+            airport - some European airlines do offer flights to these locations</p>,
+        ],
+        cta: "Monthly billing",
+        mostPopular: false,
+      },
       {
         title: "Transportation in general",
         description: "National and international transportation:",
@@ -46,6 +30,18 @@ export const transport = {
             rel="noopener noreferrer"
           >
             Regiojet
+          </a>,
+          <a className="" href="https://int.bahn.de/en"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Int Bahn
+          </a>,
+          <a className="" href="https://www.sbb.ch/en"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            SBB
           </a>,
           <a className="" href="https://www.flixbus.at/"
             target="_blank"
@@ -86,6 +82,41 @@ export const transport = {
             Grupenreisen Ticket -group tickets{" "}
           </a>,
         ],
+        extra: {
+          description: "Public transport in our cities:",
+          features: [
+            <a className="" href="https://www.wienerlinien.at/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Wiener Linien
+            </a>,
+            <a className="" href="https://www.holding-graz.at/de/mobilitaet/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Graz Holding
+            </a>,
+            <a className="" href="https://www.linzag.at/portal/de/privatkunden/unterwegs"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Linz AG
+            </a>,
+            <a className="" href="https://salzburg-verkehr.at/en/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Salzburg Verkehr
+            </a>,
+            <a className="" href="https://www.ivb.at/en/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              IVB
+            </a>,
+          ]
+        },
         cta: "Monthly billing",
         mostPopular: true,
       },
@@ -93,6 +124,16 @@ export const transport = {
   },
   "Belgium": {
     tiers: [
+      {
+        title: "Airports with budget airlines",
+        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        features: [
+          <p> Charleroi (Brussels-South airport)</p>,
+          <p> Brussels national airport (Zaventem)</p>,
+        ],
+        cta: "Monthly billing",
+        mostPopular: false,
+      },
       {
         title: "Transportation in general",
         description: "National and international transportation:",
@@ -144,6 +185,17 @@ export const transport = {
   "Bosnia-and-Herzegovina": {
     tiers: [
       {
+        title: "Airports with budget airlines",
+        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        features: [
+          <p>Sarajevo Airport</p>,
+          <p>Tuzla Airport</p>,
+          <p>Banja Luka Airport</p>
+        ],
+        cta: "Monthly billing",
+        mostPopular: false,
+      },
+      {
         title: "Transportation in general",
         description: "National and international transportation:",
         features: [
@@ -191,8 +243,52 @@ export const transport = {
       // },
     ]
   },
+  "Croatia": {
+    tiers: [
+      {
+        title: "Airports with budget airlines",
+        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        features: [
+          <p>Zagreb</p>,
+          <p>Split</p>,
+          <p>Pula</p>,
+          <p>Dubrovnik</p>,
+          <p>Zadar</p>
+        ],
+        cta: "Monthly billing",
+        mostPopular: false,
+      },
+      {
+        title: "Transportation in general",
+        description: "National and international transportation:",
+        features: [
+          <a className="" href="https://www.hzpp.hr/" target={"_blank"} rel="noopener noreferrer">
+            {" "}
+            HZPP{" "}
+          </a>,
+          <a className="" href="https://www.akz.hr/en" target={"_blank"} rel="noopener noreferrer">
+            AKZ
+          </a>,
+        ],
+        cta: "Monthly billing",
+        mostPopular: false,
+      },
+    ]
+  },
   "Czech-Republic": {
     tiers: [
+      {
+        title: "Airports with budget airlines",
+        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        features: [
+          <p>Prague-Vaclav Havel Airport Prague</p>,
+          <p>Ostrava</p>,
+          <p>Pardubice</p>,
+          <p>Brno</p>,
+        ],
+        cta: "Monthly billing",
+        mostPopular: false,
+      },
       {
         title: "Transportation in general",
         description: "National and international transportation:",
@@ -254,6 +350,22 @@ export const transport = {
   "France": {
     tiers: [
       {
+        title: "Airports with budget airlines",
+        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        features: [
+          <p>Bâle-Mulhouse (BSL)</p>,
+          <p>Bordeaux (BOD)</p>,
+          <p>Lyon (LYS)</p>,
+          <p>Marseille (MRS)</p>,
+          <p>Nantes (NTE)</p>,
+          <p>Nice (NCE)</p>,
+          <p>Paris (CDG & ORY)</p>,
+          <p>Toulouse (TLS)</p>,
+        ],
+        cta: "Monthly billing",
+        mostPopular: false,
+      },
+      {
         title: "Transportation in general",
         description: "National and international transportation:",
         features: [
@@ -301,6 +413,35 @@ export const transport = {
   },
   "Germany": {
     tiers: [
+      {
+        title: "Airports with budget airlines",
+        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        features: [
+          <p>Berlin Schönefeld Airport</p>,
+          <p>Berlin Tegel Airport</p>,
+          <p>Bremen Airport</p>,
+          <p>Cologne Bonn Airport</p>,
+          <p>Dortmund Airport</p>,
+          <p>Düsseldorf Airport</p>,
+          <p>Weeze Airport (Düsseldorf)</p>,
+          <p>Frankfurt Airport</p>,
+          <p>Frankfurt–Hahn Airport</p>,
+          <p>Friedrichshafen Airport</p>,
+          <p>Hamburg Airport</p>,
+          <p>Lübeck Airport</p>,
+          <p>Hannover Airport</p>,
+          <p>Karlsruhe/Baden-Baden Airport</p>,
+          <p>Leipzig/Halle Airport</p>,
+          <p>Memmingen Airport</p>,
+          <p>Munich Airport</p>,
+          <p>Münster Osnabrück International Airport</p>,
+          <p>Nuremberg Airport</p>,
+          <p>Paderborn Airport</p>,
+          <p>Stuttgart Airport</p>,
+        ],
+        cta: "Monthly billing",
+        mostPopular: false,
+      },
       {
         title: "Transportation in general",
         description: "National and international transportation:",
@@ -350,6 +491,16 @@ export const transport = {
   "Hungary": {
     tiers: [
       {
+        title: "Airports with budget airlines",
+        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        features: [
+          <p>Liszt Ferenc International Airport, Budapest (BUD)</p>,
+          <p>Debrecen International Airport (DEB)</p>,
+        ],
+        cta: "Monthly billing",
+        mostPopular: false,
+      },
+      {
         title: "Transportation in general",
         description: "National and international transportation:",
         features: [
@@ -392,12 +543,27 @@ export const transport = {
   "Macedonia": {
     tiers: [
       {
+        title: "Airports with budget airlines",
+        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        features: [
+          <p>Skopje International Airport (SKP)</p>,
+          <p>Ohrid St. Paul The Apostle Airport (OHD)</p>,
+          <p>Nearby cities with airports: Nish, Prishtina, Tirana, Sofia and Thesalloniki</p>
+        ],
+        cta: "Monthly billing",
+        mostPopular: false,
+      },
+      {
         title: "Transportation in general",
         description: "National and international transportation:",
         features: [
           <a className="" href="http://www.jsp.com.mk/Default.aspx" target={"_blank"} rel="noopener noreferrer">
             {" "}
             JSP {" "}
+          </a>,
+          <a className="" href="http://www.sas.com.mk" target={"_blank"} rel="noopener noreferrer">
+            {" "}
+            SAS {" "}
           </a>
         ],
         cta: "Monthly billing",
@@ -424,6 +590,15 @@ export const transport = {
   },
   "Malta": {
     tiers: [
+      {
+        title: "Airports with budget airlines",
+        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        features: [
+          <p> Malta International Airport</p>,
+        ],
+        cta: "Monthly billing",
+        mostPopular: false,
+      },
       {
         title: "Transportation in general",
         description: "National and international transportation:",
@@ -467,6 +642,23 @@ export const transport = {
   "Norway": {
     tiers: [
       {
+        title: "Airports with budget airlines",
+        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        features: [
+          <p>Oslo Gardermoen</p>,
+          <p>Oslo Sandefjord/Torp</p>,
+          <p>Bergen Flesland</p>,
+          <p>Trondheim Værnes</p>,
+          <p>Tromsø Langnes</p>,
+          <p>Stavanger Sola</p>,
+          <p>Kristiansand Kjevik</p>,
+          <p>Longyearbyen (Svalbard)</p>,
+          <p>Harstad/Narvik</p>,
+        ],
+        cta: "Monthly billing",
+        mostPopular: false,
+      },
+      {
         title: "Transportation in general",
         description: "National and international transportation:",
         features: [
@@ -483,39 +675,33 @@ export const transport = {
           >
             Hurtigruten
           </a>,
-                    <a className="" href="http://www.flybuss.no/" target={"_blank"} rel="noopener noreferrer">
-                    Flybuss
-                  </a>,
-                  <a className="" href="https://www.skyss.no/" target={"_blank"} rel="noopener noreferrer">
-                    Skyss
-                  </a>,
-                  <a className="" href=" https://www.kolumbus.no/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Kolumbus
-                  </a>,
+          <a className="" href="http://www.flybuss.no/" target={"_blank"} rel="noopener noreferrer">
+            Flybuss
+          </a>,
+          <a className="" href="https://www.skyss.no/" target={"_blank"} rel="noopener noreferrer">
+            Skyss
+          </a>,
+          <a className="" href=" https://www.kolumbus.no/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Kolumbus
+          </a>,
         ],
         cta: "Monthly billing",
         mostPopular: false,
       },
-      // {
-      //   title: "",
-      //   description: "For the national railway system discount cards:",
-      //   features: [
-      //     <a
-      //       className=""
-      //       href="https://www.sncf-connect.com/app/catalogue/description/carte-avantage-jeune"
-      //       target="_blank"
-      //       rel="noopener noreferrer"
-      //     >
-      //       {" "}
-      //       Carte Jeune{" "}
-      //     </a>,
-      //   ],
-      //   cta: "Monthly billing",
-      //   mostPopular: true,
-      // },
+      {
+        title: "",
+        description: "Discounts for airlines and public transport:",
+        features: [
+          <p>Use code UNDER26 for Norwegian airlines when buying fly ticke</p>,
+          <p>The city transport has usually a discount for a students. This discount varies from city to the 
+          city, so make sure to ask for it when buying a ticket</p>
+        ],
+        cta: "Monthly billing",
+        mostPopular: true,
+      },
     ]
   },
   "Poland": {
@@ -543,6 +729,17 @@ export const transport = {
   },
   "Slovakia": {
     tiers: [
+      {
+        title: "Airports with budget airlines",
+        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        features: [
+          <p>Bratislava airport</p>,
+          <p>Košice airport</p>,
+          <p>Poprad airport</p>,
+        ],
+        cta: "Monthly billing",
+        mostPopular: false,
+      },
       {
         title: "Transportation in general",
         description: "National and international transportation:",
@@ -580,6 +777,18 @@ export const transport = {
   "Slovenia": {
     tiers: [
       {
+        title: "Airports with budget airlines",
+        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        features: [
+          <p>Ljubljana Jože Pučnik Airport</p>,
+          <p>Maribor airport</p>,
+          <p>Portorož airport</p>,
+          <p>Cities with nearby airport: Friuli Venezia Giulia Airport in Trieste; Treviso Airport in Venice</p>
+        ],
+        cta: "Monthly billing",
+        mostPopular: false,
+      },
+      {
         title: "Transportation in general",
         description: "National and international transportation:",
         features: [
@@ -591,11 +800,11 @@ export const transport = {
             AP-Ljubljana
           </a>,
           <a className="" href="https://www.lpp.si/javni-prevoz/vozni-redi" target={"_blank"} rel="noopener noreferrer">
-          LPP
-        </a>,
-        <a className="" href="https://prevoz.org/" target={"_blank"} rel="noopener noreferrer">
-          Prevoz
-        </a>,
+            LPP
+          </a>,
+          <a className="" href="https://prevoz.org/" target={"_blank"} rel="noopener noreferrer">
+            Prevoz
+          </a>,
         ],
         cta: "Monthly billing",
         mostPopular: false,
@@ -620,6 +829,24 @@ export const transport = {
   },
   "Spain": {
     tiers: [
+      {
+        title: "Airports with budget airlines",
+        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        features: [
+          <p>Madrid Barajas International Airport (MAD)</p>,
+          <p>Josep Tarradellas Barcelona-El Prat Airport</p>,
+          <p>Seville Airport</p>,
+          <p>Santiago-Rosalía de Castro Airport</p>,
+          <p>Valencia Airport</p>,
+          <p>Palma de Mallorca Airport</p>,
+          <p>Bilbao Airport</p>,
+          <p>Málaga-Costa del Sol Airport</p>,
+          <p>Alicante-Elche Miguel Hernández Airport</p>,
+          <p>Murcia International Airport</p>
+        ],
+        cta: "Monthly billing",
+        mostPopular: false,
+      },
       {
         title: "Transportation in general",
         description: "National and international transportation:",
@@ -647,6 +874,19 @@ export const transport = {
         ],
         cta: "Monthly billing",
         mostPopular: true,
+      },
+    ]
+  },
+  "Turkey": {
+    tiers: [
+      {
+        title: "Transportation in general",
+        description: "National and international transportation:",
+        features: [
+          <p>“Trafi” app is generally rated enough for the transportation</p>
+        ],
+        cta: "Monthly billing",
+        mostPopular: false,
       },
     ]
   },

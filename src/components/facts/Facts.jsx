@@ -9,7 +9,7 @@ const Facts = ({ country }) => {
     { facts ? (
     <section
     aria-labelledby="testimonial-heading"
-    className="relative mx-auto max-w-7xl p-4 sm:px-6 mb-10 "
+    className="relative mx-auto max-w-7xl p-4 sm:px-6 mb-10 border-t border-gray-300"
   >
     <div className="mx-auto max-w-2xl lg:max-w-none">
       <h2

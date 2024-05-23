@@ -181,8 +181,28 @@ export const cities = [
         answer: "Lower Vítkovice",
       },
       {
-        question: "Pilsen",
+        question: "Plzeň",
         answer: "Breweries, Oldtown, Cathedral",
+      },
+      {
+        question: "Český ráj",
+        answer: "It is unique for its sandstone rock area which is beautiful to walk in or for rock climbing.",
+      },
+      {
+        question: "Beskydy, Jeseniky, Sumava, Krknose",
+        answer: "Pretty much all the Czech mountains are the perfect place for relaxing and enjoying nice nature with traditional cabins with good beer and food",
+      },
+      {
+        question: "Orlík & Zvíkov",
+        answer: " 2 castles, water reservoir",
+      },
+      {
+        question: "NP Bohemian Switzerland",
+        answer: "National park",
+      },
+      {
+        question: "Moravian Karst",
+        answer: "Nature reserve, caverns, gorges",
       },
     ],
   },
@@ -214,6 +234,42 @@ export const cities = [
         answer:
           "old town called “Vieille ville” (don’t mix up with “Annecy le Vieux”, a city nearby Annecy), lake of Annecy with its Love Bridge (Pont des Amours) and walk along the Europe’s gardens (Jardins de l’Europe), Palais de l’Île",
       },
+      {
+        question: "The Alps",
+        answer: "Lots of hiking available in summer, lots of ski in winter",
+      },
+      {
+        question: "Normandie",
+        answer: "Historical region, where a part of the second world war happened",
+      },
+      {
+        question: "Mont Saint Michel",
+        answer: "Very small village on a rock which becomes an island depending on the tides",
+      },
+      {
+        question: "Les gorges de l’Ardèche",
+        answer: "Rivers in the mountains where you can go to practice canoe and go swimming",
+      },
+      {
+        question: "Dune du Pilat",
+        answer: "Biggest sand dune of Europe, near Bordeaux",
+      },
+      {
+        question: "Chateaux de la Loire",
+        answer: "Many castles along the Loire river",
+      },
+      {
+        question: "French riviera",
+        answer: "In the south of France, this is the Mediterranean cost. Some cities are expensive, like Saint Tropez, Monaco, Cannes... But other are cheaper, like La Ciotat, Sanary-sur-Mer, Bandol, Hyères, Marseille…",
+      },
+      {
+        question: "Toulouse",
+        answer: "A nice city where the buildings are made of specific rocks which are a bit pink",
+      },
+      {
+        question: "Alsace",
+        answer: "A region near Germany, with its own culture, many small villages very typical and nicely decorated",
+      },
     ],
   },
   {
@@ -243,6 +299,38 @@ export const cities = [
         answer:
           "home to Octoberfest (Wiesn) which is a 16-18 day folk festival featuring beer tents (up to 6000 people per tent) and fair rides",
       },
+      {
+        question: "Wattenmeer",
+        answer: "Many parts of the northern coast of Germany are Wadden Seas, offering far mudflats to have a guided tour in."
+      },
+      {
+        question: "Sanssouci Park and Palace",
+        answer: " The summer residency of Frederick the Great in Potsdam, near Berlin. A beautiful castle in Rococo style with elaborate gardens surrounding it."
+      },
+      {
+        question: "Hiking/Climbing in the Saxon Switzerland",
+        answer: "This mountain rage contains countless steep walls to climb at. Both free climbing and climbing with a rope is possible. Besides that, there are scenic walks for short walks up to multiple day hikes. Possible as daytrip as well as for a whole weekend. Famous for the Bastei bridge and the castle Königstein"
+      },
+      {
+        question: "Baltic Sea",
+        answer: "Lovely beaches and small fisher villages. Affordable and especially during summer time good for camping."
+      },
+      {
+        question: "Hiking/Skiing in the Alps",
+        answer: "The Alps feature the highest mountains in Germany. There is a wide range of hiking routes of varying difficulty available. Often you can find a mountain hut to grab a bite and enjoy the view. During winter it’s worth going to the alps for a skiing trip at one of the many skiing slopes"
+      },
+      {
+        question: "Schloß Neuschwanstein",
+        answer: "The castle that inspired Disney’s Castle was built by the “Fairy Tale King” Ludwig II of Bavaria is definitely worth day trip and offers a great view down from the Alps."
+      },
+      {
+        question: "Wineries",
+        answer: "There are many great vineyards in the western parts of Germany. Go there and enjoy nice Riesling and other wines and enjoy the warm days of summer near the big Rhine River"
+      },
+      {
+        question: "Essen’s Zeche Zollverein",
+        answer: " A former industrial site near Essen and nowadays a UNESCO World Heritage Site. It was a coal mine and today its a very interesting museum offering a glimpse into the foundations of the industrialization in Germany."
+      },
     ],
   },
   {
@@ -262,6 +350,30 @@ export const cities = [
         question: "Pécs",
         answer:
           "the administrative and economic center of Baranya County; the seat of the Roman Catholic Diocese of Pécs",
+      },
+      {
+        question: "Lake Balaton",
+        answer: "The biggest lake of Central Europe and the most well-known tourist attraction of Hungary"
+      },
+      {
+        question: "River Danube",
+        answer: "The Danube Europe's second-longest river, after the Volga. It is located in Central and Eastern Europe."
+      },
+      {
+        question: "Hortobágy National Park",
+        answer: "It's an 800 km2 national park in eastern Hungary, rich with folklore and cultural history. The park, a part of the Alföld (Great Plain), was designated as a national park in 1973 (the first in Hungary), and elected among the World Heritage sites in 1999. The Hortobágy is Hungary's largest protected area, and the largest semi-natural grassland in Europe."
+      },
+      {
+        question: "Spas",
+        answer: "A passion for spa culture and Hungarian history have been connected from the very beginning. Hungarian spas feature Roman, Greek, Turkish, and northern country architectural elements"
+      },
+      {
+        question: "Budapest University of Technology and Economics",
+        answer: "It's the oldest Institute of technology in the world, founded in 1782. It also the home of IAESTE Hungary"
+      },
+      {
+        question: "Kékes",
+        answer: "It's Hungary's highest mountain, at 1,014 meters above sea level. It lies 12 kilometers northeast of Gyöngyös in the Mátra range of Heves county. It is Hungary's third most popular tourist attraction, after Lake Balaton and the Danube, and has a number of hotels and skiing pistes. The Kékestető TV Tower stands at the summit."
       },
     ],
   },
@@ -288,6 +400,22 @@ export const cities = [
         answer:
           "It has a remarkable history and heritage to share; At the top of the list are the frescoes inside Saint Sofia Church, the Ancient Theatre, St. Clement Church (13th century), and Tsar Samuil’s fortress",
       },
+      {
+        question: "Matka Canyon",
+        answer: "In the suburbs of Skopje, this canyon is breathtaking and offers tourists the possibility to kayak and explore natural sites, such as Vrelo, one of the deepest underwater caves."
+      },
+      {
+        question: "National Park Mavrovo",
+        answer: "The perfect place for skiing, National Park Mavrovo is Macedonia’s biggest winter resort, covering over 730 sq km of forests, gorges, waterfalls, and karst fields. You can also see the country’s highest peak, Mt Korab, which stands at 2764m"
+      },
+      {
+        question: "Pelister",
+        answer: "The oldest of the three great national parks is Pelister, located in western Macedonia near Bitola. With nearby Mount Pelister (2600m), and eight other peaks that top 2000m, the vistas are a magnificent natural escape from daily life. The park is home to the five-needle pine molica – found on only a few mountains in the Balkan Peninsula – something all nature enthusiasts will love to see."
+      },
+      {
+        question: "Shar Mountain",
+        answer: "Referred to as “the Balkan Alps” is the largest mountain in Macedonia. It is a great place for hiking, skiing and paragliding. The name literally means “Colorful Mountain”, this is because (at least before global warming) it was covered partially in snow the whole year round."
+      },
     ],
   },
   {
@@ -312,6 +440,34 @@ export const cities = [
         question: "Mdina",
         answer:
           "situated inside Rabat. This was the old capital of Malta and is concentrated in every corner with history. There is a Cathedral you can visit there. The streets in Mdina are very narrow and fun explore.",
+      },
+      {
+        question: "Sliema",
+        answer: "It’s where most of the expensive shops are and contains the biggest, most modern shopping mall on the island. From some parts of it you get amazing viewpoints of Valletta. Sliema is at sea level too so the sea views are all around"
+      },
+      {
+        question: "St. Julians",
+        answer: "The centre of the night life, where all the restaurants and bars are."
+      },
+      {
+        question: "Paceville",
+        answer: "A small area within St. Julians composed of literally a few streets where all the clubs are"
+      },
+      {
+        question: "Golden Bay",
+        answer: "In the north and is one of the nicest beaches on the island"
+      },
+      {
+        question: "Ghajn Tuffieha",
+        answer: "Just beside Golden Bay and is also the most beautiful beach on the island"
+      },
+      {
+        question: "Mellieha",
+        answer: "Very pretty city in the north of the island. Amazing landscapes."
+      },
+      {
+        question: "Marsaxlokk",
+        answer: "A very traditional fishing village situated in the very south of the island. Contains a lot of pretty fishing boats and restaurants by the sea"
       },
     ],
   },
@@ -342,6 +498,34 @@ export const cities = [
         question: "Tromsø",
         answer:
           "A city in the northern Norway popular for the northern lights.  The Fjellheisen (funicular) will lift you up 371 meters for 4 minutes to the orchestra place to see Tromsø in panorama. Here you can enjoy a spectacular view of Tromsø, with an almost endless view of islands, fjords, mountains and sea. If you turn the other way, you will see the majestic Tromsdalstinden which towers 1,238 meters above sea level.",
+      },
+      {
+        question: "Lysefjorden",
+        answer: "A fjord 25 km east of the city of Stavanger. It’s 42 km long and 422m deep at its deepest point. It is well known by the huge Preikestolen (“Pulpit Rock”) cliff overlooking the fjord at the height of 604m above the sea. To access there, you have to take a 3,8 km long hiking tour. Kjeragbolten, the boulder at the mountain Kjerag, is the second most popular place at the Lysefjorden. It is a round stone placed between two mountains at the height of 1000m above the sea level. It is possible to stay on it - if you dare! A hike to the Kjeragbolten itself challenges your adrenaline levels."
+      },
+      {
+        question: "Lofoten islands",
+        answer: "An archipelago known for a distinctive scenery with dramatic mountains and peaks, open sea and sheltered bays, beaches and untouched lands. It is known as a place of leading fishing industry in Norway and its fish is transported to all parts of the world. The islands are very popular place for outdoor activities such as rock climbing, mountaineering, cycling, whale safari and surfing. This is place where the sun is up 24/7 during the summer. One of the most popular islands is Henningsvær where you can find and visit a Caviar Factory. Henningsvær is also known as a perfect place for rock climbing. You can also go climbing and mountaineering at Austvågøy and Moskenesøya. If you like surfing, the island Unstad is a good place to start with. The Lofoten Insomnia Cycling Race takes place every year around midsummer, possible in the midnight sun, but surely in 24-hr daylight, along the whole Lofoten archipelago. One more island you should visit is Værøy. There are many companies arranging safari tours where you will get the ability to see the whales and enjoy the view"
+      },
+      {
+        question: "Svalbard",
+        answer: "A Norwegian archipelago in the midway between Norway and the North Pole. The 60% of its area is covered in glacial ice. Since Svalbard is located north of the Arctic Circle, it experiences midnight sun in summer and polar night in winter. At 74° north, the midnight sun lasts 99 days and polar night 84 days. During the winter you will be able to see the polar light. Close to the Longyearbyen, there is a seedbank to store seeds from as many of the world's crop varieties and their botanical wild relatives as possible. Polar bears are the iconic symbol of Svalbard, and one of the main tourist attractions. The animals are protected and people moving outside the settlements are required to have appropriate scare devices to ward off attacks. They are also advised to carry a firearm for use as a last resort. Make sure to have the right equipment when going to the glacier hike, driving the dog sled or just going to the polar bear safari."
+      },
+      {
+        question: "Sogn og Fjordane",
+        answer: "In Western Norway is a home of the Urnes Stave Church from the 12th century, the oldest of its kind. It is also where the Sognefjord “The King of the Fjords” lies. Sognefjord is the largest and deepest fjord in Norway with the length of 205 kilometers and the maximum depth of 1 308 metres below sea level. The inner end of the Sognefjord is rising up to 2 000 metres above sea level and covered by the Jostedalsbreen, continental Europe’s largest glacier. Close to the fjord, there is also a Jotunheim National Park, one of the country’s premier hiking and fishing regions."
+      },
+      {
+        question: "Trollstigveien",
+        answer: "'The Trolls’ Path' in Åndalsnes, Møre og Rømsdal is a part of Unesco’s World Heritage List. An impressive roadway where the road winds in 11 turns along steep mountain sides. Each turn has its own name, often called after the chairman of the construction team that built the turn. You can also admire Trollvegen at the back of Trollstigen. Here you should not be afraid of heights!"
+      },
+      {
+        question: "Hvaler",
+        answer: "'Whales' in Østfold is an island municipality consisting of 833 islands, islets and reefs. Here you can fish, sail, and experience the unique archipelago. You can travel by bus to Hvaler in about 2 hours from Oslo."
+      },
+      {
+        question: "Ålesund",
+        answer: "It is said that in Ålesund you must always look up. It is the city where mountains and fjord meet the sea. A must is to see the Art Nouveau style of Ålesund, or take a trip to the majestic Sunnmøre Alps."
       },
     ],
   },
@@ -452,6 +636,42 @@ export const cities = [
         answer:
           "The oldest free royal borough TRNAVA was the Church 'capital' of the Kingdom of Hungary for several centuries in the past. Only a few towns of central Europe can boast such a large section of town walls. For their high level of preservation, Trnava town walls are unique from the construction point of view and rank among the most significant monuments of the kind in Europe.",
       },
+      {
+        question: "High Tatras",
+        answer: "the largest mountains in Slovakia. They offer many hiking and biking trails, places for climbing or just relaxing and walking, and during the winter also skiing."
+      },
+      {
+        question: "Vlkolínec and Čičmany",
+        answer: "The villages of Vlkolínec and Čičmany are about 120 kilometers apart, in these villages we protect the type of settlement and the original wooden buildings, which are a magnet for tourism. Both are inscribed on the UNESCO World Heritage List."
+      },
+      {
+        question: "Spiš Castle",
+        answer: "The ruins of Spiš Castle in eastern Slovakia form one of the largest castle sites in Central Europe. The castle is situated in the region known as Spiš. It was included in the UNESCO list of World Heritage Sites in 1993."
+      },
+      {
+        question: "Slovensky raj",
+        answer: "Slovak Paradise features lively forests, wide meadows and plateaus, chasms, canyons, gorges, underground caves (as many as 350!) and garrulous waterfalls. This very popular north eastern region is a gem amongst Slovak national parks. There are 300 km of marked trails stretching through this enchanting paradise."
+      },
+      {
+        question: "Orava Castle",
+        answer: "It's considered to be one of the most beautiful castles in Slovakia. The castle was built in the Kingdom of Hungary in the thirteenth century. Many scenes of the 1922 film Nosferatu were filmed here, the castle representing Count Orlok's Transylvanian castle."
+      },
+      {
+        question: "Bojnice Castle",
+        answer: "A medieval castle in Bojnice, Slovakia. It is a Romanesque castle with some original Gothic and Renaissance elements built in the 12th century. Bojnice Castle is one of the most visited castles in Slovakia, receiving hundreds of thousands of visitors every year and also being a popular filming stage for fantasy and fairy-tale movies."
+      },
+      {
+        question: "Liptovská Mara",
+        answer: " It is the largest water reservoir in Slovakia. There are a wide range of fishing opportunities on Liptovská Mara, and you can also take a sightseeing boat trip from the port of Liptovský Trnovec. In summer, the dam offers a wide range of water sports such as swimming, boating, surfing, jet skiing and more."
+      },
+      {
+        question: "Ochtinská Aragonite Cave",
+        answer: "It represents a unique natural phenomenon drawing attention by the richness and variety of aragonite fill, as well as an interesting evolution and development of cave spaces."
+      },
+      {
+        question: "Dobšinská ice cave",
+        answer: "It belongs among the most important ice caves in the world. Since 2000 it is inscribed on the world heritage list."
+      },
     ],
   },
   {
@@ -476,6 +696,42 @@ export const cities = [
         question: "Maribor",
         answer:
           "the second largest city in Slovenia and the home to the oldest grape vine in the world; the most beautiful and oldest part of the town – Lent – is located next to the river Drava",
+      },
+      {
+        question: "Postojna Cave",
+        answer: "the largest show cave in Europe. There is a 24-kilometre-long cave system, which you can experience while riding an underground train."
+      },
+      {
+        question: "Predjama Castle",
+        answer: "argest cave castle in the world. The impregnable castle has been situated in the middle of a 123 m high cliff for more than 800 years."
+      },
+      {
+        question: "Škocjan caves",
+        answer: "In contrast to the more touristic Postojna Cave, the Škocjan Caves are only accessible by foot. They are on the UNESCO’s list of natural and cultural world heritage sites, because they they are home to one of the largest known underground canyons in the world."
+      },
+      {
+        question: "Triglav National Park",
+        answer: "It covers 4% of Slovenia's total land mass and is almost entirely covered by the eastern Julian Alps. It is known for its exceptional beauty and pristine nature. There are many lakes (for example Bohinjsko jezero), numerous waterfalls, gorges, rivers, creeks, streams, and mountains of staggering beauty"
+      },
+      {
+        question: "Soča River",
+        answer: "Nicknamed the Emerald river, Soča is famous for its stunning blue-green hue. It is also great for water sport enthusiasts, particularly fans of kayaking, rafting and fishing."
+      },
+      {
+        question: "Velika planina",
+        answer: "The scenic high mountain plateau is the site of one of Europe’s few surviving high mountain herdsmen’s villages. It offers great views and a unique landscape. Throughout the year it is also accessible by an aerial cable car."
+      },
+      {
+        question: "Vintgar gorge",
+        answer: "Situated next to Bled the Vintgar gorge is a 1600 m long and up to 250 m deep gorge, located 4 km northwest from Bled. The Radovana river has created many erosive features such as pools and rapids.The gorge ends with a beautiful waterfall."
+      },
+      {
+        question: "Tamar valley and Planica",
+        answer: "Tamar valley is a great hiking destination during the summer and winter months. Planica is home to the second highest ski jump in the world. If you want the experience of a ski jump, you can take a ride on the steepest Zip line in the world."
+      },
+      {
+        question: "Pohorje",
+        answer: "During the winter it is home to the largest ski resort in Slovenia and during the summer it is a nice hiking and biking destination. The most beautiful hike is from Rogla to Lovrenška jezera (Lawrence Lakes) which are located on a boggy plateau, about an hour hike from the ski resort."
       },
     ],
   },
@@ -549,6 +805,26 @@ export const cities = [
         question: "Gothenburg",
         answer:
           "'Sveriges framstjärt'. Speaking of archipelagos Gothenburg also has one and it’s beautiful! Go here in the summer and swim in the beautiful waters.",
+      },
+      {
+        question: "The west coast",
+        answer: "Sweden's summer paradise. Here you find everything you need in the summer - nice beaches, lots of people, beach bars, lots of seafood, and busy summer towns. The west coast has a huge variety with everything from the rock islands in the archipelagos around Gothenburg to long sand beaches in Halland south of Gothenburg. Do you like windsurfing? Then visit Varberg!"
+      },
+      {
+        question: "Skåne",
+        answer: "The southernmost county. This is the county where Malmö and Lund are located. It is two cities that are very close together and worth a visit. There are a lot of castles and castle gardens around the county that you can visit. Other famous places in this county include: Österlen, Skanör-Falsterbo and Mölle/Arild/Kullaberg"
+      },
+      {
+        question: "Lappland",
+        answer: "A huge county in the north of Sweden. It is a great place to go if you want to see the northern lights or stay in an ice hotel! Here is a list of cool places to go in Lappland to see the northern lights. It is also a great place for eco-adventures and a place were you can learn more about Sámi - northern Europe's indigenous people and their culture. There is plenty of amazing nature to see here, for example Storforsen which is a waterfall that has an average flow of 187 cubic meters per second, making it one of the most voluminous in Europe."
+      },
+      {
+        question: "Gotland/Öland",
+        answer: "Sweden has two large islands in the Baltic sea. If you get the chance, we really do recommend taking a trip there. Öland has a bridge through Kalmar but Gotland is only reachable by plane or boat. Both islands feature unique nature and a great touristing environment."
+      },
+      {
+        question: "Höga Kusten",
+        answer: "The place where the mountains meet the sea. Located along the east coast of Sweden, it is one of the most beautiful regions in the country and a great place for hiking."
       },
     ],
   },

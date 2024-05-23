@@ -129,13 +129,13 @@ export const information = [
       },
       {
         name: "SIM card providers",
-        role: "something",
+        role: "",
         imageUrl:
           "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
       {
         name: "Population",
-        role: "the cities",
+        role: "3.8 million",
         imageUrl:
           population,
       },
@@ -187,13 +187,13 @@ export const information = [
       },
       {
         name: "SIM card providers",
-        role: "something",
+        role: "",
         imageUrl:
           "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
       {
         name: "Population",
-        role: "the cities",
+        role: "11 million",
         imageUrl:
           population,
       },
@@ -251,7 +251,7 @@ export const information = [
       },
       {
         name: "Population",
-        role: "4.07 million",
+        role: "4 million",
         imageUrl:
           population,
       },
@@ -361,13 +361,13 @@ export const information = [
       },
       {
         name: "SIM card providers",
-        role: "something",
+        role: "",
         imageUrl:
           "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
       {
         name: "Population",
-        role: "the cities",
+        role: "67 million",
         imageUrl:
           population,
       },
@@ -419,13 +419,13 @@ export const information = [
       },
       {
         name: "SIM card providers",
-        role: "something",
+        role: "",
         imageUrl:
           "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
       {
         name: "Population",
-        role: "83.1 million",
+        role: "83 million",
         imageUrl:
           population,
       },
@@ -541,7 +541,7 @@ export const information = [
       },
       {
         name: "Population",
-        role: "the cities",
+        role: "2 million",
         imageUrl:
           population,
       },
@@ -593,13 +593,13 @@ export const information = [
       },
       {
         name: "SIM card providers",
-        role: "something",
+        role: "",
         imageUrl:
           "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
       {
         name: "Population",
-        role: "the cities",
+        role: "460K",
         imageUrl:
           population,
       },
@@ -651,13 +651,13 @@ export const information = [
       },
       {
         name: "SIM card providers",
-        role: "something",
+        role: "",
         imageUrl:
           "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
       {
         name: "Population",
-        role: "the cities",
+        role: "5 million",
         imageUrl:
           population,
       },
@@ -825,7 +825,7 @@ export const information = [
       },
       {
         name: "SIM card providers",
-        role: "something",
+        role: "",
         imageUrl:
           "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
@@ -883,13 +883,13 @@ export const information = [
       },
       {
         name: "SIM card providers",
-        role: "something",
+        role: "",
         imageUrl:
           "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
       {
         name: "Population",
-        role: "the cities",
+        role: "47 million",
         imageUrl:
           population,
       },
@@ -941,13 +941,13 @@ export const information = [
       },
       {
         name: "SIM card providers",
-        role: "something",
+        role: "Yallo",
         imageUrl:
           "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
       {
         name: "Population",
-        role: "the cities",
+        role: "8.5 million",
         imageUrl:
           population,
       },
@@ -999,13 +999,13 @@ export const information = [
       },
       {
         name: "SIM card providers",
-        role: "something",
+        role: "",
         imageUrl:
           "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
       {
         name: "Population",
-        role: "the cities",
+        role: "10 million",
         imageUrl:
           population,
       },
@@ -1058,7 +1058,7 @@ export const information = [
   //     },
   //     {
   //       name: "SIM card providers",
-  //       role: "something",
+  //       role: "",
   //       imageUrl:
   //         "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
   //     },
@@ -1116,13 +1116,13 @@ export const information = [
       },
       {
         name: "SIM card providers",
-        role: "something",
+        role: "",
         imageUrl:
           "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
       {
         name: "Population",
-        role: "the cities",
+        role: "86 million",
         imageUrl:
           population,
       },

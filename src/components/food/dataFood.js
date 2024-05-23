@@ -55,51 +55,7 @@ export const food = [
         title: "Linzer Torte​​",
         description:
           "It is considered to be the oldest cake in the world - dating back to the 16th century.Its base is a shortcrust pastry made with ground nuts,filled with red currant or plum jam and with a decorative dough lattice pattern on top.",
-      },
-      {
-        title: "Sturm",
-        description: "Unfiltered ‘young’ wine (alcoholic fermentation just started)",
-      },
-      {
-        title: "Most",
-        description: "Apple cider",
-      },
-      {
-        title: "Spritzer",
-        description: "Mixture of white wine and sparkling water",
-      },
-      {
-        title: "Radler",
-        description: "Mix of lemonade (usually lemon) and beer",
-      },
-      {
-        title: "Beer",
-        description: "Various breweries (small local as well as bigger ones) can be found throughout Austria",
-      },
-      {
-        title: "Wine",
-        description: "There are several regions especially in the east of Austria well known for producing several different kinds of wine.",
-      },
-      {
-        title: "Coffee",
-        description: "Various kinds of coffee are served in Austrian cafes",
-      },
-      {
-        title: "Almdudler",
-        description: "A herbal lemonade",
-      },
-      {
-        title: "Red Bull",
-        description: " A famous energy drink you might have heard of already."
-      },
-      {
-        title: "Gurkthaler",
-        description: "Being the reasonable financial alternative to Jaegermeister, this liquor has become kind of the unofficial signature drink of IAESTE Austria",
-      },
-      {
-        title: "Stroh 80",
-        description: "A typical regional rum, used for baking and of course the most famous ‘Burning Mozart’ tradition.",
-      },
+      }
     ],
   },
   {
@@ -134,7 +90,40 @@ export const food = [
   },
   {
     country: "Germany",
-    content: [],
+    content: [
+      {
+        title: "Thüringer Klöße",
+        description: " Grinded and cooked mass of potatoes, best served with Sauerkraut and roast meat."
+      },
+      {
+        title: "Thüringer Rostbratwurst",
+        description: "Spicy sausage, traditionally grilled over a charcoal fire and eaten with bread and mustard"
+      },
+      {
+        title: "Curry Wurst",
+        description: "Sausages with a tomato and curry-based sauce (must have in Berlin)"
+      },
+      {
+        title: "Weißwurst",
+        description: "A sausage eaten for breakfast with sweet mustard, a pretzel and, ideally, a wheat beer (“Weizen”). Very delicious."
+      },
+      {
+        title: "Kässpatzen",
+        description: " Small bead-shaped noodles with a lot of cheese and commonly served with fired onions as a topping."
+      },
+      {
+        title: "Obatzda",
+        description: "Bavarian cheese delicacy made from soft cheese and butter This is used as spread on bread and pretzels."
+      },
+      {
+        title: "Eisbein",
+        description: "Pickled ham hock, served with peas. This dish has many variations and different names and is popular throughout Germany and Austria"
+      },
+      {
+        title: "Himmel und Ääd",
+        description: " A traditional dish consisting of black pudding served with fired onions, apple sauce and mashed potatoes. Very delicious!"
+      },
+    ],
   },
   {
     country: "Poland",
@@ -160,18 +149,6 @@ export const food = [
         title: "Kotlet schabowy",
         description: " Breaded pork cutlet, often served with potatoes and carrot salad.",
       },
-      {
-        title: "Kompot",
-        description: " A traditional Polish beverage made from cooked fruits, typically apples, plums, pears, or cherries, with added sugar and spices.",
-      },
-      {
-        title: "Żubrówka",
-        description: "A popular Polish vodka flavored with bison grass, giving it a distinctive taste",
-      },
-      {
-        title: "Beer",
-        description: "Polish beers are known for their rich flavors and variety. You can try different local brands such as Żywiec, Tyskie, or Lech.",
-      },
     ],
   },
   {
@@ -191,15 +168,106 @@ export const food = [
   },
   {
     country: "Czech-Republic",
-    content: [],
+    content: [
+      {
+        title: "Svíčková",
+        description: "Beef steak with dumplings and cream"
+      },
+      {
+        title: "Guláš",
+        description: "Pork / beef steak with dumplings and brown vegetable sauce"
+      },
+      {
+        title: "Knedlo vepřo zelo",
+        description: "Pork steak with cabbage and dumplings"
+      },
+      {
+        title: "Honzovy buchty",
+        description: "Sweet dough with cream inside"
+      },
+      {
+        title: "České koláče",
+        description: "Czech traditional pie “Frgál”"
+      },
+      {
+        title: "Plněné knedlíky",
+        description: "Sweet dumplings filled with fruits"
+      },
+      {
+        title: "Chlebíček",
+        description: "Open sandwich"
+      },
+      {
+        title: "Věneček",
+        description: "Pastry with vanilla cream inside"
+      },
+    ],
   },
   {
     country: "Hungary",
-    content: [],
+    content: [
+      {
+        title: "Paprika",
+        description: "A quintessential spice and pepper is often associated with Hungary and is used prominently in a handful of dishes"
+      },
+      {
+        title: "Pörkölt",
+        description: "A Hungarian stew with boneless meat, paprika, and some vegetables."
+      },
+      {
+        title: "Gulyás",
+        description: "A stew of meat and vegetables usually seasoned with paprika and other spices. Originating in medieval Hungary, goulash is a common meal predominantly eaten in Central Europe but also in other parts of Europe. It is one of the national dishes of Hungary and a symbol of the country."
+      },
+      {
+        title: "Hortobágyi palacsinta",
+        description: "s a savoury Hungarian Crêpe, filled with meat (usually veal). The meat is prepared as a stew; minced meat is fried with onions and spices like the pörkölt or the paprikás dish, using veal, veal with mushrooms, chicken, or Hungarian sausage. The crêpes are filled with the minced meat, tucking in the ends, and are baked in the oven with a paprika and tejföl (sour cream) sauce, then topped with fresh parsley"
+      },
+      {
+        title: "Főzelék",
+        description: "Two remarkable elements of Hungarian cuisine that are hardly noticed by locals, but usually elicit much enthusiasm from foreigners, are the different forms of vegetable stews called főzelék as well as cold fruit soups, such as cold sour cherry soup."
+      },
+      {
+        title: "Halászlé",
+        description: "Fisherman's soup or halászlé is a hot, spicy paprika-based river fish soup, originating as a dish of Hungarian cuisine, a bright-red hot soup prepared with generous amounts of hot paprika and carp or mixed river fish, characteristic for the cuisines of the Pannonian Plain, particularly prepared in the Danube and Tisza river regions. With its generous use of hot paprika, halászlé is arguably one of the hottest (spicy hot) dishes native to the European continent."
+      },
+      {
+        title: "Dobos torte",
+        description: "A Hungarian sponge cake layered with chocolate buttercream and topped with caramel. The layered pastry is named after its inventor, Hungarian chef József C. Dobos, a delicatessen owner in Budapest"
+      },
+      {
+        title: "Wines",
+        description: "Hungarian wine has a history dating back to the Kingdom of Hungary. Outside Hungary, the best-known wines are the white dessert wine Tokaji aszú (particularly in the Czech Republic, Poland, and Slovakia) and the red wine Bull's Blood of Eger (Egri Bikavér). Hungary has 22 wine regions, which are usually grouped into five to seven larger regions."
+      },
+      {
+        title: "Savanyú káposzta",
+        description: "The pickled (fermented) vegetable products are often used in the Hungarian cuisine. The main product is the savanyú káposzta (lit: sour-cabbage, sauerkraut) and soured peppers, gherkins, but also common the mix of cauliflower, green tomatoes, baby water melon, and some other vegetables, too. These traditionally consumed at winter and often were the main source of vitamin-C throughout the cold months of winter. Some seasonal hearty dish such as Töltött káposzta, Húsos káposzta or Korhely leves based on savanyú káposzta. Classic Hungarian restaurants often offer some variations as side dish, a refreshing complement to heavy dishes."
+      },
+    ],
   },
   {
     country: "Croatia",
-    content: [],
+    content: [
+      {
+        title: "Any kind of fish",
+        description: "Fish is used in various traditional foods in Croatia, as Croatia is very rich with water. On the coast you can try anything from octopus to lobster, and in continental Croatia, the sweet water fish is made fried, cooked or cooked in the famous Fiš."
+      },
+      {
+        title: "Kulen",
+        description: "Part of the Slavonija and Baranja cuisine, it is a type of flavoured sausage made from minced pork. The pork meat is low-fat, spicy flavoured with hot red paprika and garlic."
+      },
+      {
+        title: "Čorbanac",
+        description: "Traditional Slavonija and Baranja meal, usually made from three or more types of meat, some of it often being from wild animals such as deers, does or boars. It is prepared in a kettle and it is cooked for hours on a mid fire. It is spiced with paprika and salt (nowadays with our famous Vegeta spice) and it should be so spicy it burns."
+      },
+      {
+        title: "Sarma",
+        description: "A dish where cabbage leaves are rolled around a filling usually based on a combination rice and minced meat, onions, garlic and various spices. It can be served with bread or mashed potatoes"
+      },
+      {
+        title: "Fritule",
+        description: "A festive pastry made particularly for Christmas. They resemble little doughnuts they are usually flavored with rum and citrus zest, containing raisins, and are topped with powdered sugar or Nutella."
+      },
+    ],
   },
   {
     country: "Slovenia",
@@ -231,6 +299,22 @@ export const food = [
       {
         title: "Kremšnita",
         description: "a custard and chantilly cream cream cake",
+      },
+      {
+        title: "Pršut",
+        description: "Dry-cured ham",
+      },
+      {
+        title: "Ajdovi žganci",
+        description: "–It is usually dressed with cracklings, but it can also be enjoyed with milk or a stew",
+      },
+      {
+        title: "Gibanica",
+        description: "The classic gibanica is made of nine layers of dough with fillings like poppy seeds, raisins, groundnuts and steamed apples.",
+      },
+      {
+        title: "Krof",
+        description: "These donuts are usually filled with jam and are very popular during the carnival season",
       },
     ],
   },
@@ -385,22 +469,22 @@ export const food = [
       {
         title: "Brunost (brown cheese)",
         description:
-          "very important part of Norwegian gastronomical and cultural identity and heritage. It is made by boiling a mixture of milk, cream and whey carefully for several hours so that the water evaporates. The heat turns milk sugars into caramel, which gives the cheese its characteristic brown colour and sweetness.",
+          "Very important part of Norwegian gastronomical and cultural identity and heritage. It is made by boiling a mixture of milk, cream and whey carefully for several hours so that the water evaporates. The heat turns milk sugars into caramel, which gives the cheese its characteristic brown colour and sweetness.",
       },
       {
         title: "Knekkebrød",
         description:
-          "a flat and dry type of cracker containing mostly rye flour. It was for a long time considered as a poor man’s diet. However, in recent years there has been renewed interest in crispbread in the Nordic countries. Its origins are coming from Sweden, and yet it is very popular here in Norway too.",
+          "A flat and dry type of cracker containing mostly rye flour. It was for a long time considered as a poor man’s diet. However, in recent years there has been renewed interest in crispbread in the Nordic countries. Its origins are coming from Sweden, and yet it is very popular here in Norway too.",
       },
       {
         title: "Havregrøt",
         description:
-          "an oatmeal porridge considered as a very healthy meal because of its nutritional values. It is made of different kinds of dried oats boiled in a water or milk usually eaten with a little butter and fruit, jelly or sugar on top.",
+          "An oatmeal porridge considered as a very healthy meal because of its nutritional values. It is made of different kinds of dried oats boiled in a water or milk usually eaten with a little butter and fruit, jelly or sugar on top.",
       },
       {
         title: "Raspeball",
         description:
-          " also known in some areas as a kumle, komle, klubb, kompe or potetballl it's a potato dumpling, and is a traditional Norwegian dish. It consists of grated potatoes, where typically half is precooked and half is raw, salt and varying kinds of flour. In many areas, the raspeball is filled with bits of salted lamb or pork.",
+          "Also known in some areas as a kumle, komle, klubb, kompe or potetballl it's a potato dumpling, and is a traditional Norwegian dish. It consists of grated potatoes, where typically half is precooked and half is raw, salt and varying kinds of flour. In many areas, the raspeball is filled with bits of salted lamb or pork.",
       },
       {
         title: "Fårikål",
@@ -411,6 +495,22 @@ export const food = [
         title: "Whale Steak",
         description: "Norway is known for its whale meat.",
       },
+      {
+        title: "Lutefisk",
+        description: "“lye fish” is a traditional part of Norwegian Christmas Dinners. It is made of air-dried or dried/salted white fish (cod, ling or burbot) and lye. There are different types of preparing the fish, and the most common is steaming of low temperature for half an hour. It is served with boiled potatoes, mashed green peas, melted butter and small pieces of fried bacon. Some of people like to eat it with brown cheese, mustard sauce and potato cake “lompe”.",
+      },
+      {
+        title: "Lapskaus",
+        description: "A Norwegian dish made of meat and mashed potatoes. It’s normally made by leftover meat, potatoes and vegetables, such as carrots. It’s very easy to cook."
+      },
+      {
+        title: "Fårikål",
+        description: "This is considered the national dish of Norway. It contains mutton with bone, cabbage and whole black peppers. It has to be cooked for hours and it’s served with potatoes. The dish is inspired by the Danish dish, but they make it with goose or duck meat."
+      },
+      {
+        title: "Lefse",
+        description: "Soft flatbread, made with butter, sugar, flour, potatoes and milk or cream. You can get many different types of Lefse. Some are sweet and meant for dessert, others are made for dinners. The most common one is the sweet one and it contains often sweet cream made of sugar and cinnamon."
+      }
     ],
   },
   {
@@ -581,37 +681,48 @@ export const drinks = [
     country: "Austria",
     content: [
       {
+        title: "Sturm",
+        description: "Unfiltered ‘young’ wine (alcoholic fermentation just started)",
+      },
+      {
         title: "Most",
         description: "Apple cider",
       },
       {
-        title: "Sturm",
-        description:
-          "Unfiltered ‘young’ wine(alcoholic fermentation just started).",
+        title: "Spritzer",
+        description: "Mixture of white wine and sparkling water",
       },
       {
-        title: "Spritzer",
-        description: " Mixture of white wine and sparkling water.",
+        title: "Radler",
+        description: "Mix of lemonade (usually lemon) and beer",
       },
       {
         title: "Beer",
-        description:
-          "Various breweries(small local as well as bigger ones) can be found throughout Austria",
+        description: "Various breweries (small local as well as bigger ones) can be found throughout Austria",
       },
       {
         title: "Wine",
-        description:
-          "There are several regions especially in the east of Austria well known for producing several different kinds of wine.",
+        description: "There are several regions especially in the east of Austria well known for producing several different kinds of wine.",
+      },
+      {
+        title: "Coffee",
+        description: "Various kinds of coffee are served in Austrian cafes",
+      },
+      {
+        title: "Almdudler",
+        description: "A herbal lemonade",
+      },
+      {
+        title: "Red Bull",
+        description: " A famous energy drink you might have heard of already."
       },
       {
         title: "Gurkthaler",
-        description:
-          "Being the reasonable financial alternative to Jaegermeister, this liquor has become kind of the unofficial signature drink of IAESTE Austria",
+        description: "Being the reasonable financial alternative to Jaegermeister, this liquor has become kind of the unofficial signature drink of IAESTE Austria",
       },
       {
         title: "Stroh 80",
-        description:
-          "A typical regional rum, used for baking and of course the most famous ‘Burning Mozart’ tradition.",
+        description: "A typical regional rum, used for baking and of course the most famous ‘Burning Mozart’ tradition.",
       },
     ],
   },
@@ -668,6 +779,40 @@ export const drinks = [
           "Schnapps (slov. žganje) is added to a lot of different fruits and spices, which make flavored spirits. Some of the most popular are Blueberry schnapps (slov. Borovničke) or Plum schnapps (slivovica).",
       },
     ],
+  },
+  {
+    country: "Poland",
+    content: [
+      {
+        title: "Kompot",
+        description: " A traditional Polish beverage made from cooked fruits, typically apples, plums, pears, or cherries, with added sugar and spices.",
+      },
+      {
+        title: "Żubrówka",
+        description: "A popular Polish vodka flavored with bison grass, giving it a distinctive taste",
+      },
+      {
+        title: "Beer",
+        description: "Polish beers are known for their rich flavors and variety. You can try different local brands such as Żywiec, Tyskie, or Lech.",
+      },
+    ]
+  },
+  {
+    country: "Czech-Republic",
+    content: [
+      {
+        title: "Beer",
+        description: "The famous ones are very good. After you have enough of those you can pick from tuns of small breweries"
+      },
+      {
+        title: "Slivovice",
+        description: "Homemade or look for brand “Žufánek”"
+      },
+      {
+        title: "Medovina",
+        description: "Sweet alcohol, tastes after honey. Look for “Křivoklátská medovina”, they usually sell it in Albert"
+      },
+    ]
   },
   {
     country: "Turkiye",
@@ -758,6 +903,15 @@ export const drinks = [
       },
     ],
   },
+  {
+    country: "Germany",
+    content: [
+      {
+        title: "Ostfriesentee",
+        description: " Black tea with rock sugar (“Kandiszucker”) and cream. The rock sugar is thrown in and makes a light crackling noise and the cream is added making clouds in the tea."
+      },
+    ]
+  }
 ];
 
 export const tipping = [

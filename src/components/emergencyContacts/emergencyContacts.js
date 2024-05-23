@@ -92,7 +92,7 @@ export const emergencyContacts = [
   },
   {
     country: "Spain",
-    police: "091 (national) or 092 (local)",
+    police: "091 / 092",
     ambulance: "061",
     fire: "080",
     emergencyLine: "112",

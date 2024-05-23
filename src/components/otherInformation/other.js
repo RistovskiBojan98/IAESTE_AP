@@ -13,7 +13,39 @@ export const otherInfo = [
     },
     {
         country: "Croatia",
-        info: []
+        info: [
+            {
+                title: "Tap water",
+                desc: "The tap water is safe to drink",
+            },
+            {
+                title: "No roaming for EU",
+                desc: "As Croatia is part of the EU, if you are from EU yourself, roaming while in Croatia - doesn’t exist anymore. You can use your data (please do check with your provider on which percentage of the data you can use) and make phone calls as you would in your home country",
+            },
+            {
+                title: "WiFi Hotspots",
+                desc: " Most Croatian cities have WiFi Hotspots that are free to use. Some café bars share theirs as well, but you might have to ask for the password",
+            },
+            {
+                title: "Football fanatics",
+                desc: "We are very passionate about European football, especially when our national team plays!",
+            },
+            {
+                title: "Commonly used words",
+                desc: "Hvala! – Thank you!\n"+
+                "Molim vas (to an older person)/Molim te (if the person is your age/younger) – Please\n"+
+                "Živjeli! – Cheers!\n"+
+                "Doviđenja! – Goodbye!",
+            },
+            {
+                title: "Low crime rate",
+                desc: " The country is safe, we have a low criminal rate.",
+            },
+            {
+                title: "Coffee culture",
+                desc: " We have a custom of enjoying our coffee in a caffe bar, and we love drinking it for hours! If someone invites you “for a coffee”, you don’t really have to drink coffee, and it can last for a while.",
+            },
+        ]
     },
     {
         country: "Czech-Republic",
@@ -41,7 +73,16 @@ export const otherInfo = [
     },
     {
         country: "Norway",
-        info: []
+        info: [
+            {
+                title: "Going out",
+                desc: "If you want to go out to clubs and bars on the weekend, be aware that the age limit in the most places is pretty high, above 21 or higher. For those below 21, the good solution are student bars and pubs. You must have a valid ID with you wherever you go, because you may be asked to show it both at the entrance and while buying the drink, even if it is just a tea. This is usual if you look younger than you are."
+            },
+            {
+                title: "Alcohol sell",
+                desc: "Norway is pretty strict when it is about the alcohol and tobacco sell. You will usually be asked to show your valid ID when buying these. If you want to buy some alcohol beverages under 4,7% alcohol, such as beer and cider, you will be able to find these in the foodmarkeds. The hours when you can buy them are from 10:00 until 20:00 o’clock during the weekdays, and from 10:00 until 18:00 o’clock during Saturdays. There is no alcohol sell during Sundays and holidays. Although, the hours for buying may deviate from place to the place.If you want to buy alcohol beverages over 4,7%, such as wine and spirits, you must go to the Vinmonopolet store which has opening hours 10:00 - 18:00 during the weekdays, and 10:00 - 15:00 during the Saturdays. These opening hours may deviate from the store to the store."
+            },
+        ]
     },
     {
         country: "Poland",
@@ -82,7 +123,12 @@ export const otherInfo = [
     },
     {
         country: "Slovenia",
-        info: []
+        info: [
+            {
+                title: "Student discounts",
+                desc: "Students in Slovenia have Student boni. Those are coupons which allow everyone enrolled in regular university programs in Slovenia free meals up to the amount of 2.63 EUR per meal in all restaurants with government contracts. If the meal costs more, the student makes up the difference, but the maximum price of a meal (for the student) is 4,37 euro. Foreign students can also ask for boni, if they are a part of international exchange programs (IAESTE Slovenia arranges boni for all IAESTE interns)."
+            }
+        ]
     },
     {
         country: "Spain",

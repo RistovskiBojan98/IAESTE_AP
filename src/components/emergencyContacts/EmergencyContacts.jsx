@@ -7,7 +7,7 @@ const EmergencyContacts = ({ country }) => {
     <div className="bg-gray-100 pt-12 sm:pt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-[#0B3D59] sm:text-4xl">
+          <h2 className="text-2xl font-bold tracking-tight text-[#0B3D59] sm:text-4xl">
             Emergency numbers
           </h2>
         </div>
@@ -19,7 +19,7 @@ const EmergencyContacts = ({ country }) => {
             <div className="mx-auto max-w-4xl">
               <dl className="rounded-lg bg-white shadow-lg sm:grid sm:grid-cols-3">
                 <div className="flex flex-col border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r">
-                  <dt className="order-2 mt-2 text-lg font-medium leading-6 text-gray-500">
+                  <dt className="order-2 mt-2 text-base sm:text-lg font-medium leading-6 text-gray-500">
                     Police
                   </dt>
                   <dd className="order-1 text-5xl font-bold tracking-tight text-[#0B3D59]">
@@ -36,7 +36,7 @@ const EmergencyContacts = ({ country }) => {
                 </div>
                 <div className="flex flex-col border-t border-gray-100 p-6 text-center sm:border-0 sm:border-l">
                   <dt className="order-2 mt-2 text-lg font-medium leading-6 text-gray-500">
-                    Fire-bridge
+                    Fire department
                   </dt>
                   <dd className="order-1 text-5xl font-bold tracking-tight text-[#0B3D59]">
                     {contacts.fire}

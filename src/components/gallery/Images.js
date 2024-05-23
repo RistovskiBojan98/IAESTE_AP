@@ -132,6 +132,44 @@ import Norway6 from "./images/Norway/6.JPG";
 import Norway7 from "./images/Norway/7.jpg";
 import Norway8 from "./images/Norway/8.jpg";
 
+import Slovakia1 from "./images/Slovakia/image1.jpg"
+import Slovakia2 from "./images/Slovakia/image2.jpg"
+import Slovakia3 from "./images/Slovakia/image3.jpg"
+import Slovakia4 from "./images/Slovakia/image4.jpg"
+import Slovakia5 from "./images/Slovakia/image5.jpg"
+import Slovakia6 from "./images/Slovakia/image6.jpg"
+import Slovakia7 from "./images/Slovakia/image7.jpg"
+import Slovakia8 from "./images/Slovakia/image8.jpg"
+import Slovakia9 from "./images/Slovakia/image9.jpg"
+import Slovakia10 from "./images/Slovenia/image10.jpg"
+
+import Slovenia1 from "./images/Slovenia/image1.jpg"
+import Slovenia2 from "./images/Slovenia/image2.jpg"
+import Slovenia3 from "./images/Slovenia/image3.jpg"
+import Slovenia4 from "./images/Slovenia/image4.jpg"
+import Slovenia5 from "./images/Slovenia/image5.jpg"
+import Slovenia6 from "./images/Slovenia/image6.jpg"
+import Slovenia7 from "./images/Slovenia/image7.jpg"
+import Slovenia8 from "./images/Slovenia/image8.jpg"
+import Slovenia9 from "./images/Slovenia/image9.jpg"
+import Slovenia10 from "./images/Slovenia/image10.jpg"
+import Slovenia11 from "./images/Slovenia/image11.jpg"
+import Slovenia12 from "./images/Slovenia/image12.jpg"
+import Slovenia13 from "./images/Slovenia/image13.jpg"
+import Slovenia14 from "./images/Slovenia/image14.jpg"
+
+import Turkiye1 from "./images/Turkiye/image1.jpg"
+import Turkiye2 from "./images/Turkiye/image2.jpg"
+import Turkiye3 from "./images/Turkiye/image3.jpg"
+import Turkiye4 from "./images/Turkiye/image4.jpg"
+import Turkiye5 from "./images/Turkiye/image5.jpg"
+import Turkiye6 from "./images/Turkiye/image6.jpg"
+import Turkiye7 from "./images/Turkiye/image7.jpg"
+import Turkiye8 from "./images/Turkiye/image8.jpg"
+import Turkiye9 from "./images/Turkiye/image9.jpg"
+import Turkiye10 from "./images/Turkiye/image10.png"
+import Turkiye11 from "./images/Turkiye/image11.jpg"
+
 export const Images = {
   "Austria": [Austria1, Austria2, Austria3, Austria4, Austria5, Austria6, Austria7, Austria8, Austria9, Austria10, Austria11, Austria12, Austria13, Austria14, Austria15, Austria16, Austria17],
   "Belgium": [Belgium1, Belgium2, Belgium3, Belgium4, Belgium5, Belgium6,Belgium7],
@@ -142,8 +180,11 @@ export const Images = {
   "Macedonia": [Macedonia1, Macedonia2, Macedonia3, Macedonia4, Macedonia5, Macedonia6, Macedonia7, Macedonia8, Macedonia9],
   "Malta": [Malta1, Malta2, Malta3, Malta4, Malta5],
   "Poland": [Poland1, Poland2, Poland3, Poland4, Poland5, Poland6, Poland7, Poland8, Poland9, Poland10],
+  "Slovakia": [Slovakia1, Slovakia2, Slovakia3, Slovakia4, Slovakia5, Slovakia6, Slovakia7, Slovakia8, Slovakia9, Slovakia10],
+  "Slovenia": [Slovenia1, Slovenia2, Slovenia3, Slovenia4, Slovenia5, Slovenia6, Slovenia7, Slovenia8, Slovenia9, Slovenia10, Slovenia11, Slovenia12, Slovenia13, Slovenia14],
   "Spain": [Spain1, Spain2, Spain3, Spain4, Spain5, Spain6, Spain7],
   "Sweden": [Sweden1, Sweden2, Sweden3, Sweden4, Sweden5, Sweden6, Sweden7, Sweden8, Sweden9, Sweden10],
   "Switzerland": [Switzerland1, Switzerland2, Switzerland3, Switzerland4, Switzerland5, Switzerland6, Switzerland7, Switzerland8, Switzerland9, Switzerland10],
-  "Norway": [Norway1, Norway2, Norway3, Norway4, Norway5, Norway6, Norway7, Norway8]
+  "Norway": [Norway1, Norway2, Norway3, Norway4, Norway5, Norway6, Norway7, Norway8],
+  "Turkiye": [Turkiye1, Turkiye2, Turkiye3, Turkiye4, Turkiye5, Turkiye6, Turkiye7, Turkiye8, Turkiye9, Turkiye10, Turkiye11],
 };

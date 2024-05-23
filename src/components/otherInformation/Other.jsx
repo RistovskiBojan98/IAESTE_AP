@@ -59,7 +59,7 @@ const Other = ({ country }) => {
                                 </div>
                                 <button
                                     onClick={showNext}
-                                    disabled={(arrayLength > 3 && startIndex + 3 >= arrayLength) || (arrayLength <= 3 && startIndex === 3)}
+                                    disabled={(arrayLength > 3 && startIndex + 3 >= arrayLength) || (arrayLength <= maxItemsToShow)}
                                     className={classes["next-button"]}
                                 >
                                     <svg
