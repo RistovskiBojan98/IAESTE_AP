@@ -58,7 +58,7 @@ const Countries = ({ passRef }) => {
                 </div>
               </a>
               <a href={country.href}><h1 className="my-5 font-semibold text-xl text-[#0B3D59] hover:text-sky-700">IAESTE {country.name}</h1></a>
-              <button className="btn text-center text-sm w-1/2 py-2" style={{ backgroundColor: '#0B3D59', color: 'white', borderRadius: '19px' }}>
+              <button className="btn text-center text-sm w-1/2 py-2 hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]" style={{ backgroundColor: '#0B3D59', color: 'white', borderRadius: '19px' }}>
                 <a href={country.pdf} target='_blank' rel="noreferrer"><i className="fa-solid fa-download text-white text-lg mr-2"></i>Download PDF</a>
               </button>
             </div>

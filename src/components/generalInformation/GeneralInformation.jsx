@@ -1,14 +1,15 @@
 import { information } from "./information";
+import css from "../app.module.css"
 
 const GeneralInformation = ({ country }) => {
   const countryInfo = information.find((obj) => obj.country === country);
   
   return (
     <div className="bg-white">
-      <div className="mx-auto max-w-7xl py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24">
+      <div className={css.container}>
         <div className="space-y-12">
           <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
-            <h2 className="text-2xl font-bold tracking-tight sm:text-4xl">
+            <h2 className={css.title}>
               General Information
             </h2>
           </div>
@@ -26,8 +27,8 @@ const GeneralInformation = ({ country }) => {
                   </div>
                   <div className="space-y-2">
                     <div className="space-y-1 text-lg font-medium leading-6">
-                      <h3>{info.name}</h3>
-                      <p className="text-[#0B3D59]">{info.role}</p>
+                      <h3 className="text-[#38607F]">{info.name}</h3>
+                      <p className="text-[#0B3D59] font-semibold">{info.role}</p>
                     </div>
                   </div>
                 </div>

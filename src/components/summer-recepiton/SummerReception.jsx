@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { summerReception } from "./summerReception"
 import css from "../sr-weekends/EventPopup/event-popup.module.css"
+import appCss from "../app.module.css"
 
 const SummerReception = ({ country, summerReceptionRef }) => {
   let smCols = 2;
@@ -36,10 +37,9 @@ const SummerReception = ({ country, summerReceptionRef }) => {
     mdCols = weekends.length < 4 ? weekends.length : 4;
 
     return (
-      <section className="flex flex-col my-10 border-b botder-t border-gray-300" ref={summerReceptionRef}>
-        <hr className='my-5 bg-black'></hr>
+      <section className={`${css.container} mt-10`} ref={summerReceptionRef}>
         <div className="lg:space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl mb-5 text-center">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className={appCss.title}>
             Summer Reception 2024
           </h2>
           {/* <p className='mt-2 mb-8'>
@@ -51,9 +51,10 @@ const SummerReception = ({ country, summerReceptionRef }) => {
             {weekendsNames.map((name, index) => (
               <button
                 key={index}
-                className={`flex p-1 rounded border border-solid border-gray-300 shadow-md bg-white-300 hover:bg-gray-400 focus:bg-[#0B3D59] focus:text-white focus:outline-none w-40 h-20 justify-center items-center ${index === selectedButtonIndex ? 'bg-[#0B3D59] text-white' : ''
-                  }`}
-                style={{ fontSize: '18px' }}
+                className={`flex p-1 rounded border border-solid border-gray-300 shadow-md 
+                hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] hover:text-white
+                w-40 h-20 justify-center items-center text-base
+                ${index === selectedButtonIndex ? 'bg-[#0B3D59] text-white' : 'text-[#0B3D59] bg-white-300'}`}
                 onClick={() => {
                   setSelectedButtonIndex(index)
                   setWeekend(weekends[index])

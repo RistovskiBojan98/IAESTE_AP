@@ -3,6 +3,8 @@ import "./Gallery.module.css";
 import { Images } from "./Images";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
+import css from "../app.module.css"
+import carouselCss from "./Gallery.module.css"
 
 const Gallery = ({ country }) => {
   const [images, setImages] = useState([]);
@@ -36,12 +38,12 @@ const setDefaultArrowStyle = (event) =>{
 
   if (images?.length)
     return (
-      <section className="relative mx-auto max-w-7xl px-4 sm:px-6 pb-8 lg:px-8 mt-4">
+      <section className={css.container}>
         <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl mb-5">
-          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+          <h2 className={css.title}>
             Gallery
           </h2>
-          <p>Click on the right for more incredible views!</p>
+          <p className="text-center">Click on the right for more incredible views!</p>
         </div>
         <Carousel
           showArrows={true}
@@ -50,13 +52,12 @@ const setDefaultArrowStyle = (event) =>{
           interval={2500}
           selectedItem={images[currIndex]}
           onChange={handleChange}
-          className="carousel-container"
           renderThumbs={() => { }}
-          renderArrowNext={(handleNext) => <button type="button" onClick={handleNext} aria-label="next slide / item" className="control-arrow control-next" onMouseOver={handleArrowStyle} onMouseOut={setDefaultArrowStyle} style={{backgroundColor: "rgba(11, 61, 89, 85)"}}></button>}
-          renderArrowPrev={(handlePrev) => <button type="button" onClick={handlePrev} aria-label="previous slide / item" className="control-arrow control-prev" style={{backgroundColor: "rgba(11, 61, 89, 85)"}}></button>}
+          renderArrowNext={(handleNext) => <button type="button" onClick={handleNext} className="control-arrow control-next" onMouseOver={handleArrowStyle} onMouseOut={setDefaultArrowStyle} style={{backgroundColor: "rgba(11, 61, 89, 85)"}}></button>}
+          renderArrowPrev={(handlePrev) => <button type="button" onClick={handlePrev} className="control-arrow control-prev" style={{backgroundColor: "rgba(11, 61, 89, 85)"}}></button>}
         >
           {images.map((image, index) => (
-            <div key={index} className="slide">
+            <div key={index} className={carouselCss.slide}>
               <img
                 src={image}
                 alt=""

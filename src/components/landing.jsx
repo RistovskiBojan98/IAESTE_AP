@@ -42,12 +42,12 @@ export default function Landing({ countriesRef }) {
             </div>
           </Popover>
 
-          <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-20 lg:mt-24 lg:px-8 xl:mt-36">
+          <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 lg:px-8">
             <div className="md:text-center xl:text-left w-full flex flex-col items-start md:items-center xl:items-start">
               <h1
-                className={`text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl md:text-6xl leading-10 ${classes.title}`}
+                className={`text-4xl font-bold  text-gray-900 sm:text-5xl md:text-6xl leading-10 ${classes.title}`}
               >
-                <span className="block xl:inline text-[#0B3D59] "> IAESTE</span>{" "}
+                <span className="block xl:inline text-white "> IAESTE</span>{" "}
                 <br />
                 <span className="block text-[#0B3D59] xl:inline">
                   Across the planet
@@ -63,10 +63,10 @@ export default function Landing({ countriesRef }) {
                   <Link
                     to="countries-div"
                     smooth={true}
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#0B3D59] px-8 py-3 text-base font-medium text-white hover:bg-[#1d5b80] md:py-4 md:px-10 md:text-lg cursor-pointer"
+                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#0B3D59] px-8 py-3 text-base font-semibold text-white hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] md:py-4 md:px-10 md:text-lg cursor-pointer"
                   >
                     DISCOVER A COUNTRY
-                    <i className="fa-solid fa-magnifying-glass ml-2"></i>
+                    <i className="fa-solid fa-magnifying-glass ml-3"></i>
                   </Link>
                 </div>
               </div>
@@ -74,10 +74,10 @@ export default function Landing({ countriesRef }) {
                 <div className="rounded-md shadow">
                   <a
                     href="/sr-weekends"
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#0B3D59] px-8 py-3 text-base font-medium text-white hover:bg-[#1d5b80] md:py-4 md:px-10 md:text-lg"
+                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#0B3D59] px-8 py-3 text-base font-semibold text-white hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] md:py-4 md:px-10 md:text-lg"
                   >
                     SUMMER RECEPTION WEEKENDS
-                    <i className="fa-solid fa-umbrella-beach ml-2"></i>
+                    <i className="fa-solid fa-umbrella-beach ml-3"></i>
                   </a>
                 </div>
               </div>

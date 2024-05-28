@@ -3,6 +3,7 @@ import { food, drinks } from "./dataFood";
 import FoodCard from "./FoodCard";
 import classes from "./Food.module.css";
 import useWindowSize from "../../hooks/useScreenSize";
+import css from "../app.module.css"
 
 const Food = ({ country, foodRef }) => {
   const {width} = useWindowSize();
@@ -42,11 +43,10 @@ const Food = ({ country, foodRef }) => {
     <>
     { countryData.length ? (
       <section
-      style={{ padding: "0 2rem" }}
       ref={foodRef}
-      className="relative mb-12 mx-auto max-w-7xl py-24 px-4 sm:px-6 lg:py-32 lg:px-8"
+      className={`${css.container} mt-10 mb-16`}
     >
-      <h2 className="font-bold tracking-tight text-gray-900 mb-6 text-3xl md:text-4xl">
+      <h2 className={`${css.title} pb-10`}>
         Traditional food and drinks
       </h2>
       <div className={classes.grid}>

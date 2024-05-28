@@ -1,20 +1,22 @@
 import { funfacts } from "./facts";
 import FactCard from "./FactCard";
+import css from "../app.module.css"
+
 
 const Facts = ({ country }) => {
   const facts = funfacts.find((obj) => obj.country === country);
 
   return (
     <>
-    { facts ? (
+    { facts.facts?.length ? (
     <section
     aria-labelledby="testimonial-heading"
-    className="relative mx-auto max-w-7xl p-4 sm:px-6 mb-10 border-t border-gray-300"
+    className={`${css.container} bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] shadow-xl sm:overflow-hidden sm:rounded-2xl mb-10`}
   >
-    <div className="mx-auto max-w-2xl lg:max-w-none">
+    <div className="mx-auto max-w-2xl lg:max-w-none text-start">
       <h2
         id="testimonial-heading"
-        className="text-2xl font-bold tracking-tight text-gray-900"
+        className={css.title2}
       >
         Did you know?
       </h2>

@@ -5,3 +5,58 @@
     background-size: cover;
     /* background: rgba(255,255,255,0.1) */
 }
+
+.navButton {
+    padding: 0.75rem;
+    border-width: 2px;
+    border-style: solid;
+    border-color: '#0B3D59';
+    border-radius: 9999px;
+}
+
+.cardText {
+    display: flex;
+    align-items: center;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+}
+
+.titleText {
+    font-size: 1.875rem; /* 30px */
+    line-height: 2.25rem; /* 36px */
+    font-weight: bolder;
+    color: #0B3D59;
+    text-shadow: '0 0 5px rgba(255,255,255,1';
+
+    @media (max-width: 640px) {
+        font-size: 1.125rem; /* 18px */
+        line-height: 1.75rem; /* 28px */
+    }
+}
+
+.custom-event-wrapper {
+    background-color: #B2D8FB;
+    border-radius: 20px;
+    color: white;
+    border: 1px solid transparent;
+    padding: 5px 10px;
+    cursor: pointer
+}
+
+/* Styles for the event */
+.event {
+    background-color: #1B75BB;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    border: 1px solid transparent;
+    display: block;
+    transition: background; /* Smooth transition for the background change */
+    padding: 5px 10px;
+    cursor: pointer
+  }
+  
+  /* Styles for the event when hovered */
+  .event:hover {
+    background: linear-gradient(to right, #1B75BB, #27A9E1, #49C0B5);
+  }

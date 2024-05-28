@@ -1,4 +1,5 @@
 import { emergencyContacts } from "./emergencyContacts";
+import css from "../app.module.css"
 
 const EmergencyContacts = ({ country }) => {
   const contacts = emergencyContacts.find((obj) => obj.country === country);
@@ -7,7 +8,7 @@ const EmergencyContacts = ({ country }) => {
     <div className="bg-gray-100 pt-12 sm:pt-16">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-2xl font-bold tracking-tight text-[#0B3D59] sm:text-4xl">
+          <h2 className={css.title}>
             Emergency numbers
           </h2>
         </div>
@@ -22,7 +23,7 @@ const EmergencyContacts = ({ country }) => {
                   <dt className="order-2 mt-2 text-base sm:text-lg font-medium leading-6 text-gray-500">
                     Police
                   </dt>
-                  <dd className="order-1 text-5xl font-bold tracking-tight text-[#0B3D59]">
+                  <dd className="order-1 text-5xl font-bold  text-[#0B3D59]">
                     {contacts.police}
                   </dd>
                 </div>
@@ -30,7 +31,7 @@ const EmergencyContacts = ({ country }) => {
                   <dt className="order-2 mt-2 text-lg font-medium leading-6 text-gray-500">
                     Ambulance
                   </dt>
-                  <dd className="order-1 text-5xl font-bold tracking-tight text-[#0B3D59]">
+                  <dd className="order-1 text-5xl font-bold  text-[#0B3D59]">
                     {contacts.ambulance}
                   </dd>
                 </div>
@@ -38,7 +39,7 @@ const EmergencyContacts = ({ country }) => {
                   <dt className="order-2 mt-2 text-lg font-medium leading-6 text-gray-500">
                     Fire department
                   </dt>
-                  <dd className="order-1 text-5xl font-bold tracking-tight text-[#0B3D59]">
+                  <dd className="order-1 text-5xl font-bold  text-[#0B3D59]">
                     {contacts.fire}
                   </dd>
                 </div>

@@ -1,13 +1,11 @@
-.carousel-container {
-  position: relative;
-  max-width: 750px;
-}
-
-.carousel .slide {
+.slide {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 200px;
+
+  @media (max-width: 768px) {
+    height: 300px;
+  }
 }
 
 .carousel .custom-button {
@@ -43,4 +41,13 @@
 
 .carousel .custom-button-next {
   right: 15px;
+}
+
+.carouselImg {
+  height: "700px";
+  width: "auto";
+
+  @media (max-width: 768px) {
+    height: 300px;
+  }
 }

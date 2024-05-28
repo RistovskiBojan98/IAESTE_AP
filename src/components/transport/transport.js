@@ -5,9 +5,9 @@ export const transport = {
         title: "Airports with budget airlines",
         description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
         features: [
-          <p> Vienna International Airport (VIA)</p>,
-          <p> Bratislava Airport (BTS)</p>,
-          <p>Munich (MUN)</p>,
+          <p>Vienna International Airport (VIE)</p>,
+          <p>M. R. Štefánik Airport Bratislava (BTS)</p>,
+          <p>Munich International Airport (MUC)</p>,
           <p> Beside that we have in every bigger city (especially all our LCs city) an
             airport - some European airlines do offer flights to these locations</p>,
         ],
@@ -15,8 +15,8 @@ export const transport = {
         mostPopular: false,
       },
       {
-        title: "Transportation in general",
-        description: "National and international transportation:",
+        title: "National and international transportation",
+        description: "",
         features: [
           <a className="" href="https://www.oebb.at" target={"_blank"} rel="noopener noreferrer">
             {" "}
@@ -35,13 +35,13 @@ export const transport = {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Int Bahn
+            DB - International trains and connections to Germany
           </a>,
           <a className="" href="https://www.sbb.ch/en"
             target="_blank"
             rel="noopener noreferrer"
           >
-            SBB
+            SBB - International trains to/from Switzerland
           </a>,
           <a className="" href="https://www.flixbus.at/"
             target="_blank"
@@ -60,8 +60,50 @@ export const transport = {
         mostPopular: false,
       },
       {
+        title: "Public transport",
+        description: "",
+        features: [
+          <a className="" href="https://www.wienerlinien.at/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Wiener Linien
+          </a>,
+          <a className="" href="https://www.holding-graz.at/de/mobilitaet/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Graz Holding
+          </a>,
+          <a className="" href="https://www.linzag.at/portal/de/privatkunden/unterwegs"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Linz AG
+          </a>,
+          <a className="" href="https://salzburg-verkehr.at/en/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Salzburg Verkehr
+          </a>,
+          <a className="" href="https://www.ivb.at/en/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            IVB
+          </a>,
+          <a className="" href="https://www.klimaticket.at/en/home/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Klimaticket - recommend for longer stays in Austria
+          </a>,
+        ]
+      },
+      {
         title: "",
-        description: "For the national railway system a discount cards:",
+        description: "Discount cards for the national or local railway system:",
         features: [
           <a
             className=""
@@ -82,41 +124,6 @@ export const transport = {
             Grupenreisen Ticket -group tickets{" "}
           </a>,
         ],
-        extra: {
-          description: "Public transport in our cities:",
-          features: [
-            <a className="" href="https://www.wienerlinien.at/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Wiener Linien
-            </a>,
-            <a className="" href="https://www.holding-graz.at/de/mobilitaet/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Graz Holding
-            </a>,
-            <a className="" href="https://www.linzag.at/portal/de/privatkunden/unterwegs"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Linz AG
-            </a>,
-            <a className="" href="https://salzburg-verkehr.at/en/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Salzburg Verkehr
-            </a>,
-            <a className="" href="https://www.ivb.at/en/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              IVB
-            </a>,
-          ]
-        },
         cta: "Monthly billing",
         mostPopular: true,
       },
@@ -135,8 +142,8 @@ export const transport = {
         mostPopular: false,
       },
       {
-        title: "Transportation in general",
-        description: "National and international transportation:",
+        title: "National and international transportation",
+        description: "",
         features: [
           <a className="" href="https://www.delijn.be/en/?vertaling=true" target={"_blank"} rel="noopener noreferrer">
             {" "}
@@ -157,7 +164,7 @@ export const transport = {
       },
       {
         title: "",
-        description: "For the national railway system a discount cards:",
+        description: "Discount cards for the national or local railway system:",
         features: [
           <a
             className=""
@@ -196,8 +203,8 @@ export const transport = {
         mostPopular: false,
       },
       {
-        title: "Transportation in general",
-        description: "National and international transportation:",
+        title: "National and international transportation",
+        description: "",
         features: [
           <a className="" href="http://www.autoprevoz.ba/" target={"_blank"} rel="noopener noreferrer">
             {" "}
@@ -218,7 +225,7 @@ export const transport = {
       },
       // {
       //   title: "",
-      //   description: "For the national railway system a discount cards:",
+      //   description: "Discount cards for the national or local railway system:",
       //   features: [
       //     <a
       //       className=""
@@ -259,8 +266,8 @@ export const transport = {
         mostPopular: false,
       },
       {
-        title: "Transportation in general",
-        description: "National and international transportation:",
+        title: "National and international transportation",
+        description: "",
         features: [
           <a className="" href="https://www.hzpp.hr/" target={"_blank"} rel="noopener noreferrer">
             {" "}
@@ -290,8 +297,8 @@ export const transport = {
         mostPopular: false,
       },
       {
-        title: "Transportation in general",
-        description: "National and international transportation:",
+        title: "National and international transportation",
+        description: "",
         features: [
           <a className="" href="https://idos.idnes.cz/vlakyautobusymhdvse/spojeni/" target={"_blank"} rel="noopener noreferrer">
             {" "}
@@ -330,7 +337,7 @@ export const transport = {
       },
       {
         title: "",
-        description: "For the national railway system a discount cards:",
+        description: "Discount cards for the national or local railway system:",
         features: [
           <a
             className=""
@@ -366,8 +373,8 @@ export const transport = {
         mostPopular: false,
       },
       {
-        title: "Transportation in general",
-        description: "National and international transportation:",
+        title: "National and international transportation",
+        description: "",
         features: [
           <a className="" href="https://en.oui.sncf/en/ " target={"_blank"} rel="noopener noreferrer">
             {" "}
@@ -394,7 +401,7 @@ export const transport = {
       },
       {
         title: "",
-        description: "For the national railway system a discount cards:",
+        description: "Discount cards for the national or local railway system:",
         features: [
           <a
             className=""
@@ -443,8 +450,8 @@ export const transport = {
         mostPopular: false,
       },
       {
-        title: "Transportation in general",
-        description: "National and international transportation:",
+        title: "National and international transportation",
+        description: "",
         features: [
           <a className="" href="https://www.bahn.de/p/view/index.shtml" target={"_blank"} rel="noopener noreferrer">
             {" "}
@@ -501,8 +508,8 @@ export const transport = {
         mostPopular: false,
       },
       {
-        title: "Transportation in general",
-        description: "National and international transportation:",
+        title: "National and international transportation",
+        description: "",
         features: [
           <a className="" href="https://elvira.mav-start.hu/" target={"_blank"} rel="noopener noreferrer">
             {" "}
@@ -554,8 +561,8 @@ export const transport = {
         mostPopular: false,
       },
       {
-        title: "Transportation in general",
-        description: "National and international transportation:",
+        title: "National and international transportation",
+        description: "",
         features: [
           <a className="" href="http://www.jsp.com.mk/Default.aspx" target={"_blank"} rel="noopener noreferrer">
             {" "}
@@ -600,8 +607,8 @@ export const transport = {
         mostPopular: false,
       },
       {
-        title: "Transportation in general",
-        description: "National and international transportation:",
+        title: "National and international transportation",
+        description: "",
         features: [
           <a className="" href="https://www.transport.gov.mt/" target={"_blank"} rel="noopener noreferrer">
             {" "}
@@ -659,8 +666,8 @@ export const transport = {
         mostPopular: false,
       },
       {
-        title: "Transportation in general",
-        description: "National and international transportation:",
+        title: "National and international transportation",
+        description: "",
         features: [
           <a className="" href="https://ruter.no/" target={"_blank"} rel="noopener noreferrer">
             {" "}
@@ -696,8 +703,8 @@ export const transport = {
         description: "Discounts for airlines and public transport:",
         features: [
           <p>Use code UNDER26 for Norwegian airlines when buying fly ticke</p>,
-          <p>The city transport has usually a discount for a students. This discount varies from city to the 
-          city, so make sure to ask for it when buying a ticket</p>
+          <p>The city transport has usually a discount for a students. This discount varies from city to the
+            city, so make sure to ask for it when buying a ticket</p>
         ],
         cta: "Monthly billing",
         mostPopular: true,
@@ -707,8 +714,8 @@ export const transport = {
   "Poland": {
     tiers: [
       {
-        title: "Transportation in general",
-        description: "National and international transportation:",
+        title: "National and international transportation",
+        description: "",
         features: [
           <a className="" href="https://rozklad-pkp.pl/en" target={"_blank"} rel="noopener noreferrer">
             {" "}
@@ -722,8 +729,9 @@ export const transport = {
         mostPopular: false,
       },
       {
-        title: "Discounts",
+        title: "",
         description: "50% discount for transportation for students under 26, also discounts in museums and other venues. Discount for transport mostly applies only of the students with polish ID cards, museum and other venues usually accept ISIC (International Student Identity Card).",
+        mostPopular: true,
       },
     ]
   },
@@ -733,7 +741,7 @@ export const transport = {
         title: "Airports with budget airlines",
         description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
         features: [
-          <p>Bratislava airport</p>,
+          <p>M. R. Štefánik Airport Bratislava</p>,
           <p>Košice airport</p>,
           <p>Poprad airport</p>,
         ],
@@ -741,8 +749,8 @@ export const transport = {
         mostPopular: false,
       },
       {
-        title: "Transportation in general",
-        description: "National and international transportation:",
+        title: "National and international transportation",
+        description: "",
         features: [
           <a className="" href="https://cp.hnonline.sk/en/vlakbusmhdsk/spojenie/" target={"_blank"} rel="noopener noreferrer">
             {" "}
@@ -789,8 +797,8 @@ export const transport = {
         mostPopular: false,
       },
       {
-        title: "Transportation in general",
-        description: "National and international transportation:",
+        title: "National and international transportation",
+        description: "",
         features: [
           <a className="" href="https://potniski.sz.si/" target={"_blank"} rel="noopener noreferrer">
             {" "}
@@ -848,8 +856,8 @@ export const transport = {
         mostPopular: false,
       },
       {
-        title: "Transportation in general",
-        description: "National and international transportation:",
+        title: "National and international transportation",
+        description: "",
         features: [
           <a className="" href="https://www.redtransporte.com/" target={"_blank"} rel="noopener noreferrer">
             {" "}
@@ -880,8 +888,8 @@ export const transport = {
   "Turkey": {
     tiers: [
       {
-        title: "Transportation in general",
-        description: "National and international transportation:",
+        title: "National and international transportation",
+        description: "",
         features: [
           <p>“Trafi” app is generally rated enough for the transportation</p>
         ],

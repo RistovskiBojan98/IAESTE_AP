@@ -30,7 +30,7 @@ const Hero = ({
                         <div className="absolute inset-0 bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] mix-blend-multiply" />
                     </div>
                     <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
-                        <h1 className="text-center text-4xl font-bold tracking-tight sm:text-5xl lg:text-6xl">
+                        <h1 className="text-center text-4xl font-bold  sm:text-5xl lg:text-6xl">
                             <span className="block text-white">Welcome to</span>
                             <span className="block text-white">
                                 IAESTE {country.replace(/-/g, ' ')}
@@ -76,25 +76,25 @@ const Hero = ({
                             >
                                 <button
                                     onClick={scrollToTransport}
-                                    className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-medium text-[#0B3D59] shadow-sm sm:px-8"
+                                    className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-bold text-[#0B3D59] shadow-sm sm:px-8"
                                 >
                                     Transport
                                 </button>
                                 <button
                                     onClick={scrollToCities}
-                                    className="flex items-center justify-center rounded-md border border-transparent bg-white  px-4 py-3 text-base font-medium text-[#0B3D59] shadow-sm  sm:px-8"
+                                    className="flex items-center justify-center rounded-md border border-transparent bg-white  px-4 py-3 text-base font-bold text-[#0B3D59] shadow-sm  sm:px-8"
                                 >
                                     Travel
                                 </button>
                                 <button
                                     onClick={scrollToFood}
-                                    className="flex items-center justify-center rounded-md border border-transparent bg-white  px-4 py-3 text-base font-medium text-[#0B3D59] shadow-sm  sm:px-8"
+                                    className="flex items-center justify-center rounded-md border border-transparent bg-white  px-4 py-3 text-base font-bold text-[#0B3D59] shadow-sm  sm:px-8"
                                 >
                                     Food&Drinks
                                 </button>
                                 <button
                                     onClick={scrollToSummerReception}
-                                    className="flex items-center justify-center rounded-md border border-transparent bg-white  px-4 py-3 text-base font-medium text-[#0B3D59] shadow-sm  sm:px-8"
+                                    className="flex items-center justify-center rounded-md border border-transparent bg-white  px-4 py-3 text-base font-bold text-[#0B3D59] shadow-sm  sm:px-8"
                                 >
                                     SR weekends
                                 </button>

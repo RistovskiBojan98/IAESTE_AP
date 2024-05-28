@@ -6,6 +6,7 @@ import { summerReception } from '../summer-recepiton/summerReception';
 import EventPopup from './EventPopup/Event';
 import FilterPopup from "./EventFilter/Filter"
 import useWindowSize from '../../hooks/useScreenSize';
+import css from "./sr-weekends.module.css"
 
 // Customize localizer to make Monday the first day of the week
 moment.updateLocale('en', {
@@ -154,14 +155,8 @@ const EventList = () => {
     };
 
     // Function to customize event style
-    const eventStyleGetter = (event, start, end, isSelected) => ({
-        style: {
-            backgroundColor: 'lightblue',
-            borderRadius: '20px',
-            color: 'blue',
-            border: '1px solid transparent',
-            display: 'block',
-        }
+    const eventStyleGetter = () => ({
+        className: css.event
     });
 
     // Function to handle the "+x events" indicator click
@@ -172,15 +167,7 @@ const EventList = () => {
 
     // Custom component for rendering the "+x events" indicator
     const CustomEventWrapper = ({ children, events, date }) => (
-        <div className="custom-event-wrapper" onClick={() => handleMoreEventsClick(events, date)}
-            style={{
-                backgroundColor: 'lightblue',
-                borderRadius: '20px',
-                color: 'white',
-                border: '1px solid transparent',
-                padding: '5px 10px', // Adjust padding as needed
-                cursor: 'pointer' // Add pointer cursor to indicate it's clickable
-            }}>
+        <div className="custom-event-wrapper" onClick={() => handleMoreEventsClick(events, date)}>
             {children}
         </div>
     );
@@ -188,13 +175,25 @@ const EventList = () => {
     // Function to customize day style
     const dayStyleGetter = (date) => {
         const today = moment();
+        const currentMonth = currentDate.month();
+        
         if (moment(date).isSame(today, 'day')) {
             return {
                 style: {
-                    backgroundColor: '#aabbcc' // Change this to the desired color
+                    backgroundColor: '#1B75BB'
                 }
             };
         }
+
+        if (moment(date).month() !== currentMonth) {
+            return {
+                style: {
+                    backgroundColor: '#6086A7',
+                    color: 'white'
+                }
+            };
+        }
+        
         return {};
     };
 
@@ -207,11 +206,11 @@ const EventList = () => {
             {selectedEvent && (<EventPopup event={selectedEvent} onClose={closePopup} />)}
             <div className="mx-auto max-w-7xl mt-10 border-solid border-b-2 pb-3 border-[#0B3D59]">
                 <div className="w-full px-10 flex justify-start items-center">
-                    <h2 className="text-xl md:text-3xl font-bold tracking-tight text-[#0B3D59] sm:text-4xl" style={{ textShadow: '0 0 5px rgba(255,255,255,1' }}>
+                    <h2 className={css.titleText}>
                         Summer Reception Weekends 2024
                     </h2>
                     <div className='ml-auto'>
-                        <button onClick={toggleFilterPopup} className="bg-[#0B3D59] hover:bg-sky-700 text-white font-bold py-3 px-6 text-lg md:text-xl rounded-full">
+                        <button onClick={toggleFilterPopup} className="bg-[#0B3D59] hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] text-white font-bold py-3 px-6 text-lg md:text-xl rounded-full">
                             <i className="fa fa-filter"></i> {maxEventsToShow === 3 ? 'Filter' : ''}
                         </button>
                         {/* Filter Popup */}
@@ -224,7 +223,7 @@ const EventList = () => {
                         <span className="text-lg font-semibold text-[#0B3D59]"><i className="fa fa-filter"></i></span>
                         <div className='flex flex-col md:flex-row gap-3'>
                             {filter.map((filterItem, index) => (
-                                <div key={index} onClick={toggleFilterPopup} className="flex flex-row items-center bg-[#0B3D59] hover:bg-sky-700 cursor-pointer text-white rounded-full px-3 py-1 ml-2">
+                                <div key={index} onClick={toggleFilterPopup} className="flex flex-row items-center bg-[#0B3D59] hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] cursor-pointer text-white rounded-full px-3 py-1 ml-2">
                                     {Object.entries(filterItem).map(([key, value]) => (
                                         <span key={key}>
                                             {key}: <b className='font-semibold'>{value}</b>
@@ -238,14 +237,14 @@ const EventList = () => {
                 )}
             </div>
             <div className="mb-10">
-                <div className=' gap-5 mx-auto max-w-7xl'>
+                <div className='gap-5 mx-auto max-w-7xl'>
                     {/* event list */}
                     <div className='w-full' style={{ maxHeight: '650px' }}>
                         <div className='py-10 px-1 mx-auto max-w-7xl'>
                             {eventsToShow.length ? (
                                 <div className="flex justify-between items-center">
                                     <button onClick={handlePrevious} disabled={startIndex === 0}
-                                        className={`p-3 border-solid border-2 border-sky-500 rounded-full ${startIndex === 0 ? 'bg-gray-500' : 'bg-white'}`}
+                                        className={`${css.navButton} ${startIndex === 0 ? 'bg-[#9DADBC]' : 'bg-white'}`}
                                     >
                                         <svg
                                             width="20"
@@ -256,21 +255,22 @@ const EventList = () => {
                                         >
                                             <path
                                                 d="M4.76 17.6L19.448 32.288L17.672 34.304L0.872 17.6L17.432 0.847998L19.208 2.864L4.76 17.6Z"
-                                                fill="blue"
+                                                fill={`${startIndex === 0 ? 'gray' : '#0B3D59'}`}
                                             />
                                         </svg>
                                     </button>
                                     <div className='flex gap-4 w-full px-5'>
                                         {eventsToShow.map(event => (
-                                            <div key={event.name} className="w-full card mb-3 bg-white rounded-lg shadow-md p-3 cursor-pointer h-auto md:h-40 hover:bg-sky-100">
-                                                <div className="card-body text-black flex flex-col justify-between h-full" onClick={() => handleEventClick(event)}>
+                                            <div key={event.name} className="w-full card mb-3 bg-white rounded-lg shadow-md p-3 cursor-pointer h-auto md:h-40 
+                                                hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]">
+                                                <div className="card-body text-[#0B3D59] flex flex-col justify-between h-full hover:text-white" onClick={() => handleEventClick(event)}>
                                                     <h2 className="card-title font-semibold text-xl md:text-2xl border-b-2 pb-2">{event.name}</h2>
                                                     <div className='flex flex-col mt-2 sm:mt-0'>
-                                                        <div className="flex items-center text-lg">
-                                                            <i className="far fa-calendar-alt mr-2 text-blue-700"></i> {event.date}
+                                                        <div className={css.cardText}>
+                                                            <i className="far fa-calendar-alt mr-2"></i> {event.date}
                                                         </div>
-                                                        <div className="flex items-center text-lg">
-                                                            <i className="fas fa-map-marker-alt text-blue-700 mr-2"></i> {event.location}
+                                                        <div className={css.cardText}>
+                                                            <i className="fas fa-map-marker-alt mr-2"></i> {event.location}
                                                         </div>
                                                     </div>
                                                 </div>
@@ -278,7 +278,7 @@ const EventList = () => {
                                         ))}
                                     </div>
                                     <button onClick={handleNext} disabled={endIndex >= filteredEvents.length}
-                                        className={`p-3 border-solid border-2 border-sky-500 rounded-full ${endIndex >= filteredEvents.length ? 'bg-gray-500' : 'bg-white'}`}
+                                        className={`${css.navButton} ${endIndex >= filteredEvents.length ? 'bg-[#9DADBC]' : 'bg-white'}`}
                                     >
                                         <svg
                                             width="20"
@@ -289,14 +289,14 @@ const EventList = () => {
                                         >
                                             <path
                                                 d="M2.66588 0.847998L19.1779 17.6L2.42588 34.304L0.601875 32.288L15.3379 17.6L0.841875 2.864L2.66588 0.847998Z"
-                                                fill="blue"
+                                                fill={`${endIndex >= filteredEvents.length ? 'gray' : '#0B3D59'}`}
                                             />
                                         </svg>
                                     </button>
                                 </div>
                             ) : (
                                 <div className="flex justify-center items-center h-full">
-                                    <h2 className="text-lg md:text-3xl text-center font-bold text-[#0B3D59]" style={{ textShadow: '0 0 5px rgba(255,255,255,1' }}><i className="fa-solid fa-circle-exclamation"></i> No events found from the filter parameters!</h2>
+                                    <h2 className={`${css.titleText} text-center`}><i className="fa-solid fa-circle-exclamation"></i> No events found from the filter parameters!</h2>
                                 </div>
                             )}
 
@@ -307,7 +307,7 @@ const EventList = () => {
                         <div className='w-full'>
                             {/* Custom toolbar */}
                             <div className="flex justify-center gap-10 items-center py-5 px-1">
-                                <button onClick={handlePreviousMonth} className="text-lg font-bold p-3 border-solid border-2 border-sky-500 rounded-full bg-white">
+                                <button onClick={handlePreviousMonth} className={`${css.navButton} bg-white`}>
                                     <svg
                                         width="20"
                                         height="20"
@@ -321,8 +321,8 @@ const EventList = () => {
                                         />
                                     </svg>
                                 </button>
-                                <h2 className="text-xl md:text-2xl text-center w-60 font-bold text-[#0B3D59]" style={{ textShadow: '0 0 5px rgba(255,255,255,1' }}>{currentDate.format('MMMM YYYY')}</h2>
-                                <button onClick={handleNextMonth} className="text-lg font-bold p-3 border-solid border-2 border-sky-500 rounded-full bg-white">
+                                <h2 className={`${css.titleText} w-60 text-center`}>{currentDate.format('MMMM YYYY')}</h2>
+                                <button onClick={handleNextMonth} className={`${css.navButton} bg-white`}>
                                     <svg
                                         width="20"
                                         height="20"
@@ -362,7 +362,7 @@ const EventList = () => {
                     </div>
                     {/* Subscribe */}
                     {/* <div className='w-full px-10 py-5'>
-                        <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl" style={{ textShadow: '0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5)' }}>
+                        <h2 className="text-3xl font-bold  text-white sm:text-4xl" style={{ textShadow: '0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5)' }}>
                             Subscribe to our newsletter
                         </h2>
                     </div> */}

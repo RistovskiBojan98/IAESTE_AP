@@ -18,7 +18,7 @@ const Committees = ({ country }) => {
   // const selectedImg = secondImage.find((item) => item.country === country)?.image ?? ''
 
   return (
-    <div className="relative bg-gray-900 max-w-7xl mx-auto sm:px-6 lg:px-8 shadow-xl sm:overflow-hidden sm:rounded-2xl" >
+    <div className="relative bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] max-w-7xl mx-auto sm:px-6 lg:px-8 shadow-xl sm:overflow-hidden sm:rounded-2xl" >
       {/* <div className="relative h-56 bg-indigo-600 sm:h-72 md:absolute md:left-0 md:h-full md:w-1/2">
         <img
           className="h-full w-full object-cover"
@@ -35,17 +35,17 @@ const Committees = ({ country }) => {
         style={{ paddingTop: "3rem", paddingBottom: "3rem" }}
       >
         <div className="md:ml-auto md:pl-10 text-center"> {/* md:w-1/2 */}
-          <h2 className="text-3xl md:text-4xl font-semibold text-gray-300">
+          <h2 className="text-3xl md:text-4xl font-semibold text-[#F1F1E6]">
             Cities with IAESTE LCs
           </h2>
-          <p className="mt-2 font-bold tracking-tight text-white" style={{fontSize: '18px'}}>
-            In {country.replace(/-/g, " ")} we have {countryCommittees.lcs.length} cities with local commitees:
+          <p className="mt-2 font-bold text-[#F1F1E6]" style={{fontSize: '18px'}}>
+            In {country.replace(/-/g, " ")} we have {countryCommittees.lcs.length} cities with local committees:
           </p>
-          <p className="mt-3 text-3xl text-gray-300 sm:text-4xl">
+          <p className="mt-3 text-3xl text-[#F1F1E6] sm:text-4xl font-semibold">
             {countryCommittees.hasCommiteesWebsite? 
                <div>
-               <p style={{ fontSize: "24px", paddingTop: "1rem" }}>You can visit a full list of the IAESTE local commitees for {country} here:</p>
-               <a style={{fontSize: "23px", fontStyle: "italic", textDecoration:"underline"}} href={countryCommittees.page}>Local commitees {country}</a>
+               <p style={{ fontSize: "24px", paddingTop: "1rem" }}>You can visit a full list of the IAESTE local committees for {country} here:</p>
+               <a style={{fontSize: "23px", fontStyle: "italic", textDecoration:"underline"}} href={countryCommittees.page}>Local Committees {country}</a>
                </div>
               :
               <ul className="items-center flex flex-col">
@@ -73,9 +73,9 @@ const Committees = ({ country }) => {
                         })}
                       </Disclosure.Panel>
                       <dt className="text-lg">
-                        <Disclosure.Button className="flex md:w-2/7 items-start justify-between text-left text-gray-400 pt-6"
+                        <Disclosure.Button className="flex md:w-2/7 items-start justify-between text-left text-[#F1F1E6] hover:text-[#B2D8FB] pt-6"
                           onClick={onOpenCitiesHandler} style={{fontSize: '18px'}}>
-                          <span className="font-medium text-white-900">
+                          <span className="font-base">
                             {isOpen ? 'Show less' : 'Show more'}
                           </span>
                           <span className="ml-6 flex h-7 items-center">

@@ -14,7 +14,7 @@ const FactCard = ({ fact }) => {
         <path
           opacity="0.5"
           d="M27.6 33.9V63.9H4.24683e-07V36.3L13.2 -1.64509e-05H27.6L16.5 33.9H27.6ZM62.7 33.9V63.9H35.1V36.3L48.3 -1.64509e-05H62.7L51.6 33.9H62.7Z"
-          fill="#9CA3AF"
+          fill="#0B3D59"
         />
       </svg>
       <p>{fact}</p>

@@ -73,10 +73,10 @@ const Country = () => {
       <EmergencyContacts country={id} />
       <GeneralInformation country={id} />
       <Committees country={id} />
-      <SummerReception country={id} summerReceptionRef={summerReceptionRef} />
       {/* <ImageSection selectedCountry={id} /> */}
       <Transport transportRef={transportRef} country={id} />
       <Cities country={id} citiesRef={citiesRef} />
+      <SummerReception country={id} summerReceptionRef={summerReceptionRef} />
       <Food country={id} foodRef={foodRef} />
       <Facts country={id} />
       <Other country={id} />
