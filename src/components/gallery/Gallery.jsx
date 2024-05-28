@@ -22,6 +22,7 @@ const setDefaultArrowStyle = (event) =>{
   useEffect(() => {
     const loadedImages = Images[country];
     setImages(loadedImages);
+    setCurrIndex(0);
   }, [country]);
 
   const handleChange = (index) => setCurrIndex(index);
@@ -47,10 +48,9 @@ const setDefaultArrowStyle = (event) =>{
         </div>
         <Carousel
           showArrows={true}
-          autoPlay={true}
           infiniteLoop={true}
-          interval={2500}
-          selectedItem={images[currIndex]}
+          interval={5000}
+          selectedItem={currIndex}
           onChange={handleChange}
           renderThumbs={() => { }}
           renderArrowNext={(handleNext) => <button type="button" onClick={handleNext} className="control-arrow control-next" onMouseOver={handleArrowStyle} onMouseOut={setDefaultArrowStyle} style={{backgroundColor: "rgba(11, 61, 89, 85)"}}></button>}
