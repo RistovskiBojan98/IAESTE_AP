@@ -39,13 +39,13 @@ const Committees = ({ country }) => {
             Cities with IAESTE LCs
           </h2>
           <p className="mt-2 font-bold text-[#F1F1E6]" style={{fontSize: '18px'}}>
-            In {country.replace(/-/g, " ")} we have {countryCommittees.lcs.length} cities with local committees:
+            In {country.replace(/-/g, " ")} we have {country !== "Germany" ? countryCommittees.lcs.length : 'a lot of'} cities with local committees:
           </p>
           <p className="mt-3 text-3xl text-[#F1F1E6] sm:text-4xl font-semibold">
             {countryCommittees.hasCommiteesWebsite? 
                <div>
-               <p style={{ fontSize: "24px", paddingTop: "1rem" }}>You can visit a full list of the IAESTE local committees for {country} here:</p>
-               <a style={{fontSize: "23px", fontStyle: "italic", textDecoration:"underline"}} href={countryCommittees.page}>Local Committees {country}</a>
+               <p className="text-xl pt-2">You can check out the full list of the local committees here:</p>
+               <a className="italic underline decoration-solid text-2xl hover:text-[#0B3D59]" href={countryCommittees.page}>Local Committees {country}</a>
                </div>
               :
               <ul className="items-center flex flex-col">

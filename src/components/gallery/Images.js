@@ -15,6 +15,13 @@ import Austria14 from "./images/Austria/14.jpg";
 import Austria15 from "./images/Austria/15.jpg";
 import Austria16 from "./images/Austria/16.jpg";
 import Austria17 from "./images/Austria/17.jpg";
+import Austria18 from "./images/Austria/18.jpg";
+import Austria19 from "./images/Austria/19.jpg";
+import Austria20 from "./images/Austria/20.jpg";
+import Austria21 from "./images/Austria/21.jpg";
+import Austria22 from "./images/Austria/22.jpg";
+import Austria23 from "./images/Austria/23.jpg";
+import Austria24 from "./images/Austria/24.jpg";
 
 import Belgium1 from "./images/Belgium/1.jpg";
 import Belgium2 from "./images/Belgium/2.jpg";
@@ -171,7 +178,7 @@ import Turkiye10 from "./images/Turkiye/image10.png"
 import Turkiye11 from "./images/Turkiye/image11.jpg"
 
 export const Images = {
-  "Austria": [Austria1, Austria2, Austria3, Austria4, Austria5, Austria6, Austria7, Austria8, Austria9, Austria10, Austria11, Austria12, Austria13, Austria14, Austria15, Austria16, Austria17],
+  "Austria": [Austria1, Austria2, Austria3, Austria4, Austria5, Austria6, Austria7, Austria8, Austria9, Austria10, Austria11, Austria12, Austria13, Austria14, Austria15, Austria16, Austria17, Austria18, Austria19, Austria20, Austria21, Austria22, Austria23, Austria24],
   "Belgium": [Belgium1, Belgium2, Belgium3, Belgium4, Belgium5, Belgium6,Belgium7],
   "Bosnia-and-Herzegovina": [Bosnia1, Bosnia2, Bosnia3, Bosnia4, Bosnia5, Bosnia6, Bosnia7, Bosnia8],
   "Czech-Republic": [Czech1, Czech2, Czech3, Czech4, Czech5, Czech6, Czech7, Czech8, Czech9, Czech10, Czech11, Czech12, Czech13, Czech14, Czech15, Czech16, Czech17],

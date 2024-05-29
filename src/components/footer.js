@@ -37,7 +37,7 @@
 //     { name: 'StaticKit', url: 'https://tailwindui.com/img/logos/statickit-logo-gray-400.svg' },
 //     { name: 'Workcation', url: 'https://tailwindui.com/img/logos/workcation-logo-gray-400.svg' },
 // ]
-import logoImg from "./cer-logo-white.png"
+import logoImg from "./cer-logo-dark.png"
 import footerImg from "./footer_img.png"
 
 const footerNavigation = {

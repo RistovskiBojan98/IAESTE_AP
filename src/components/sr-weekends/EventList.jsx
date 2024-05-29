@@ -261,8 +261,9 @@ const EventList = () => {
                                     </button>
                                     <div className='flex gap-4 w-full px-5'>
                                         {eventsToShow.map(event => (
-                                            <div key={event.name} className="w-full card mb-3 bg-white rounded-lg shadow-md p-3 cursor-pointer h-auto md:h-40 
-                                                hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]">
+                                            <div key={event.name} className={`w-full card mb-3 rounded-lg shadow-md p-3 cursor-pointer h-auto md:h-40 
+                                                hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]
+                                                ${selectedEvent !== event ? 'bg-white' : 'bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]'}`}>
                                                 <div className="card-body text-[#0B3D59] flex flex-col justify-between h-full hover:text-white" onClick={() => handleEventClick(event)}>
                                                     <h2 className="card-title font-semibold text-xl md:text-2xl border-b-2 pb-2">{event.name}</h2>
                                                     <div className='flex flex-col mt-2 sm:mt-0'>

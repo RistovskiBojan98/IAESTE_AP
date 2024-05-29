@@ -33,7 +33,7 @@ const EventPopup = ({ event, onClose }) => {
                 <button onClick={onClose} className={css.closeButton}>
                     <i className="fa-solid fa-x"></i>
                 </button>
-                <div className="w-full h-full bg-[#0B3D59] p-6 text-white">
+                <div className="w-full h-full p-6 text-white">
                     <h3 className="text-2xl md:text-4xl font-bold">{event.name}</h3>
                     <hr className='mt-4'></hr>
                     <div className="flex items-center text-base md:text-2xl mt-2 md:mt-4">
