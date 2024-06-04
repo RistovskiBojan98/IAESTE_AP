@@ -92,7 +92,7 @@ export const committees = [
       "Wismar",
       "Zittau",
     ],
-    page: "https://www.iaeste.de/",
+    page: "https://www.iaeste.de/the-local-committees/",
     hasCommiteesWebsite: true
   },
   {
