@@ -28,7 +28,6 @@ export const committees = [
       "Pilsen",
       "Liberec",
       "Zlin",
-      "Pardubice",
     ],
     page: "https://www.iaeste.cz/",
   },
