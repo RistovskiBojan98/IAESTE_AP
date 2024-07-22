@@ -42,11 +42,14 @@ const EventPopup = ({ event, onClose }) => {
                     <div className="flex items-center text-base md:text-2xl mt-2 md:mt-4">
                         <i className="fas fa-map-marker-alt text-white mr-3"></i> {event.location}
                     </div>
-                    <div className="flex items-center text-base md:text-2xl mt-2 md:mt-4 hover:text-sky-500">
-                        <a href={event.link} target='_blank' rel="noreferrer">
-                            <i className="fas fa-link text-white mr-1"></i> Registration link
-                        </a>
-                    </div>
+                    {event.link && (
+                        <div className="flex items-center text-base md:text-2xl mt-2 md:mt-4 hover:text-sky-500">
+                            <a href={event.link} target='_blank' rel="noreferrer">
+                                <i className="fas fa-link text-white mr-1"></i> Registration link
+                            </a>
+                        </div>
+                    )}
+
                     {/* {event.limit && (
                         <div className="flex items-center text-lg md:text-2xl mt-4">
                             <i className="fas fa-users text-white mr-3"></i> Maximum participants: {event.limit}

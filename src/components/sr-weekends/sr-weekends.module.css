@@ -22,22 +22,26 @@
 }
 
 .titleText {
-    font-size: 2.25rem; /* 36px */
-    line-height: 2.5rem; /* 40px */
+    font-size: 2.25rem;
+    /* 36px */
+    line-height: 2.5rem;
+    /* 40px */
     font-weight: bold;
     color: #0B3D59;
     text-shadow: '0 0 5px rgba(255,255,255,1';
 
     @media (max-width: 640px) {
-        font-size: 1.5rem; /* 24px */
-        line-height: 2rem; /* 32px */
+        font-size: 1.5rem;
+        /* 24px */
+        line-height: 2rem;
+        /* 32px */
     }
 }
 
 .custom-event-wrapper {
     background-color: #B2D8FB;
     border-radius: 20px;
-    color: white;
+    color: black;
     border: 1px solid transparent;
     padding: 5px 10px;
     cursor: pointer
@@ -51,12 +55,26 @@
     font-weight: bold;
     border: 1px solid transparent;
     display: block;
-    transition: background; /* Smooth transition for the background change */
+    transition: background;
+    /* Smooth transition for the background change */
     padding: 5px 10px;
     cursor: pointer
-  }
-  
-  /* Styles for the event when hovered */
-  .event:hover {
+}
+
+/* Styles for the event when hovered */
+.event:hover {
     background: linear-gradient(to right, #1B75BB, #27A9E1, #49C0B5);
-  }
+}
+
+.custom-show-more {
+    background-color: #0B3D59 !important;
+    color: black !important;
+    font-weight: bold !important;
+    padding: 5px !important;
+    border-radius: 5px !important;
+    cursor: pointer !important;
+}
+
+.custom-show-more:hover {
+    background-color: #1B75BB !important;
+}

@@ -172,11 +172,17 @@ const EventList = () => {
         </div>
     );
 
+    const CustoMoreEventsWrapper = ({ events, date }) => (
+        <div className="custom-show-more" onClick={() => handleMoreEventsClick(events, date)}>
+            {`+${events.length} more`}
+        </div>
+    );
+
     // Function to customize day style
     const dayStyleGetter = (date) => {
         const today = moment();
         const currentMonth = currentDate.month();
-        
+
         if (moment(date).isSame(today, 'day')) {
             return {
                 style: {
@@ -193,7 +199,7 @@ const EventList = () => {
                 }
             };
         }
-        
+
         return {};
     };
 
@@ -354,7 +360,8 @@ const EventList = () => {
                                 eventPropGetter={eventStyleGetter}
                                 dayPropGetter={dayStyleGetter}
                                 components={{
-                                    eventWrapper: CustomEventWrapper // Use the custom event wrapper component
+                                    eventWrapper: CustomEventWrapper, // Use the custom event wrapper component
+                                    showMore: CustoMoreEventsWrapper
                                 }}
                                 onNavigate={handleNavigate}
                             />
