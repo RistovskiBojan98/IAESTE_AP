@@ -5,6 +5,7 @@ import 'react-big-calendar/lib/css/react-big-calendar.css';
 import { summerReception } from '../summer-recepiton/summerReception';
 import EventPopup from './EventPopup/Event';
 import FilterPopup from "./EventFilter/Filter"
+import MoreEventsPopup from "./MoreEventsPopup/MoreEvents"
 import useWindowSize from '../../hooks/useScreenSize';
 import css from "./sr-weekends.module.css"
 
@@ -110,7 +111,7 @@ const EventList = () => {
                 }
                 if (filterValues.startDate) {
                     const startDate = new Date(filterValues.startDate);
-                    events = events.filter(event => new Date(event.start) >= startDate || new Date(event.end));
+                    events = events.filter(event => new Date(event.start) >= startDate || new Date(event.end) >= startDate);
                     filter.push({ "From date": formatDate(filterValues.startDate) })
                     date = filterValues.startDate
                 }
@@ -139,6 +140,7 @@ const EventList = () => {
     // Function to close the popup
     const closePopup = () => {
         setSelectedEvent(null);
+        localStorage.removeItem('selectedEvent')
     };
 
     // Define state variables for current date
@@ -172,12 +174,6 @@ const EventList = () => {
         </div>
     );
 
-    const CustoMoreEventsWrapper = ({ events, date }) => (
-        <div className="custom-show-more" onClick={() => handleMoreEventsClick(events, date)}>
-            {`+${events.length} more`}
-        </div>
-    );
-
     // Function to customize day style
     const dayStyleGetter = (date) => {
         const today = moment();
@@ -207,9 +203,37 @@ const EventList = () => {
         setCurrentDate(moment(date));
     };
 
+    const [moreEvents, setMoreEvents] = useState([])
+    const [moreEventsSelectedDate, setMoreEventsSelectedDate] = useState([])
+    // Customizing the 'Show More' button
+    const showMoreEvents = (events) => {
+        const date = currentDate.toDate().toLocaleDateString('en-GB', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+        });
+        setMoreEvents([events])
+        setMoreEventsSelectedDate(date)
+    }
+    const closeMoreEvents = () => {
+        setMoreEvents([])
+        setMoreEventsSelectedDate([])
+        const selectedEvent = localStorage.getItem('selectedEvent');
+        if (selectedEvent) handleEventClick(JSON.parse(selectedEvent))
+    }
+    const customMessages = {
+        showMore: (count, remainig, all) => (
+            <div className={css.customShowMore} onClick={() => showMoreEvents(all)}>+{count} {width >= 768 ? 'more' : ''}</div>
+        )
+    };
+
+    
+
     return (
         <div>
             {selectedEvent && (<EventPopup event={selectedEvent} onClose={closePopup} />)}
+            {moreEvents.length && (<MoreEventsPopup events={moreEvents} date={moreEventsSelectedDate} onClose={closeMoreEvents} />)}
             <div className="mx-auto max-w-7xl mt-10 border-solid border-b-2 pb-3 border-[#0B3D59]">
                 <div className="w-full px-10 flex justify-start items-center">
                     <h2 className={css.titleText}>
@@ -361,9 +385,9 @@ const EventList = () => {
                                 dayPropGetter={dayStyleGetter}
                                 components={{
                                     eventWrapper: CustomEventWrapper, // Use the custom event wrapper component
-                                    showMore: CustoMoreEventsWrapper
                                 }}
                                 onNavigate={handleNavigate}
+                                messages={customMessages}
                             />
                         </div>
 

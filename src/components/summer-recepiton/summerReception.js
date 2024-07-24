@@ -151,7 +151,7 @@ export const summerReception = {
         },
         {
             name: "Prague Challenge",
-            date: "28.07 - 30.07",
+            date: "26.07 - 28.07",
             location: "Prague",
             link: "",
             description: "Hello to you all,\n\n" +

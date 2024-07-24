@@ -66,15 +66,13 @@
     background: linear-gradient(to right, #1B75BB, #27A9E1, #49C0B5);
 }
 
-.custom-show-more {
-    background-color: #0B3D59 !important;
-    color: black !important;
-    font-weight: bold !important;
-    padding: 5px !important;
-    border-radius: 5px !important;
-    cursor: pointer !important;
+.customShowMore {
+    color: white;
+    background-color: #1B75BB;
+    padding: 5px 10px;
+    cursor: pointer;
 }
 
-.custom-show-more:hover {
-    background-color: #1B75BB !important;
+.customShowMore:hover {
+    background: linear-gradient(to right, #1B75BB, #27A9E1, #49C0B5);
 }
