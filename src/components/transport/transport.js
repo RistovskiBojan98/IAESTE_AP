@@ -731,6 +731,7 @@ export const transport = {
       {
         title: "",
         description: "50% discount for transportation for students under 26, also discounts in museums and other venues. Discount for transport mostly applies only of the students with polish ID cards, museum and other venues usually accept ISIC (International Student Identity Card).",
+        features: [],
         mostPopular: true,
       },
     ]
