@@ -1,6 +1,3 @@
-import voltage from "../../images/voltage1.jpg"
-import country_code from "../../images/country_dialing_code.jpg"
-import population from "../../images/population2.jpg"
 import flag_austria from "./images/Austria/austria_flag.png"
 import flag_bosnia from "./images/Bosnia/bosna_and_herzcegovina_flag.png"
 import flag_croatia from "./images/Croatia/croatia_flag.png"
@@ -32,26 +29,18 @@ export const information = [
       {
         name: "Language",
         role: "German",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
       },
       {
         name: "Time zone",
         role: "UTC+1 (summer time: UTC+2)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
       },
       {
         name: "Currency",
         role: "Euro (EUR)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
       },
       {
         name: "Voltage",
         role: "230V",
-        imageUrl:
-          voltage,
       },
       {
         name: "Climate",
@@ -60,26 +49,18 @@ export const information = [
         // "Summer: pleasant warm, sometimes hot beyond 35°C especially in the east, mostly sunny with some short heavy rains"+
         // "Autumn: moderate low temperatures above 0°C, sometimes windy"+
         // "Winter: low temperatures, can (rarely) get very cold down to -20°C, regular snowfalls, especially in the west.",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
       },
       {
         name: "country dialing code",
         role: "+43",
-        imageUrl:
-          country_code,
       },
       {
         name: "SIM card providers",
         role: "HoT, Drei, A1, Lidl",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
       {
         name: "Population",
         role: "8.9 million",
-        imageUrl:
-          population,
       },
     ],
   },
@@ -89,55 +70,39 @@ export const information = [
       {
         name: "Capital city",
         role: "Sarajevo",
-        imageUrl: flag_bosnia      
+        imageUrl: flag_bosnia
       },
       {
         name: "Language",
-        role: "Bosnian, Croatian, and Serbian",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
+        role: "Bosnian, Croatian, and Serbian"
       },
       {
         name: "Time zone",
-        role: "UTC+1 (summer time: UTC+2)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "UTC+1 (summer time: UTC+2)"
       },
       {
         name: "Currency",
-        role: "Bosnia and Herzegovina convertible mark (BAM)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+        role: "Bosnia and Herzegovina convertible mark (BAM)"
       },
       {
         name: "Voltage",
-        role: "230V",
-        imageUrl:
-          voltage,
+        role: "230V"
       },
       {
         name: "Climate",
-        role: "Moderate continental climate (hot summers and snowy winters)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "Moderate continental climate (hot summers and snowy winters)"
       },
       {
         name: "country dialing code",
-        role: "+387",
-        imageUrl:
-          country_code,
+        role: "+387"
       },
       {
         name: "SIM card providers",
-        role: "",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+        role: ""
       },
       {
         name: "Population",
-        role: "3.8 million",
-        imageUrl:
-          population,
+        role: "3.8 million"
       },
     ],
   },
@@ -152,50 +117,34 @@ export const information = [
       {
         name: "Language",
         role: "Dutch, French, German",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
       },
       {
         name: "Time zone",
-        role: "UTC+1 (summer time: UTC+2)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "UTC+1 (summer time: UTC+2)"
       },
       {
         name: "Currency",
-        role: "Euro (EUR)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+        role: "Euro (EUR)"
       },
       {
         name: "Voltage",
-        role: "220V",
-        imageUrl:
-          voltage,
+        role: "220V"
       },
       {
         name: "Climate",
-        role: "The weather is very variable in Belgium. The best thing you can do is to check the weather forecast before traveling to Belgium.",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "The weather is very variable in Belgium. The best thing you can do is to check the weather forecast before traveling to Belgium."
       },
       {
         name: "country dialing code",
-        role: "+32",
-        imageUrl:
-          country_code,
+        role: "+32"
       },
       {
         name: "SIM card providers",
-        role: "",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+        role: ""
       },
       {
         name: "Population",
-        role: "11 million",
-        imageUrl:
-          population,
+        role: "11 million"
       },
     ],
   },
@@ -209,51 +158,35 @@ export const information = [
       },
       {
         name: "Language",
-        role: "Croatian",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
+        role: "Croatian"
       },
       {
         name: "Time zone",
-        role: "UTC+1 (summer time: UTC+2)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "UTC+1 (summer time: UTC+2)"
       },
       {
         name: "Currency",
-        role: "Euro (EUR)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+        role: "Euro (EUR)"
       },
       {
         name: "Voltage",
-        role: "230V (type C and F sockets)",
-        imageUrl:
-          voltage,
+        role: "230V (type C and F sockets)"
       },
       {
         name: "Climate",
-        role: "Hot summers and milder winters",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "Hot summers and milder winters"
       },
       {
         name: "country dialing code",
-        role: "+385",
-        imageUrl:
-          country_code,
+        role: "+385"
       },
       {
         name: "SIM card providers",
-        role: "Hrvatski Telekom (T-Mobile brand), A1, Telemach",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+        role: "Hrvatski Telekom (T-Mobile brand), A1, Telemach"
       },
       {
         name: "Population",
-        role: "4 million",
-        imageUrl:
-          population,
+        role: "4 million"
       },
     ],
   },
@@ -267,51 +200,35 @@ export const information = [
       },
       {
         name: "Language",
-        role: "Czech",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
+        role: "Czech"
       },
       {
         name: "Time zone",
-        role: "UTC+1 (summer time: UTC+2)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "UTC+1 (summer time: UTC+2)"
       },
       {
         name: "Currency",
-        role: "Czech koruna (CZK)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+        role: "Czech koruna (CZK)"
       },
       {
         name: "Voltage",
-        role: "230V",
-        imageUrl:
-          voltage,
+        role: "230V"
       },
       {
         name: "Climate",
-        role: "null",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "null"
       },
       {
         name: "country dialing code",
-        role: "+420",
-        imageUrl:
-          country_code,
+        role: "+420"
       },
       {
         name: "SIM card providers",
-        role: "Vodafone, T-mobile, O2",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+        role: "Vodafone, T-mobile, O2"
       },
       {
         name: "Population",
-        role: "10.5 million",
-        imageUrl:
-          population,
+        role: "10.5 million"
       },
     ],
   },
@@ -325,51 +242,35 @@ export const information = [
       },
       {
         name: "Language",
-        role: "French",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
+        role: "French"
       },
       {
         name: "Time zone",
-        role: "UTC+1 (summer time: UTC+2)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "UTC+1 (summer time: UTC+2)"
       },
       {
         name: "Currency",
-        role: "Euro (EUR)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+        role: "Euro (EUR)"
       },
       {
         name: "Voltage",
-        role: "230V",
-        imageUrl:
-          voltage,
+        role: "230V"
       },
       {
         name: "Climate",
-        role: "The weather is sunny, cloudy, a bit rainy, it depends on the days.",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "The weather is sunny, cloudy, a bit rainy, it depends on the days."
       },
       {
         name: "country dialing code",
-        role: "+33",
-        imageUrl:
-          country_code,
+        role: "+33"
       },
       {
         name: "SIM card providers",
-        role: "",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+        role: ""
       },
       {
         name: "Population",
-        role: "67 million",
-        imageUrl:
-          population,
+        role: "67 million"
       },
     ],
   },
@@ -383,51 +284,35 @@ export const information = [
       },
       {
         name: "Language",
-        role: "German",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
+        role: "German"
       },
       {
         name: "Time zone",
-        role: "UTC+1 (summer time: UTC+2)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "UTC+1 (summer time: UTC+2)"
       },
       {
         name: "Currency",
-        role: "Euro (EUR)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+        role: "Euro (EUR)"
       },
       {
         name: "Voltage",
-        role: "220-230V",
-        imageUrl:
-          voltage,
+        role: "220-230V"
       },
       {
         name: "Climate",
-        role: "In most of Germany: moderately continental, unstable weather, northernmost area: humid, rainy, windy, cloudy southcentral, Alps: mountainous climate, snowy in winter",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "In most of Germany: moderately continental, unstable weather, northernmost area: humid, rainy, windy, cloudy southcentral, Alps: mountainous climate, snowy in winter"
       },
       {
         name: "country dialing code",
-        role: "+49",
-        imageUrl:
-          country_code,
+        role: "+49"
       },
       {
         name: "SIM card providers",
-        role: "",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+        role: ""
       },
       {
         name: "Population",
-        role: "83 million",
-        imageUrl:
-          population,
+        role: "83 million"
       },
     ],
   },
@@ -441,51 +326,35 @@ export const information = [
       },
       {
         name: "Language",
-        role: "Hungarian",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
+        role: "Hungarian"
       },
       {
         name: "Time zone",
-        role: "UTC+1 (summer time: UTC+2)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "UTC+1 (summer time: UTC+2)"
       },
       {
         name: "Currency",
-        role: "Hungarian Forint (HUF)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+        role: "Hungarian Forint (HUF)"
       },
       {
         name: "Voltage",
-        role: "230V",
-        imageUrl:
-          voltage,
+        role: "230V"
       },
       {
         name: "Climate",
-        role: "TBD",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "TBD"
       },
       {
         name: "country dialing code",
-        role: "+36",
-        imageUrl:
-          country_code,
+        role: "+36"
       },
       {
         name: "SIM card providers",
-        role: "Telekom (30), Telenor (20), Vodafone (70)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+        role: "Telekom (30), Telenor (20), Vodafone (70)"
       },
       {
         name: "Population",
-        role: "9.8 million",
-        imageUrl:
-          population,
+        role: "9.8 million"
       },
     ],
   },
@@ -499,51 +368,35 @@ export const information = [
       },
       {
         name: "Language",
-        role: "Macedonian",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
+        role: "Macedonian"
       },
       {
         name: "Time zone",
-        role: "UTC+1 (summer time: UTC+2)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "UTC+1 (summer time: UTC+2)"
       },
       {
         name: "Currency",
-        role: "Macedonian denar (MKD)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+        role: "Macedonian denar (MKD)"
       },
       {
         name: "Voltage",
-        role: "220V",
-        imageUrl:
-          voltage,
+        role: "220V"
       },
       {
         name: "Climate",
-        role: "Really hot summers and really cold winters",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "Really hot summers and really cold winters"
       },
       {
         name: "country dialing code",
-        role: "+389",
-        imageUrl:
-          country_code,
+        role: "+389"
       },
       {
         name: "SIM card providers",
-        role: "Lyca mobile, T-mobile, A1",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+        role: "Lyca mobile, T-mobile, A1"
       },
       {
         name: "Population",
-        role: "2 million",
-        imageUrl:
-          population,
+        role: "2 million"
       },
     ],
   },
@@ -557,51 +410,35 @@ export const information = [
       },
       {
         name: "Language",
-        role: "Maltese, English",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
+        role: "Maltese, English"
       },
       {
         name: "Time zone",
-        role: "UTC+1 (summer time: UTC+2)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "UTC+1 (summer time: UTC+2)"
       },
       {
         name: "Currency",
-        role: "Euro (EUR)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+        role: "Euro (EUR)"
       },
       {
         name: "Voltage",
-        role: "230V",
-        imageUrl:
-          voltage,
+        role: "230V"
       },
       {
         name: "Climate",
-        role: "Mild wet winters & hot, dry Summers. The Temperature never drops down to 0 degrees Celsius.",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "Mild wet winters & hot, dry Summers. The Temperature never drops down to 0 degrees Celsius."
       },
       {
         name: "country dialing code",
-        role: "+356",
-        imageUrl:
-          country_code,
+        role: "+356"
       },
       {
         name: "SIM card providers",
-        role: "",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+        role: ""
       },
       {
         name: "Population",
-        role: "460K",
-        imageUrl:
-          population,
+        role: "460K"
       },
     ],
   },
@@ -615,51 +452,35 @@ export const information = [
       },
       {
         name: "Language",
-        role: "Norwegian and Sami",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
+        role: "Norwegian and Sami"
       },
       {
         name: "Time zone",
-        role: "UTC+1 (summer time: UTC+2)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "UTC+1 (summer time: UTC+2)"
       },
       {
         name: "Currency",
-        role: "Norwegian crown (NOK)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+        role: "Norwegian crown (NOK)"
       },
       {
         name: "Voltage",
-        role: "240V (type F)",
-        imageUrl:
-          voltage,
+        role: "240V (type F)"
       },
       {
         name: "Climate",
-        role: "The weather and temperatures can change quickly, especially in the mountains. Make sure you are prepared with good footwear and warm and waterproof clothing",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "The weather and temperatures can change quickly, especially in the mountains. Make sure you are prepared with good footwear and warm and waterproof clothing"
       },
       {
         name: "country dialing code",
-        role: "+47",
-        imageUrl:
-          country_code,
+        role: "+47"
       },
       {
         name: "SIM card providers",
-        role: "",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+        role: ""
       },
       {
         name: "Population",
-        role: "5 million",
-        imageUrl:
-          population,
+        role: "5 million"
       },
     ],
   },
@@ -673,51 +494,35 @@ export const information = [
       },
       {
         name: "Language",
-        role: "Polish",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
+        role: "Polish"
       },
       {
         name: "Time zone",
-        role: "UTC+1 (summer time: UTC+2)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "UTC+1 (summer time: UTC+2)"
       },
       {
         name: "Currency",
-        role: "Zloty (zl, PLN)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+        role: "Zloty (zl, PLN)"
       },
       {
         name: "Voltage",
-        role: "220V",
-        imageUrl:
-          voltage,
+        role: "220V"
       },
       {
         name: "Climate",
-        role: "Hot and dry summers, really cold and wet winters",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "Hot and dry summers, really cold and wet winters"
       },
       {
         name: "country dialing code",
-        role: "+48",
-        imageUrl:
-          country_code,
+        role: "+48"
       },
       {
         name: "SIM card providers",
-        role: "Orange, Play, T-Mobile, Plus",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+        role: "Orange, Play, T-Mobile, Plus"
       },
       {
         name: "Population",
-        role: "38 million",
-        imageUrl:
-          population,
+        role: "38 million"
       },
     ],
   },
@@ -731,51 +536,35 @@ export const information = [
       },
       {
         name: "Language",
-        role: "Slovak",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
+        role: "Slovak"
       },
       {
         name: "Time zone",
-        role: "UTC+1 (summer time: UTC+2)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "UTC+1 (summer time: UTC+2)"
       },
       {
         name: "Currency",
-        role: "Euro (EUR)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+        role: "Euro (EUR)"
       },
       {
         name: "Voltage",
-        role: "230V",
-        imageUrl:
-          voltage,
+        role: "230V"
       },
       {
         name: "Climate",
-        role: "Hot summers (up to 30°C), cold winters (temperatures down to -10°C, sometimes snowy)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "Hot summers (up to 30°C), cold winters (temperatures down to -10°C, sometimes snowy)"
       },
       {
         name: "country dialing code",
-        role: "+421",
-        imageUrl:
-          country_code,
+        role: "+421"
       },
       {
         name: "SIM card providers",
-        role: "Orange, Play, T-Mobile, Plus",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+        role: "Orange, Play, T-Mobile, Plus"
       },
       {
         name: "Population",
-        role: "37,8 mln",
-        imageUrl:
-          population,
+        role: "37,8 mln"
       },
     ],
   },
@@ -789,51 +578,35 @@ export const information = [
       },
       {
         name: "Language",
-        role: "Slovenian",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
+        role: "Slovenian"
       },
       {
         name: "Time zone",
-        role: "UTC+1 (summer time: UTC+2)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "UTC+1 (summer time: UTC+2)"
       },
       {
         name: "Currency",
-        role: "Euro (EUR)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+        role: "Euro (EUR)"
       },
       {
         name: "Voltage",
-        role: "230V",
-        imageUrl:
-          voltage,
+        role: "230V"
       },
       {
         name: "Climate",
-        role: "Moderate continental climate. Cold winters. The climate changes with the landscape as well.",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "Moderate continental climate. Cold winters. The climate changes with the landscape as well."
       },
       {
         name: "country dialing code",
-        role: "+386",
-        imageUrl:
-          country_code,
+        role: "+386"
       },
       {
         name: "SIM card providers",
-        role: "",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+        role: ""
       },
       {
         name: "Population",
-        role: "2 million",
-        imageUrl:
-          population,
+        role: "2 million"
       },
     ],
   },
@@ -847,51 +620,35 @@ export const information = [
       },
       {
         name: "Language",
-        role: "Spanish",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
+        role: "Spanish"
       },
       {
         name: "Time zone",
-        role: "UTC+1 (summer time: UTC+2)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "UTC+1 (summer time: UTC+2)"
       },
       {
         name: "Currency",
-        role: "Euro (EUR)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+        role: "Euro (EUR)"
       },
       {
         name: "Voltage",
-        role: "230V",
-        imageUrl:
-          voltage,
+        role: "230V"
       },
       {
         name: "Climate",
-        role: "Usually hot throughout the whole year",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "Usually hot throughout the whole year"
       },
       {
         name: "country dialing code",
-        role: "+34",
-        imageUrl:
-          country_code,
+        role: "+34"
       },
       {
         name: "SIM card providers",
-        role: "",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+        role: ""
       },
       {
         name: "Population",
-        role: "47 million",
-        imageUrl:
-          population,
+        role: "47 million"
       },
     ],
   },
@@ -905,51 +662,35 @@ export const information = [
       },
       {
         name: "Language",
-        role: "German, French, Italian and Romansch",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
+        role: "German, French, Italian and Romansch"
       },
       {
         name: "Time zone",
-        role: "UTC+1 (summer time: UTC+2)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "UTC+1 (summer time: UTC+2)"
       },
       {
         name: "Currency",
-        role: "Swiss Franc (CHF)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+        role: "Swiss Franc (CHF)"
       },
       {
         name: "Voltage",
-        role: null,
-        imageUrl:
-          voltage,
+        role: null
       },
       {
         name: "Climate",
-        role: "Typical central european climate, with cold winters and warm summers, and soft temperatures in Spring and Autumn (except the Alps)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "Typical central european climate, with cold winters and warm summers, and soft temperatures in Spring and Autumn (except the Alps)"
       },
       {
         name: "country dialing code",
-        role: "+41",
-        imageUrl:
-          country_code,
+        role: "+41"
       },
       {
         name: "SIM card providers",
-        role: "Yallo",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
+        role: "Yallo"
       },
       {
         name: "Population",
-        role: "8.5 million",
-        imageUrl:
-          population,
+        role: "8.5 million"
       },
     ],
   },
@@ -963,51 +704,35 @@ export const information = [
       },
       {
         name: "Language",
-        role: "Swedish, Sámi, Finnish, Meänkieli, Romani, Yiddish",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
+        role: "Swedish, Sámi, Finnish, Meänkieli, Romani, Yiddish"
       },
       {
         name: "Time zone",
-        role: "UTC+1",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "UTC+1"
       },
       {
         name: "Currency",
-        role: " Swedish Krona (SEK)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
+        role: " Swedish Krona (SEK)"
       },
       {
         name: "Voltage",
-        role: "230V",
-        imageUrl:
-          voltage,
+        role: "230V"
       },
       {
         name: "Climate",
-        role: "Dark and cold winters, warm summers with the sun not setting down at all.",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
+        role: "Dark and cold winters, warm summers with the sun not setting down at all."
       },
       {
         name: "country dialing code",
-        role: "+216",
-        imageUrl:
-          country_code,
+        role: "+216"
       },
       {
         name: "SIM card providers",
         role: "",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
       {
         name: "Population",
         role: "10 million",
-        imageUrl:
-          population,
       },
     ],
   },
@@ -1081,50 +806,34 @@ export const information = [
       {
         name: "Language",
         role: "Turkish",
-        imageUrl:
-          "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80",
       },
       {
         name: "Time zone",
         role: "UTC+3",
-        imageUrl:
-          "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
       },
       {
         name: "Currency",
         role: "Turkish lira (TRY)",
-        imageUrl:
-          "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80",
       },
       {
         name: "Voltage",
         role: "220V",
-        imageUrl:
-          voltage,
       },
       {
         name: "Climate",
         role: "",
-        imageUrl:
-          "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
       },
       {
         name: "country dialing code",
         role: "+90",
-        imageUrl:
-          country_code,
       },
       {
         name: "SIM card providers",
         role: "",
-        imageUrl:
-          "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80",
       },
       {
         name: "Population",
         role: "86 million",
-        imageUrl:
-          population,
       },
     ],
   },

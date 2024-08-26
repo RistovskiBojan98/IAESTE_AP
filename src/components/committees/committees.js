@@ -2,22 +2,18 @@ export const committees = [
   {
     country: "Austria",
     lcs: ["Graz", "Innsbruck", "Leoben", "Linz", "Vienna"],
-    page: "https://www.iaeste.at/en/",
   },
   {
     country: "Belgium",
     lcs: ["Brussels", "Leuven", "Ghent"],
-    page: "https://iaeste.be/",
   },
   {
     country: "Bosnia-and-Herzegovina",
     lcs: ["Banja Luka", "Sarajevo", "Mostar"],
-    page: "",
   },
   {
     country: "Croatia",
     lcs: ["Osijek", "Pula", "Rijeka", "Split", "Zagreb"],
-    page: "https://www.iaeste.hr/",
   },
   {
     country: "Czech-Republic",
@@ -29,12 +25,10 @@ export const committees = [
       "Liberec",
       "Zlin",
     ],
-    page: "https://www.iaeste.cz/",
   },
   {
     country: "France",
     lcs: ["Grenoble"],
-    page: "https://www.iaeste-france.fr/en/",
   },
   {
     country: "Germany",
@@ -92,22 +86,18 @@ export const committees = [
       "Zittau",
     ],
     page: "https://www.iaeste.de/the-local-committees/",
-    hasCommiteesWebsite: true
   },
   {
     country: "Hungary",
     lcs: ["Budapest", "Győr"],
-    page: "https://iaeste.hu/",
   },
   {
     country: "Macedonia",
     lcs: ["Skopje", "Bitola", "Ohrid", "Stip"],
-    page: "https://iaeste.org.mk/",
   },
   {
     country: "Malta",
     lcs: ["Msida"],
-    page: "https://iaeste.org.mt/",
   },
   {
     country: "Norway",
@@ -120,7 +110,6 @@ export const committees = [
       "Trondheim",
       "Ås",
     ],
-    page: "https://www.iaeste.no/",
   },
   {
     country: "Poland",
@@ -135,17 +124,14 @@ export const committees = [
       "Gdansk",
       "Poznan",
     ],
-    page: "https://iaeste.pl/",
   },
   {
     country: "Slovakia",
     lcs: ["Bratislava", "Žilina", "Zvolen", "Košice"],
-    page: "https://iaeste.sk/",
   },
   {
     country: "Slovenia",
     lcs: ["Ljubljana", "Maribor"],
-    page: "http://iaeste.si/",
   },
   {
     country: "Spain",
@@ -162,26 +148,21 @@ export const committees = [
       "Elche",
       "Aragón",
     ],
-    page: "https://iaeste.es/",
   },
   {
     country: "Switzerland",
     lcs: ["Zurich", "Bern", "Basel", "Lausanne"],
-    page: "https://www.iaeste.ch/en/",
   },
   {
     country: "Sweden",
     lcs: ["Luleå", "Stockholm", "Linköping", "Gothenburg", "Lund"],
-    page: "https://iaeste.se/",
   },
   // {
   //   country: "Tunisia",
   //   lcs: ["Tunis"],
-  //   page: "http://www.iaeste.tn/tunisia/",
   // },
   {
     country: "Turkiye",
     lcs: ["İstanbul", "Ankara", "Kocaeli", "İzmir"],
-    page: "https://iaeste.org.tr/",
   },
 ];

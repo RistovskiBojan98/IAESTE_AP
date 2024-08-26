@@ -4,18 +4,19 @@ import css from "./event-popup.module.css"
 const EventPopup = ({ event, onClose }) => {
     const popupRef = useRef(null);
 
+    const currYear = new Date().getFullYear();
+    const [startDate] = event.date.split(' - ');
+    const fullStartDate = new Date(`${startDate}.${currYear}`)
+    if (fullStartDate < new Date()) event.link = null;
+
     useEffect(() => {
         // click outside of the popup window
         const handleClickOutside = (event) => {
-            if (popupRef.current && !popupRef.current.contains(event.target)) {
-                onClose();
-            }
+            if (popupRef.current && !popupRef.current.contains(event.target)) onClose();
         };
         // escape button
         const handleEscapeKey = (event) => {
-            if (event.keyCode === 27) {
-                onClose();
-            }
+            if (event.keyCode === 27) onClose();
         };
 
         document.addEventListener("mousedown", handleClickOutside);

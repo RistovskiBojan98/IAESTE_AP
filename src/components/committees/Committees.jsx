@@ -42,7 +42,7 @@ const Committees = ({ country }) => {
             In {country.replace(/-/g, " ")} we have {country !== "Germany" ? countryCommittees.lcs.length : 'a lot of'} cities with local committees:
           </p>
           <p className="mt-3 text-3xl text-[#F1F1E6] sm:text-4xl font-semibold">
-            {countryCommittees.hasCommiteesWebsite ?
+            {countryCommittees.page ?
               <div>
                 <p className="text-xl pt-2">You can check out the full list of the local committees here:</p>
                 <a className="italic underline decoration-solid text-2xl hover:text-[#0B3D59]" href={countryCommittees.page} target="_blank" rel="noopener noreferrer">

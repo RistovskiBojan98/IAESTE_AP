@@ -16,6 +16,14 @@ const SummerReception = ({ country, summerReceptionRef }) => {
     const fetchData = async () => {
       try {
         const data = await summerReception[country];
+        // check if the event passed, if true then disable the registraion link
+        const currYear = new Date().getFullYear();
+        data?.forEach((event) => {
+          const [startDate] = event.date.split(' - ');
+          const fullStartDate = new Date(`${startDate}.${currYear}`)
+          if (fullStartDate < new Date()) event.link = null;
+        })
+        // set the weekends
         setWeekends(data);
         const names = data?.map((weekend) => weekend.name) ?? [];
         setWeekendsNames(names);
@@ -75,11 +83,13 @@ const SummerReception = ({ country, summerReceptionRef }) => {
                 <div className="flex items-center text-lg md:text-xl mt-4">
                   <i className="fas fa-map-marker-alt text-white mr-2"></i> {weekend.location + ", " + country}
                 </div>
-                <div className="flex items-center text-lg md:text-xl mt-4 hover:text-sky-500">
-                  <a href={weekend.link} target='_blank' rel="noreferrer">
-                    <i className="fas fa-link text-white mr-1"></i> Registration link
-                  </a>
-                </div>
+                {weekend.link && (
+                  <div className="flex items-center text-lg md:text-xl mt-4 hover:text-sky-500">
+                    <a href={weekend.link} target='_blank' rel="noreferrer">
+                      <i className="fas fa-link text-white mr-1"></i> Registration link
+                    </a>
+                  </div>
+                )}
                 {weekend.limit && (
                   <div className="flex items-center text-lg md:text-xl mt-4">
                     <i className="fas fa-users text-white mr-3"></i> Maximum participants: {weekend.limit}

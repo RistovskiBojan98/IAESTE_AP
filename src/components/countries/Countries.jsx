@@ -6,14 +6,13 @@ const Countries = ({ passRef }) => {
   const [displayedCountries, setDisplayedCountries] = useState(countries);
 
   const onFilterCountriesHandler = (e) => {
-    let typedCountry = e.target.value;
-    if (typedCountry.trim().length > 0) {
-      let newCountriesList = countries.filter((country) =>
+    const typedCountry = e.target.value;
+    if (!typedCountry.trim().length) setDisplayedCountries(countries);
+    else {
+      const newCountriesList = countries.filter((country) =>
         country.name.toLowerCase().includes(typedCountry.toLowerCase())
       );
       setDisplayedCountries(newCountriesList);
-    } else {
-      setDisplayedCountries(countries);
     }
   };
 

@@ -15,8 +15,7 @@ const Cities = ({ country, citiesRef }) => {
   const countryCities = cities.find((obj) => obj.country === country);
   const totalCities = countryCities?.cities?.length ?? 0
   const firstFiveCities = countryCities.cities.slice(0, totalCities  > 5 ? 5 : totalCities)
-  let additionalCities = 0
-  if (totalCities > 5) additionalCities = countryCities.cities.slice(5, totalCities)
+  const additionalCities = totalCities > 5 ? countryCities.cities.slice(5, totalCities) : 0
 
   return (
     <>

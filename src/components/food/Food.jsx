@@ -6,21 +6,19 @@ import useWindowSize from "../../hooks/useScreenSize";
 import css from "../app.module.css"
 
 const Food = ({ country, foodRef }) => {
-  const {width} = useWindowSize();
-  const countryFood =
-    food.find((obj) => obj.country === country) &&
-    food.find((obj) => obj.country === country).content;
-  const countryDrinks =
-    drinks.find((obj) => obj.country === country) &&
-    drinks.find((obj) => obj.country === country).content;
+  const findContent = (obj) => obj.find((el) => el.country === country)?.content ?? [];
 
-  const countryData = countryDrinks ? countryFood.concat(countryDrinks) : countryFood;
-  const maxItemsToShow = countryData && countryData.length >= 3 ? 3 : countryData.length
+  const {width} = useWindowSize();
+  const countryFood = findContent(food)
+  const countryDrinks = findContent(drinks)
+
+  const countryData = [...countryFood, ... countryDrinks];
+  const maxItemsToShow = countryData?.length >= 3 ? 3 : countryData.length
 
   const [startIndex, setStartIndex] = useState(0);
 
   const cards =
-    countryData.length > 0 &&
+    countryData.length &&
     countryData
       .slice(startIndex, startIndex + (width >= 768 ?  maxItemsToShow : 1))
       .map((item, index) => (
