@@ -4,15 +4,26 @@ import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 // import { secondImage } from "../imageSection/secondImage";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
 
 const Committees = ({ country }) => {
-  const [isOpen, setIsOpen] = useState(false);
-  const onOpenCitiesHandler = () => {
-    setIsOpen(prev => !prev)
+  // local helper functions
+  const classNames = (...classes) => classes.filter(Boolean).join(" ");
+  // filter - false if the country has 5 or less committees, true if more
+  // lower - true if we need to list the first five elements
+  const listCommittees = (filter, lower) => {
+    let committeesToDisplay = countryCommittees.lcs;
+
+    if (filter) committeesToDisplay = lower ? countryCommittees.lcs.slice(0, 5) : countryCommittees.lcs.slice(5);
+
+    return committeesToDisplay.map((committee, index) => (
+      <li style={{ fontSize: '24px' }} key={index}>{committee}</li>
+    ));
   }
+
+
+  const [isOpen, setIsOpen] = useState(false);
+  const onOpenCitiesHandler = () => setIsOpen(prev => !prev)
+  
   const countryCommittees = committees.find((obj) => obj.country === country);
 
   // const selectedImg = secondImage.find((item) => item.country === country)?.image ?? ''
@@ -51,28 +62,14 @@ const Committees = ({ country }) => {
               </div>
               :
               <ul className="items-center flex flex-col">
-                {countryCommittees.lcs.length <= 5 &&
-                  countryCommittees.lcs.map((committee, index) => {
-                    return <li style={{ fontSize: '24px' }} key={index}>{committee}</li>;
-                  })}
-                {countryCommittees.lcs.length > 5 &&
-                  countryCommittees.lcs.map((com, index) => {
-                    if (index < 5) {
-                      return <li style={{ fontSize: '24px' }} key={index}>{com}</li>;
-                    }
-                    return <></>;
-                  })}
+                {countryCommittees.lcs.length <= 5 && listCommittees(false)}
+                {countryCommittees.lcs.length > 5 && listCommittees(true, true)}
                 {countryCommittees.lcs.length > 5 && (
                   <Disclosure as="div">
                     {({ open }) => (
                       <>
-                        <Disclosure.Panel as="dd" className="">
-                          {countryCommittees.lcs.map((com, index) => {
-                            if (index >= 5) {
-                              return <li style={{ fontSize: '24px' }} key={index}>{com}</li>;
-                            }
-                            return <></>;
-                          })}
+                        <Disclosure.Panel as="dd">
+                          {listCommittees(true, false)}
                         </Disclosure.Panel>
                         <dt className="text-lg">
                           <Disclosure.Button className="flex md:w-2/7 items-start justify-between text-left text-[#F1F1E6] hover:text-[#B2D8FB] pt-6"

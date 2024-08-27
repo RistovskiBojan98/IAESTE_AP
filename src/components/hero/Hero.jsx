@@ -11,10 +11,19 @@ const Hero = ({
     scrollToTransport,
     scrollToSummerReception,
 }) => {
-    const heroImg = countryImages.find((item) => item.country === country)?.image 
+
+    const heroImg = countryImages.find((item) => item.country === country)?.image
         ?? information.find((obj) => obj.country === country).data[0].imageUrl
 
-    const socialLinks = countrySocialLinks.find((item) => item.country === country)
+    const links = countrySocialLinks.find((item) => item.country === country)?.links
+
+    const socialLinks = Object.entries(links).map(([key, value]) => {
+        let icon = "fas fa-globe mx-2"; // website
+        if (key === 'insta') icon = "fab fa-instagram mx-2 mt-2.5 sm: mt-1.5"
+        else if (key === 'facebook') icon = "fab fa-facebook mx-2"
+
+        return { link: value, icon }
+    })
 
     return (
         <div className="relative">
@@ -38,66 +47,28 @@ const Hero = ({
                         </h1>
                         <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none justify-center">
                             <div
-                                className="justify-center space-y-2 flex sm:space-y-0 sm:space-x-2 gap-5 font-bold" style={{ textShadow: '0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5)' }}
+                                className="justify-center space-y-2 flex sm:space-y-0 sm:space-x-2 gap-5 font-bold text-white text-4xl"
+                                style={{ textShadow: '0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5)' }}
                             >
-                                <div className="flex items-center text-center">
-                                    <a
-                                        href={socialLinks?.insta ?? ''}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <i className="fab fa-instagram mx-2 mt-2 sm:mt-0 text-white text-4xl"></i>
-                                    </a>
-                                </div>
-                                <div className="flex items-center">
-                                    <a
-                                        href={socialLinks?.facebook ?? ''}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <i className="fab fa-facebook mx-2 text-white text-4xl"></i>
-                                    </a>
-                                </div>
-                                <div className="flex items-center">
-                                    <a
-                                        href={socialLinks?.website ?? ''}
-                                        target="_blank"
-                                        rel="noopener noreferrer"
-                                    >
-                                        <i className="fas fa-globe mx-2 text-white text-4xl"></i>
-                                    </a>
-                                </div>
+                                {socialLinks.map((link, index) =>
+                                    <div key={index} className={classes.socialLink}>
+                                        <a href={link.link} target="_blank" rel="noopener noreferrer">
+                                            <i className={link.icon}></i>
+                                        </a>
+                                    </div>
+                                )}
                             </div>
                         </div>
+
 
                         <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
                             <div
                                 className={`space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-3 sm:gap-5 sm:space-y-0 ${classes['btns-container']}`}
                             >
-                                <button
-                                    onClick={scrollToTransport}
-                                    className="flex items-center justify-center rounded-md border border-transparent bg-white px-4 py-3 text-base font-bold text-[#0B3D59] shadow-sm sm:px-8"
-                                >
-                                    Transport
-                                </button>
-                                <button
-                                    onClick={scrollToCities}
-                                    className="flex items-center justify-center rounded-md border border-transparent bg-white  px-4 py-3 text-base font-bold text-[#0B3D59] shadow-sm  sm:px-8"
-                                >
-                                    Travel
-                                </button>
-                                <button
-                                    onClick={scrollToFood}
-                                    className="flex items-center justify-center rounded-md border border-transparent bg-white  px-4 py-3 text-base font-bold text-[#0B3D59] shadow-sm  sm:px-8"
-                                >
-                                    Food&Drinks
-                                </button>
-                                <button
-                                    onClick={scrollToSummerReception}
-                                    className="flex items-center justify-center rounded-md border border-transparent bg-white  px-4 py-3 text-base font-bold text-[#0B3D59] shadow-sm  sm:px-8"
-                                >
-                                    SR weekends
-                                </button>
+                                <button onClick={scrollToTransport} className={classes.scrollBtn}>Transport</button>
+                                <button onClick={scrollToCities} className={classes.scrollBtn}>Travel</button>
+                                <button onClick={scrollToFood} className={classes.scrollBtn}>Food&Drinks</button>
+                                <button onClick={scrollToSummerReception} className={classes.scrollBtn}>SR weekends</button>
                             </div>
                         </div>
                     </div>

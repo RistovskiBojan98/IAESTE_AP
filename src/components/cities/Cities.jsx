@@ -3,10 +3,7 @@ import { cities } from "./cities";
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
 import css from "../app.module.css"
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+import { classNames } from "../global_functions";
 
 const Cities = ({ country, citiesRef }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -26,6 +23,7 @@ const Cities = ({ country, citiesRef }) => {
               Places that we recommend visiting:
             </h2>
             <dl className="mt-6 space-y-6 divide-y divide-[#F1F1E6]">
+
               {firstFiveCities.map((faq) => (
                   <Disclosure as="div" key={faq.question} className="pt-6 text-start">
                     {({ open }) => (
@@ -112,7 +110,6 @@ const Cities = ({ country, citiesRef }) => {
                     </>
                   )}
                 </Disclosure>
-
               )}
             </dl>
           </div>

@@ -4,11 +4,11 @@ import css from "../app.module.css"
 
 
 const Facts = ({ country }) => {
-  const facts = funfacts.find((obj) => obj.country === country);
+  const facts = funfacts.find((obj) => obj.country === country)?.facts ?? [];
 
   return (
     <>
-    { facts.facts?.length ? (
+    { facts?.length ? (
     <section
     aria-labelledby="testimonial-heading"
     className={`${css.container} bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] shadow-xl sm:overflow-hidden sm:rounded-2xl mb-10`}
@@ -22,17 +22,16 @@ const Facts = ({ country }) => {
       </h2>
 
       <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:space-y-0">
-        {facts.facts.map((fact, index) => (
+        {facts.map((fact, index) => (
           <FactCard fact={fact} key={index}/>
         ))}
       </div>
     </div>
   </section>
     ) : (
-      <></>
+      null
     )}
     </>
-
   );
 };
 

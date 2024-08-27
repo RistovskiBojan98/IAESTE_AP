@@ -1,9 +1,6 @@
 import { Disclosure } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/24/outline";
-
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
+import { classNames } from "./global_functions";
 
 const metrics = [
   { id: 1, stat: "18", emphasis: "Member countries" },

@@ -33,7 +33,7 @@ const SummerReception = ({ country, summerReceptionRef }) => {
         // Automatically select the first weekend after data is loaded
         if (data?.length > 0) setSelectedButtonIndex(0);
       } catch (error) {
-        console.error('Error fetching data:', error);
+        console.error('Error fetching summer reception data:', error);
       }
     };
 
@@ -98,7 +98,7 @@ const SummerReception = ({ country, summerReceptionRef }) => {
                 <hr className='mt-4'></hr>
                 <div className={css.overflowDescription} style={{maxHeight: '300px'}}>
                   <p className='text-base md:text-lg my-4 pb-10'> {weekend.description.split('\n').map((paragraph, index) => (
-                    <p key={index}>{paragraph}<br></br></p>
+                    <span key={index}>{paragraph}<br></br></span>
                   ))}
                   </p>
                 </div>

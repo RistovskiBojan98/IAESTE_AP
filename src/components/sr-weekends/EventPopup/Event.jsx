@@ -60,7 +60,7 @@ const EventPopup = ({ event, onClose }) => {
                     <hr className='mt-2 md:mt-4'></hr>
                     <div className={css.overflowDescription}>
                         <p className='text-sm md:text-xl my-4'> {event.description.split('\n').map((paragraph, index) => (
-                            <p key={index}>{paragraph}<br></br></p>
+                            <span key={index}>{paragraph}<br></br></span>
                         ))}
                         </p>
                     </div>

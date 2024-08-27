@@ -13,33 +13,30 @@ const Food = ({ country, foodRef }) => {
   const countryDrinks = findContent(drinks)
 
   const countryData = [...countryFood, ... countryDrinks];
-  const maxItemsToShow = countryData?.length >= 3 ? 3 : countryData.length
+  const dataLen = countryData?.length ?? 0
+  const maxItemsToShow = dataLen >= 3 ? 3 : dataLen
 
   const [startIndex, setStartIndex] = useState(0);
 
   const cards =
-    countryData.length &&
+    dataLen &&
     countryData
       .slice(startIndex, startIndex + (width >= 768 ?  maxItemsToShow : 1))
       .map((item, index) => (
         <FoodCard
-          key={index}
           title={item.title}
           description={item.description}
+          key={index}
         />
       ));
 
-  const showPrev = () => {
-    setStartIndex(Math.max(startIndex - (width >= 768 ?  3 : 1), 0));
-  };
+  const showPrev = () => setStartIndex(Math.max(startIndex - (width >= 768 ?  3 : 1), 0));
 
-  const showNext = () => {
-    setStartIndex(Math.min(startIndex + (width >= 768 ?  3 : 1), countryData.length - 1));
-  };
+  const showNext = () => setStartIndex(Math.min(startIndex + (width >= 768 ?  3 : 1), dataLen - 1));
 
   return (
     <>
-    { countryData.length ? (
+    { dataLen ? (
       <section
       ref={foodRef}
       className={`${css.container} mt-10 mb-16`}
@@ -66,7 +63,7 @@ const Food = ({ country, foodRef }) => {
         </div>
         <button
           onClick={showNext}
-          disabled={(countryData.length > 3 && startIndex + 3 >= countryData.length) || (countryData.length <= maxItemsToShow) }
+          disabled={(dataLen > 3 && startIndex + 3 >= dataLen) || (dataLen <= maxItemsToShow) }
           className={classes["next-button"]}
         >
           <svg
