@@ -5,8 +5,6 @@ import css from "../app.module.css"
 const EmergencyContacts = ({ country }) => {
   const [loading, setLoading] = useState(true);
   const [contacts, setContacts] = useState([]);
-  const [contactsLen, setContactsLen] = useState(3);
-
 
   useEffect(() => {
     const eContacts = emergencyContacts.find((obj) => obj.country === country);
@@ -34,11 +32,10 @@ const EmergencyContacts = ({ country }) => {
     })
 
     setContacts(mappedContacts);
-    setContactsLen(mappedContacts.length)
     setLoading(false);
   }, [country])
 
-  if (!loading && contactsLen)
+  if (!loading && contacts)
     return (
       <div className="bg-gray-100 pt-12 sm:pt-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -53,7 +50,7 @@ const EmergencyContacts = ({ country }) => {
             <div className="absolute inset-0 h-1/2 bg-gray-100" />
             <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="mx-auto max-w-4xl">
-                <dl className={`rounded-lg bg-white shadow-lg grid grid-cols-1 sm:grid-cols-${contactsLen}`}>
+                <dl className={`rounded-lg bg-white shadow-lg grid grid-cols-1 sm:grid-cols-${contacts.length}`}>
                   {contacts.map((contact, index) =>
                     <div key={index} className="flex flex-col border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r">
                       <dt className="order-2 mt-2 text-base sm:text-lg font-medium leading-6 text-gray-500">
