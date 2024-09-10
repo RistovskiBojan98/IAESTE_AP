@@ -4842,6 +4842,11 @@ fs.realpath@^1.0.0:
   resolved "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz"
   integrity sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw==
 
+fsevents@^2.3.2, fsevents@~2.3.2:
+  version "2.3.2"
+  resolved "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz"
+  integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
+
 function-bind@^1.1.1:
   version "1.1.1"
   resolved "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz"
@@ -8898,6 +8903,36 @@ stylehacks@^5.1.1:
   dependencies:
     browserslist "^4.21.4"
     postcss-selector-parser "^6.0.4"
+
+"summer-app-cer@file:":
+  version "0.1.0"
+  resolved "file:"
+  dependencies:
+    "@babel/runtime" "^7.12.5"
+    "@fortawesome/fontawesome-free" "^6.5.2"
+    "@headlessui/react" "^1.7.7"
+    "@heroicons/react" "^2.0.13"
+    "@tailwindcss/aspect-ratio" "^0.4.2"
+    "@testing-library/jest-dom" "^5.16.5"
+    "@testing-library/react" "^13.4.0"
+    "@testing-library/user-event" "^13.5.0"
+    heroicons-react "^1.4.1"
+    moment "^2.30.1"
+    react "^18.2.0"
+    react-big-calendar "^1.11.6"
+    react-datepicker "^6.9.0"
+    react-dom "^18.2.0"
+    react-helmet "^6.1.0"
+    react-query "^3.39.2"
+    react-responsive-carousel "^3.2.23"
+    react-router-dom "^6.6.1"
+    react-scripts "^5.0.1"
+    react-scroll "^1.8.9"
+    react-slick "^0.29.0"
+    slick-carousel "^1.8.1"
+    summer-app-cer "file:"
+    web-vitals "^2.1.4"
+    yarn "^1.22.19"
 
 supports-color@^5.3.0:
   version "5.5.0"

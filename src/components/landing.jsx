@@ -58,9 +58,8 @@ export default function Landing({ countriesRef }) {
                 and this application will help you find all information needed
                 while travelling across the globe with IAESTE.
               </p>
-              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                <div className="rounded-md shadow">
-                  <Link
+              <div className="mt-5 sm:mt-8 w-64 sm:w-80 sm:flex sm:justify-center lg:justify-start shadow rounded-md">
+              <Link
                     to="countries-div"
                     smooth={true}
                     className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#0B3D59] px-8 py-3 text-base font-semibold text-white hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] md:py-4 md:px-10 md:text-lg cursor-pointer"
@@ -68,18 +67,15 @@ export default function Landing({ countriesRef }) {
                     DISCOVER A COUNTRY
                     <i className="fa-solid fa-magnifying-glass ml-3"></i>
                   </Link>
-                </div>
               </div>
-              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                <div className="rounded-md shadow">
-                  <a
+              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start w-64 sm:w-80 shadow rounded-md">
+              <a
                     href="/sr-weekends"
                     className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#0B3D59] px-8 py-3 text-base font-semibold text-white hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] md:py-4 md:px-10 md:text-lg"
                   >
-                    SUMMER RECEPTION WEEKENDS
+                    SUMMER RECEPTION
                     <i className="fa-solid fa-umbrella-beach ml-3"></i>
                   </a>
-                </div>
               </div>
             </div>
           </main>

@@ -18,13 +18,13 @@ const Countries = ({ passRef }) => {
 
   return (
     <div className="bg-white" ref={passRef} id="countries-div" style={{ overflowX: 'hidden' }}>
-      <div className="mx-auto max-w-2xl py-16 px-4 sm:py-16 sm:px-6 lg:max-w-7xl lg:px-8">
+      <div className="mx-auto py-16 px-4 sm:py-16 sm:px-6 lg:max-w-7xl lg:px-8">
         <div>
           <h2
             className="font-bold"
             style={{ fontSize: "1.5rem", fontWeight: "600" }}
           >
-            IAESTE Member Countries
+            IAESTE CER & CoRe Member Countries
           </h2>
           <input
             type="text"
@@ -41,13 +41,13 @@ const Countries = ({ passRef }) => {
             }}
           />
         </div>
-        <div className="mt-12 grid grid-cols-1 gap-y-20 gap-x-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 xl:gap-x-8">
+        <div className="mt-12 grid grid-cols-2 gap-y-20 gap-x-6 sm:grid-cols-3 lg:grid-cols-4 xl:gap-x-8">
           {displayedCountries.map((country, index) => (
             <div className="text-center" key={index}>
               <a key={country.id}
                 className="group items-center"
                 href={country.href}>
-                  <div className="mx-auto h-40 w-40">
+                  <div className="mx-auto h-20 w-20 sm:h-40 sm:w-40">
                   <img
                     src={country.imageSrc}
                     alt={country.imageAlt}
@@ -57,8 +57,8 @@ const Countries = ({ passRef }) => {
                 </div>
               </a>
               <a href={country.href}><h1 className="my-5 font-semibold text-xl text-[#0B3D59] hover:text-sky-700">IAESTE {country.name}</h1></a>
-              <button className="btn text-center text-sm w-1/2 py-2 hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]" style={{ backgroundColor: '#0B3D59', color: 'white', borderRadius: '19px' }}>
-                <a href={country.pdf} target='_blank' rel="noreferrer"><i className="fa-solid fa-download text-white text-lg mr-2"></i>Download PDF</a>
+              <button className="btn text-center text-sm w-1/2 sm:w-1/3 py-2 max-w-20 hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]" style={{ backgroundColor: '#0B3D59', color: 'white', borderRadius: '19px' }}>
+                <a href={country.pdf} target='_blank' rel="noreferrer"><i className="fa-solid fa-download text-white text-lg mr-2"></i>PDF</a>
               </button>
             </div>
           ))}

@@ -54,13 +54,13 @@ const Cities = ({ country, citiesRef }) => {
                 ))}
 
               {additionalCities && (
-                <Disclosure as="div">
+                <Disclosure as="div" key="additionalCities">
                   {() => (
                     <>
-                      <Disclosure.Panel as="dd" className="space-y-6 divide-y divide-[#F1F1E6]">
+                      <Disclosure.Panel as="dt" className="space-y-6 divide-y divide-[#F1F1E6]" key="additionalCitiesPanel">
                         {countryCities.cities.map((faq, index) => {
                           if (index >= 5) {
-                            return <Disclosure as="div" key={index} className="pt-6 text-start">
+                            return <Disclosure as="div" key={faq.question} className="pt-6 text-start">
                               {({ open2 }) => (
                                 <>
                                   <dt className="text-[#F1F1E6] hover:text-[#B2D8FB]">

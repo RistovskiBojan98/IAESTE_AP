@@ -61,14 +61,14 @@ const Hero = ({
                         </div>
 
 
-                        <div className="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
+                        <div className="mx-auto mt-10 max-w-sm flex sm:max-w-none justify-center">
                             <div
-                                className={`space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-3 sm:gap-5 sm:space-y-0 ${classes['btns-container']}`}
+                                className={`mx-auto inline-grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-5`}
                             >
                                 <button onClick={scrollToTransport} className={classes.scrollBtn}>Transport</button>
                                 <button onClick={scrollToCities} className={classes.scrollBtn}>Travel</button>
-                                <button onClick={scrollToFood} className={classes.scrollBtn}>Food&Drinks</button>
-                                <button onClick={scrollToSummerReception} className={classes.scrollBtn}>SR weekends</button>
+                                <button onClick={scrollToFood} className={classes.scrollBtn}>Cuisine</button>
+                                <button onClick={scrollToSummerReception} className={classes.scrollBtn}>Summer Reception</button>
                             </div>
                         </div>
                     </div>

@@ -4,8 +4,6 @@ import css from "../sr-weekends/EventPopup/event-popup.module.css"
 import appCss from "../app.module.css"
 
 const SummerReception = ({ country, summerReceptionRef }) => {
-  let smCols = 2;
-  let mdCols = 4
   const [weekend, setWeekend] = useState({});
   const [weekends, setWeekends] = useState([]);
   const [weekendsNames, setWeekendsNames] = useState([]);
@@ -41,8 +39,8 @@ const SummerReception = ({ country, summerReceptionRef }) => {
   }, [country]);
 
   if (!loading && weekends?.length && weekend) {
-    smCols = weekends.length < 3 ? weekends.length : 3;
-    mdCols = weekends.length < 4 ? weekends.length : 4;
+    const cols = weekends.length < 4 ? weekends.length : 4
+    const mobCols = weekends.length > 1 ? 2 : 1;
 
     return (
       <section className={`${css.container} mt-10`} ref={summerReceptionRef}>
@@ -55,7 +53,7 @@ const SummerReception = ({ country, summerReceptionRef }) => {
           </p> */}
         </div>
         <div className="flex flex-col items-center">
-          <div className={`grid grid-cols-1 sm:grid-cols-${smCols} md:grid-cols-${mdCols} gap-4 text-center my-5`}>
+          <div className={`grid grid-cols-${mobCols} sm:grid-cols-${cols} gap-4 text-center my-5`}>
             {weekendsNames.map((name, index) => (
               <button
                 key={index}

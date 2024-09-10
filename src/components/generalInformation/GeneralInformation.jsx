@@ -57,11 +57,11 @@ const GeneralInformation = ({ country }) => {
               General Information
             </h2>
           </div>
-          <ul className="mx-auto space-y-16 sm:grid sm:grid-cols-2 sm:gap-16 sm:space-y-0 lg:max-w-5xl lg:grid-cols-3">
+          <ul className="mx-auto space-y-16 grid grid-cols-3 gap-8 sm:gap-16 space-y-0 lg:max-w-5xl lg:grid-cols-3">
             {countryInfo.data.map((info) => (
               <li key={info.name}>
                 <div className="space-y-6">
-                  <div className="mx-auto h-40 w-40">
+                  <div className="mx-auto h-20 w-20 sm:h-40 sm:w-40">
                   <img
                     className="rounded-full"
                     src={info.imageUrl}

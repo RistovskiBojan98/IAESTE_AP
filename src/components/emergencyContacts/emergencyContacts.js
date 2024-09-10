@@ -75,7 +75,7 @@ export const emergencyContacts = [
     police: "997",
     ambulance: "999",
     fire: "998",
-    emergencyLine: "112",
+    // emergencyLine: "112",
   },
   {
     country: "Slovakia",

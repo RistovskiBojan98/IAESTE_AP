@@ -1,7 +1,7 @@
 export const committees = [
   {
     country: "Austria",
-    lcs: ["Graz", "Innsbruck", "Leoben", "Linz", "Vienna"],
+    lcs: ["Vienna", "Graz", "Innsbruck", "Leoben", "Linz"],
   },
   {
     country: "Belgium",

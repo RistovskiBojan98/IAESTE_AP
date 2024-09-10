@@ -19,9 +19,9 @@ const EmergencyContacts = ({ country }) => {
 
           case 'fire':
             return 'Fire department'
-
+          // bug in the cols when showing emergency line in the Poland page
           default:
-            return 'Emergency line'
+           break;
         }
       }
 
@@ -35,9 +35,9 @@ const EmergencyContacts = ({ country }) => {
     setLoading(false);
   }, [country])
 
-  if (!loading && contacts)
+  if (!loading && contacts) 
     return (
-      <div className="bg-gray-100 pt-12 sm:pt-16">
+      <div className="bg-gray-100 pt-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-4xl text-center">
             <h2 className={css.title}>
@@ -45,18 +45,18 @@ const EmergencyContacts = ({ country }) => {
             </h2>
           </div>
         </div>
-        <div className="mt-10 bg-white pb-12 sm:pb-16">
+        <div className="mt-10 bg-white">
           <div className="relative">
             <div className="absolute inset-0 h-1/2 bg-gray-100" />
             <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="mx-auto max-w-4xl">
-                <dl className={`rounded-lg bg-white shadow-lg grid grid-cols-1 sm:grid-cols-${contacts.length}`}>
+                <dl className={`rounded-lg bg-white shadow-lg grid grid-cols-3 sm:grid-cols-3`}>
                   {contacts.map((contact, index) =>
                     <div key={index} className="flex flex-col border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r">
                       <dt className="order-2 mt-2 text-base sm:text-lg font-medium leading-6 text-gray-500">
                         {contact.title}
                       </dt>
-                      <dd className="order-1 text-5xl font-bold  text-[#0B3D59]">
+                      <dd className="order-1 text-3xl sm:text-5xl font-bold text-[#0B3D59]">
                         {contact.number}
                       </dd>
                     </div>
