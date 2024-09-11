@@ -29,7 +29,7 @@ const SummerReception = ({ country, summerReceptionRef }) => {
         setLoading(false); // Mark data as loaded
 
         // Automatically select the first weekend after data is loaded
-        if (data?.length > 0) setSelectedButtonIndex(0);
+        if (data?.length) setSelectedButtonIndex(0);
       } catch (error) {
         console.error('Error fetching summer reception data:', error);
       }

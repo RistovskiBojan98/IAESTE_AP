@@ -11,8 +11,8 @@ const Food = ({ country, foodRef }) => {
   const { width } = useWindowSize();
   const countryFood = findContent(food)
   const countryDrinks = findContent(drinks)
-
   const countryData = [...countryFood, ...countryDrinks];
+
   const dataLen = countryData?.length ?? 0
   const maxItemsToShow = dataLen >= 3 ? 3 : dataLen
 
@@ -34,12 +34,11 @@ const Food = ({ country, foodRef }) => {
 
   const showNext = () => setStartIndex(Math.min(startIndex + (width >= 768 ? 3 : 1), dataLen - 1));
 
-  return (
-    <>
-      {dataLen ? (
+  return dataLen ? (
         <section
           ref={foodRef}
-          className={`${css.container} mt-10 mb-16`}
+          className={`${css.container} sm:mt-10 sm:mb-16`}
+          style={{paddingTop: '1rem'}}
         >
           <h2 className={`${css.title} pb-10`}>
             Traditional food and drinks
@@ -61,11 +60,7 @@ const Food = ({ country, foodRef }) => {
             <div className={classes.cards}
               style={{ gridTemplateColumns: width >= 768 ? `repeat(${maxItemsToShow}, 1fr)` : '' }}>{cards}
             </div>
-            <button
-              onClick={showNext}
-              disabled={(dataLen > 3 && startIndex + 3 >= dataLen) || (dataLen <= maxItemsToShow)}
-              className={classes["next-button"]}
-            >
+            <button onClick={showNext} className={classes["next-button"]}>
               <svg
                 width="15"
                 viewBox="0 0 20 35"
@@ -80,9 +75,7 @@ const Food = ({ country, foodRef }) => {
             </button>
           </div>
         </section>
-      ) : (<></>)}
-    </>
-  );
+      ) : (<></>)
 };
 
 export default Food;

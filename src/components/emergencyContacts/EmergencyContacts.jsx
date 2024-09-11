@@ -21,7 +21,7 @@ const EmergencyContacts = ({ country }) => {
             return 'Fire department'
           // bug in the cols when showing emergency line in the Poland page
           default:
-           break;
+            return "Emergency line";
         }
       }
 
@@ -35,7 +35,10 @@ const EmergencyContacts = ({ country }) => {
     setLoading(false);
   }, [country])
 
-  if (!loading && contacts) 
+  if (!loading && contacts) {
+    const cols = contacts.length;
+    const mobCols = contacts.length === 3 ? 3 : 2;
+
     return (
       <div className="bg-gray-100 pt-12">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -50,9 +53,9 @@ const EmergencyContacts = ({ country }) => {
             <div className="absolute inset-0 h-1/2 bg-gray-100" />
             <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="mx-auto max-w-4xl">
-                <dl className={`rounded-lg bg-white shadow-lg grid grid-cols-3 sm:grid-cols-3`}>
+                <dl className={`rounded-lg bg-white shadow-lg grid grid-cols-${mobCols} sm:grid-cols-${cols}`}>
                   {contacts.map((contact, index) =>
-                    <div key={index} className="flex flex-col border-b border-gray-100 p-6 text-center sm:border-0 sm:border-r">
+                    <div key={index} className="flex flex-col border-b border-gray-100 p-6 text-center sm:border-0 border-r">
                       <dt className="order-2 mt-2 text-base sm:text-lg font-medium leading-6 text-gray-500">
                         {contact.title}
                       </dt>
@@ -68,6 +71,7 @@ const EmergencyContacts = ({ country }) => {
         </div>
       </div>
     );
+  }
 };
 
 export default EmergencyContacts;

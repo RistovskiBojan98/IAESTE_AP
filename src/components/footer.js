@@ -1,54 +1,9 @@
-/*
-  This example requires some changes to your config:
-  
-  ```
-  // tailwind.config.js
-  const colors = require('tailwindcss/colors')
-  
-  module.exports = {
-    // ...
-    theme: {
-      extend: {
-        colors: {
-          rose: colors.rose,
-        },
-      },
-    },
-    plugins: [
-      // ...
-      require('@tailwindcss/forms'),
-    ],
-  }
-  ```
-*/
-// import { ChevronRightIcon, StarIcon } from '@heroicons/react/20/solid'
 
-// const stats = [
-//     { label: 'Founded', value: '2021' },
-//     { label: 'Employees', value: '5' },
-//     { label: 'Beta Users', value: '521' },
-//     { label: 'Raised', value: '$25M' },
-// ]
-// const logos = [
-//     { name: 'Transistor', url: 'https://tailwindui.com/img/logos/transistor-logo-gray-400.svg' },
-//     { name: 'Mirage', url: 'https://tailwindui.com/img/logos/mirage-logo-gray-400.svg' },
-//     { name: 'Tuple', url: 'https://tailwindui.com/img/logos/tuple-logo-gray-400.svg' },
-//     { name: 'Laravel', url: 'https://tailwindui.com/img/logos/laravel-logo-gray-400.svg' },
-//     { name: 'StaticKit', url: 'https://tailwindui.com/img/logos/statickit-logo-gray-400.svg' },
-//     { name: 'Workcation', url: 'https://tailwindui.com/img/logos/workcation-logo-gray-400.svg' },
-// ]
 import logoImg from "./cer-logo-dark.png"
 import footerImg from "./footer_img.png"
 
 const footerNavigation = {
-    // main: [
-    //     { name: 'About', href: '#' },
-    //     { name: 'Blog', href: '#' },
-    //     { name: 'Jobs', href: '#' },
-    //     { name: 'Press', href: '#' },
-    //     { name: 'Accessibility', href: '#' },
-    //     { name: 'Partners', href: '#' },
-    // ],
+
     social: [
         {
             name: 'facebook',
@@ -113,11 +68,13 @@ export default function Footer() {
     return (
         <footer className="bg-gray-900" style={{ backgroundColor: "#0A3D58" }}>
         <div className="mx-auto max-w-md overflow-hidden px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-20">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-20">
                 <div className="mb-1 sm:mb-0">
-                    <img src={logoImg} alt="" />
+                    <a href="/">
+                        <img src={logoImg} alt="" />
+                    </a>
                 </div>
-                <div className="flex flex-col justify-start pt-4">
+                <div className="flex flex-col justify-start py-4">
                     {footerNavigation.social.map((item) => (
                         // eslint-disable-next-line react/jsx-no-target-blank
                         <a key={item.name} href={item.href ?? '#'} target="_blank" className="text-gray-400 hover:text-gray-300 flex flex-row justify-between">

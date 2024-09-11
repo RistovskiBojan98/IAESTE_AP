@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Footer from "../footer";
-import SRNavbar from "./SRNavbar";
+import Navbar from "../navbar/Navbar";
 import EventList from "./EventList";
 import Loader from "./Loader";
 import css from "./sr-weekends.module.css";
@@ -32,7 +32,7 @@ export default function SRWeekends() {
             <meta charSet="utf-8" />
             <title>IAESTE | Across the Planet | Summer Reception </title>
           </Helmet>
-          <SRNavbar />
+          <Navbar isCountryNav={false}/>
           <EventList />
           <Footer />
         </div>

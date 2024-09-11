@@ -2,14 +2,15 @@ import { Popover } from "@headlessui/react";
 import { Link } from "react-scroll";
 import cerLogo from "./navbar/cer-logo.png";
 import classes from "./statsStyles.module.css";
+import Navbar from "./navbar/Navbar";
 
 export default function Landing({ countriesRef }) {
   return (
     <div className="relative overflow-hidden bg-white">
       <div className="mx-auto max-w-7xl">
         <div
-          className="relative bg-white pb-8 sm:pb-16 md:pb-20 lg:w-full xl:max-w-2xl lg:pb-28 xl:pb-32"
-          style={{ paddingBottom: "80px"}}
+          className="relative bg-white lg:w-full xl:max-w-2xl"
+          style={{ paddingBottom: "32px"}}
         >
           <svg
             className="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white xl:block"
@@ -20,38 +21,13 @@ export default function Landing({ countriesRef }) {
           >
             <polygon points="10,0 100,0 33,100 10,100" />
           </svg>
+          
+          <Navbar isCountryNav={false} />
 
-          <Popover>
-            <div className="relative px-4 pt-6 sm:px-6 lg:px-8">
-              <nav
-                className="relative flex items-center justify-between sm:h-10 xl:justify-start"
-                aria-label="Global"
-              >
-                <div className="flex flex-shrink-0 flex-grow items-center lg:flex-grow-0">
-                  <div
-                    className={`flex w-full items-center justify-between md:w-auto ${classes.logo}`}
-                  >
-                    <img
-                      alt="CER Summer App"
-                      className="md:mt-20 h-24 w-auto"
-                      src={cerLogo}
-                    />
-                  </div>
-                </div>
-              </nav>
-            </div>
-          </Popover>
-
-          <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 lg:px-8">
+          <main className="mx-auto max-w-7xl px-4 mt-4 sm:mt-16 sm:mb-8 sm:px-6 lg:px-8">
             <div className="md:text-center xl:text-left w-full flex flex-col items-start md:items-center xl:items-start">
-              <h1
-                className={`text-4xl font-bold  text-gray-900 sm:text-5xl md:text-6xl leading-10 ${classes.title}`}
-              >
-                <span className="block xl:inline text-white "> IAESTE</span>{" "}
-                <br />
-                <span className="block text-[#0B3D59] xl:inline">
-                  Across the planet
-                </span>
+              <h1 className={`text-5xl font-bold pb-3 sm:pb-6 text-gray-900 md:text-7xl leading-10 ${classes.title}`}>
+                Across the planet
               </h1>
               <p className="mt-3 text-base text-[#0B3D59] md:mx-auto sm:mt-5 md:max-w-xl md:text-lg md:mt-5 md:text-xl lg:mx-0">
                 We hope you will have a great time discovering foreign places,

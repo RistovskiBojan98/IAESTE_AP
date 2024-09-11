@@ -62,7 +62,7 @@ const Country = () => {
         <meta charSet="utf-8" />
         <title>IAESTE | Across {id.replace(/-/g, " ")}</title>
       </Helmet>
-      <Navbar />
+      <Navbar isCountryNav={true} />
       <Hero
         country={id}
         scrollToCities={scrollToCities}

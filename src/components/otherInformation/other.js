@@ -87,10 +87,10 @@ export const otherInfo = [
     {
         country: "Poland",
         info: [
-            // {
-            //     title: "Tipping restaurants",
-            //     desc: "Tipping is not mandatory, but well received. It all depends on the quality of the service. It is usually between 10 - 15%.When dining in a larger group of people (more than 6) sometimes, depending on the restaurant, a service charge could be applied, but it is always written in the menu and most typical charge would be 10%. If you want to tip remember to do it in cash, most of the time restaurants don't accept additional card payment for tipping."
-            // },
+            {
+                title: "Tipping restaurants",
+                desc: "Tipping is not mandatory, but well received. It all depends on the quality of the service. It is usually between 10 - 15%.When dining in a larger group of people (more than 6) sometimes, depending on the restaurant, a service charge could be applied, but it is always written in the menu and most typical charge would be 10%. If you want to tip remember to do it in cash, most of the time restaurants don't accept additional card payment for tipping."
+            },
             {
                 title: "Polish Festivals",
                 desc: "Poland celebrates a variety of cultural festivals throughout the year. For example, Święto Wina (Wine Festival) in Zielona Góra celebrates the local wine industry, while Juwenalia festivals are held in many cities to celebrate students. The Pierogi Festival in Kraków and the Bread Festival in Poznań are also popular events. There are also famous music festivals during summer like Open’er in Tricity."

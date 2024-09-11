@@ -228,13 +228,11 @@ const EventList = () => {
         )
     };
 
-    
-
     return (
         <div>
             {selectedEvent && (<EventPopup event={selectedEvent} onClose={closePopup} />)}
-            {moreEvents.length && (<MoreEventsPopup events={moreEvents} date={moreEventsSelectedDate} onClose={closeMoreEvents} />)}
-            <div className="mx-auto max-w-7xl mt-10 border-solid border-b-2 pb-3 border-[#0B3D59]">
+            {!!moreEvents.length && (<MoreEventsPopup events={moreEvents} date={moreEventsSelectedDate} onClose={closeMoreEvents} />)}
+            <div className="mx-auto max-w-7xl border-solid border-b-2 py-3 border-[#0B3D59]">
                 <div className="w-full px-10 flex justify-start items-center">
                     <h2 className={css.titleText}>
                         Summer Reception Weekends 2024
@@ -248,7 +246,7 @@ const EventList = () => {
                     </div>
                 </div>
                 {/* Filter values */}
-                {filter.length > 0 && (
+                {!!filter.length && (
                     <div className="flex justify-start items-center mt-3 max-w-7xl px-10 border-solid border-t-2 border-[#0B3D59] pt-3">
                         <span className="text-lg font-semibold text-[#0B3D59]"><i className="fa fa-filter"></i></span>
                         <div className='flex flex-col md:flex-row gap-3'>
@@ -262,7 +260,6 @@ const EventList = () => {
                                 </div>
                             ))}
                         </div>
-
                     </div>
                 )}
             </div>

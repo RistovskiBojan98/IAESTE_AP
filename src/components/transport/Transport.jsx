@@ -19,7 +19,7 @@ const Transport = ({ transportRef, country }) => {
         <div className={css.container} ref={transportRef}>
           <h4 className={css.title}>Travelling options</h4>
           {/* Tiers */}
-          <div className="mt-12 space-y-12 grid grid-cols-1 lg:grid-cols-2 gap-8 lg:space-y-0">
+          <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
             {countryTransport.map((transport) => {
               const firstTenFeatures = transport.features.slice(0, 10);
               const remainingFeatures = transport.features.slice(10);
@@ -33,11 +33,11 @@ const Transport = ({ transportRef, country }) => {
                     <h3 className="text-xl font-semibold text-[#0B3D59]">
                       {transport.title}
                     </h3>
-                    {transport.mostPopular ? (
+                    {transport.mostPopular && (
                       <p className="absolute top-0 -translate-y-1/2 transform rounded-full bg-[#0B3D59] py-1.5 px-4 text-sm font-semibold text-white">
                         Discounts
                       </p>
-                    ) : null}
+                    )}
 
                     <p className="mt-6 text-[#3A4856] font-semibold">{transport.description}</p>
 
@@ -54,7 +54,7 @@ const Transport = ({ transportRef, country }) => {
                       ))}
                     </ul>
 
-                    {remainingFeatures.length > 0 && (
+                    {!!remainingFeatures.length && (
                       <Disclosure as="div">
                         {({ open }) => (
                           <>

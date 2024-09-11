@@ -3,6 +3,7 @@ import { countryImages } from './heroImages';
 import classes from './Hero.module.css';
 import { countrySocialLinks } from './socialLinks';
 import { information } from '../generalInformation/information';
+import cerLogoWhite from "../cer-logo-dark.png"
 
 const Hero = ({
     country,
@@ -38,8 +39,13 @@ const Hero = ({
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] mix-blend-multiply" />
                     </div>
+                    <div className="absolute inset-0 p-3 sm:hidden" style={{zIndex: '99'}}>
+                        <a href="/">
+                            <img alt="CER AP" src={cerLogoWhite} className="h-14 w-auto"/>
+                        </a>
+                    </div>
                     <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
-                        <h1 className="text-center text-4xl font-bold  sm:text-5xl lg:text-6xl">
+                        <h1 className="text-center text-4xl font-bold pt-10 sm:pt-0 sm:text-5xl lg:text-6xl">
                             <span className="block text-white">Welcome to</span>
                             <span className="block text-white">
                                 IAESTE {country.replace(/-/g, ' ')}
