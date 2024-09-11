@@ -1,6 +1,4 @@
-import { Popover } from "@headlessui/react";
 import { Link } from "react-scroll";
-import cerLogo from "./navbar/cer-logo.png";
 import classes from "./statsStyles.module.css";
 import Navbar from "./navbar/Navbar";
 
