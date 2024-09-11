@@ -50,8 +50,7 @@ const GeneralInformation = ({ country }) => {
 
   return (
     <div className="bg-white">
-      <div className={css.container}>
-        <div className="space-y-12">
+      <div className={`${css.container} space-y-12`}>
           <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
             <h2 className={css.title}>
               General Information
@@ -79,7 +78,6 @@ const GeneralInformation = ({ country }) => {
               </li>
             ))}
           </ul>
-        </div>
       </div>
     </div>
   );

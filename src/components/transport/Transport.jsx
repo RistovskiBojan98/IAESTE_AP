@@ -18,7 +18,6 @@ const Transport = ({ transportRef, country }) => {
       {countryTransport?.length ? (
         <div className={css.container} ref={transportRef}>
           <h4 className={css.title}>Travelling options</h4>
-          {/* Tiers */}
           <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
             {countryTransport.map((transport) => {
               const firstTenFeatures = transport.features.slice(0, 10);

@@ -69,11 +69,9 @@ export default function Footer() {
         <footer className="bg-gray-900" style={{ backgroundColor: "#0A3D58" }}>
         <div className="mx-auto max-w-md overflow-hidden px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-20">
-                <div className="mb-1 sm:mb-0">
-                    <a href="/">
-                        <img src={logoImg} alt="" />
-                    </a>
-                </div>
+                <a href="/">
+                    <img src={logoImg} alt="" />
+                </a>
                 <div className="flex flex-col justify-start py-4">
                     {footerNavigation.social.map((item) => (
                         // eslint-disable-next-line react/jsx-no-target-blank
@@ -83,9 +81,7 @@ export default function Footer() {
                         </a>
                     ))}
                 </div>
-                <div className="hidden lg:block">
-                    <img src={footerImg} alt="" />
-                </div>
+                <img src={footerImg} alt="" className="hidden lg:block"/>
             </div>
         </div>
     </footer>

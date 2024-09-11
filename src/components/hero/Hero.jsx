@@ -39,7 +39,7 @@ const Hero = ({
                         />
                         <div className="absolute inset-0 bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] mix-blend-multiply" />
                     </div>
-                    <div className="absolute inset-0 p-3 sm:hidden" style={{zIndex: '99'}}>
+                    <div className="absolute inset-0 p-3 sm:hidden h-10" style={{zIndex: '99'}}>
                         <a href="/">
                             <img alt="CER AP" src={cerLogoWhite} className="h-14 w-auto"/>
                         </a>
@@ -68,9 +68,7 @@ const Hero = ({
 
 
                         <div className="mx-auto mt-10 max-w-sm flex sm:max-w-none justify-center">
-                            <div
-                                className={`mx-auto inline-grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-5`}
-                            >
+                            <div className="mx-auto inline-grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-5">
                                 <button onClick={scrollToTransport} className={classes.scrollBtn}>Transport</button>
                                 <button onClick={scrollToCities} className={classes.scrollBtn}>Travel</button>
                                 <button onClick={scrollToFood} className={classes.scrollBtn}>Cuisine</button>

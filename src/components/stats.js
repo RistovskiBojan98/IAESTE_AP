@@ -31,16 +31,9 @@ export default function Stats() {
             </div>
           </div>
           <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:max-w-7xl lg:px-8 xl:grid xl:grid-flow-col-dense xl:grid-cols-2 xl:gap-x-8">
-            <div
-              className="relative py-12 xl:col-start-1"
-            >
-              <h2 className="text-base font-semibold">
-                {/* absolute inset-0 bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] mix-blend-multiply" aria-hidden="true" */}
-                <span
-                  className="text-white text-3xl"
-                >
-                  About us
-                </span>
+            <div className="relative py-12 xl:col-start-1">
+              <h2 className="text-white text-3xl font-semibold">
+                About us
               </h2>
               <Disclosure as="div">
                 {({ open }) => (

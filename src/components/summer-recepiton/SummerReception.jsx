@@ -22,14 +22,14 @@ const SummerReception = ({ country, summerReceptionRef }) => {
           if (fullStartDate < new Date()) event.link = null;
         })
         // set the weekends
-        setWeekends(data);
-        const names = data?.map((weekend) => weekend.name) ?? [];
-        setWeekendsNames(names);
-        setWeekend(data ? data[0] : undefined);
+        if (data?.length) {
+          setWeekends(data);
+          const names = data?.map((weekend) => weekend.name) ?? [];
+          setWeekendsNames(names);
+          setWeekend(data[0]);
+          setSelectedButtonIndex(0);
+        }
         setLoading(false); // Mark data as loaded
-
-        // Automatically select the first weekend after data is loaded
-        if (data?.length) setSelectedButtonIndex(0);
       } catch (error) {
         console.error('Error fetching summer reception data:', error);
       }
@@ -48,9 +48,6 @@ const SummerReception = ({ country, summerReceptionRef }) => {
           <h2 className={appCss.title}>
             Summer Reception 2024
           </h2>
-          {/* <p className='mt-2 mb-8'>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. At elementum eu facilisis sed odio morbi. In est ante in nibh mauris. Suscipit adipiscing bibendum est ultricies integer quis auctor elit sed. Varius duis at consectetur lorem donec massa sapien. Molestie a iaculis at erat pellentesque. Massa eget egestas purus viverra accumsan in.
-          </p> */}
         </div>
         <div className="flex flex-col items-center">
           <div className={`grid grid-cols-${mobCols} sm:grid-cols-${cols} gap-4 text-center my-5`}>

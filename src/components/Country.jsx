@@ -26,21 +26,12 @@ const Country = () => {
   const foodRef = useRef(null);
   const summerReceptionRef = useRef(null)
 
-  const scrollToTransport = () => {
-    transportRef.current.scrollIntoView({ behavior: "smooth" });
-  };
+  const scrollToSection = (ref) => ref.current.scrollIntoView({ behavior: "smooth" });
 
-  const scrollToCities = () => {
-    citiesRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const scrollToFood = () => {
-    foodRef.current.scrollIntoView({ behavior: "smooth" });
-  };
-
-  const scrollToSummerReception = () => {
-    summerReceptionRef.current.scrollIntoView({ behavior: "smooth" });
-  };
+  const scrollToTransport = () => scrollToSection(transportRef)
+  const scrollToCities = () => scrollToSection(citiesRef)
+  const scrollToFood = () => scrollToSection(foodRef)
+  const scrollToSummerReception = () => scrollToSection(summerReceptionRef)
 
   useEffect(() => {
     // Simulate a delay (you can adjust the duration as needed)

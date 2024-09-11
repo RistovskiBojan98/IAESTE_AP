@@ -1,15 +1,11 @@
 import { Link } from "react-scroll";
-import classes from "./statsStyles.module.css";
 import Navbar from "./navbar/Navbar";
 
 export default function Landing({ countriesRef }) {
   return (
     <div className="relative overflow-hidden bg-white">
       <div className="mx-auto max-w-7xl">
-        <div
-          className="relative bg-white lg:w-full xl:max-w-2xl"
-          style={{ paddingBottom: "32px"}}
-        >
+        <div className="relative bg-white lg:w-full xl:max-w-2xl pb-8">
           <svg
             className="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white xl:block"
             fill="currentColor"
@@ -22,9 +18,9 @@ export default function Landing({ countriesRef }) {
           
           <Navbar isCountryNav={false} />
 
-          <main className="mx-auto max-w-7xl px-4 mt-4 sm:mt-16 sm:mb-8 sm:px-6 lg:px-8">
+          <main className="mx-auto max-w-7xl px-4 mt-4 sm:mt-8 sm:mb-8 sm:px-6 lg:px-8">
             <div className="md:text-center xl:text-left w-full flex flex-col items-start md:items-center xl:items-start">
-              <h1 className={`text-5xl font-bold pb-3 sm:pb-6 text-gray-900 md:text-7xl leading-10 ${classes.title}`}>
+              <h1 className={`text-5xl font-bold pb-3 text-gray-900 md:text-7xl leading-10`}>
                 Across the planet
               </h1>
               <p className="mt-3 text-base text-[#0B3D59] md:mx-auto sm:mt-5 md:max-w-xl md:text-lg md:mt-5 md:text-xl lg:mx-0">

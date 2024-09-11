@@ -1,6 +1,5 @@
 import { Popover } from "@headlessui/react";
 import cerLogo from "./cer-logo.png";
-import classes from "../statsStyles.module.css";
 
 const Navbar = ({isCountryNav}) =>
   <div className={`mx-auto mb-2 ${isCountryNav ? "hidden sm:block" : ""}`}>
@@ -11,15 +10,9 @@ const Navbar = ({isCountryNav}) =>
           aria-label="Global"
         >
           <div className="flex flex-shrink-0 flex-grow items-center md:flex-grow-0">
-            <div
-              className={`flex w-full items-center justify-between md:w-auto ${classes.logo}`}
-            >
+            <div className="flex w-full items-center justify-between md:w-auto">
               <a href="/">
-                <img
-                  alt="CER Summer App"
-                  className="mt-2 sm:mt-10 sm:h-24 h-16 w-auto"
-                  src={cerLogo}
-                />
+                <img alt="CER Summer App" className="mt-2 sm:mt-10 sm:h-24 h-16 w-auto" src={cerLogo}/>
               </a>
             </div>
           </div>
