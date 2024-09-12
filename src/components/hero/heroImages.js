@@ -1,15 +1,15 @@
-import austriaImg from "./austria.jpg";
-import bosniaImg from "./Bosnia-and-Herzegovina.JPG";
-import belgiumImg from "./Belgium.png";
-import maltaImg from "./Malta.jpg";
-import norwayImg from "./Norway.JPG";
-import polandImg from "./Poland.jpg";
-import spainImg from "./Spain.jpg";
-import swedenImg from "./Sweden.jpg";
-import switzerlandImg from "./Switzerland.jpg";
-import macedoniaImg from "./macedonia.jpg";
-import germanyImg from "./Germany.jpg";
-import czechiaImg from "./Czech-Republic.jpg";
+import austriaImg from "./images/austria.jpg";
+import bosniaImg from "./images/Bosnia-and-Herzegovina.JPG";
+import belgiumImg from "./images/Belgium.png";
+import maltaImg from "./images/Malta.jpg";
+import norwayImg from "./images/Norway.JPG";
+import polandImg from "./images/Poland.jpg";
+import spainImg from "./images/Spain.jpg";
+import swedenImg from "./images/Sweden.jpg";
+import switzerlandImg from "./images/Switzerland.jpg";
+import macedoniaImg from "./images/macedonia.jpg";
+import germanyImg from "./images/Germany.jpg";
+import czechiaImg from "./images/Czech-Republic.jpg";
 
 export const countryImages = [
   {

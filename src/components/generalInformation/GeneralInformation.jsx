@@ -4,14 +4,9 @@ import css from "../app.module.css"
 import voltage from "../../images/voltage1.jpg"
 import country_code from "../../images/country_dialing_code.jpg"
 import population from "../../images/population2.jpg"
+import { langImgUrl, timeZoneImgUrl, currencyImgUrl, climateImgUrl, simImgUrl } from "./information";
 
 const GeneralInformation = ({ country }) => {
-  // global constants
-  const langImgUrl = "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80"
-  const timeZoneImgUrl = "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-  const currencyImgUrl = "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
-  const climateImgUrl = "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
-  const simImgUrl = "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80"
   // helper function
   const addImgUrl = (obj) => {
     switch (obj.name) {
@@ -49,36 +44,27 @@ const GeneralInformation = ({ country }) => {
   countryInfo.data.forEach(addImgUrl);
 
   return (
-    <div className="bg-white">
-      <div className={`${css.container} space-y-12`}>
-          <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
-            <h2 className={css.title}>
-              General Information
-            </h2>
-          </div>
-          <ul className="mx-auto space-y-16 grid grid-cols-3 gap-8 sm:gap-16 space-y-0 lg:max-w-5xl lg:grid-cols-3">
-            {countryInfo.data.map((info) => (
-              <li key={info.name}>
-                <div className="space-y-6">
-                  <div className="mx-auto h-20 w-20 sm:h-40 sm:w-40">
-                  <img
-                    className="rounded-full"
-                    src={info.imageUrl}
-                    alt=""
-                    style={{width:'100%', height:'100%'}}
-                  />
-                  </div>
-                  <div className="space-y-2">
-                    <div className="space-y-1 text-lg font-medium leading-6">
-                      <h3 className="text-[#38607F]">{info.name}</h3>
-                      <p className="text-[#0B3D59] font-semibold">{info.role}</p>
-                    </div>
-                  </div>
-                </div>
-              </li>
-            ))}
-          </ul>
+    <div className={`${css.container}`}>
+      <div className="mb-14 space-y-5 sm:mx-auto sm:max-w-xl lg:max-w-5xl">
+        <h2 className={css.title}>
+          General Information
+        </h2>
       </div>
+      <ul className="mx-auto grid grid-cols-3 gap-8 lg:max-w-5xl">
+        {countryInfo.data.map((info) => (
+          <li key={info.name}>
+            <div className="space-y-5">
+              <div className="mx-auto h-20 w-20 sm:h-40 sm:w-40">
+                <img className="rounded-full w-full h-full" src={info.imageUrl} alt="" />
+              </div>
+              <div className="text-lg leading-6">
+                <h3 className="text-[#38607F]">{info.name}</h3>
+                <p className="text-[#0B3D59] font-semibold">{info.role}</p>
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

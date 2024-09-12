@@ -8,11 +8,11 @@ export default function Layout() {
     const countriesRef = useRef(null);
 
     return (
-        <>
-        <Landing countriesRef={countriesRef}/>
-        <Stats/>
-        <Countries passRef={countriesRef}/>
-        <Footer/>
-        </>
+        <section>
+            <Landing/>
+            <Stats/>
+            <Countries passRef={countriesRef}/>
+            <Footer/>
+        </section>
     )
 }

@@ -1,11 +1,14 @@
 import { Link } from "react-scroll";
 import Navbar from "./navbar/Navbar";
+import css from "./app.module.css"
+import { bgGradient } from "./global_functions";
 
-export default function Landing({ countriesRef }) {
+export default function Landing() {
   return (
     <div className="relative overflow-hidden bg-white">
-      <div className="mx-auto max-w-7xl">
+      <div className={css.containerPosition}>
         <div className="relative bg-white lg:w-full xl:max-w-2xl pb-8">
+          {/* Polygon*/}
           <svg
             className="absolute inset-y-0 right-0 hidden h-full w-48 translate-x-1/2 transform text-white xl:block"
             fill="currentColor"
@@ -18,39 +21,34 @@ export default function Landing({ countriesRef }) {
           
           <Navbar isCountryNav={false} />
 
-          <main className="mx-auto max-w-7xl px-4 mt-4 sm:mt-8 sm:mb-8 sm:px-6 lg:px-8">
+          {/* Title, description and buttons*/}
+          <main className={`${css.containerPosition} px-4 mt-4 sm:mt-8 sm:mb-8 sm:px-6 lg:px-8`}>
             <div className="md:text-center xl:text-left w-full flex flex-col items-start md:items-center xl:items-start">
-              <h1 className={`text-5xl font-bold pb-3 text-gray-900 md:text-7xl leading-10`}>
+              <h1 className="text-5xl font-bold pb-3 text-gray-900 md:text-7xl leading-10">
                 Across the planet
               </h1>
-              <p className="mt-3 text-base text-[#0B3D59] md:mx-auto sm:mt-5 md:max-w-xl md:text-lg md:mt-5 md:text-xl lg:mx-0">
+              <p className="mt-3 text-base text-[#0B3D59] sm:mt-5 md:max-w-xl sm:text-lg md:mt-5 md:text-xl lg:mx-0">
                 We hope you will have a great time discovering foreign places,
                 and this application will help you find all information needed
                 while travelling across the globe with IAESTE.
               </p>
-              <div className="mt-5 sm:mt-8 w-64 sm:w-80 sm:flex sm:justify-center lg:justify-start shadow rounded-md">
-              <Link
-                    to="countries-div"
-                    smooth={true}
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#0B3D59] px-8 py-3 text-base font-semibold text-white hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] md:py-4 md:px-10 md:text-lg cursor-pointer"
-                  >
+              <div className={css.landingBtnsContainer}>
+                <Link to="countries-div" smooth={true} className={`${css.landingBtns} hover:${bgGradient}`}>
                     DISCOVER A COUNTRY
                     <i className="fa-solid fa-magnifying-glass ml-3"></i>
-                  </Link>
+                </Link>
               </div>
-              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start w-64 sm:w-80 shadow rounded-md">
-              <a
-                    href="/sr-weekends"
-                    className="flex w-full items-center justify-center rounded-md border border-transparent bg-[#0B3D59] px-8 py-3 text-base font-semibold text-white hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] md:py-4 md:px-10 md:text-lg"
-                  >
+              <div className={css.landingBtnsContainer}>
+                <a href="/sr-weekends" className={`${css.landingBtns} hover:${bgGradient}`}>
                     SUMMER RECEPTION
                     <i className="fa-solid fa-umbrella-beach ml-3"></i>
-                  </a>
+                </a>
               </div>
             </div>
           </main>
         </div>
       </div>
+      {/* Image next to title*/}
       <div className="xl:absolute xl:inset-y-0 xl:right-0 xl:w-1/2">
         <img
           className="h-56 w-full object-cover lg:h-72 lg:h-96 xl:h-full xl:w-full "

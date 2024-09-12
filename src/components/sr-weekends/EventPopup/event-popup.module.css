@@ -57,12 +57,3 @@
     color: black;
 }
 
-.overflowDescription {
-    overflow-y: scroll;
-    max-height: 60%;
-
-    @media (max-width: 768px) {
-        max-height: 70%;
-    }
-}
-

@@ -16,7 +16,7 @@ const Facts = ({ country }) => {
           id="testimonial-heading"
           className={css.title2}
         >
-          Did you know?
+          Did you know ?
         </h2>
 
         <div className="mt-4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 lg:space-y-0">
@@ -26,9 +26,7 @@ const Facts = ({ country }) => {
         </div>
       </div>
     </section>
-  ) : (
-    null
-  )
+  ) : null
 };
 
 export default Facts;
