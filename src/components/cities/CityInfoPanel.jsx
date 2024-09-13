@@ -1,6 +1,6 @@
 import React from "react";
 import { Disclosure } from "@headlessui/react";
-import DownIcon from "./DownIcon";
+import DownIcon from "../global/DownIcon";
 
 const CityInfoPanel = ({ cities }) =>
     cities.map((faq, index) =>
@@ -17,7 +17,7 @@ const CityInfoPanel = ({ cities }) =>
                         </Disclosure.Button>
                     </dt>
                     <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                        <p className="p-4 text-lg text-[#F1F1E6]">{faq.answer}</p>
+                        <p className="p-4 text-lg" style={{color: 'white', fontWeight: '300'}}>{faq.answer}</p>
                     </Disclosure.Panel>
                 </div>
             )}

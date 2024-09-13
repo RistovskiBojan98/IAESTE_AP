@@ -3,7 +3,7 @@ import { otherInfo } from "./other";
 import useWindowSize from "../../hooks/useScreenSize";
 import OtherInfoCard from "./InfoCard";
 import css from "../app.module.css"
-import { leftArrow, rightArrow } from "../global_functions";
+import { leftArrow, rightArrow } from "../global/global_functions";
 
 const Other = ({ country }) => {
     const { width } = useWindowSize();

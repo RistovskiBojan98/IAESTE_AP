@@ -13,11 +13,10 @@
 }
 
 .title {
-    font-size: 2.25rem; /* 36px */
-    line-height: 2.5rem; /* 40px */
+    font-size: 2.5rem; /* 36px */
+    line-height: 2.75rem; /* 40px */
     font-weight: bold;
     color: #0B3D59;
-    letter-spacing: -0.025em; /**/
     text-align: center;
 }
 

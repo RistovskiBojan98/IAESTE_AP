@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
-import Layout from "./components/layout.js";
+import Layout from "./components/layout.jsx";
 import Country from "./components/Country.jsx";
 import Plane from "./components/plane/Plane";
 import SRWeekends from "./components/sr-weekends/sr-weekends.jsx";

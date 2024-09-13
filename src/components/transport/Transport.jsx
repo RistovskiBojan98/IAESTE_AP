@@ -1,15 +1,58 @@
 import React, { useState, useEffect } from "react";
-import { CheckIcon, ChevronDownIcon } from "@heroicons/react/24/outline";
 import { transport } from "./transport";
 import css from "../app.module.css";
 import { Disclosure } from "@headlessui/react";
-import { classNames } from "../global_functions";
+import TransportFeatures from "./TransportFeatures";
+import { TRANSPORT_CONSTANTS } from "../global/global_functions";
+import ShowMore from "../global/ShowMore";
 
 const Transport = ({ transportRef, country }) => {
   const [countryTransport, setTransportProps] = useState([]);
 
   useEffect(() => {
-    const tiers = transport[country]?.tiers ?? [];
+    const tiers = transport[country]?.tiers?.map(tier => {
+      // helper function
+      // set the title and icon of the feature tier
+      // this is done to not repeat the same code in the transport.js
+      const { AIRPORTS, NATIONAL_AND_INTERNATIONAL_TRANSPORT, PUBLIC_TRANSPORT } = TRANSPORT_CONSTANTS
+      const setTitleAndIcon = (id) => {
+        switch (id) {
+          case AIRPORTS:
+            return {
+              title: "Airports",
+              icon: "fa fa-plane",
+            };
+          
+          case NATIONAL_AND_INTERNATIONAL_TRANSPORT:
+            return {
+              title: "National and international transport",
+              icon: "fa fa-train",
+            };
+
+          case PUBLIC_TRANSPORT:
+            return {
+              title: "Public transport",
+              icon: "fa fa-bus",
+            }
+          
+          default:
+            return {
+              title: "Discounts",
+              icon: "fa fa-tag",
+            }
+        }
+      }
+
+      const {title, icon} = setTitleAndIcon(tier.id)
+      
+      return {
+        ...tier,
+        title,
+        icon
+      }
+
+    }) ?? [];
+
     setTransportProps(tiers);
   }, [country]);
 
@@ -17,11 +60,13 @@ const Transport = ({ transportRef, country }) => {
     <>
       {countryTransport?.length ? (
         <div className={css.container} ref={transportRef}>
-          <h4 className={css.title}>Travelling options</h4>
-          <div className="mt-10 grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <h1 className={css.title}>Transportation</h1>
+          <div className="my-16 grid grid-cols-1 md:grid-cols-2 gap-8">
             {countryTransport.map((transport) => {
-              const firstTenFeatures = transport.features.slice(0, 10);
-              const remainingFeatures = transport.features.slice(10);
+              // the first features (max 6) are always shown
+              // if there are additional, they are covered in the see more tab
+              const firstFeatures = transport.features.slice(0, 6);
+              const remainingFeatures = transport.features.slice(6);
 
               return (
                 <div
@@ -29,63 +74,26 @@ const Transport = ({ transportRef, country }) => {
                   className="relative flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm"
                 >
                   <div className="flex-1 text-start">
-                    <h3 className="text-xl font-semibold text-[#0B3D59]">
-                      {transport.title}
-                    </h3>
-                    {transport.mostPopular && (
-                      <p className="absolute top-0 -translate-y-1/2 transform rounded-full bg-[#0B3D59] py-1.5 px-4 text-sm font-semibold text-white">
-                        Discounts
-                      </p>
-                    )}
-
-                    <p className="mt-6 text-[#3A4856] font-semibold">{transport.description}</p>
+                      <div className="absolute top-0 -translate-y-1/2 transform rounded-full bg-[#0B3D59] py-2 px-4 font-semibold" style={{ color: 'white'}}>
+                        <div className="flex items-center gap-2">
+                          <i className={transport.icon}></i>{transport.title}
+                        </div>
+                      </div>
 
                     {/* Feature list */}
                     <ul className="mt-6 space-y-6">
-                      {firstTenFeatures.map((feature, index) => (
-                        <li key={feature + "-" + index} className="flex">
-                          <CheckIcon
-                            className="h-6 w-6 flex-shrink-0 text-[#0B3D59]"
-                            aria-hidden="true"
-                          />
-                          <span className="ml-3 text-[#3A4856] font-semibold">{feature}</span>
-                        </li>
-                      ))}
+                      <TransportFeatures features={firstFeatures} />
                     </ul>
 
                     {!!remainingFeatures.length && (
                       <Disclosure as="div">
                         {({ open }) => (
-                          <>
+                          <div>
                             <Disclosure.Panel as="ul" className="mt-6 space-y-6">
-                              {remainingFeatures.map((feature, index) => (
-                                <li key={feature + "-" + index} className="flex">
-                                  <CheckIcon
-                                    className="h-6 w-6 flex-shrink-0 text-[#0B3D59]"
-                                    aria-hidden="true"
-                                  />
-                                  <span className="ml-3 text-[#3A4856] font-semibold">{feature}</span>
-                                </li>
-                              ))}
+                              <TransportFeatures features={remainingFeatures} />
                             </Disclosure.Panel>
-                            <div className="text-lg mt-4">
-                              <Disclosure.Button className="flex items-start justify-between text-left text-[#0B3D59] hover:text-[#B2D8FB]"
-                                style={{ fontSize: '18px' }}>
-                                <span className="font-base">
-                                  {open ? 'Show less' : 'Show more'}
-                                </span>
-                                <span className="ml-6 flex h-7 items-center">
-                                  <ChevronDownIcon
-                                    className={classNames(
-                                      open ? "-rotate-180" : "rotate-0",
-                                      "h-6 w-6 transform"
-                                    )}
-                                    aria-hidden="true"
-                                  />
-                                </span>
-                              </Disclosure.Button>
-                            </div>
-                          </>
+                            <ShowMore textColors={["[#0B3D59]", "[#B2D8FB]"]} open={open}/>
+                          </div>
                         )}
                       </Disclosure>
                     )}

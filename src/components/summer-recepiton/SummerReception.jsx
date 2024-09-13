@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { summerReception } from "./summerReception"
 import css from "../sr-weekends/EventPopup/event-popup.module.css"
 import appCss from "../app.module.css"
-import Weekend from './Weekend';
-import { bgGradient } from '../global_functions';
+import Weekend from '../global/Weekend';
+import { bgGradient } from "../global/global_functions";
 
 const SummerReception = ({ country, summerReceptionRef }) => {
   const [weekend, setWeekend] = useState({});

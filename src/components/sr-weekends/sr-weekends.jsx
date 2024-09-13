@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
-import Footer from "../footer";
+import Footer from "../footer/footer";
 import Navbar from "../navbar/Navbar";
 import EventList from "./EventList";
 import Loader from "./Loader";

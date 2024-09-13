@@ -16,7 +16,7 @@ const Weekend = ({ weekend }) => {
                 <i className="fas fa-map-marker-alt mr-2"></i> {weekend.location}
             </div>
             {weekend.link && (
-                <div className={`${css.info} hover:text-sky-500`}>
+                <div className={`${css.info} hover:text-sky-700`}>
                     <a href={weekend.link} target='_blank' rel="noreferrer">
                         <i className="fas fa-link mr-1"></i> Registration link
                     </a>

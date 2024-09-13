@@ -2,7 +2,7 @@ import React from 'react';
 import { countryImages } from './heroImages';
 import { countrySocialLinks } from './socialLinks';
 import { information } from '../generalInformation/information';
-import cerLogoWhite from "../cer-logo-dark.png"
+import cerLogoWhite from "../footer/cer-logo-dark.png"
 
 const Hero = ({
     country,

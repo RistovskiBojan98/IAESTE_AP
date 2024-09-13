@@ -1,6 +1,6 @@
 import React from "react";
 import { committees } from "./committees";
-import { bgGradient } from "../global_functions";
+import { bgGradient } from "../global/global_functions";
 import css from "../app.module.css"
 
 const Committees = ({ country }) => {

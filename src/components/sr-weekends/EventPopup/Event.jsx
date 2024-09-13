@@ -1,6 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import css from "./event-popup.module.css"
-import Weekend from '../../summer-recepiton/Weekend';
+import Weekend from '../../global/Weekend';
 
 const EventPopup = ({ event, onClose }) => {
     const popupRef = useRef(null);

@@ -1,9 +1,9 @@
 import { information } from "./information";
 import css from "../app.module.css"
 // logo images
-import voltage from "../../images/voltage1.jpg"
-import country_code from "../../images/country_dialing_code.jpg"
-import population from "../../images/population2.jpg"
+import voltage from "./images/voltage1.jpg"
+import country_code from "./images/country_dialing_code.jpg"
+import population from "./images/population2.jpg"
 import { langImgUrl, timeZoneImgUrl, currencyImgUrl, climateImgUrl, simImgUrl } from "./information";
 
 const GeneralInformation = ({ country }) => {

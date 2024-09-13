@@ -3,7 +3,7 @@ import { food, drinks } from "./dataFood";
 import FoodCard from "./FoodCard";
 import useWindowSize from "../../hooks/useScreenSize";
 import css from "../app.module.css"
-import { leftArrow, rightArrow } from "../global_functions";
+import { leftArrow, rightArrow } from "../global/global_functions";
 
 const Food = ({ country, foodRef }) => {
   const findContent = (obj) => obj.find((el) => el.country === country)?.content ?? [];

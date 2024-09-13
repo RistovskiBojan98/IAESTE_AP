@@ -25,3 +25,10 @@ export const rightArrow = <svg
         fill="black"
     />
 </svg>
+
+export const TRANSPORT_CONSTANTS = {
+    AIRPORTS: 1,
+    NATIONAL_AND_INTERNATIONAL_TRANSPORT: 2,
+    PUBLIC_TRANSPORT: 3,
+    DISCOUNTS: 4
+}

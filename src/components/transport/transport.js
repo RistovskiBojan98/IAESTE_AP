@@ -1,901 +1,450 @@
+// ID CONSTANTS
+import { TRANSPORT_CONSTANTS } from "../global/global_functions";
+const { AIRPORTS, NATIONAL_AND_INTERNATIONAL_TRANSPORT, PUBLIC_TRANSPORT, DISCOUNTS } = TRANSPORT_CONSTANTS
+
 export const transport = {
   "Austria": {
     tiers: [
       {
-        title: "Airports with budget airlines",
-        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        id: AIRPORTS,
         features: [
-          <p>Vienna International Airport (VIE)</p>,
-          <p>M. R. Štefánik Airport Bratislava (BTS)</p>,
-          <p>Munich International Airport (MUC)</p>,
-          <p> Beside that we have in every bigger city (especially all our LCs city) an
-            airport - some European airlines do offer flights to these locations</p>,
+          { name: "Vienna International Airport (VIE)" },
+          { name: "M. R. Štefánik Airport Bratislava (BTS)" },
+          { name: "Munich International Airport (MUC)" },
+          { name: "Beside that we have in every bigger city (especially all our LCs city) an airport - some European airlines do offer flights to these locations" }
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "National and international transportation",
-        description: "",
+        id: NATIONAL_AND_INTERNATIONAL_TRANSPORT,
         features: [
-          <a href="https://www.oebb.at" target={"_blank"} rel="noopener noreferrer">
-            {" "}
-            OEBB{" "}
-          </a>,
-          <a href="https://www.westbahn.at" target={"_blank"} rel="noopener noreferrer">
-            WEST BAHN
-          </a>,
-          <a href="https://www.regiojet.de/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Regiojet
-          </a>,
-          <a href="https://int.bahn.de/en"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            DB - International trains and connections to Germany
-          </a>,
-          <a href="https://www.sbb.ch/en"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            SBB - International trains to/from Switzerland
-          </a>,
-          <a href="https://www.flixbus.at/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Flixbus
-          </a>,
-          <a href="https://www.postbus.at/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Postbus
-          </a>,
+          { name: "OEBB", link: "https://www.oebb.at" },
+          { name: "WEST BAHN", link: "https://www.westbahn.at" },
+          { name: "Regiojet", link: "https://www.regiojet.de/" },
+          { name: "DB - International trains and connections to Germany", link: "https://int.bahn.de/en" },
+          { name: "SBB - International trains to/from Switzerland", link: "https://www.sbb.ch/en" },
+          { name: "Flixbus", link: "https://www.flixbus.at/" },
+          { name: "Postbus", link: "https://www.postbus.at/" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "Public transport",
-        description: "",
+        id: PUBLIC_TRANSPORT,
         features: [
-          <a href="https://www.wienerlinien.at/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Wiener Linien
-          </a>,
-          <a href="https://www.holding-graz.at/de/mobilitaet/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Graz Holding
-          </a>,
-          <a href="https://www.linzag.at/portal/de/privatkunden/unterwegs"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Linz AG
-          </a>,
-          <a href="https://salzburg-verkehr.at/en/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Salzburg Verkehr
-          </a>,
-          <a href="https://www.ivb.at/en/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            IVB
-          </a>,
-          <a href="https://www.klimaticket.at/en/home/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Klimaticket - recommend for longer stays in Austria
-          </a>,
+          { name: "Wiener Linien", link: "https://www.wienerlinien.at/" },
+          { name: "Graz Holding", link: "https://www.holding-graz.at/de/mobilitaet/" },
+          { name: "Linz AG", link: "https://www.linzag.at/portal/de/privatkunden/unterwegs" },
+          { name: "Salzburg Verkehr", link: "https://salzburg-verkehr.at/en/" },
+          { name: "IVB", link: "https://www.ivb.at/en/" },
+          { name: " Klimaticket - recommend for longer stays in Austria", link: "https://www.klimaticket.at/en/home/" },
         ]
       },
       {
-        title: "",
-        description: "Discount cards for the national or local railway system:",
+        id: DISCOUNTS,
         features: [
-          <a
-            
-            href="https://www.oebb.at/de/tickets-kundenkarten/kundenkarten/vorteilscard "
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {" "}
-            OEBB Vorteilscard{" "}
-          </a>,
-          <a
-            
-            href="https://www.oebb.at/de/tickets-kundenkarten/schueler-gruppen/gruppenreisen  "
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {" "}
-            Grupenreisen Ticket -group tickets{" "}
-          </a>,
+          { name: "OEBB Vorteilscard", link: "https://www.oebb.at/de/tickets-kundenkarten/kundenkarten/vorteilscard" },
+          { name: "Grupenreisen Ticket - group tickets", link: "https://www.oebb.at/de/tickets-kundenkarten/schueler-gruppen/gruppenreisen" },
         ],
-        cta: "Monthly billing",
-        mostPopular: true,
       },
     ],
   },
   "Belgium": {
     tiers: [
       {
-        title: "Airports with budget airlines",
-        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        id: AIRPORTS,
         features: [
-          <p> Charleroi (Brussels-South airport)</p>,
-          <p> Brussels national airport (Zaventem)</p>,
+          { name: "Charleroi (Brussels-South Airport)" },
+          { name: "Zaventem (Brussels National Airport)" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "National and international transportation",
-        description: "",
+        id: NATIONAL_AND_INTERNATIONAL_TRANSPORT,
         features: [
-          <a href="https://www.delijn.be/en/?vertaling=true" target={"_blank"} rel="noopener noreferrer">
-            {" "}
-            De lijn{" "}
-          </a>,
-          <a href="https://www.belgiantrain.be/en " target={"_blank"} rel="noopener noreferrer">
-            Belgian train
-          </a>,
-          <a href="https://www.stib-mivb.be/GO_easy.html?l=en "
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            STIB-MIVB
-          </a>,
+          { name: "De Lijn", link: "https://www.delijn.be/en/?vertaling=true" },
+          { name: "Belgian train", link: "https://www.belgiantrain.be/en" },
+          { name: "STIB-MIVB", link: "https://www.stib-mivb.be/GO_easy.html?l=en" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "",
-        description: "Discount cards for the national or local railway system:",
+        id: DISCOUNTS,
         features: [
-          <a
-            
-            href="https://www.belgiantrain.be/en/tickets-and-railcards/gopass1"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {" "}
-            Go Pass{" "}
-          </a>,
-          <a
-            
-            href="https://belgianrail.be/nl/Mobility/Web/biljetten-abonnementen/leeftijd/adults-seniors/een-reis/weekendbiljet.aspx"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Weekendbiljet
-          </a>,
+          { name: "Go Pass", link: "https://www.belgiantrain.be/en/tickets-and-railcards/gopass1" },
+          { name: "Weekendbiljet", link: "https://belgianrail.be/nl/Mobility/Web/biljetten-abonnementen/leeftijd/adults-seniors/een-reis/weekendbiljet.aspx" },
         ],
-        cta: "Monthly billing",
-        mostPopular: true,
       },
     ]
   },
   "Bosnia-and-Herzegovina": {
     tiers: [
       {
-        title: "Airports with budget airlines",
-        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        id: AIRPORTS,
         features: [
-          <p>Sarajevo Airport</p>,
-          <p>Tuzla Airport</p>,
-          <p>Banja Luka Airport</p>
+          { name: "Sarajevo Airport" },
+          { name: "Tuzla Airport" },
+          { name: "Banja Luka Airport" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "National and international transportation",
-        description: "",
+        id: NATIONAL_AND_INTERNATIONAL_TRANSPORT,
         features: [
-          <a href="http://www.autoprevoz.ba/" target={"_blank"} rel="noopener noreferrer">
-            {" "}
-            Autoprevoz{" "}
-          </a>,
-          <a href="https://centrotrans.com/ " target={"_blank"} rel="noopener noreferrer">
-            Centrotrans
-          </a>,
-          <a href="https://www.globtour.com/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Globtour
-          </a>,
+          { name: "Autoprevoz", link: "http://www.autoprevoz.ba/" },
+          { name: "Centrotrans", link: "https://centrotrans.com/" },
+          { name: "Globtour", link: "https://www.globtour.com/" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
-      // {
-      //   title: "",
-      //   description: "Discount cards for the national or local railway system:",
-      //   features: [
-      //     <a
-      //       
-      //       href="https://www.belgiantrain.be/en/tickets-and-railcards/gopass1"
-      //       target="_blank"
-      //       rel="noopener noreferrer"
-      //     >
-      //       {" "}
-      //       Go Pass{" "}
-      //     </a>,
-      //      <a
-      //      
-      //      href="https://belgianrail.be/nl/Mobility/Web/biljetten-abonnementen/leeftijd/adults-seniors/een-reis/weekendbiljet.aspx"
-      //      target="_blank"
-      //      rel="noopener noreferrer"
-      //    >
-      //      Weekendbiljet
-      //    </a>,
-      //   ],
-      //   cta: "Monthly billing",
-      //   mostPopular: true,
-      // },
     ]
   },
   "Croatia": {
     tiers: [
       {
-        title: "Airports with budget airlines",
-        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        id: AIRPORTS,
         features: [
-          <p>Zagreb</p>,
-          <p>Split</p>,
-          <p>Pula</p>,
-          <p>Dubrovnik</p>,
-          <p>Zadar</p>
+          { name: "Zagreb" },
+          { name: "Split" },
+          { name: "Pula" },
+          { name: "Dubrovnik" },
+          { name: "Zadar" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "National and international transportation",
-        description: "",
+        id: NATIONAL_AND_INTERNATIONAL_TRANSPORT,
         features: [
-          <a href="https://www.hzpp.hr/" target={"_blank"} rel="noopener noreferrer">
-            {" "}
-            HZPP{" "}
-          </a>,
-          <a href="https://www.akz.hr/en" target={"_blank"} rel="noopener noreferrer">
-            AKZ
-          </a>,
+          { name: "HZPP", link: "https://www.hzpp.hr/" },
+          { name: "AKZ", link: "https://www.akz.hr/en" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
     ]
   },
   "Czech-Republic": {
     tiers: [
       {
-        title: "Airports with budget airlines",
-        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        id: AIRPORTS,
         features: [
-          <p>Prague-Vaclav Havel Airport Prague</p>,
-          <p>Ostrava</p>,
-          <p>Pardubice</p>,
-          <p>Brno</p>,
+          { name: "Prague-Vaclav Havel Airport" },
+          { name: "Ostrava" },
+          { name: "Pardubice" },
+          { name: "Brno" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "National and international transportation",
-        description: "",
+        id: NATIONAL_AND_INTERNATIONAL_TRANSPORT,
         features: [
-          <a href="https://idos.idnes.cz/vlakyautobusymhdvse/spojeni/" target={"_blank"} rel="noopener noreferrer">
-            {" "}
-            IDOS{" "}
-          </a>,
-          <a href="https://www.cd.cz/en" target={"_blank"} rel="noopener noreferrer">
-            České dráhy
-          </a>,
-          <a href="https://www.regiojet.cz/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Regiojet
-          </a>,
-          <a href="https://www.flixbus.cz/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Flixbus
-          </a>,
-          <a href="https://www.leoexpress.com/en"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Leo express
-          </a>,
-          <a href="hhttps://www.arriva.cz/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Arriva
-          </a>,
+          { name: "IDOS", link: "https://idos.idnes.cz/vlakyautobusymhdvse/spojeni/" },
+          { name: "České dráhy", link: "https://www.cd.cz/en" },
+          { name: "Regiojet", link: "https://www.regiojet.cz/" },
+          { name: "Flixbus", link: "https://www.flixbus.cz/" },
+          { name: "Leo express", link: "https://www.leoexpress.com/en" },
+          { name: "Arriva", link: "https://www.arriva.cz/" },
+
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "",
-        description: "Discount cards for the national or local railway system:",
+        id: DISCOUNTS,
         features: [
-          <a
-            
-            target="_blank"
-            href="https://www.isic.cz/"
-            rel="noopener noreferrer"
-          >
-            {" "}
-            ISIC{" "}
-          </a>,
-        ],
-        cta: "Monthly billing",
-        mostPopular: true,
+          { name: "ISIC", link: "https://www.isic.cz/" },
+        ]
       },
     ]
   },
   "France": {
     tiers: [
       {
-        title: "Airports with budget airlines",
-        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        id: AIRPORTS,
         features: [
-          <p>Bâle-Mulhouse (BSL)</p>,
-          <p>Bordeaux (BOD)</p>,
-          <p>Lyon (LYS)</p>,
-          <p>Marseille (MRS)</p>,
-          <p>Nantes (NTE)</p>,
-          <p>Nice (NCE)</p>,
-          <p>Paris (CDG & ORY)</p>,
-          <p>Toulouse (TLS)</p>,
+          { name: "Bâle-Mulhouse (BSL)" },
+          { name: "Bordeaux (BOD)" },
+          { name: "Lyon (LYS)" },
+          { name: "Marseille (MRS)" },
+          { name: "Nantes (NTE)" },
+          { name: "Nice (NCE)" },
+          { name: "Paris (CDG & ORY)" },
+          { name: "Toulouse (TLS)" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "National and international transportation",
-        description: "",
+        id: NATIONAL_AND_INTERNATIONAL_TRANSPORT,
         features: [
-          <a href="https://en.oui.sncf/en/ " target={"_blank"} rel="noopener noreferrer">
-            {" "}
-            SNCF {" "}
-          </a>,
-          <a href="https://www.blablacar.fr/" target={"_blank"} rel="noopener noreferrer">
-            BlaBlaCar
-          </a>,
-          <a href=" https://www.blablacar.fr/bus "
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            BlaBlaBus
-          </a>,
-          <a href="https://www.flixbus.fr/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Flixbus
-          </a>,
+          { name: "SNCF", link: "https://en.oui.sncf/en/" },
+          { name: "Flixbus", link: "https://www.flixbus.fr/" },
+          { name: "BlaBlaCar", link: "https://www.blablacar.fr/" },
+          { name: "BlaBlaBus", link: "https://www.blablacar.fr/bus" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "",
-        description: "Discount cards for the national or local railway system:",
+        id: DISCOUNTS,
         features: [
-          <a
-            
-            href="https://www.sncf-connect.com/app/catalogue/description/carte-avantage-jeune"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {" "}
-            Carte Jeune{" "}
-          </a>,
+          { name: "Carte Jeune", link: "https://www.sncf-connect.com/app/catalogue/description/carte-avantage-jeune" },
         ],
-        cta: "Monthly billing",
-        mostPopular: true,
       },
     ]
   },
   "Germany": {
     tiers: [
       {
-        title: "Airports with budget airlines",
-        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        id: AIRPORTS,
         features: [
-          <p>Berlin Schönefeld Airport</p>,
-          <p>Berlin Tegel Airport</p>,
-          <p>Bremen Airport</p>,
-          <p>Cologne Bonn Airport</p>,
-          <p>Dortmund Airport</p>,
-          <p>Düsseldorf Airport</p>,
-          <p>Weeze Airport (Düsseldorf)</p>,
-          <p>Frankfurt Airport</p>,
-          <p>Frankfurt–Hahn Airport</p>,
-          <p>Friedrichshafen Airport</p>,
-          <p>Hamburg Airport</p>,
-          <p>Lübeck Airport</p>,
-          <p>Hannover Airport</p>,
-          <p>Karlsruhe/Baden-Baden Airport</p>,
-          <p>Leipzig/Halle Airport</p>,
-          <p>Memmingen Airport</p>,
-          <p>Munich Airport</p>,
-          <p>Münster Osnabrück International Airport</p>,
-          <p>Nuremberg Airport</p>,
-          <p>Paderborn Airport</p>,
-          <p>Stuttgart Airport</p>,
+          { name: "Berlin Schönefeld Airport" },
+          { name: "Berlin Tegel Airport" },
+          { name: "Bremen Airport" },
+          { name: "Cologne Bonn Airport" },
+          { name: "Dortmund Airport" },
+          { name: "Düsseldorf Airport" },
+          { name: "Weeze Airport (Düsseldorf)" },
+          { name: "Frankfurt Airport" },
+          { name: "Frankfurt–Hahn Airport" },
+          { name: "Friedrichshafen Airport" },
+          { name: "Hamburg Airport" },
+          { name: "Lübeck Airport" },
+          { name: "Hannover Airport" },
+          { name: "Karlsruhe/Baden-Baden Airport" },
+          { name: "Leipzig/Halle Airport" },
+          { name: "Memmingen Airport" },
+          { name: "Munich Airport" },
+          { name: "Münster Osnabrück International Airport" },
+          { name: "Nuremberg Airport" },
+          { name: "Paderborn Airport" },
+          { name: "Stuttgart Airport" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "National and international transportation",
-        description: "",
+        id: NATIONAL_AND_INTERNATIONAL_TRANSPORT,
         features: [
-          <a href="https://www.bahn.de/p/view/index.shtml" target={"_blank"} rel="noopener noreferrer">
-            {" "}
-            Deutsche Bahn {" "}
-          </a>,
-          <a href="https://www.blablacar.de/" target={"_blank"} rel="noopener noreferrer">
-            BlaBlaCar
-          </a>,
-          <a href=" https://www.flixtrain.com "
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Flixtrain
-          </a>,
-          <a href="https://www.flixbus.de/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Flixbus
-          </a>,
+          {
+            name: "Deutsche Bahn",
+            link: "https://www.bahn.de/p/view/index.shtml"
+          },
+          {
+            name: "BlaBlaCar",
+            link: "https://www.blablacar.de/"
+          },
+          {
+            name: "Flixtrain",
+            link: "https://www.flixtrain.com"
+          },
+          {
+            name: "Flixbus",
+            link: "https://www.flixbus.de/"
+          },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
-      // {
-      //   title: "",
-      //   description: "For the national railway system discount cards:",
-      //   features: [
-      //     <a
-      //       
-      //       href="https://www.sncf-connect.com/app/catalogue/description/carte-avantage-jeune"
-      //       target="_blank"
-      //       rel="noopener noreferrer"
-      //     >
-      //       {" "}
-      //       Carte Jeune{" "}
-      //     </a>,
-      //   ],
-      //   cta: "Monthly billing",
-      //   mostPopular: true,
-      // },
     ]
   },
   "Hungary": {
     tiers: [
       {
-        title: "Airports with budget airlines",
-        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        id: AIRPORTS,
         features: [
-          <p>Liszt Ferenc International Airport, Budapest (BUD)</p>,
-          <p>Debrecen International Airport (DEB)</p>,
+          { name: "Liszt Ferenc International Airport, Budapest (BUD)" },
+          { name: "Debrecen International Airport (DEB)" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "National and international transportation",
-        description: "",
+        id: NATIONAL_AND_INTERNATIONAL_TRANSPORT,
         features: [
-          <a href="https://elvira.mav-start.hu/" target={"_blank"} rel="noopener noreferrer">
-            {" "}
-            Mav-start {" "}
-          </a>,
-          <a href="https://www.volanbusz.hu/en" target={"_blank"} rel="noopener noreferrer">
-            Volanbusz
-          </a>,
-          <a href=" https://bkk.hu/en/news/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            BKK
-          </a>,
+          {
+            name: "Mav-start",
+            link: "https://elvira.mav-start.hu/"
+          },
+          {
+            name: "Volanbusz",
+            link: "https://www.volanbusz.hu/en"
+          },
+          {
+            name: "BKK",
+            link: "https://bkk.hu/en/news/"
+          },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
-      // {
-      //   title: "",
-      //   description: "For the national railway system discount cards:",
-      //   features: [
-      //     <a
-      //       
-      //       href="https://www.sncf-connect.com/app/catalogue/description/carte-avantage-jeune"
-      //       target="_blank"
-      //       rel="noopener noreferrer"
-      //     >
-      //       {" "}
-      //       Carte Jeune{" "}
-      //     </a>,
-      //   ],
-      //   cta: "Monthly billing",
-      //   mostPopular: true,
-      // },
     ]
   },
   "Macedonia": {
     tiers: [
       {
-        title: "Airports with budget airlines",
-        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        id: AIRPORTS,
         features: [
-          <p>Skopje International Airport (SKP)</p>,
-          <p>Ohrid St. Paul The Apostle Airport (OHD)</p>,
-          <p>Nearby cities with airports: Nish, Prishtina, Tirana, Sofia and Thesalloniki</p>
+          { name: "Skopje International Airport (SKP)" },
+          { name: "Ohrid St. Paul The Apostle Airport (OHD)" },
+          { name: "Nearby cities with airports: Nish, Prishtina, Tirana, Sofia and Thesalloniki" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "National and international transportation",
-        description: "",
+        id: NATIONAL_AND_INTERNATIONAL_TRANSPORT,
         features: [
-          <a href="http://www.jsp.com.mk/Default.aspx" target={"_blank"} rel="noopener noreferrer">
-            {" "}
-            JSP {" "}
-          </a>,
-          <a href="http://www.sas.com.mk" target={"_blank"} rel="noopener noreferrer">
-            {" "}
-            SAS {" "}
-          </a>
+          {
+            name: "JSP",
+            link: "http://www.jsp.com.mk/Default.aspx"
+          },
+          {
+            name: "SAS",
+            link: "http://www.sas.com.mk"
+          },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
-      // {
-      //   title: "",
-      //   description: "For the national railway system discount cards:",
-      //   features: [
-      //     <a
-      //       
-      //       href="https://www.sncf-connect.com/app/catalogue/description/carte-avantage-jeune"
-      //       target="_blank"
-      //       rel="noopener noreferrer"
-      //     >
-      //       {" "}
-      //       Carte Jeune{" "}
-      //     </a>,
-      //   ],
-      //   cta: "Monthly billing",
-      //   mostPopular: true,
-      // },
     ]
   },
   "Malta": {
     tiers: [
       {
-        title: "Airports with budget airlines",
-        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        id: AIRPORTS,
         features: [
-          <p> Malta International Airport</p>,
+          { name: "Malta International Airport" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "National and international transportation",
-        description: "",
+        id: NATIONAL_AND_INTERNATIONAL_TRANSPORT,
         features: [
-          <a href="https://www.transport.gov.mt/" target={"_blank"} rel="noopener noreferrer">
-            {" "}
-            Transport Malta {" "}
-          </a>,
-          <a href="https://www.publictransport.com.mt/" target={"_blank"} rel="noopener noreferrer">
-            Malta public transport
-          </a>,
-          <a href=" https://www.goto.com.mt/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Goto
-          </a>,
+          {
+            name: "Transport Malta",
+            link: "https://www.transport.gov.mt/"
+          },
+          {
+            name: "Malta public transport",
+            link: "https://www.publictransport.com.mt/"
+          },
+          {
+            name: "Goto",
+            link: "https://www.goto.com.mt/"
+          },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
-      // {
-      //   title: "",
-      //   description: "For the national railway system discount cards:",
-      //   features: [
-      //     <a
-      //       
-      //       href="https://www.sncf-connect.com/app/catalogue/description/carte-avantage-jeune"
-      //       target="_blank"
-      //       rel="noopener noreferrer"
-      //     >
-      //       {" "}
-      //       Carte Jeune{" "}
-      //     </a>,
-      //   ],
-      //   cta: "Monthly billing",
-      //   mostPopular: true,
-      // },
     ]
   },
   "Norway": {
     tiers: [
       {
-        title: "Airports with budget airlines",
-        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        id: AIRPORTS,
         features: [
-          <p>Oslo Gardermoen</p>,
-          <p>Oslo Sandefjord/Torp</p>,
-          <p>Bergen Flesland</p>,
-          <p>Trondheim Værnes</p>,
-          <p>Tromsø Langnes</p>,
-          <p>Stavanger Sola</p>,
-          <p>Kristiansand Kjevik</p>,
-          <p>Longyearbyen (Svalbard)</p>,
-          <p>Harstad/Narvik</p>,
+          { name: "Oslo Gardermoen" },
+          { name: "Oslo Sandefjord/Torp" },
+          { name: "Bergen Flesland" },
+          { name: "Trondheim Værnes" },
+          { name: "Tromsø Langnes" },
+          { name: "Stavanger Sola" },
+          { name: "Kristiansand Kjevik" },
+          { name: "Longyearbyen (Svalbard)" },
+          { name: "Harstad/Narvik" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "National and international transportation",
-        description: "",
+        id: NATIONAL_AND_INTERNATIONAL_TRANSPORT,
         features: [
-          <a href="https://ruter.no/" target={"_blank"} rel="noopener noreferrer">
-            {" "}
-            Ruter {" "}
-          </a>,
-          <a href="https://www.vy.no/" target={"_blank"} rel="noopener noreferrer">
-            VY
-          </a>,
-          <a href=" https://www.hurtigruten.no/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Hurtigruten
-          </a>,
-          <a href="http://www.flybuss.no/" target={"_blank"} rel="noopener noreferrer">
-            Flybuss
-          </a>,
-          <a href="https://www.skyss.no/" target={"_blank"} rel="noopener noreferrer">
-            Skyss
-          </a>,
-          <a href=" https://www.kolumbus.no/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Kolumbus
-          </a>,
+          { name: "Ruter", link: "https://ruter.no/" },
+          { name: "VY", link: "https://www.vy.no/" },
+          { name: "Hurtigruten", link: "https://www.hurtigruten.no/" },
+          { name: "Flybuss", link: "http://www.flybuss.no/" },
+          { name: "Skyss", link: "https://www.skyss.no/" },
+          { name: "Kolumbus", link: "https://www.kolumbus.no/" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "",
-        description: "Discounts for airlines and public transport:",
+        id: DISCOUNTS,
         features: [
-          <p>Use code UNDER26 for Norwegian airlines when buying fly ticke</p>,
-          <p>The city transport has usually a discount for a students. This discount varies from city to the
-            city, so make sure to ask for it when buying a ticket</p>
+          { name: "Use code UNDER26 for Norwegian airlines when buying fly tickets" },
+          { name: "The city transport usually offers a discount for students. This discount varies from city to city, so make sure to ask for it when buying a ticket." }
         ],
-        cta: "Monthly billing",
-        mostPopular: true,
       },
     ]
   },
   "Poland": {
     tiers: [
       {
-        title: "National and international transportation",
-        description: "",
+        id: NATIONAL_AND_INTERNATIONAL_TRANSPORT,
         features: [
-          <a href="https://rozklad-pkp.pl/en" target={"_blank"} rel="noopener noreferrer">
-            {" "}
-            PKP {" "}
-          </a>,
-          <a href="https://en.e-podroznik.pl/" target={"_blank"} rel="noopener noreferrer">
-            E-podroznik
-          </a>,
+          { name: "PKP", link: "https://rozklad-pkp.pl/en" },
+          { name: "E-podroznik", link: "https://en.e-podroznik.pl/" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "",
-        description: "50% discount for transportation for students under 26, also discounts in museums and other venues. Discount for transport mostly applies only of the students with polish ID cards, museum and other venues usually accept ISIC (International Student Identity Card).",
-        features: [],
-        mostPopular: true,
+        id: DISCOUNTS,
+        features: [
+          { name: "50% discount for transportation for students under 26, also discounts in museums and other venues. Discount for transport mostly applies only for students with Polish ID cards, museums and other venues usually accept ISIC (International Student Identity Card)." }
+        ],
       },
     ]
   },
   "Slovakia": {
     tiers: [
       {
-        title: "Airports with budget airlines",
-        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        id: AIRPORTS,
         features: [
-          <p>M. R. Štefánik Airport Bratislava</p>,
-          <p>Košice airport</p>,
-          <p>Poprad airport</p>,
+          { name: "M. R. Štefánik Airport Bratislava" },
+          { name: "Košice Airport" },
+          { name: "Poprad Airport" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "National and international transportation",
-        description: "",
+        id: NATIONAL_AND_INTERNATIONAL_TRANSPORT,
         features: [
-          <a href="https://cp.hnonline.sk/en/vlakbusmhdsk/spojenie/" target={"_blank"} rel="noopener noreferrer">
-            {" "}
-            Cestovne poriadky {" "}
-          </a>,
-          <a href="https://www.zssk.sk/en/" target={"_blank"} rel="noopener noreferrer">
-            ZSSK
-          </a>,
+          { name: "Cestovne poriadky", link: "https://cp.hnonline.sk/en/vlakbusmhdsk/spojenie/" },
+          { name: "ZSSK", link: "https://www.zssk.sk/en/" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
-      // {
-      //   title: "",
-      //   description: "For the national railway system discount cards:",
-      //   features: [
-      //     <a
-      //       
-      //       href="https://www.sncf-connect.com/app/catalogue/description/carte-avantage-jeune"
-      //       target="_blank"
-      //       rel="noopener noreferrer"
-      //     >
-      //       {" "}
-      //       Carte Jeune{" "}
-      //     </a>,
-      //   ],
-      //   cta: "Monthly billing",
-      //   mostPopular: true,
-      // },
     ]
   },
   "Slovenia": {
     tiers: [
       {
-        title: "Airports with budget airlines",
-        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        id: AIRPORTS,
         features: [
-          <p>Ljubljana Jože Pučnik Airport</p>,
-          <p>Maribor airport</p>,
-          <p>Portorož airport</p>,
-          <p>Cities with nearby airport: Friuli Venezia Giulia Airport in Trieste; Treviso Airport in Venice</p>
+          { name: "Ljubljana Jože Pučnik Airport" },
+          { name: "Maribor Airport" },
+          { name: "Portorož Airport" },
+          { name: "Cities with nearby airports: Friuli Venezia Giulia Airport in Trieste; Treviso Airport in Venice" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "National and international transportation",
-        description: "",
+        id: NATIONAL_AND_INTERNATIONAL_TRANSPORT,
         features: [
-          <a href="https://potniski.sz.si/" target={"_blank"} rel="noopener noreferrer">
-            {" "}
-            Slovenske zeleznice {" "}
-          </a>,
-          <a href="https://www.ap-ljubljana.si/" target={"_blank"} rel="noopener noreferrer">
-            AP-Ljubljana
-          </a>,
-          <a href="https://www.lpp.si/javni-prevoz/vozni-redi" target={"_blank"} rel="noopener noreferrer">
-            LPP
-          </a>,
-          <a href="https://prevoz.org/" target={"_blank"} rel="noopener noreferrer">
-            Prevoz
-          </a>,
+          { name: "Slovenske zeleznice", link: "https://potniski.sz.si/" },
+          { name: "AP-Ljubljana", link: "https://www.ap-ljubljana.si/" },
+          { name: "LPP", link: "https://www.lpp.si/javni-prevoz/vozni-redi" },
+          { name: "Prevoz", link: "https://prevoz.org/" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "",
-        description: "For the national railway system discount cards:",
+        id: DISCOUNTS,
         features: [
-          <a
-            
-            href="https://potniski.sz.si/en/young-people-under-26/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Slovenske zeleznice
-          </a>,
+          { name: "Slovenske zeleznice", link: "https://potniski.sz.si/en/young-people-under-26/" },
         ],
-        cta: "Monthly billing",
-        mostPopular: true,
       },
     ]
   },
   "Spain": {
     tiers: [
       {
-        title: "Airports with budget airlines",
-        description: "Wizz Air, Ryanair, EasyJet, Transavia, Norwegian:",
+        id: AIRPORTS,
         features: [
-          <p>Madrid Barajas International Airport (MAD)</p>,
-          <p>Josep Tarradellas Barcelona-El Prat Airport</p>,
-          <p>Seville Airport</p>,
-          <p>Santiago-Rosalía de Castro Airport</p>,
-          <p>Valencia Airport</p>,
-          <p>Palma de Mallorca Airport</p>,
-          <p>Bilbao Airport</p>,
-          <p>Málaga-Costa del Sol Airport</p>,
-          <p>Alicante-Elche Miguel Hernández Airport</p>,
-          <p>Murcia International Airport</p>
+          { name: "Madrid Barajas International Airport (MAD)" },
+          { name: "Josep Tarradellas Barcelona-El Prat Airport" },
+          { name: "Seville Airport" },
+          { name: "Santiago-Rosalía de Castro Airport" },
+          { name: "Valencia Airport" },
+          { name: "Palma de Mallorca Airport" },
+          { name: "Bilbao Airport" },
+          { name: "Málaga-Costa del Sol Airport" },
+          { name: "Alicante-Elche Miguel Hernández Airport" },
+          { name: "Murcia International Airport" },
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "National and international transportation",
-        description: "",
+        id: NATIONAL_AND_INTERNATIONAL_TRANSPORT,
         features: [
-          <a href="https://www.redtransporte.com/" target={"_blank"} rel="noopener noreferrer">
-            {" "}
-            Red transporte {" "}
-          </a>,
+          { name: "Red transporte", link: "https://www.redtransporte.com/" }
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
       {
-        title: "",
-        description: "For the national railway system discount cards:",
+        id: DISCOUNTS,
         features: [
-          <a
-            
-            href="https://www.expatica.com/es/living/transportation/public-transport-spain-101423/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Expatica
-          </a>,
+          { name: "Expatica", link: "https://www.expatica.com/es/living/transportation/public-transport-spain-101423/" }
         ],
-        cta: "Monthly billing",
-        mostPopular: true,
       },
     ]
   },
   "Turkey": {
     tiers: [
       {
-        title: "National and international transportation",
-        description: "",
+        id: NATIONAL_AND_INTERNATIONAL_TRANSPORT,
         features: [
-          <p>“Trafi” app is generally rated enough for the transportation</p>
+          { name: "“Trafi” app is generally rated enough for the transportation" }
         ],
-        cta: "Monthly billing",
-        mostPopular: false,
       },
     ]
   },

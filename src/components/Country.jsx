@@ -1,7 +1,7 @@
 import { useRef, useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import Footer from "./footer.js";
+import Footer from "./footer/footer.jsx";
 import Transport from "./transport/Transport.jsx";
 import Cities from "./cities/Cities.jsx";
 import Gallery from "./gallery/Gallery.jsx";

@@ -1,7 +1,7 @@
 import { Link } from "react-scroll";
 import Navbar from "./navbar/Navbar";
 import css from "./app.module.css"
-import { bgGradient } from "./global_functions";
+import { bgGradient } from "./global/global_functions";
 
 export default function Landing() {
   return (
