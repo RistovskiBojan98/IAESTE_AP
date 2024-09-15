@@ -7,10 +7,10 @@ import Country from "./panel/Country";
 const AdminPanel = () => {
 
     return (
-        <section>
-            <AdminNavbar />
-            <div className="flex flex-row w-full">
-                <Sidebar />
+        <section className="flex flex-row">
+            <Sidebar />
+            <div className="w-full">
+                <AdminNavbar />
                 <Country />
             </div>
         </section>
