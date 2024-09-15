@@ -1,9 +1,10 @@
 import React from "react";
+import Country from "./Country";
 
-const Panel = () => {
+const Panel = ({ country }) => {
 
     return (
-        <div>Welcome to the Admin Panel of the IAESTE Across the Planet Project!</div>
+        <Country />
     )
 }
 

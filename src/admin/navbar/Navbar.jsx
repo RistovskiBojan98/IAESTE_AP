@@ -1,17 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Popover } from "@headlessui/react";
 import cerLogo from "../../components/navbar/cer-logo.png";
 import { bgGradient } from "../../components/global/global_functions"
-import useWindowSize from "../../hooks/useScreenSize";
 
-const AdminNavbar = () => {
-  const { width } = useWindowSize();
-  const [isMobileView, setIsMobileView] = useState(false)
-  const [navBtn, setNavBtn] = useState(true);
-
-  const navBtnTrigger = () => setNavBtn(!navBtn)
-
-
+const AdminNavbar = ({ toggleSidebar }) => {
 
   return (
     <div className="mx-auto border-b border-black">
@@ -25,10 +17,10 @@ const AdminNavbar = () => {
               <div className="flex w-full items-center justify-between gap-8 md:w-auto">
                 <button
                   className={`icon cursor-pointer border-2 border-solid border-black px-3 py-1 hover:${bgGradient} hover:text-white`}
-                  onClick={navBtnTrigger}>
+                  onClick={toggleSidebar}>
                   <i className="fa fa-bars"></i>
                 </button>
-                <a href="/">
+                <a href="/admin">
                   <img alt="CER Summer App" className="h-16 w-auto" src={cerLogo} />
                 </a>
               </div>
