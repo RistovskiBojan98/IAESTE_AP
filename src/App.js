@@ -5,6 +5,7 @@ import Layout from "./components/layout.jsx";
 import Country from "./components/Country.jsx";
 import Plane from "./components/plane/Plane";
 import SRWeekends from "./components/sr-weekends/sr-weekends.jsx";
+import AdminPanel from "./admin/AdminPanel.jsx";
 
 function App() {
   const queryClient = new QueryClient();
@@ -18,6 +19,7 @@ function App() {
               <Route path="/loading" element={ <Plane />} />
               <Route path="/:id" element={<Country />} />
               <Route path="/sr-weekends" element={ <SRWeekends />} />
+              <Route path="/admin" element={<AdminPanel />} />
             </Routes>
           </header>
         </QueryClientProvider>
