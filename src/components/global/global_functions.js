@@ -32,3 +32,8 @@ export const TRANSPORT_CONSTANTS = {
     PUBLIC_TRANSPORT: 3,
     DISCOUNTS: 4
 }
+
+export const filterCountriesToDisplay = (countries, inputText) =>
+    !inputText 
+        ? countries 
+        : countries.filter((country) => country.name.toLowerCase().includes(inputText.toLowerCase()))

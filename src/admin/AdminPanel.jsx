@@ -3,12 +3,17 @@ import AdminNavbar from "./navbar/Navbar";
 import Sidebar from "./sidebar/Sidebar";
 import Panel from "./panel/Panel";
 import useWindowSize from "../hooks/useScreenSize"
+import { Routes, useLocation, Route } from "react-router-dom";
+import Country from "./panel/Country";
 
 const AdminPanel = () => {
     const { width } = useWindowSize()
+    const location = useLocation();
+
     const [isSidebarOpen, setIsSidebarOpen] = useState()
-    const [isLoading, setIsLoading] = useState(false)
-    const [country, setCountry] = useState(null)
+    const [isLoading, setIsLoading] = useState(true)
+    const [country, setCountry] = useState()
+    const [card, setCard] = useState()
     
     const toggleSidebar = () => setIsSidebarOpen(!isSidebarOpen)
 
@@ -19,16 +24,24 @@ const AdminPanel = () => {
 
     useEffect(() => {
         setIsSidebarOpen(width > 640);
-        setIsLoading(true)
+        setIsLoading(false)
     }, [width])
 
+    useEffect(() => {
+        if (location.pathname === "/admin") setCountry(null)
+    }, [location])
+
     return (
-        isLoading &&
+        !isLoading &&
         <section className="flex flex-row">
-            <Sidebar isOpen={isSidebarOpen} selectCountry={selectCountry} toggleSidebar={toggleSidebar}/>
+            <Sidebar isOpen={isSidebarOpen} country={country} selectCountry={selectCountry}/>
             <div className={`w-full transition-all duration-300 ${isSidebarOpen ? "sm:ml-60" : "ml-0"}`}>
-                <AdminNavbar toggleSidebar={toggleSidebar} />
-                <Panel />
+                <AdminNavbar toggleSidebar={toggleSidebar}/>
+                <Routes>
+                    <Route path="/" element={<Panel />} />
+                    <Route path="/:country" element={<Country />} />
+                    <Route path="/:country/:card" element={<Country />} />
+                </Routes>
             </div>
             {/* For mobile view*/}
             {isSidebarOpen && width <= 640 && (

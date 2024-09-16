@@ -19,7 +19,7 @@ function App() {
               <Route path="/loading" element={ <Plane />} />
               <Route path="/:id" element={<Country />} />
               <Route path="/sr-weekends" element={ <SRWeekends />} />
-              <Route path="/admin" element={<AdminPanel />} />
+              <Route path="/admin/*" element={<AdminPanel />} />
             </Routes>
           </header>
         </QueryClientProvider>

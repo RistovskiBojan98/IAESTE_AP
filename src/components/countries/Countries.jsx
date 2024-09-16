@@ -1,20 +1,14 @@
 import { useState } from "react";
 import { countries } from "./countries";
 import css from "../app.module.css"
-import { bgGradient } from "../global/global_functions";
+import { bgGradient, filterCountriesToDisplay } from "../global/global_functions";
 
 const Countries = ({ passRef }) => {
   const [displayedCountries, setDisplayedCountries] = useState(countries);
 
   const onFilterCountriesHandler = (e) => {
     const typedCountry = e.target.value;
-    if (!typedCountry.trim().length) setDisplayedCountries(countries);
-    else {
-      const newCountriesList = countries.filter((country) =>
-        country.name.toLowerCase().includes(typedCountry.toLowerCase())
-      );
-      setDisplayedCountries(newCountriesList);
-    }
+    setDisplayedCountries(filterCountriesToDisplay(countries, typedCountry))
   };
 
   return (
