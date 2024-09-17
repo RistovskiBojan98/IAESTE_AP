@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { bgGradient } from "../../components/global/global_functions";
 import { componentsCards } from "./ComponentsCards";
 import Path from "./Path";
