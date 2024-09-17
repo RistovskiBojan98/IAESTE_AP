@@ -112,7 +112,7 @@ export const countrySocialLinks = [
         }
     },
     {
-        country: "Turkey",
+        country: "Turkiye",
         links: {
             insta: 'https://www.instagram.com/iaesteturkiye?igsh=dnE2aGJwOWU2ZGx0',
             facebook: '',

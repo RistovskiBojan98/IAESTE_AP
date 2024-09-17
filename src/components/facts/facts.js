@@ -196,10 +196,10 @@ export const funfacts = [
     country: "Turkiye",
     facts: [
       "İstanbul is said to be the center of the world considering its feature including both European and Asian sides.",
-      "Santa Claus is from Turkey. Saint Nicholas was born far from the North Pole, in Patara. And he’s not the only saint with connections to Turkey — the Virgin Mary’s resting place could be near Ephesus, while Saint Paul was from Tarsus in the south.",
+      "Santa Claus is from Turkiye. Saint Nicholas was born far from the North Pole, in Patara. And he’s not the only saint with connections to Turkiye — the Virgin Mary’s resting place could be near Ephesus, while Saint Paul was from Tarsus in the south.",
       "You might find chicken in your dessert. The signature Ottoman treat is tavuk göğsü, or chicken breast pudding.",
       "It has one of the world’s oldest and biggest malls.Istanbul‘s Grand Bazaar, or Kapalı Çarşı, dates to 1455 and was established shortly after the Ottoman conquest of Constantinople.",
-      "Turkey gifted tulips to the world (you’re welcome, Netherlands). It’s uncertain where the first tulips were grown, but what is known is that the Ottomans popularized the flower and facilitated their introduction to Europe.",
+      "Turkiye gifted tulips to the world (you’re welcome, Netherlands). It’s uncertain where the first tulips were grown, but what is known is that the Ottomans popularized the flower and facilitated their introduction to Europe.",
     ],
   },
 ];

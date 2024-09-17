@@ -39,7 +39,8 @@ const AdminPanel = () => {
                 <AdminNavbar toggleSidebar={toggleSidebar}/>
                 <Routes>
                     <Route path="/" element={<Panel />} />
-                    <Route path="/:country" element={<Country />} />
+                    <Route path="/:country" element={<Country selectedCountry={country}/>} />
+                    {/* TODO: Create the card component*/}
                     <Route path="/:country/:card" element={<Country />} />
                 </Routes>
             </div>

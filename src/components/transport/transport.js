@@ -438,7 +438,7 @@ export const transport = {
       },
     ]
   },
-  "Turkey": {
+  "Turkiye": {
     tiers: [
       {
         id: NATIONAL_AND_INTERNATIONAL_TRANSPORT,

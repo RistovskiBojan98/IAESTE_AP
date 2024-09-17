@@ -874,7 +874,7 @@ export const cities = [
       {
         question: "Pamukkale",
         answer:
-          "One of Turkey's most famous natural wonders, the pure white travertine terraces of Pamukkale ('Cotton Castle' in English) cascade down the slope looking like an out-of-place snowfield amid the green landscape.",
+          "One of Turkiye's most famous natural wonders, the pure white travertine terraces of Pamukkale ('Cotton Castle' in English) cascade down the slope looking like an out-of-place snowfield amid the green landscape.",
       },
       {
         question: "Aspendos-Antalya",

@@ -2,14 +2,12 @@ import { useState } from "react";
 import { countries } from "./countries";
 import css from "../app.module.css"
 import { bgGradient, filterCountriesToDisplay } from "../global/global_functions";
+import CountrySearch from "../global/CountrySearch";
 
 const Countries = ({ passRef }) => {
   const [displayedCountries, setDisplayedCountries] = useState(countries);
 
-  const onFilterCountriesHandler = (e) => {
-    const typedCountry = e.target.value;
-    setDisplayedCountries(filterCountriesToDisplay(countries, typedCountry))
-  };
+  const searchFilterCountries = (filteredCountries) => setDisplayedCountries(filteredCountries)
 
   return (
     <div className="bg-white overflow-x-hidden" ref={passRef} id="countries-div">
@@ -18,15 +16,12 @@ const Countries = ({ passRef }) => {
           <h2 className="font-bold text-3xl">
             IAESTE CER & CoRe Member Countries
           </h2>
-          <input
-            type="text"
-            className="p-2 mt-4 max-w-md w-full border border-solid border-black rounded-xl"
-            placeholder="Search for a country"
-            onChange={onFilterCountriesHandler}
-          />
+          <div className="mt-4">
+          <CountrySearch countries={countries} searchFilterCountries={searchFilterCountries} />
+          </div>
         </div>
         <div className="mt-12 grid grid-cols-2 gap-y-20 gap-x-6 sm:grid-cols-3 lg:grid-cols-4 xl:gap-x-8">
-          {displayedCountries.map((country, index) => (
+          {displayedCountries.length ? displayedCountries.map((country, index) => (
             <div className="text-center" key={index}>
               <a key={country.id} className="group items-center" href={country.href}>
                   <div className="mx-auto h-20 w-20 sm:h-40 sm:w-40">
@@ -48,7 +43,11 @@ const Countries = ({ passRef }) => {
                   </a>
               </button>
             </div>
-          ))}
+          )) : (
+            <div className="flex justify-center items-center font-semibold text-2xl">
+                <i className="fa fa-triangle-exclamation mr-2"></i>No countires found
+            </div>
+          )}
         </div>
       </div>
     </div>
