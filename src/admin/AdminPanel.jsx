@@ -19,11 +19,11 @@ const AdminPanel = () => {
 
     const selectCountry = (selectedCountry) => {
         setCountry(selectedCountry)
-        if (width <= 640) toggleSidebar(false)
+        if (width <= 1024) toggleSidebar(false)
     }
 
     useEffect(() => {
-        setIsSidebarOpen(width > 640);
+        setIsSidebarOpen(width > 1024);
         setIsLoading(false)
     }, [width])
 
@@ -35,7 +35,7 @@ const AdminPanel = () => {
         !isLoading &&
         <section className="flex flex-row">
             <Sidebar isOpen={isSidebarOpen} country={country} selectCountry={selectCountry}/>
-            <div className={`w-full transition-all duration-300 ${isSidebarOpen ? "sm:ml-60" : "ml-0"}`}>
+            <div className={`w-full transition-all duration-300 ${isSidebarOpen ? "lg:ml-60" : "ml-0"}`}>
                 <AdminNavbar toggleSidebar={toggleSidebar}/>
                 <Routes>
                     <Route path="/" element={<Panel />} />
@@ -45,7 +45,7 @@ const AdminPanel = () => {
                 </Routes>
             </div>
             {/* For mobile view*/}
-            {isSidebarOpen && width <= 640 && (
+            {isSidebarOpen && width <= 1024 && (
                 <div className="fixed inset-0 bg-black bg-opacity-50 z-10" onClick={toggleSidebar}></div>
             )}
         </section>

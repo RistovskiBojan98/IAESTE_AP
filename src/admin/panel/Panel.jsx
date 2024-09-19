@@ -26,9 +26,9 @@ const Panel = () => {
                 <i className="fa fa-cogs text-5xl"></i>
                 <h1 className="text-5xl">IAESTE AP Admin Panel</h1>
             </div>
-            <div className="max-w-2xl mx-auto text-center my-4 space-y-2">
+            <div className="max-w-xl mx-auto text-center my-4 space-y-2">
                 <h3 className="font-semibold text-3xl pb-2">Welcome, Admin!</h3>
-                <span className="text-2xl">Manage the platform’s content and ensure each country's page is up-to-date. Use this dashboard to add, edit, or delete components for each country’s page and customize the information displayed to users.</span>
+                <span className="text-lg md:text-2xl">Manage the platform’s content and ensure each country's page is up-to-date. Use this dashboard to add, edit, or delete components for each country’s page and customize the information displayed to users.</span>
                 <div className="pt-2 font-bold items-center text-lg">
                     <i className="fa fa-circle-info mr-3"></i>Start by selecting a country from the sidebar to access the country menu
                 </div>
@@ -42,7 +42,7 @@ const Panel = () => {
                     <span className="font-semibold text-3xl">Key features</span>
                     <ul className="grid grid-cols-1 lg:grid-cols-3 gap-8 px-4 max-w-5xl mx-auto">
                         {cards.map((card, index) =>
-                            <li key={index} className="bg-gray-100 shadow-xl space-y-2 rounded-lg p-2 py-6 sm:p-6 text-center text-[#1B75BB]">
+                            <li key={index} className="bg-gray-100 shadow-xl space-y-2 rounded-lg p-2 py-6 sm:p-6 text-center text-[#1B75BB] max-w-lg mx-auto">
                                 {/* Top half with the icon */}
                                 <div className="flex flex-col justify-center space-y-2 h-1/2">
                                     <i className={`fa ${card.icon} text-4xl aria-hidden='true'`} />
