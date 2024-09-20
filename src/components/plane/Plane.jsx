@@ -1,5 +1,6 @@
 import React from "react";
 import { bgGradient } from "../global/global_functions";
+import css from "./Plane.module.css"
 
 const Plane = ({ country }) => {
   const strings = country.split('-')
@@ -14,13 +15,7 @@ const Plane = ({ country }) => {
       className={`absolute z-10 inset-0 flex justify-center items-center ${bgGradient} mix-blend-multiply`}
       aria-hidden="true"
     >
-      <div className="text-white text-center space-y-4">
-        <button type="button" disabled>
-          <svg className="animate-spin h-20 w-20  text-white" viewBox="0 0 24 24">
-            <circle className="opacity-0" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-            <path  fill="currentColor" d="M4 12a8 8 0 018-8v4a4 4 0 00-4 4H4z"></path>
-          </svg>
-        </button>
+      <div className={`text-white text-center space-y-4 ${css.animatePlane}`}>
         <p className="text-3xl font-semibold">Flying to</p>
         <p className="text-7xl font-semibold">{name}</p>
         <div className="flex justify-center"> {/* Container for centering the image */}
