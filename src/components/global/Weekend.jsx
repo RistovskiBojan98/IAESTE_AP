@@ -28,7 +28,7 @@ const Weekend = ({ weekend }) => {
                 </div>
             )}
             <hr className='mt-4'></hr>
-            <div className={css.overflowDescription} >
+            <div className="overflow-hidden hover:overflow-y-scroll max-h-72" style={{scrollbarWidth: 'thin'}}>
                 <p className='text-base md:text-xl mt-4 pb-10'> {weekend.description.split('\n').map((paragraph, index) => (
                     <span key={index}>{paragraph}<br></br></span>
                 ))}

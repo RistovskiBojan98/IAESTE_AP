@@ -62,7 +62,7 @@ const SummerReception = ({ country, summerReceptionRef }) => {
               </button>
             ))}
           </div>
-          <div className="border border-gray-300 w-full max-w-7xl shadow-xl sm:overflow-hidden sm:rounded-2xl" style={{ maxHeight: '600px'}}>
+          <div className="border border-gray-300 w-full max-w-7xl shadow-xl overflow-hidden sm:rounded-2xl" style={{ maxHeight: '600px'}}>
             <Weekend weekend={weekend}/>
           </div>
         </div>

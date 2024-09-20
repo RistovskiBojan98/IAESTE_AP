@@ -7,19 +7,9 @@
     color: white;
 }
 
-.overflowDescription {
-    overflow-y: scroll;
-    max-height: 60%;
-}
 
 @media (max-width: 768px) {
     .info {
         font-size: 1.125rem; /* 18px */
     }
-}
-
-@media (max-width: 768px) {
-    .overflowDescription {
-        max-height: 70%;
-    }   
 }
