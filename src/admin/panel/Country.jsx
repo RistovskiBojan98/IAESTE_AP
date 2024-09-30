@@ -46,7 +46,7 @@ const Country = ({ selectedCountry, selectCard }) => {
                 return checkIfObjectExists(emergencyContacts)
             case "General Information":
                 return checkIfObjectExists(information, 'data')
-            case "Recommended PlacesCities With LCs":
+            case "Cities With LCs":
                 return checkIfObjectExists(committees, 'lcs')
             case "Transportation":
                 return !transport[countryName]
@@ -92,7 +92,7 @@ const Country = ({ selectedCountry, selectCard }) => {
                         <div className="max-w-5xl mx-auto">
                             <div className="flex flex-col">
                                 <Path country={country.name} />
-                                <div className="flex items-center justify-center w-full">
+                                <div className="flex items-center justify-center w-full sm:mt-10">
                                     <img src={country.imageSrc} alt={country.imageAlt} className="rounded-full h-20 w-20 sm:h-32 sm:w-32 border" />
                                     <div className="flex flex-col ml-5 font-bold text-[#1B75BB]">
                                         <span className="text=xl sm:text-3xl">IAESTE</span>
@@ -119,7 +119,7 @@ const Country = ({ selectedCountry, selectCard }) => {
 
                                 {cards.map((card, index) =>
                                     <li key={index}
-                                        className={`relative ${card.isEmpty ? "bg-[#F1F1E6]" : "bg-gray-100"} shadow-xl space-y-2 rounded-lg p-2 py-6 sm:p-6 text-center text-[#1B75BB] cursor-pointer hover:${bgGradient} hover:text-white`}>
+                                        className={`relative ${card.isEmpty ? "bg-[#F1F1E6]" : "bg-gray-100"} shadow-xl space-y-2 rounded-lg p-2 py-6 sm:p-6 text-center text-[#1B75BB] cursor-pointer hover:${bgGradient} hover:text-white h-32 sm:h-44`}>
                                         <Link to={`/admin/${country.name}/${card.link}`} onClick={() => handleSelectCard(card)}>
                                             {/* Conditional ribbon when card.isEmpty is true */}
                                             {card.isEmpty && (

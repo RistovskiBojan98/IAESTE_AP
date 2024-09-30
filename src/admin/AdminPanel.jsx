@@ -32,7 +32,10 @@ const AdminPanel = () => {
 
     useEffect(() => {
         if (location.pathname === "/admin") setCountry(null)
-        else if (!country)setCountry(location.pathname.split("/")[2])
+        else if (!country) {
+            const countryName = location.pathname.split("/")[2].replaceAll("%20", " ")
+            setCountry(countryName)
+        }
     }, [location])
 
     return (
@@ -46,6 +49,7 @@ const AdminPanel = () => {
                     <Route path="/:country" element={<Country selectedCountry={country} selectCard={selectCard} />} />
                     {/* TODO: Create the card components*/}
                     <Route path="/:country/emergency-numbers" element={<EmergencyContacts selectedCard={card} />} />
+                    <Route path="/:country/cities-with-lcs" element={<EmergencyContacts selectedCard={card} />} />
                 </Routes>
             </div>
             {/* For mobile view*/}

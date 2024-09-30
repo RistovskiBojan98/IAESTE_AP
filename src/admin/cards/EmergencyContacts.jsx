@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Loader from "./Loader/Loader";
-import Path from "../panel/Path";
 import { countries } from "../../components/countries/countries";
-import { bgGradient, mapEmergencyContacts } from "../../components/global/global_functions";
+import { getCardAndCountryFromUrl, mapEmergencyContacts } from "../../components/global/global_functions";
 import { emergencyContacts } from "../../components/emergencyContacts/emergencyContacts";
+import CardHeader from "./CardHeader";
 
 const EmergencyContacts = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -15,14 +15,9 @@ const EmergencyContacts = () => {
     const [card, setCard] = useState(null);
 
     useEffect(() => {
-        const urlParts = window.location.href.split("/");
-        const cardUrl = urlParts[urlParts.length - 1].replace("-", " ");
-        const cardObject = cardUrl.charAt(0).toUpperCase() + cardUrl.slice(1);
-        setCard(cardObject);
-
-        const countryUrl = urlParts[urlParts.length - 2];
-        const countryObject = countries.find((c) => c.name === countryUrl);
-        setCountry(countryObject);
+        const { card, country } = getCardAndCountryFromUrl()
+        setCard(card);
+        setCountry(country);
     }, []);
 
     useEffect(() => {
@@ -36,6 +31,9 @@ const EmergencyContacts = () => {
         }, 1100);
         return () => clearTimeout(timer);
     }, []);
+
+    const toggleEditMode = () => setIsEditMode(!isEditMode)
+    const toggleAddMode = () => setIsAddMode(!isAddMode)
 
     // Handle input change
     const handleEdit = (e, index) => {
@@ -77,32 +75,7 @@ const EmergencyContacts = () => {
                 <section className="px-4 py-2 bg-sky-100">
                     <div className="max-w-5xl mx-auto">
                         <div className="flex flex-col min-h-screen">
-                            {country && <Path country={country.name} card={card} />}
-                            <div className="justify-between flex sm:mt-10 sm:px-10 border-b border-gray-300 pb-4">
-                                <div className="text-3xl sm:text-5xl flex flex-col font-semibold text-[#1B75BB]">
-                                    <span>IAESTE {country?.name}</span>
-                                    <span>{card}</span>
-                                </div>
-                                <div className="items-center flex space-x-2 font-semibold">
-                                    <button
-                                        disabled={isAddMode || isEditMode}
-                                        onClick={() => setIsEditMode(true)}
-                                        className={`btn flex flex-row items-center text-center sm:justify-between rounded-full sm:rounded-md border-2 border-[#1B75BB] bg-[#F1F1E6] text-[#1B75BB] p-3 hover:${bgGradient} hover:text-white hover:shadow-xl `}
-                                    >
-                                        <i className="fa fa-pencil-alt sm:mr-2" aria-hidden="true"></i>
-                                        <span className="hidden sm:block">Edit</span>
-                                    </button>
-                                    <button
-                                        disabled={isAddMode || isEditMode}
-                                        onClick={handleAdd}
-                                        className={`btn flex flex-row items-center text-center sm:justify-between rounded-full sm:rounded-md border-2 bg-[#1B75BB] text-white p-3 hover:${bgGradient} hover:text-white hover:shadow-xl `}
-                                    >
-                                        <i className="fa fa-plus sm:mr-2" aria-hidden="true"></i>
-                                        <span className="hidden sm:block">Add</span>
-                                    </button>
-                                </div>
-                            </div>
-
+                            <CardHeader country={country?.name} card={card} toggleAddMode={toggleAddMode} toggleEditMode={toggleEditMode}/>
                             {/* Contact Form */}
                             <form className="mt-10 sm:mx-10 space-y-4 bg-gray-100 p-4 rounded-lg shadow-lg border-2 border-[#1B75BB] text-lg sm:text-2xl">
                                 {!!contactData?.length ? contactData?.map((contact, index) => (

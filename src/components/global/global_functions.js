@@ -1,3 +1,5 @@
+import { countries } from "../countries/countries";
+
 export const classNames = (...classes) => classes.filter(Boolean).join(" ");
 
 export const bgGradient = "bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]";
@@ -60,4 +62,15 @@ export const mapEmergencyContacts = (contacts, country) => {
             number: value
         }
     })
+}
+
+export const getCardAndCountryFromUrl = () => {
+    const urlParts = window.location.href.split("/");
+    const cardUrl = urlParts[urlParts.length - 1].replaceAll("-", " ");
+    const card = cardUrl.charAt(0).toUpperCase() + cardUrl.slice(1);
+
+    const countryUrl = urlParts[urlParts.length - 2];
+    const country = countries.find((c) => c.name === countryUrl);
+
+    return { card, country }
 }
