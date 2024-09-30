@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import CountrySearch from "../../components/global/CountrySearch";
 
 const Sidebar = ({ isOpen, selectCountry, country }) => {
-    const [selectedCountry, setSelectedCountry] = useState();
+    const [selectedCountry, setSelectedCountry] = useState(country);
     const [displayedCountries, setDisplayedCountries] = useState(countries);
 
     const handleSelectCountry = (event) => {
@@ -15,10 +15,6 @@ const Sidebar = ({ isOpen, selectCountry, country }) => {
     }
 
     const searchFilterCountries = (filteredCountries) => setDisplayedCountries(filteredCountries)
-
-    useEffect(() => {
-        setSelectedCountry(country)
-    }, [country])
 
     return (
         <section className={`fixed z-20 top-0 left-0 bg-[#F1F1E6] border-r border-[#1B75BB] w-64 max-h-screen min-h-full overflow-hidden hover:overflow-y-scroll transform transition-transform duration-300 ${isOpen ? "translate-x-0" : "-translate-x-full"}`}

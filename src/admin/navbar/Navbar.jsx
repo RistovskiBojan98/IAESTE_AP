@@ -1,12 +1,13 @@
 import React from "react";
 import { Popover } from "@headlessui/react";
 import cerLogo from "../../components/navbar/cer-logo.png";
+
 const AdminNavbar = ({ toggleSidebar }) => {
 
   return (
     <div className="mx-auto">
       <Popover className="w-full bg-transparent">
-        <div className="relative p-1 sm:py-4 sm:px-6 lg:px-8">
+        <div className="relative p-1 sm:py-4">
           <nav
             className="relative flex items-center justify-between sm:h-10 xl:justify-start"
             aria-label="Global"

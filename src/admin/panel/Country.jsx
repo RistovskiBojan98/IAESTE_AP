@@ -70,15 +70,20 @@ const Country = ({ selectedCountry, selectCard }) => {
     // replace with a variable when demo is done
     const country = { ...countries.find(c => c.name === selectedCountry) }
 
+    const handleSelectCard = (card) => {
+        console.log(card)
+        selectCard(card.link)
+    }
+
     // add links to cards
     const cards = componentsCards.map(card => ({
         ...card,
-        link: card.title.replace(/\s/g, "-"),
-        isEmpty: checkIfCardIsEmpty(card.title, country.name.replace("&", "and").replace(/\s/g, "-"))
+        link: card.title.replace(/\s/g, "-").toLowerCase(),
+        isEmpty: checkIfCardIsEmpty(card.title, country?.name.replace("&", "and").replace(/\s/g, "-"))
     }))
 
     return (
-        <section className="relative w-full h-screen">
+        <section className="relative w-full min-h-screen">
             {isLoading ? (
                 <Plane country={selectedCountry}></Plane>
             ) : (
@@ -95,44 +100,48 @@ const Country = ({ selectedCountry, selectCard }) => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="mt-6 sm:mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                                <a href={country.href} target="_blank" rel="noreferrer"
-                                    className={`bg-[#1B75BB] shadow-xl space-y-2 rounded-lg p-2 py-6 sm:p-6 text-center text-white cursor-pointer hover:${bgGradient}`}>
-                                    {/* Top half with the icon */}
-                                    <div className="flex flex items-center justify-center h-1/2">
-                                        <i className="fa fa-eye text-4xl aria-hidden='true'" />
-                                    </div>
-
-                                    {/* Bottom half with the title */}
-                                    <div className="flex grow items-center justify-center h-1/2">
-                                        <h3 className="text-xl sm:text-2xl font-bold">
-                                            Preview page
-                                        </h3>
-                                    </div>
-                                </a>
-                                {cards.map((card, index) =>
-                                    <Link key={index} to={`/admin/${country.name}/${card.link}`}
-                                        className={`relative ${card.isEmpty ? "bg-[#F1F1E6]" : "bg-gray-100"} shadow-xl space-y-2 rounded-lg p-2 py-6 sm:p-6 text-center text-[#1B75BB] cursor-pointer hover:${bgGradient} hover:text-white`}>
-                                        {/* Conditional ribbon when card.isEmpty is true */}
-                                        {card.isEmpty && (
-                                            <div className="absolute top-0 left-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-br-lg z-10">
-                                                Section empty
-                                            </div>
-                                        )}
+                            <ul className="mt-6 sm:mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                                <li className={`bg-[#1B75BB] shadow-xl space-y-2 rounded-lg p-2 py-6 sm:p-6 text-center text-white cursor-pointer hover:${bgGradient}`}>
+                                    <a href={country.href} target="_blank" rel="noreferrer">
                                         {/* Top half with the icon */}
                                         <div className="flex flex items-center justify-center h-1/2">
-                                            <i className={`${card.icon} text-4xl aria-hidden="true`} />
+                                            <i className="fa fa-eye text-4xl aria-hidden='true'" />
                                         </div>
 
                                         {/* Bottom half with the title */}
                                         <div className="flex grow items-center justify-center h-1/2">
                                             <h3 className="text-xl sm:text-2xl font-bold">
-                                                {card.title}
+                                                Preview page
                                             </h3>
                                         </div>
-                                    </Link>
+                                    </a>
+                                </li>
+
+                                {cards.map((card, index) =>
+                                    <li key={index}
+                                        className={`relative ${card.isEmpty ? "bg-[#F1F1E6]" : "bg-gray-100"} shadow-xl space-y-2 rounded-lg p-2 py-6 sm:p-6 text-center text-[#1B75BB] cursor-pointer hover:${bgGradient} hover:text-white`}>
+                                        <Link to={`/admin/${country.name}/${card.link}`} onClick={() => handleSelectCard(card)}>
+                                            {/* Conditional ribbon when card.isEmpty is true */}
+                                            {card.isEmpty && (
+                                                <div className="absolute top-0 left-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-br-lg z-10">
+                                                    Section empty
+                                                </div>
+                                            )}
+                                            {/* Top half with the icon */}
+                                            <div className="flex flex items-center justify-center h-1/2">
+                                                <i className={`${card.icon} text-4xl aria-hidden="true`} />
+                                            </div>
+
+                                            {/* Bottom half with the title */}
+                                            <div className="flex grow items-center justify-center h-1/2">
+                                                <h3 className="text-xl sm:text-2xl font-bold">
+                                                    {card.title}
+                                                </h3>
+                                            </div>
+                                        </Link>
+                                    </li>
                                 )}
-                            </div>
+                            </ul>
                         </div>
                     </section>
                 ) : (

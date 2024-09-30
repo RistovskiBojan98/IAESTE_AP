@@ -32,3 +32,32 @@ export const TRANSPORT_CONSTANTS = {
     PUBLIC_TRANSPORT: 3,
     DISCOUNTS: 4
 }
+
+export const mapEmergencyContacts = (contacts, country) => {
+    const countryName = typeof(country) === 'string' ? country : country?.name;
+    let eContacts = contacts.find((obj) => obj.country === countryName);
+    eContacts = Object.entries(eContacts).filter((obj) => obj[0] !== "country");
+
+    return eContacts.map(([key, value]) => {
+        const getTitle = () => {
+            switch (key) {
+                case 'police':
+                    return 'Police'
+
+                case 'ambulance':
+                    return 'Ambulance'
+                // For better visual design, if there are 3 contants the name is shorter so that the contacts are in one row
+                case 'fire':
+                    return contacts.length === 3 ? 'Fire dpt.' : 'Fire Department'
+
+                default:
+                    return "Emergency line";
+            }
+        }
+
+        return {
+            title: getTitle(),
+            number: value
+        }
+    })
+}
