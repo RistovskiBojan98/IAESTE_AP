@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { bgGradient } from "../../components/global/global_functions";
+import { bgGradient, loadingTimer } from "../../components/global/global_functions";
 import { componentsCards } from "./ComponentsCards";
 import Path from "./Path";
 import { Link } from "react-router-dom";
@@ -16,18 +16,13 @@ import { otherInfo } from "../../components/otherInformation/other";
 import { Images } from "../../components/gallery/Images";
 import Plane from "../../components/plane/Plane";
 
-const Country = ({ selectedCountry, selectCard }) => {
+const Country = ({ selectedCountry }) => {
     // add loader with plane component
     const [isLoading, setIsLoading] = useState(true);
     useEffect(() => {
         setIsLoading(true)
         // Simulate a delay (you can adjust the duration as needed)
-        const timer = setTimeout(() => {
-            // Hide the loading screen after a delay
-            setIsLoading(false);
-        }, 1100); // Adjust the delay duration as needed (1000ms = 1 second)
-
-        return () => clearTimeout(timer);
+        loadingTimer(setIsLoading)
     }, [selectedCountry]);
     // local helper function
     const checkIfCardIsEmpty = (title, countryName) => {
@@ -69,11 +64,6 @@ const Country = ({ selectedCountry, selectCard }) => {
 
     // replace with a variable when demo is done
     const country = { ...countries.find(c => c.name === selectedCountry) }
-
-    const handleSelectCard = (card) => {
-        console.log(card)
-        selectCard(card.link)
-    }
 
     // add links to cards
     const cards = componentsCards.map(card => ({
@@ -120,7 +110,7 @@ const Country = ({ selectedCountry, selectCard }) => {
                                 {cards.map((card, index) =>
                                     <li key={index}
                                         className={`relative ${card.isEmpty ? "bg-[#F1F1E6]" : "bg-gray-100"} shadow-xl space-y-2 rounded-lg p-2 py-6 sm:p-6 text-center text-[#1B75BB] cursor-pointer hover:${bgGradient} hover:text-white h-32 sm:h-44`}>
-                                        <Link to={`/admin/${country.name}/${card.link}`} onClick={() => handleSelectCard(card)}>
+                                        <Link to={`/admin/${country.name}/${card.link}`}>
                                             {/* Conditional ribbon when card.isEmpty is true */}
                                             {card.isEmpty && (
                                                 <div className="absolute top-0 left-0 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded-br-lg z-10">

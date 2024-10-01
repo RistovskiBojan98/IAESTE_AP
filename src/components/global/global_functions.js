@@ -67,10 +67,17 @@ export const mapEmergencyContacts = (contacts, country) => {
 export const getCardAndCountryFromUrl = () => {
     const urlParts = window.location.href.split("/");
     const cardUrl = urlParts[urlParts.length - 1].replaceAll("-", " ");
-    const card = cardUrl.charAt(0).toUpperCase() + cardUrl.slice(1);
+    const cardName = cardUrl.charAt(0).toUpperCase() + cardUrl.slice(1);
 
     const countryUrl = urlParts[urlParts.length - 2];
-    const country = countries.find((c) => c.name === countryUrl);
+    const countryName = countries.find((c) => c.name === countryUrl);
 
-    return { card, country }
+    return { cardName, countryName }
+}
+
+export const loadingTimer = (setIsLoading) => {
+    const timer = setTimeout(() => {
+        setIsLoading(false);
+    }, 1100);
+    return () => clearTimeout(timer);
 }

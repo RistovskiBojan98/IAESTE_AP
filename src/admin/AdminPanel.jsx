@@ -5,7 +5,7 @@ import Panel from "./panel/Panel";
 import useWindowSize from "../hooks/useScreenSize"
 import { Routes, useLocation, Route } from "react-router-dom";
 import Country from "./panel/Country";
-import EmergencyContacts from "./cards/EmergencyContacts";
+import Card from "./cards/Card";
 
 const AdminPanel = () => {
     const { width } = useWindowSize()
@@ -48,8 +48,7 @@ const AdminPanel = () => {
                     <Route path="/" element={<Panel />} />
                     <Route path="/:country" element={<Country selectedCountry={country} selectCard={selectCard} />} />
                     {/* TODO: Create the card components*/}
-                    <Route path="/:country/emergency-numbers" element={<EmergencyContacts selectedCard={card} />} />
-                    <Route path="/:country/cities-with-lcs" element={<EmergencyContacts selectedCard={card} />} />
+                    <Route path="/:country/:card" element={<Card selectedCountry={country} selectedCard={card}/>} />
                 </Routes>
             </div>
             {/* For mobile view*/}

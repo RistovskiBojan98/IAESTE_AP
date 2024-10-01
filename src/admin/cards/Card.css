@@ -1,0 +1,47 @@
+.section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+}
+
+.background {
+    padding: 0.5rem 1rem;
+    background-color: rgb(224 242 254);
+}
+
+.container {
+    max-width: 64rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.elements-position {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.form {
+    margin-top: 2.5rem;
+    background-color: rgb(243 244 246);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    border-width: 2px;
+    border-color: #1B75BB;
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+}
+
+@media (min-width: 640px) {
+    .form {
+        font-size: 1.5rem; /* 24px */
+        line-height: 2rem; /* 32px */
+        margin-left: 1.5rem;
+        margin-right: 1.5rem;
+    }
+}
+
+.spacing-y > * + * {
+    margin-top: 1rem;
+}

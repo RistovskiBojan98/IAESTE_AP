@@ -1,139 +1,88 @@
 import React, { useState, useEffect } from "react";
-import Loader from "./Loader/Loader";
-import { countries } from "../../components/countries/countries";
-import { getCardAndCountryFromUrl, mapEmergencyContacts } from "../../components/global/global_functions";
+import { mapEmergencyContacts, bgGradient } from "../../components/global/global_functions";
 import { emergencyContacts } from "../../components/emergencyContacts/emergencyContacts";
-import CardHeader from "./CardHeader";
+import "./Card.css";
 
-const EmergencyContacts = () => {
-    const [isLoading, setIsLoading] = useState(true);
-    const [contactData, setContactData] = useState([]); // State to manage contact list
-    const [isAddMode, setIsAddMode] = useState(false)
-    const [isEditMode, setIsEditMode] = useState(false); // Track edit mode
-    const [hasChanges, setHasChanges] = useState(false); // Track if changes are made
-    const [country, setCountry] = useState(null);
-    const [card, setCard] = useState(null);
+const EmergencyContacts = ({ selectedCountry }) => {
+    const [contactData, setContactData] = useState([]);
+    const [editIndex, setEditIndex] = useState(null); // Track which row is being edited
 
     useEffect(() => {
-        const { card, country } = getCardAndCountryFromUrl()
-        setCard(card);
-        setCountry(country);
-    }, []);
+        if (selectedCountry) setContactData([...mapEmergencyContacts(emergencyContacts, selectedCountry)]);
+    }, [selectedCountry]);
 
-    useEffect(() => {
-        if (country) setContactData([...mapEmergencyContacts(emergencyContacts, country)]);
-    }, [country]);
-
-    // Initialize contactData with eContacts
-    useEffect(() => {
-        const timer = setTimeout(() => {
-            setIsLoading(false);
-        }, 1100);
-        return () => clearTimeout(timer);
-    }, []);
-
-    const toggleEditMode = () => setIsEditMode(!isEditMode)
-    const toggleAddMode = () => setIsAddMode(!isAddMode)
-
-    // Handle input change
-    const handleEdit = (e, index) => {
-        const { value } = e.target;
-        const updatedContacts = [...contactData];
-        updatedContacts[index].number = value; // Update the contact's number
-        setContactData(updatedContacts);
-        setHasChanges(true);
+    // Handle the change in input during editing
+    const handleInputChange = (e, index) => {
+        const newData = [...contactData];
+        newData[index].number = e.target.value; // Update the number in the contact data
+        setContactData(newData);
     };
 
-    const handleAdd = () => {
-        const newContacts = [...contactData, { title: "", number: "" }]; // Add a new empty row
-        setContactData(newContacts);
-        setHasChanges(true);
-        setIsAddMode(true);
+    // Toggle edit/save mode for the specific row
+    const handleEditClick = (index) => {
+        if (editIndex === index) {
+            // Save changes and exit edit mode, show success alert
+            setEditIndex(null);
+            window.alert('Contact updated successfully!');
+        } else {
+            // Enter edit mode for this row
+            setEditIndex(index);
+        }
     };
 
-    const handleSave = () => {
-        // Logic to save changes to your backend or state
-        console.log("Saved Data:", contactData);
-        setIsEditMode(false);
-        setHasChanges(false);
+    // Handle delete with confirmation
+    const handleDeleteClick = (index) => {
+        const confirmDelete = window.confirm("Are you sure you want to delete this contact?");
+        if (confirmDelete) {
+            const newData = contactData.filter((_, i) => i !== index); // Remove the contact
+            setContactData(newData);
+            window.alert('Emergency contact deleted successfully!');
+        }
     };
-
-    const handleCancel = () => {
-        setContactData([...mapEmergencyContacts(emergencyContacts, country)]); // Revert to original data
-        setIsEditMode(false);
-        setIsAddMode(false)
-        setHasChanges(false);
-    };
-
-    console.log(contactData)
 
     return (
-        <section className="relative w-full min-h-screen">
-            {isLoading ? (
-                <Loader />
-            ) : (
-                <section className="px-4 py-2 bg-sky-100">
-                    <div className="max-w-5xl mx-auto">
-                        <div className="flex flex-col min-h-screen">
-                            <CardHeader country={country?.name} card={card} toggleAddMode={toggleAddMode} toggleEditMode={toggleEditMode}/>
-                            {/* Contact Form */}
-                            <form className="mt-10 sm:mx-10 space-y-4 bg-gray-100 p-4 rounded-lg shadow-lg border-2 border-[#1B75BB] text-lg sm:text-2xl">
-                                {!!contactData?.length ? contactData?.map((contact, index) => (
-                                    <div key={index} className="flex sm:items-center sm:space-x-4">
-                                        {(!isAddMode || contact.title) 
-                                            ?
-                                            <label className="font-semibold w-full sm:w-1/3">
-                                                {contact.title}
-                                            </label>
-                                            :
-                                            <input 
-                                                type="text"
-                                                placeholder="New contact"
-                                                onChange={(e) => console.log(e)}
-                                                className="border rounded-md px-2 py-1 w-full sm:w-1/3"
-                                            />
-                                        }
-                                        
-                                        {isEditMode || isAddMode || !contact.number ? (
-                                            <input
-                                                type="text"
-                                                value={contact.number}
-                                                placeholder="New contact number"
-                                                onChange={(e) => handleEdit(e, index)}
-                                                className="border rounded-md px-2 py-1 w-full sm:w-2/3"
-                                            />
-                                        ) : (
-                                            <span className="w-full sm:w-2/3 text-gray-700">{contact.number}</span>
-                                        )}
-                                    </div>
-                                )) : <div>No contacts available.</div> }
-                            </form>
-
-                            {/* Footer with Save/Cancel buttons */}
-                            {(isEditMode || isAddMode) && (
-                                <div className="my-8 sm:mr-10 flex justify-end space-x-4">
-                                    <button
-                                        onClick={handleCancel}
-                                        className={`btn bg-gray-300 text-black px-4 py-2 rounded-md`}
-                                    >
-                                        Cancel
-                                    </button>
-                                    <button
-                                        onClick={handleSave}
-                                        disabled={!hasChanges}
-                                        className={`btn bg-green-500 text-white px-4 py-2 rounded-md ${
-                                            !hasChanges ? "cursor-not-allowed opacity-50" : ""
-                                        }`}
-                                    >
-                                        Save Changes
-                                    </button>
-                                </div>
-                            )}
-                        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+            {!!contactData.length && contactData.map((contact, index) => (
+                <div key={index} className={`relative p-4 border rounded-lg shadow-lg ${editIndex === index ? 'bg-amber-300' : "bg-[#F1F1E6]"}`}>
+                    {/* Title in the top right */}
+                    <div className="absolute top-3 left-3 text-2xl font-semibold">
+                        {contact.title}
                     </div>
-                </section>
-            )}
-        </section>
+
+                    {/* Buttons in the top left */}
+                    <div className="absolute top-2 right-2 flex space-x-3">
+                        {/* Edit/Save button */}
+                        <button
+                            type="button"
+                            onClick={() => handleEditClick(index)}
+                            className={`btn flex items-center rounded-full border-2 border-[#1B75BB] bg-white text-[#1B75BB] p-2 hover:${bgGradient} hover:text-white hover:shadow-xl`}
+                        >
+                            <i className={`fa ${editIndex === index ? 'fa-save' : 'fa-pencil-alt'}`} aria-hidden="true"></i>
+                        </button>
+
+                        {/* Remove button */}
+                        <button
+                            type="button"
+                            onClick={() => handleDeleteClick(index)}
+                            className="btn flex items-center rounded-full border-2 border-red-500 bg-white text-red-500 p-2 hover:bg-red-500 hover:text-white hover:shadow-xl"
+                        >
+                            <i className="fa fa-trash" aria-hidden="true"></i>
+                        </button>
+                    </div>
+
+                    {/* Value input below buttons */}
+                    <div className="mt-12 text-2xl">
+                        <input
+                            type="text"
+                            value={contact.number}
+                            onChange={(e) => handleInputChange(e, index)} // Update input value
+                            className="w-full text-center border-2"
+                            readOnly={editIndex !== index} // Disable input if not in edit mode
+                        />
+                    </div>
+                </div>
+            ))}
+        </div>
     );
 };
 
