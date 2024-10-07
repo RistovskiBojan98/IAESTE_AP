@@ -51,10 +51,10 @@ const GeneralInfo = ({ selectedCountry }) => {
                         <textarea
                             type="text"
                             placeholder="Description"
-                            rows={3}
+                            rows={2}
                             value={info.role}
                             onChange={(e) => handleInputChange(e, index)} // Update input value
-                            className="w-full text-center border-2"
+                            className="w-full p-2 border-2"
                             readOnly={editIndex !== index} // Disable input if not in edit mode
                         />
                     </div>
