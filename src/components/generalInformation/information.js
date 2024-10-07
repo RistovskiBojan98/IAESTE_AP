@@ -17,12 +17,20 @@ import flag_spain from "./images/Spain/spain_flag.jpg"
 import flag_malta from "./images/Malta/malta_flag.png"
 import flag_france from "./images/France/france_flag.jpg"
 
+// images
+import voltage from "./images/voltage1.jpg"
+import countryCode from "./images/country_dialing_code.jpg"
+import population from "./images/population2.jpg"
 // global constants
 export const langImgUrl = "https://images.unsplash.com/photo-1451226428352-cf66bf8a0317?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80"
 export const timeZoneImgUrl = "https://images.unsplash.com/photo-1508962914676-134849a727f0?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
 export const currencyImgUrl = "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1471&q=80"
 export const climateImgUrl = "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
 export const simImgUrl = "https://images.unsplash.com/photo-1562831915-6524120efded?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=797&q=80"
+export const voltageImgUrl = voltage
+export const countryCodeImgUrl = countryCode
+export const populationImgUrl = population
+
 
 export const information = [
   {

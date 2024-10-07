@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import Loader from "./Loader/Loader";
 import CardHeader from "./CardHeader";
-import { loadingTimer, getCardAndCountryFromUrl } from "../../components/global/global_functions";
+import { getCardAndCountryFromUrl } from "../../components/global/global_functions";
 import "./Card.css"
 import EmergencyContacts from "./EmergencyContacts";
+import CitiesWithLcs from "./CitiesWithLcs";
+import GeneralInfo from "./GeneralInfo";
 
 const Card = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -16,11 +18,16 @@ const Card = () => {
             const { cardName, countryName } = getCardAndCountryFromUrl()
             setCard(cardName);
             setCountry(countryName);
+            console.log(cardName)
             // add the proper card component
             switch (cardName) {
                 case "Emergency numbers":
                     setCardComponent(<EmergencyContacts selectedCountry={countryName}/>)
                     break
+                case "Cities with lcs":
+                    setCardComponent(<CitiesWithLcs selectedCountry={countryName} />)
+                case "General information":
+                    setCardComponent(<GeneralInfo selectedCountry={countryName} />)
                 default:
                     break
             }

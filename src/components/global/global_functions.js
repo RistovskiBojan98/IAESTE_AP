@@ -1,4 +1,5 @@
 import { countries } from "../countries/countries";
+import { information, langImgUrl, timeZoneImgUrl, currencyImgUrl, climateImgUrl, simImgUrl, voltageImgUrl, countryCodeImgUrl, populationImgUrl } from "../generalInformation/information";
 
 export const classNames = (...classes) => classes.filter(Boolean).join(" ");
 
@@ -35,8 +36,10 @@ export const TRANSPORT_CONSTANTS = {
     DISCOUNTS: 4
 }
 
+export const getSelectedCountryName = (country) => typeof (country) === 'string' ? country : country?.name;
+
 export const mapEmergencyContacts = (contacts, country) => {
-    const countryName = typeof(country) === 'string' ? country : country?.name;
+    const countryName = getSelectedCountryName(country)
     let eContacts = contacts.find((obj) => obj.country === countryName);
     eContacts = Object.entries(eContacts).filter((obj) => obj[0] !== "country");
 
@@ -64,6 +67,46 @@ export const mapEmergencyContacts = (contacts, country) => {
     })
 }
 
+export const mapGeneralInfo = (country) => {
+    // helper function
+    const addImgUrl = (obj) => {
+        switch (obj.name) {
+            case "Language":
+                obj.imageUrl = langImgUrl;
+                break;
+            case "Time zone":
+                obj.imageUrl = timeZoneImgUrl;
+                break;
+            case "Currency":
+                obj.imageUrl = currencyImgUrl;
+                break;
+            case "Voltage":
+                obj.imageUrl = voltageImgUrl;
+                break;
+            case "Climate":
+                obj.imageUrl = climateImgUrl;
+                break;
+            case "country dialing code":
+                obj.imageUrl = countryCodeImgUrl;
+                break;
+            case "SIM card providers":
+                obj.imageUrl = simImgUrl;
+                break;
+            case "Population":
+                obj.imageUrl = populationImgUrl;
+                break;
+            default:
+                break;
+        }
+    }
+
+    const countryName = getSelectedCountryName(country)
+    const countryInfo = information.find((obj) => obj.country === countryName)
+    // Dynamically add imageUrl back to each object based on its name
+    countryInfo.data.forEach(addImgUrl);
+    return countryInfo;
+}
+
 export const getCardAndCountryFromUrl = () => {
     const urlParts = window.location.href.split("/");
     const cardUrl = urlParts[urlParts.length - 1].replaceAll("-", " ");
@@ -80,4 +123,22 @@ export const loadingTimer = (setIsLoading) => {
         setIsLoading(false);
     }, 1100);
     return () => clearTimeout(timer);
+}
+
+export const editCardItem = (index, editIndex, setEditIndex) => {
+    if (editIndex !== index) setEditIndex(index) // Enter edit mode for this row
+    else {
+        // Save changes and exit edit mode, show success alert
+        setEditIndex(null)
+        window.alert('Item updated successfully!');
+    }
+}
+
+export const deleteCardItem = (index, dataList, setDataList) => {
+    const confirmDelete = window.confirm("Are you sure you want to delete this item?");
+    if (confirmDelete) {
+        const newDataList = dataList.filter((_, i) => i !== index); // Remove the item
+        setDataList(newDataList);
+        window.alert('Item deleted successfully!');
+    }
 }
