@@ -39,8 +39,9 @@ const EmergencyContacts = ({ selectedCountry }) => {
                         {/* Edit/Save button */}
                         <button
                             type="button"
+                            disabled={!contact.number}
                             onClick={() => handleEditClick(index)}
-                            className={`btn flex items-center rounded-full border-2 border-[#1B75BB] bg-white text-[#1B75BB] p-2 hover:${bgGradient} hover:text-white hover:shadow-xl`}
+                            className={`btn flex items-center rounded-full border-2 border-[#1B75BB] p-2 ${contact.number ? `bg-white text-[#1B75BB] hover:${bgGradient} hover:text-white hover:shadow-xl` : "bg-[#F1F1E6] text-black"}`}
                         >
                             <i className={`fa ${editIndex === index ? 'fa-save' : 'fa-pencil-alt'}`} aria-hidden="true"></i>
                         </button>
@@ -59,6 +60,7 @@ const EmergencyContacts = ({ selectedCountry }) => {
                     <div className="mt-12 text-2xl">
                         <input
                             type="text"
+                            placeholder="Emergency number"
                             value={contact.number}
                             onChange={(e) => handleInputChange(e, index)} // Update input value
                             className="w-full text-center border-2"

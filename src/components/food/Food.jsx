@@ -1,17 +1,13 @@
 import React, { useState } from "react";
-import { food, drinks } from "./dataFood";
 import FoodCard from "./FoodCard";
 import useWindowSize from "../../hooks/useScreenSize";
 import css from "../app.module.css"
+import { getCountryFoodAndDrinks } from "../global/global_functions";
 import { leftArrow, rightArrow } from "../global/global_functions";
 
 const Food = ({ country, foodRef }) => {
-  const findContent = (obj) => obj.find((el) => el.country === country)?.content ?? [];
-
   const { width } = useWindowSize();
-  const countryFood = findContent(food)
-  const countryDrinks = findContent(drinks)
-  const countryData = [...countryFood, ...countryDrinks];
+  const countryData = getCountryFoodAndDrinks(country)
 
   const dataLen = countryData?.length ?? 0
   const maxItemsToShow = dataLen >= 3 ? 3 : dataLen

@@ -1,5 +1,7 @@
 import { countries } from "../countries/countries";
 import { information, langImgUrl, timeZoneImgUrl, currencyImgUrl, climateImgUrl, simImgUrl, voltageImgUrl, countryCodeImgUrl, populationImgUrl } from "../generalInformation/information";
+import { food, drinks } from "../food/dataFood";
+import { TRANSPORT_CONSTANTS, transport } from "../transport/transport";
 
 export const classNames = (...classes) => classes.filter(Boolean).join(" ");
 
@@ -28,13 +30,6 @@ export const rightArrow = <svg
         fill="black"
     />
 </svg>
-
-export const TRANSPORT_CONSTANTS = {
-    AIRPORTS: 1,
-    NATIONAL_AND_INTERNATIONAL_TRANSPORT: 2,
-    PUBLIC_TRANSPORT: 3,
-    DISCOUNTS: 4
-}
 
 export const getSelectedCountryName = (country) => typeof (country) === 'string' ? country : country?.name;
 
@@ -107,6 +102,64 @@ export const mapGeneralInfo = (country) => {
     return countryInfo;
 }
 
+export const getCountryFoodAndDrinks = (selectedCountry) => {
+    // helper function
+    const findContent = (obj, countryName) => obj.find((el) => el.country === countryName)?.content ?? [];
+
+    const countryName = getSelectedCountryName(selectedCountry)
+    const countryFood = findContent(food, countryName)
+    const countryDrinks = findContent(drinks, countryName)
+    return [...countryFood, ...countryDrinks]
+}
+
+export const mapCountryTransportTiers = (tiers) => tiers?.map(tier => {
+    // helper function
+    const setTransportTitleAndIcon = (transportId) => {
+        const { AIRPORTS, NATIONAL_AND_INTERNATIONAL_TRANSPORT, PUBLIC_TRANSPORT } = TRANSPORT_CONSTANTS
+    
+        switch (transportId) {
+            case AIRPORTS:
+                return {
+                    title: "Airports",
+                    icon: "fa fa-plane",
+                };
+    
+            case NATIONAL_AND_INTERNATIONAL_TRANSPORT:
+                return {
+                    title: "National and international transport",
+                    icon: "fa fa-train",
+                };
+    
+            case PUBLIC_TRANSPORT:
+                return {
+                    title: "Public transport",
+                    icon: "fa fa-bus",
+                }
+    
+            default:
+                return {
+                    title: "Discounts",
+                    icon: "fa fa-tag",
+                }
+        }
+    }
+
+    const { title, icon } = setTransportTitleAndIcon(tier.id)
+
+    return {
+        ...tier,
+        title,
+        icon
+    }
+})
+
+export const getCountryTransport = (country) => {
+    const countryName = getSelectedCountryName(country)
+    const tiers = transport[countryName]?.tiers ?? []
+
+    return tiers.length ? mapCountryTransportTiers(transport[countryName]?.tiers) : []
+}
+
 export const getCardAndCountryFromUrl = () => {
     const urlParts = window.location.href.split("/");
     const cardUrl = urlParts[urlParts.length - 1].replaceAll("-", " ");
@@ -141,4 +194,12 @@ export const deleteCardItem = (index, dataList, setDataList) => {
         setDataList(newDataList);
         window.alert('Item deleted successfully!');
     }
+}
+
+export const saveNewCardItem = (listData, inputValue, setListData, setAddMode, setInputValue) => {
+    const newData = [...listData, inputValue]
+    setListData(newData)
+    setAddMode(false)
+    setInputValue("")
+    window.alert('Item added successfully!')
 }

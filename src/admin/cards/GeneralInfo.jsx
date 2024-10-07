@@ -7,10 +7,8 @@ const GeneralInfo = ({ selectedCountry }) => {
     const [editIndex, setEditIndex] = useState(null); // Track which row is being edited
 
     useEffect(() => {
-        console.log(selectedCountry)
         if (selectedCountry) {
             const info = mapGeneralInfo(selectedCountry)
-            console.log(info)
             if (info?.data) setInfoData([...info.data])
         };
     }, [selectedCountry]);
@@ -26,7 +24,7 @@ const GeneralInfo = ({ selectedCountry }) => {
     const handleEditClick = (index) => editCardItem(index, editIndex, setEditIndex)
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
             {!!infoData.length && infoData.map((info, index) => (
                 <div key={index} className={`relative p-4 border rounded-lg shadow-lg ${editIndex === index ? 'bg-amber-300' : "bg-[#F1F1E6]"}`}>
                     {/* Title in the top right */}
@@ -40,17 +38,19 @@ const GeneralInfo = ({ selectedCountry }) => {
                         {/* Edit/Save button */}
                         <button
                             type="button"
+                            disabled={!info.role}
                             onClick={() => handleEditClick(index)}
-                            className={`btn flex items-center rounded-full border-2 border-[#1B75BB] bg-white text-[#1B75BB] p-2 hover:${bgGradient} hover:text-white hover:shadow-xl`}
+                            className={`btn flex items-center rounded-full border-2 border-[#1B75BB] p-2 ${info.role ? `bg-white text-[#1B75BB] hover:${bgGradient} hover:text-white hover:shadow-xl` : "bg-[#F1F1E6] text-black"}`}
                         >
                             <i className={`fa ${editIndex === index ? 'fa-save' : 'fa-pencil-alt'}`} aria-hidden="true"></i>
                         </button>
                     </div>
 
                     {/* Value input below buttons */}
-                    <div className="mt-12 text-2xl">
+                    <div className="mt-12 text-lg">
                         <textarea
                             type="text"
+                            placeholder="Description"
                             rows={3}
                             value={info.role}
                             onChange={(e) => handleInputChange(e, index)} // Update input value

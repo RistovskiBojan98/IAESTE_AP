@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./Card.css"
 import { committees } from "../../components/committees/committees";
-import { bgGradient, editCardItem, deleteCardItem } from "../../components/global/global_functions";
+import { bgGradient, editCardItem, deleteCardItem, saveNewCardItem, getSelectedCountryName } from "../../components/global/global_functions";
 
 const CitiesWithLcs = ({ selectedCountry }) => {
     const [committeesData, setCommitteesData] = useState([]) // State to manage contact list
@@ -11,7 +11,7 @@ const CitiesWithLcs = ({ selectedCountry }) => {
 
     useEffect(() => {
         if (selectedCountry) {
-            const countryName = typeof (selectedCountry) === 'string' ? selectedCountry : selectedCountry?.name;
+            const countryName = getSelectedCountryName(selectedCountry)
             const data = committees.find(com => com.country === countryName)
             if (data) setCommitteesData(data.lcs)
         }
@@ -30,14 +30,8 @@ const CitiesWithLcs = ({ selectedCountry }) => {
     // Handle delete with confirmation
     const handleDeleteClick = (index) => deleteCardItem(index, committeesData, setCommitteesData)
 
-    // handle save new item
-    const handleSaveNewItem = () => {
-        const newData = [...committeesData, inputValue]
-        setCommitteesData(newData)
-        setAddMode(false)
-        setInputValue("")
-        window.alert('Item added successfully!')
-    }
+    // Handle save new item
+    const handleSaveNewItem = () =>  saveNewCardItem(committeesData, inputValue, setCommitteesData, setAddMode, setInputValue)
 
     return (
         <div className="elements-position space-y-5 mt-5">
@@ -45,6 +39,7 @@ const CitiesWithLcs = ({ selectedCountry }) => {
                 <div key={index} className="flex flex-row font-semibold rounded-md w-full gap-2 sm:gap-5">
                     <input
                         type="text"
+                        placeholder="City name"
                         readOnly={editIndex !== index} // Disable input if not in edit mode
                         value={city}
                         onChange={(e) => handleInputChange(e, index)}
@@ -53,8 +48,9 @@ const CitiesWithLcs = ({ selectedCountry }) => {
                     {/* Edit/Save button */}
                     <button
                         type="button"
+                        disabled={!city}
                         onClick={() => handleEditClick(index)}
-                        className={`btn flex items-center rounded-md border-2 border-[#1B75BB] bg-white text-[#1B75BB] p-4 hover:${bgGradient} hover:text-white hover:shadow-xl`}
+                        className={`btn flex items-center rounded-md border-2 border-[#1B75BB] p-4 ${city ? `bg-white text-[#1B75BB] hover:${bgGradient} hover:text-white hover:shadow-xl` : "bg-[#F1F1E6] text-black"}`}
                     >
                         <i className={`fa ${editIndex === index ? 'fa-save' : 'fa-pencil-alt'}`} aria-hidden="true"></i>
                     </button>
@@ -86,6 +82,7 @@ const CitiesWithLcs = ({ selectedCountry }) => {
                     <div key="new" className="flex flex-row font-semibold rounded-md w-full gap-2 sm:gap-5">
                         <input
                             type="text"
+                            placeholder="City name"
                             value={inputValue}
                             onChange={(e) => setInputValue(e.target.value)}
                             className={`p-2 grow text-2xl border-2 border-[#1B75BB] bg-amber-300`}

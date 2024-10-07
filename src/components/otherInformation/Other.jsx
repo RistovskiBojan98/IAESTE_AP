@@ -27,7 +27,7 @@ const Other = ({ country }) => {
                 <h1 className="text-3xl md:text-4xl font-bold ">
                     Interesting and useful information
                 </h1>
-                <div className="grid mt-8 gap-2" style={{ gridTemplateColumns: '1fr 15fr 1fr' }}>
+                <div className="grid mt-8 gap-2" style={{ gridTemplateColumns: '1fr 14fr 1fr' }}>
                     <button onClick={showPrev} disabled={startIndex === 0}>
                         {leftArrow}
                     </button>

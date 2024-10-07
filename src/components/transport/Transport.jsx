@@ -1,59 +1,15 @@
 import React, { useState, useEffect } from "react";
-import { transport } from "./transport";
 import css from "../app.module.css";
 import { Disclosure } from "@headlessui/react";
 import TransportFeatures from "./TransportFeatures";
-import { TRANSPORT_CONSTANTS } from "../global/global_functions";
+import { getCountryTransport } from "../global/global_functions";
 import ShowMore from "../global/ShowMore";
 
 const Transport = ({ transportRef, country }) => {
   const [countryTransport, setTransportProps] = useState([]);
 
   useEffect(() => {
-    const tiers = transport[country]?.tiers?.map(tier => {
-      // helper function
-      // set the title and icon of the feature tier
-      // this is done to not repeat the same code in the transport.js
-      const { AIRPORTS, NATIONAL_AND_INTERNATIONAL_TRANSPORT, PUBLIC_TRANSPORT } = TRANSPORT_CONSTANTS
-      const setTitleAndIcon = (id) => {
-        switch (id) {
-          case AIRPORTS:
-            return {
-              title: "Airports",
-              icon: "fa fa-plane",
-            };
-          
-          case NATIONAL_AND_INTERNATIONAL_TRANSPORT:
-            return {
-              title: "National and international transport",
-              icon: "fa fa-train",
-            };
-
-          case PUBLIC_TRANSPORT:
-            return {
-              title: "Public transport",
-              icon: "fa fa-bus",
-            }
-          
-          default:
-            return {
-              title: "Discounts",
-              icon: "fa fa-tag",
-            }
-        }
-      }
-
-      const {title, icon} = setTitleAndIcon(tier.id)
-      
-      return {
-        ...tier,
-        title,
-        icon
-      }
-
-    }) ?? [];
-
-    setTransportProps(tiers);
+    setTransportProps(getCountryTransport(country));
   }, [country]);
 
   return (

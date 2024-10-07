@@ -6,6 +6,11 @@ import "./Card.css"
 import EmergencyContacts from "./EmergencyContacts";
 import CitiesWithLcs from "./CitiesWithLcs";
 import GeneralInfo from "./GeneralInfo";
+import FunFacts from "./FunFacts";
+import Cuisine from "./Cuisine";
+import Places from "./Places";
+import Other from "./Other";
+import Transport from "./Transport";
 
 const Card = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -26,8 +31,25 @@ const Card = () => {
                     break
                 case "Cities with lcs":
                     setCardComponent(<CitiesWithLcs selectedCountry={countryName} />)
+                    break
                 case "General information":
                     setCardComponent(<GeneralInfo selectedCountry={countryName} />)
+                    break
+                case "Fun facts":
+                    setCardComponent(<FunFacts selectedCountry={countryName} />)
+                    break
+                case "Traditional cuisine":
+                    setCardComponent(<Cuisine selectedCountry={countryName} />)
+                    break
+                case "Recommended places":
+                    setCardComponent(<Places selectedCountry={countryName} />)
+                    break
+                case "Other information":
+                    setCardComponent(<Other selectedCountry={countryName} />)
+                    break
+                case "Transportation":
+                    setCardComponent(<Transport selectedCountry={countryName} />)
+                    break
                 default:
                     break
             }
