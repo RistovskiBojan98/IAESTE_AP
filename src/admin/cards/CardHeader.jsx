@@ -7,7 +7,7 @@ const CardHeader = ({ country, card, toggleEditMode, toggleAddMode, headerButton
     return (
         <section>
             {country && <Path country={country} card={card} />}
-            <div className="justify-between flex sm:mt-10 sm:px-10 border-b border-gray-300 pb-4">
+            <div className="justify-between flex sm:mt-5 sm:px-10 border-b border-gray-300 pb-4">
                 <div className="text-3xl sm:text-5xl flex flex-col font-semibold text-[#1B75BB]">
                     <span>IAESTE {country}</span>
                     <span>{card}</span>

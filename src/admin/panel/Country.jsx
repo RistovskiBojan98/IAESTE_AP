@@ -78,11 +78,11 @@ const Country = ({ selectedCountry }) => {
                 <Plane country={selectedCountry}></Plane>
             ) : (
                 !!country ? (
-                    <section className="px-4 py-2 bg-sky-100 h-full min-h-screen">
-                        <div className="max-w-5xl mx-auto">
+                    <section className="p-2 bg-sky-100 h-full min-h-screen">
+                        <div className="max-w-7xl mx-auto">
                             <div className="flex flex-col">
                                 <Path country={country.name} />
-                                <div className="flex items-center justify-center w-full sm:mt-10">
+                                <div className="flex items-center justify-center w-full ">
                                     <img src={country.imageSrc} alt={country.imageAlt} className="rounded-full h-20 w-20 sm:h-32 sm:w-32 border" />
                                     <div className="flex flex-col ml-5 font-bold text-[#1B75BB]">
                                         <span className="text=xl sm:text-3xl">IAESTE</span>

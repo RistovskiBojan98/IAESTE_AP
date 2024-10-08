@@ -10,6 +10,7 @@
 .overflowDescription {
     overflow-y: scroll;
     max-height: 60%;
+    scrollbar-width: "thin";
 }
 
 @media (max-width: 768px) {

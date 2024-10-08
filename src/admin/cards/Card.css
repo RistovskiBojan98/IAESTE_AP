@@ -10,7 +10,7 @@
 }
 
 .container {
-    max-width: 64rem;
+    max-width: 80rem;
     margin-left: auto;
     margin-right: auto;
 }
@@ -44,4 +44,44 @@
 
 .spacing-y > * + * {
     margin-top: 1rem;
+}
+
+.card-table {
+    width: 100%;
+    border: 1px solid #1B75BB;
+    table-layout: auto;
+}
+
+.card-table-head {
+    background: #1B75BB;
+    color: white;
+}
+
+.card-table-head th {
+    padding: 0.5rem;
+    text-align: left;
+}
+
+.card-table-row {
+    border-bottom: 1px solid #1B75BB;
+}
+
+.card-table-row td {
+    padding: 0.25rem
+}
+
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 85px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    border: 2px solid;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
 }

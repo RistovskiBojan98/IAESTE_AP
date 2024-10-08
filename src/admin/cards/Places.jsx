@@ -37,7 +37,7 @@ const Places = ({ selectedCountry }) => {
     const handleDeleteClick = (index) => deleteCardItem(index, placesData, setPlacesData)
 
     // Handle save new item
-    const handleSaveNewItem = () =>  {
+    const handleSaveNewItem = () => {
         const newData = [...placesData]
         const newItem = { question: inputTitleValue, answer: inputValue }
         newData.push(newItem)
@@ -49,33 +49,35 @@ const Places = ({ selectedCountry }) => {
     }
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-10">
             {!!placesData.length && placesData.map((item, index) => (
-                <div key={index} className={`relative p-4 border rounded-lg shadow-lg ${editIndex === index ? 'bg-amber-300' : "bg-[#F1F1E6]"}`}>
+                <div key={index} className={`p-4 border rounded-lg shadow-lg ${editIndex === index ? 'bg-amber-300 text-black border-black' : "bg-[#1B75BB] text-white"}`}>
                     {/* Title in the top right */}
-                    <div className="absolute top-3 left-3 text-2xl font-semibold">
-                        {editIndex !== index ? (
-                            <span>{item.question}</span>
-                        ) : (
-                            <input
-                                type="text"
-                                placeholder="Title"
-                                value={item.question}
-                                onChange={(e) => handleInputTitleChange(e, index)} // Update input value
-                                className="border-2 p-1" />
-                        )}
+                    <div className="text-2xl font-semibold">
+                        <input
+                            type="text"
+                            placeholder="Title"
+                            value={item.question}
+                            onChange={(e) => handleInputTitleChange(e, index)} // Update input value
+                            className={`w-full p-1 ${editIndex === index ? "bg-white border-black border" : "bg-transparent"}`} />
                     </div>
-                    {/* Buttons in the top left */}
-                    <div className="absolute top-3 right-3 flex space-x-3">
-                        {/* Edit/Save button */}
-                        <button
-                            type="button"
-                            onClick={() => handleEditClick(index)}
-                            className={`btn flex items-center rounded-full border-2 border-[#1B75BB] p-2 ${item.title && item.description ? `bg-white text-[#1B75BB] hover:${bgGradient} hover:text-white hover:shadow-xl` : "bg-[#F1F1E6] text-black"}`}
-                        >
-                            <i className={`fa ${editIndex === index ? 'fa-save' : 'fa-pencil-alt'}`} aria-hidden="true"></i>
-                        </button>
 
+                    {/* Value input below buttons */}
+                    <div className="text-xl pt-1">
+                        <textarea
+                            type="text"
+                            placeholder="Description"
+                            value={item.answer}
+                            rows={8}
+                            onChange={(e) => handleInputDescChange(e, index)} // Update input value
+                            style={{ scrollbarWidth: "thin" }}
+                            className={`w-full p-1 border-y ${editIndex === index ? "bg-white border-black border" : "bg-transparent"}`}
+                            readOnly={editIndex !== index} // Disable input if not in edit mode
+                        />
+                    </div>
+
+                    {/* Buttons in the top left */}
+                    <div className="flex space-x-3 justify-end">
                         {/* Remove button */}
                         <button
                             type="button"
@@ -84,19 +86,14 @@ const Places = ({ selectedCountry }) => {
                         >
                             <i className="fa fa-trash" aria-hidden="true"></i>
                         </button>
-                    </div>
-
-                    {/* Value input below buttons */}
-                    <div className="mt-12 text-xl">
-                        <textarea
-                            type="text"
-                            placeholder="Description"
-                            value={item.answer}
-                            rows={4}
-                            onChange={(e) => handleInputDescChange(e, index)} // Update input value
-                            className="w-full border-2 p-2"
-                            readOnly={editIndex !== index} // Disable input if not in edit mode
-                        />
+                        {/* Edit/Save button */}
+                        <button
+                            type="button"
+                            onClick={() => handleEditClick(index)}
+                            className={`btn flex items-center rounded-full border-2 border-[#1B75BB] p-2 ${item.title && item.description ? `bg-white text-[#1B75BB] hover:${bgGradient} hover:text-white hover:shadow-xl` : "bg-[#F1F1E6] text-black"}`}
+                        >
+                            <i className={`fa ${editIndex === index ? 'fa-save' : 'fa-pencil-alt'}`} aria-hidden="true"></i>
+                        </button>
                     </div>
                 </div>
             ))}

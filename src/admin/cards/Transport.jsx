@@ -31,7 +31,7 @@ const Transport = ({ selectedCountry }) => {
             {transportData.map((transport, index) => (
                 <div key={transport.id} className="mb-4 border border-[#1B75BB]">
                     <div
-                        className={`p-4 bg-[#F1F1E6] font-bold cursor-pointer flex justify-between items-center gap-2 text-xl transition-all duration-300 ${openIndex === index ? "bg-[#1B75BB] text-white" : `hover:${bgGradient} hover:text-white text-[#1B75BB]`}`}
+                        className={`p-4 font-bold cursor-pointer flex justify-between items-center gap-2 text-xl transition-all duration-300 ${openIndex === index ? "bg-[#1B75BB] text-white" : `hover:${bgGradient} text-white bg-[#1B75BB]`}`}
                         onClick={() => toggleAccordion(index)} // Call toggle function on click
                     >
                         <div className="flex items-center gap-4">

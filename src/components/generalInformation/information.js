@@ -66,7 +66,7 @@ export const information = [
         // "Winter: low temperatures, can (rarely) get very cold down to -20°C, regular snowfalls, especially in the west.",
       },
       {
-        name: "country dialing code",
+        name: "Country dialing code",
         role: "+43",
       },
       {
@@ -108,7 +108,7 @@ export const information = [
         role: "Moderate continental climate (hot summers and snowy winters)"
       },
       {
-        name: "country dialing code",
+        name: "Country dialing code",
         role: "+387"
       },
       {
@@ -150,7 +150,7 @@ export const information = [
         role: "The weather is very variable in Belgium. The best thing you can do is to check the weather forecast before traveling to Belgium."
       },
       {
-        name: "country dialing code",
+        name: "Country dialing code",
         role: "+32"
       },
       {
@@ -192,7 +192,7 @@ export const information = [
         role: "Hot summers and milder winters"
       },
       {
-        name: "country dialing code",
+        name: "Country dialing code",
         role: "+385"
       },
       {
@@ -234,7 +234,7 @@ export const information = [
         role: "null"
       },
       {
-        name: "country dialing code",
+        name: "Country dialing code",
         role: "+420"
       },
       {
@@ -276,7 +276,7 @@ export const information = [
         role: "The weather is sunny, cloudy, a bit rainy, it depends on the days."
       },
       {
-        name: "country dialing code",
+        name: "Country dialing code",
         role: "+33"
       },
       {
@@ -318,7 +318,7 @@ export const information = [
         role: "In most of Germany: moderately continental, unstable weather, northernmost area: humid, rainy, windy, cloudy southcentral, Alps: mountainous climate, snowy in winter"
       },
       {
-        name: "country dialing code",
+        name: "Country dialing code",
         role: "+49"
       },
       {
@@ -360,7 +360,7 @@ export const information = [
         role: "TBD"
       },
       {
-        name: "country dialing code",
+        name: "Country dialing code",
         role: "+36"
       },
       {
@@ -402,7 +402,7 @@ export const information = [
         role: "Really hot summers and really cold winters"
       },
       {
-        name: "country dialing code",
+        name: "Country dialing code",
         role: "+389"
       },
       {
@@ -444,7 +444,7 @@ export const information = [
         role: "Mild wet winters & hot, dry Summers. The Temperature never drops down to 0 degrees Celsius."
       },
       {
-        name: "country dialing code",
+        name: "Country dialing code",
         role: "+356"
       },
       {
@@ -486,7 +486,7 @@ export const information = [
         role: "The weather and temperatures can change quickly, especially in the mountains. Make sure you are prepared with good footwear and warm and waterproof clothing"
       },
       {
-        name: "country dialing code",
+        name: "Country dialing code",
         role: "+47"
       },
       {
@@ -528,7 +528,7 @@ export const information = [
         role: "Hot and dry summers, really cold and wet winters"
       },
       {
-        name: "country dialing code",
+        name: "Country dialing code",
         role: "+48"
       },
       {
@@ -570,7 +570,7 @@ export const information = [
         role: "Hot summers (up to 30°C), cold winters (temperatures down to -10°C, sometimes snowy)"
       },
       {
-        name: "country dialing code",
+        name: "Country dialing code",
         role: "+421"
       },
       {
@@ -612,7 +612,7 @@ export const information = [
         role: "Moderate continental climate. Cold winters. The climate changes with the landscape as well."
       },
       {
-        name: "country dialing code",
+        name: "Country dialing code",
         role: "+386"
       },
       {
@@ -654,7 +654,7 @@ export const information = [
         role: "Usually hot throughout the whole year"
       },
       {
-        name: "country dialing code",
+        name: "Country dialing code",
         role: "+34"
       },
       {
@@ -696,7 +696,7 @@ export const information = [
         role: "Typical central european climate, with cold winters and warm summers, and soft temperatures in Spring and Autumn (except the Alps)"
       },
       {
-        name: "country dialing code",
+        name: "Country dialing code",
         role: "+41"
       },
       {
@@ -738,7 +738,7 @@ export const information = [
         role: "Dark and cold winters, warm summers with the sun not setting down at all."
       },
       {
-        name: "country dialing code",
+        name: "Country dialing code",
         role: "+216"
       },
       {
@@ -791,7 +791,7 @@ export const information = [
   //         "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
   //     },
   //     {
-  //       name: "country dialing code",
+  //       name: "Country dialing code",
   //       role: "+216",
   //       imageUrl:
   //         country_code,
@@ -839,7 +839,7 @@ export const information = [
         role: "",
       },
       {
-        name: "country dialing code",
+        name: "Country dialing code",
         role: "+90",
       },
       {

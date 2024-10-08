@@ -11,6 +11,7 @@ import Cuisine from "./Cuisine";
 import Places from "./Places";
 import Other from "./Other";
 import Transport from "./Transport";
+import SummerReception from "./summer-reception/SummerReception";
 
 const Card = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -27,7 +28,7 @@ const Card = () => {
             // add the proper card component
             switch (cardName) {
                 case "Emergency numbers":
-                    setCardComponent(<EmergencyContacts selectedCountry={countryName}/>)
+                    setCardComponent(<EmergencyContacts selectedCountry={countryName} />)
                     break
                 case "Cities with lcs":
                     setCardComponent(<CitiesWithLcs selectedCountry={countryName} />)
@@ -50,6 +51,9 @@ const Card = () => {
                 case "Transportation":
                     setCardComponent(<Transport selectedCountry={countryName} />)
                     break
+                case "Summer reception":
+                    setCardComponent(<SummerReception selectedCountry={countryName} />)
+                    break
                 default:
                     break
             }
@@ -64,7 +68,7 @@ const Card = () => {
             {isLoading ? (
                 <Loader />
             ) : (
-                <section className="background">
+                <section className="p-1 bg-sky-100">
                     <div className="container">
                         <div className="elements-position">
                             <CardHeader country={country?.name} card={card} />

@@ -8,12 +8,14 @@ import {
   saveNewCardItem,
   getSelectedCountryName,
 } from "../../components/global/global_functions";
+import CardFooter from "./CardFooter";
 
 const CitiesWithLcs = ({ selectedCountry }) => {
   const [committeesData, setCommitteesData] = useState([]); // State to manage contact list
   const [editIndex, setEditIndex] = useState(null); // Track which row is being edited
   const [isAddMode, setAddMode] = useState(false);
   const [inputValue, setInputValue] = useState("");
+  const [actionInProgress, setActionInProgress] = useState(false); // Track if an action is in progress
 
 
   useEffect(() => {
@@ -50,10 +52,10 @@ const CitiesWithLcs = ({ selectedCountry }) => {
     );
 
   // Handle save changes
-  const handleSaveChanges = () => {
-    // Logic for saving changes
-    console.log("Changes saved:", committeesData);
-  };
+  const handleSave = () => {
+    setEditIndex(null);
+    setActionInProgress(false); // Reset action in progress
+};
 
   // Handle cancel changes
   const handleCancel = () => {
@@ -163,27 +165,7 @@ const CitiesWithLcs = ({ selectedCountry }) => {
               }
       </div>
 
-      {/* Fixed footer for mobile view */}
-      {/* <footer className="fixed bottom-0 left-0 w-full bg-white border-t border-gray-300 p-2 md:hidden">
-        <div className="flex justify-end space-x-2">
-          <button
-            type="button"
-            onClick={handleCancel}
-            className="btn flex items-center rounded-md border-2 border-red-500 bg-white text-red-500 p-1 hover:bg-red-500 hover:text-white hover:shadow-xl"
-          >
-            <i className={`fa fa-ban mr-1`} aria-hidden="true"></i>
-            Cancel
-          </button>
-          <button
-            type="button"
-            onClick={handleSaveChanges}
-            className={`btn flex items-center rounded-md border-2 border-[#1B75BB] bg-white text-[#1B75BB] p-1 hover:${bgGradient} hover:text-white hover:shadow-xl`}
-          >
-            <i className={`fa fa-save mr-1`} aria-hidden="true"></i>
-            Save Changes
-          </button>
-        </div>
-      </footer> */}
+      <CardFooter isDisabled={editIndex == null} onCancel={handleCancel} onSave={handleSave} />
     </div>
   );
 };

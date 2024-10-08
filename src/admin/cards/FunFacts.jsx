@@ -33,7 +33,7 @@ const FunFacts = ({ selectedCountry }) => {
     const handleSaveNewItem = () =>  saveNewCardItem(factsData, inputValue, setFactsData, setAddMode, setInputValue)
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mt-10">
             {!!factsData.length && factsData.map((fact, index) => (
                 <div key={index} className={`relative p-4 border rounded-lg shadow-lg ${editIndex === index ? 'bg-amber-300' : "bg-[#F1F1E6]"}`}>
                     {/* Title in the top right */}
@@ -67,7 +67,7 @@ const FunFacts = ({ selectedCountry }) => {
                         <textarea
                             type="text"
                             value={fact}
-                            rows={4}
+                            rows={8}
                             onChange={(e) => handleInputChange(e, index)} // Update input value
                             className="w-full border-2 p-2"
                             readOnly={editIndex !== index} // Disable input if not in edit mode

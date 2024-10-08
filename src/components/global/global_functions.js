@@ -81,7 +81,7 @@ export const mapGeneralInfo = (country) => {
             case "Climate":
                 obj.imageUrl = climateImgUrl;
                 break;
-            case "country dialing code":
+            case "Country dialing code":
                 obj.imageUrl = countryCodeImgUrl;
                 break;
             case "SIM card providers":

@@ -26,7 +26,7 @@ const Panel = () => {
                 <i className="fa fa-cogs text-5xl"></i>
                 <h1 className="text-5xl">IAESTE AP Admin Panel</h1>
             </div>
-            <div className="max-w-xl mx-auto text-center my-4 space-y-2">
+            <div className="max-w-2xl mx-auto text-center my-4 space-y-2">
                 <h3 className="font-semibold text-3xl pb-2">Welcome, Admin!</h3>
                 <span className="text-lg md:text-2xl">Manage the platform’s content and ensure each country's page is up-to-date. Use this dashboard to add, edit, or delete components for each country’s page and customize the information displayed to users.</span>
                 <div className="pt-2 font-bold items-center text-lg">
