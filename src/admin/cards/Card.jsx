@@ -12,6 +12,7 @@ import Places from "./Places";
 import Other from "./Other";
 import Transport from "./Transport";
 import SummerReception from "./summer-reception/SummerReception";
+import Gallery from "./Gallery";
 
 const Card = () => {
     const [isLoading, setIsLoading] = useState(true);
@@ -53,6 +54,9 @@ const Card = () => {
                     break
                 case "Summer reception":
                     setCardComponent(<SummerReception selectedCountry={countryName} />)
+                    break
+                case "Gallery":
+                    setCardComponent(<Gallery selectedCountry={countryName} />)
                     break
                 default:
                     break

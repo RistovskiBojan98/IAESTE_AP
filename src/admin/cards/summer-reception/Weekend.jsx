@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import css from "../../../components/sr-weekends/EventPopup/event-popup.module.css";
+import "./Weekend.css"
+import { bgGradient } from "../../../components/global/global_functions"
 
 const WeekendForm = ({ selectedWeekend, onClose }) => {
     const [weekendData, setWeekendData] = useState({
@@ -80,112 +82,124 @@ const WeekendForm = ({ selectedWeekend, onClose }) => {
     };
 
     // Format startDate - endDate without year
-    const formatDateRange = (start, end) => {
-        const startDate = new Date(start).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-        const endDate = new Date(end).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-        return `${startDate} - ${endDate}`;
-    };
+    // const formatDateRange = (start, end) => {
+    //     const startDate = new Date(start).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    //     const endDate = new Date(end).toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+    //     return `${startDate} - ${endDate}`;
+    // };
 
     return (
         <div className={css.overlay}>
-            <div className={css.popup} ref={popupRef} style={{ maxWidth: '800px', maxHeight: '600px' }}>
-                <div className="w-full bg-[#0B3D59] p-6 text-white">
-                    <div className="flex flex-row justify-between items-center">
-                        <span className="text-2xl font-bold">{isEditMode ? "Edit weekend" : "Add new weekend"}</span>
-                        <button onClick={onClose} className="rounded-full bg-white py-1.5 px-3 text-black">
-                            <i class="fa-solid fa-x"></i>
-                        </button>
-                    </div>
-
-                    <hr className="mt-4" />
-
+            <div className={`relative ${bgGradient} rounded-xl shadow-md w-4/5 h-4/5 flex flex-col`} 
+                ref={popupRef} style={{ maxWidth: '800px', maxHeight: '600px' }}>
+                <div className="absolute top-0 flex w-full mx-auto justify-between items-center py-2 px-5 border-b">
+                    <span className="text-2xl font-bold text-white">{isEditMode ? "Edit weekend" : "Add new weekend"}</span>
+                    <button onClick={onClose} className="rounded-full bg-white py-1.5 px-3 text-black border border-[#0B3D59]">
+                        <i class="fa-solid fa-x text-[#0B3D59]"></i>
+                    </button>
+                </div>
+                <div className="w-full p-6 text-white overflow-y-scroll mt-14 mb-20" style={{ scrollbarWidth: "thin" }}>
                     <form className="space-y-4 mt-4 text-xl">
-                        <div className="flex flex-row items-center gap-2">
-                            <label>Name:</label>
+                        <div className="form-row">
+                            <label>
+                                <i class="fa-solid fa-umbrella-beach"></i>
+                                <span>Name: </span>
+                            </label>
                             <input
                                 type="text"
                                 name="name"
                                 value={weekendData.name}
                                 onChange={handleInputChange}
                                 placeholder="Event Name"
-                                className="text-black font-semibold p-1 grow"
+                                className="sm:col-span-4"
                             />
                         </div>
                         {/* Date Range */}
-                        <div className="flex space-x-4 mt-4">
-                            <label>Date:</label>
-                            <div className={css.info}>
-                                <input
+                        <div className="form-row">
+                            <label>
+                                <i className="fa fa-calendar-alt"></i>
+                                <span>Date: </span>
+                            </label>
+                            <input
                                     type="date"
                                     name="startDate"
                                     value={weekendData.startDate}
                                     onChange={handleInputChange}
-                                    className="text-black p-1"
+                                    className="col-span-2"
                                 />
-                            </div>
-                            <div className={css.info}>
-                                <input
+                            <input
                                     type="date"
                                     name="endDate"
                                     value={weekendData.endDate}
                                     onChange={handleInputChange}
-                                    className="text-black p-1"
+                                    className="col-span-2"
                                 />
-                            </div>
                         </div>
                         {/* Location */}
-                        <div className="flex flex-row items-center gap-2">
-                            <label>Location:</label>
+                        <div className="form-row">
+                            <label>
+                                <i className="fa fa-map-marker-alt"></i>
+                                <span>Location: </span>
+                            </label>
                             <input
                                 type="text"
                                 name="location"
                                 value={weekendData.location}
                                 onChange={handleInputChange}
                                 placeholder="Location"
-                                className="grow text-black p-1"
+                                className="col-span-4"
                             />
                         </div>
 
                         {/* Link */}
-                        <div className="flex flex-row items-center gap-2">
-                            <label>Link:</label>
+                        <div className="form-row">
+                            <label>
+                                <i className="fa fa-link"></i>
+                                <span>Reg. link: </span>
+                            </label>
                             <input
                                 type="text"
                                 name="link"
                                 value={weekendData.link}
                                 onChange={handleInputChange}
                                 placeholder="Registration Link"
-                                className="grow text-black underline p-1"
+                                className="underline col-span-4"
                             />
                         </div>
                         {/* Limit */}
-                    <div className="flex flex-row items-center gap-2">
-                        <label>Limit:</label>
-                        <input
-                            type="number"
-                            name="limit"
-                            value={weekendData.limit}
-                            onChange={handleInputChange}
-                            placeholder="Maximum Participants"
-                            className="grow text-black p-1"
-                        />
-                    </div>
-                    {/* Description */}
-                    <div className="mt-4 flex flex-col">
-                        <label>Description:</label>
-                        <textarea
-                            name="description"
-                            value={weekendData.description}
-                            onChange={handleInputChange}
-                            placeholder="Description"
-                            rows="4"
-                            className="grow p-1 text-black"
-                        />
-                    </div>
+                        <div className="form-row">
+                            <label>
+                                <i className="fa fa-users"></i>
+                                <span>Limit: </span>
+                            </label>
+                            <input
+                                type="number"
+                                name="limit"
+                                value={weekendData.limit}
+                                onChange={handleInputChange}
+                                placeholder="Maximum Participants"
+                                className="col-span-4"
+                            />
+                        </div>
+                        {/* Description */}
+                        <div className="form-row">
+                            <label>
+                                <i className="fa fa-file-lines"></i>
+                                <span>Description: </span>
+                            </label>
+                            <textarea
+                                name="description"
+                                value={weekendData.description}
+                                onChange={handleInputChange}
+                                placeholder="Description"
+                                rows="8"
+                                className="col-span-4 p-1 text-black"
+                            />
+                        </div>
                     </form>
                 </div>
                 {/* Fixed Footer */}
-                <footer className="absolute bottom-0 left-0 w-full bg-white border-t border-gray-300 p-2">
+                <footer className="absolute bottom-0 left-0 w-full border-t-2 p-2">
                     <div className="flex justify-end space-x-4 font-semibold">
                         <button
                             type="button"

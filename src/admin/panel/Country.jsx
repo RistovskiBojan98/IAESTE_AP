@@ -90,22 +90,19 @@ const Country = ({ selectedCountry }) => {
                                     </div>
                                 </div>
                             </div>
-                            <ul className="mt-6 sm:mt-14 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                                <li className={`bg-[#1B75BB] shadow-xl space-y-2 rounded-lg p-2 py-6 sm:p-6 text-center text-white cursor-pointer hover:${bgGradient}`}>
+                            <ul className="mt-6 sm:mt-14 grid grid-cols-2 md:grid-cols-3 xl:grid-cols-5 gap-4">
+                                {/* <li className={`bg-[#1B75BB] shadow-xl space-y-2 rounded-lg p-2 py-6 sm:p-6 text-center text-white cursor-pointer hover:${bgGradient}`}>
                                     <a href={country.href} target="_blank" rel="noreferrer">
-                                        {/* Top half with the icon */}
                                         <div className="flex flex items-center justify-center h-1/2">
                                             <i className="fa fa-eye text-4xl aria-hidden='true'" />
                                         </div>
-
-                                        {/* Bottom half with the title */}
                                         <div className="flex grow items-center justify-center h-1/2">
                                             <h3 className="text-xl sm:text-2xl font-bold">
                                                 Preview page
                                             </h3>
                                         </div>
                                     </a>
-                                </li>
+                                </li> */}
 
                                 {cards.map((card, index) =>
                                     <li key={index}

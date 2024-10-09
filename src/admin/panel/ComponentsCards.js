@@ -1,5 +1,5 @@
 export const componentsCards = [
-    { title: "Hero Banner", icon: "fa fa-chalkboard" },
+    // { title: "Hero Banner", icon: "fa fa-chalkboard" },
     { title: "Emergency Numbers", icon: "fa fa-phone" },
     { title: "General Information", icon: "fa fa-info-circle" },
     { title: "Cities With LCs", icon: "fa fa-city" },

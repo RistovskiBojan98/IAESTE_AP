@@ -1,0 +1,36 @@
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    align-items: center;
+    justify-content: start;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    font-weight: 700;
+}
+
+.form-row input {
+    color: black;
+    font-weight: 600;
+    padding: 0.25rem;
+    width: 100%;
+}
+
+.form-row label {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.5rem;
+    width: 100%;
+}
+
+.form-row textarea {
+    scrollbar-width: "thin";
+    width: 100%;
+}
+
+@media (max-width: 640px) {
+    .form-row {
+        display: flex;
+        flex-direction: column;
+    }
+}
