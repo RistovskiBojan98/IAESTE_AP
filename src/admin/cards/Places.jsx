@@ -76,7 +76,7 @@ const Places = ({ selectedCountry }) => {
                         />
                     </div>
 
-                    {/* Buttons in the top left */}
+                    {/* Buttons in the bottom right */}
                     <div className="flex space-x-3 justify-end">
                         {/* Remove button */}
                         <button
