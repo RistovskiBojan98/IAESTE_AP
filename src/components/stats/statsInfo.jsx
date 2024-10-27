@@ -21,7 +21,9 @@ const StatsInfo = ({id}) => {
                 </dt>
                 <Disclosure.Panel as="dd" className="mt-2 pr-12">
                   <p className="mt-5 text-lg text-gray-300">
-                    {data.info}
+                  {data.info.split('\n').map((paragraph, index) => (
+                    <span key={index}>{paragraph}<br></br></span>
+                ))}
                   </p>
                 </Disclosure.Panel>
               </div>
