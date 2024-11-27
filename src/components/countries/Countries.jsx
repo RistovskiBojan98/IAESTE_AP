@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { countries } from "./countries";
 import css from "../app.module.css"
-import { bgGradient } from "../global/global_functions";
 
 const Countries = ({ passRef }) => {
   const [displayedCountries, setDisplayedCountries] = useState(countries);
