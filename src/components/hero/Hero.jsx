@@ -17,13 +17,21 @@ const Hero = ({
 
     const links = countrySocialLinks.find((item) => item.country === country)?.links
     // set social links icons
-    const socialLinks = Object.entries(links).map(([key, value]) => {
-        let icon = "fas fa-globe"; // website
-        if (key === 'insta') icon = "fab fa-instagram mt-2.5 sm: mt-1.5"
-        else if (key === 'facebook') icon = "fab fa-facebook"
-
-        return { link: value, icon }
-    })
+    const socialLinks = Object.entries(links)?.map(([key, value]) => {
+        const setIcon = () => {
+            switch(key) {
+                case 'insta':
+                    return "fab fa-instagram mt-2.5 sm: mt-1.5"
+                case 'facebook':
+                    return "fab fa-facebook"
+                case 'pdf':
+                    return 'fa-regular fa-file-pdf'
+                default:
+                    return 'fas fa-globe' // website
+            }
+        }
+        return { link: value, icon: setIcon() }
+    }) ?? []
     // Scroll buttons
     const buttons = [
         {title: "Transport", function: scrollToTransport},

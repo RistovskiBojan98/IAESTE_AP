@@ -20,13 +20,13 @@ const Transport = ({ transportRef, country }) => {
           case AIRPORTS:
             return {
               title: "Airports",
-              icon: "fa fa-plane",
+              icon: "fa fa-plane-departure",
             };
           
           case NATIONAL_AND_INTERNATIONAL_TRANSPORT:
             return {
               title: "National and international transport",
-              icon: "fa fa-train",
+              icon: "fa fa-train-subway",
             };
 
           case PUBLIC_TRANSPORT:
@@ -76,13 +76,13 @@ const Transport = ({ transportRef, country }) => {
                   <div className="flex-1 text-start">
                       <div className="absolute top-0 -translate-y-1/2 transform rounded-full bg-[#0B3D59] py-2 px-4 font-semibold" style={{ color: 'white'}}>
                         <div className="flex items-center gap-2">
-                          <i className={transport.icon}></i>{transport.title}
+                          {transport.title}
                         </div>
                       </div>
 
                     {/* Feature list */}
                     <ul className="mt-6 space-y-6">
-                      <TransportFeatures features={firstFeatures} />
+                      <TransportFeatures features={firstFeatures} icon={transport.icon}/>
                     </ul>
 
                     {!!remainingFeatures.length && (
@@ -90,7 +90,7 @@ const Transport = ({ transportRef, country }) => {
                         {({ open }) => (
                           <div>
                             <Disclosure.Panel as="ul" className="mt-6 space-y-6">
-                              <TransportFeatures features={remainingFeatures} />
+                              <TransportFeatures features={remainingFeatures} icon={transport.icon}/>
                             </Disclosure.Panel>
                             <ShowMore textColors={["[#0B3D59]", "[#B2D8FB]"]} open={open}/>
                           </div>

@@ -31,7 +31,7 @@ const Countries = ({ passRef }) => {
             onChange={onFilterCountriesHandler}
           />
         </div>
-        <div className="mt-12 grid grid-cols-2 gap-y-20 gap-x-6 sm:grid-cols-3 lg:grid-cols-4 xl:gap-x-8">
+        <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4 xl:gap-8">
           {displayedCountries.map((country, index) => (
             <div className="text-center" key={index}>
               <a key={country.id} className="group items-center" href={country.href}>
@@ -39,7 +39,7 @@ const Countries = ({ passRef }) => {
                     <img
                       src={country.imageSrc}
                       alt={country.imageAlt}
-                      className="group-hover:opacity-75 rounded-full hover:scale-110 w-full h-full"
+                      className="group-hover:opacity-75 rounded-full hover:scale-105 w-full h-full transition-all duration-300 ease-in-out"
                     />
                 </div>
               </a>
@@ -48,11 +48,11 @@ const Countries = ({ passRef }) => {
                   IAESTE {country.name}
                 </h1>
               </a>
-              <button className={`btn text-center text-white text-sm w-1/2 sm:w-1/3 py-2 max-w-20 bg-[#0B3D59] hover:${bgGradient} rounded-2xl`}>
+              {/* <button className={`btn text-center text-white text-sm w-1/2 sm:w-1/3 py-2 max-w-20 bg-[#0B3D59] hover:${bgGradient} rounded-2xl`}>
                 <a href={country.pdf} target='_blank' rel="noreferrer">
                   <i className="fa-solid fa-download text-white text-lg mr-2"></i>PDF
                   </a>
-              </button>
+              </button> */}
             </div>
           ))}
         </div>
