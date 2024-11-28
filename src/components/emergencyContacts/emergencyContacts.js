@@ -120,6 +120,6 @@ export const emergencyContacts = [
     country: "Turkiye",
     police: "155",
     ambulance: "112",
-    fire: "null",
+    fire: "110",
   },
 ];
