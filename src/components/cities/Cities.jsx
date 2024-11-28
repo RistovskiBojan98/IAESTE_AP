@@ -23,7 +23,7 @@ const Cities = ({ country, citiesRef }) => {
           <dl className="mt-6 space-y-6 divide-y divide-[#F1F1E6]">
             <CityInfoPanel cities={firstCities} />
             {/* if there are more cities then generate them and the see more button*/}
-            {additionalCities && (
+            {!!additionalCities?.length && (
               <Disclosure as="div" key="additionalCities">
                 {({ open }) => (
                   <div>
