@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { emergencyContacts } from "./emergencyContacts";
 import css from "../app.module.css"
 
 const EmergencyContacts = ({ country }) => {
@@ -7,33 +6,7 @@ const EmergencyContacts = ({ country }) => {
   const [contacts, setContacts] = useState([]);
 
   useEffect(() => {
-    let eContacts = emergencyContacts.find((obj) => obj.country === country);
-    eContacts = Object.entries(eContacts).filter((obj) => obj[0] !== 'country')
-    // mapping the contacts to have a format title and number
-    const mappedContacts = eContacts.map(([key, value]) => {
-      const getTitle = () => {
-        switch (key) {
-          case 'police':
-            return 'Police'
-
-          case 'ambulance':
-            return 'Ambulance'
-          // For better visual design, if there are 3 contants the name is shorter so that the contacts are in one row
-          case 'fire':
-            return eContacts.length === 3 ? 'Fire dpt.' : 'Fire Department'
-
-          default:
-            return "Emergency line";
-        }
-      }
-
-      return {
-        title: getTitle(),
-        number: value
-      }
-    })
-
-    setContacts(mappedContacts);
+    setContacts(country.emergencyContacts ?? []);
     setLoading(false);
   }, [country])
 

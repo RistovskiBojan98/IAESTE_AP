@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Gallery.module.css";
-import { Images } from "./Images";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import css from "../app.module.css"
@@ -20,9 +19,7 @@ const setDefaultArrowStyle = (event) =>{
 }
 
   useEffect(() => {
-    const loadedImages = Images[country];
-    setImages(loadedImages);
-    setCurrIndex(0);
+    setImages(country.gallery ?? []);
   }, [country]);
 
   const handleChange = (index) => setCurrIndex(index);
@@ -78,6 +75,7 @@ const setDefaultArrowStyle = (event) =>{
         </button>
       </section>
     );
+    return <></>
 };
 
 export default Gallery;

@@ -3,7 +3,7 @@ import { Disclosure } from "@headlessui/react";
 import DownIcon from "../global/DownIcon";
 
 const CityInfoPanel = ({ cities }) =>
-    cities.map((faq, index) =>
+    cities.map((city, index) =>
         <Disclosure as="div" key={index} className="pt-6 text-start">
             {({ open }) => (
                 <div>
@@ -11,13 +11,13 @@ const CityInfoPanel = ({ cities }) =>
                         <Disclosure.Button
                             className="flex w-full items-start justify-between text-left px-3">
                             <span className="font-semibold text-2xl">
-                                {faq.question}
+                                {city.name}
                             </span>
                             <DownIcon isOpen={open} />
                         </Disclosure.Button>
                     </dt>
                     <Disclosure.Panel as="dd" className="mt-2 pr-12">
-                        <p className="p-4 text-lg" style={{color: 'white', fontWeight: '300'}}>{faq.answer}</p>
+                        <p className="p-4 text-lg" style={{color: 'white', fontWeight: '300'}}>{city.description}</p>
                     </Disclosure.Panel>
                 </div>
             )}

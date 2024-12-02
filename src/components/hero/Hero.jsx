@@ -1,7 +1,4 @@
 import React from 'react';
-import { countryImages } from './heroImages';
-import { countrySocialLinks } from './socialLinks';
-import { information } from '../generalInformation/information';
 import cerLogoWhite from "../footer/cer-logo-dark.png"
 
 const Hero = ({
@@ -12,26 +9,24 @@ const Hero = ({
     scrollToSummerReception,
 }) => {
     // get country image, if they don't have it, set the flag image
-    const heroImg = countryImages.find((item) => item.country === country)?.image
-        ?? information.find((obj) => obj.country === country).data[0].imageUrl
-
-    const links = countrySocialLinks.find((item) => item.country === country)?.links
+    const heroImg = country.banner ?? country.imageSrc
     // set social links icons
-    const socialLinks = Object.entries(links)?.map(([key, value]) => {
+    const socialLinks = country.socialLinks?.map(link => {
         const setIcon = () => {
-            switch(key) {
-                case 'insta':
+            switch(link.name) {
+                case 'Instagram':
                     return "fab fa-instagram mt-2.5 sm: mt-1.5"
-                case 'facebook':
+                case 'Facebook':
                     return "fab fa-facebook"
-                case 'pdf':
-                    return 'fa-regular fa-file-pdf'
+                // case 'pdf':
+                //     return 'fa-regular fa-file-pdf'
                 default:
                     return 'fas fa-globe' // website
             }
         }
-        return { link: value, icon: setIcon() }
+        return { href: link.value, icon: setIcon() }
     }) ?? []
+    socialLinks.push({ href: country.pdf, icon: 'fa-regular fa-file-pdf' })
     // Scroll buttons
     const buttons = [
         {title: "Transport", function: scrollToTransport},
@@ -59,7 +54,7 @@ const Hero = ({
                     <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
                         <h1 className="text-center text-white text-4xl font-bold pt-10 sm:pt-0 sm:text-5xl lg:text-6xl">
                             <span>Welcome to</span><br></br>
-                            <span>IAESTE {country.replace(/-/g, ' ')}</span>
+                            <span>IAESTE {country.name.replace(/-/g, ' ')}</span>
                         </h1>
                         <div className="mx-auto mt-10 sm:flex justify-center">
                             <div
@@ -68,7 +63,7 @@ const Hero = ({
                             >
                                 {socialLinks.map((link, index) =>
                                     <ul key={index} className="flex items-center">
-                                        <a href={link.link} target="_blank" rel="noopener noreferrer">
+                                        <a href={link.href} target="_blank" rel="noopener noreferrer">
                                             <i className={`${link.icon} mx-2 hover:scale-110`}></i>
                                         </a>
                                     </ul>

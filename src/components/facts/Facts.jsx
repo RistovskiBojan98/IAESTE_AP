@@ -1,10 +1,9 @@
-import { funfacts } from "./facts";
 import FactCard from "./FactCard";
 import css from "../app.module.css"
 
 
 const Facts = ({ country }) => {
-  const facts = funfacts.find((obj) => obj.country === country)?.facts ?? [];
+  const facts = country.facts ?? [];
 
   return facts?.length ? (
     <section

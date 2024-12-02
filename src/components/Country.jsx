@@ -16,10 +16,12 @@ import Navbar from "./navbar/Navbar.jsx";
 import Plane from "./plane/Plane.jsx";
 import SummerReception from "./summer-recepiton/SummerReception.jsx"
 import Other from "./otherInformation/Other.jsx";
+import { fetchCountryData } from "../service/CountriesService.jsx";
 
 const Country = () => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
+  const [country, setCountry] = useState()
 
   const transportRef = useRef(null);
   const citiesRef = useRef(null);
@@ -35,13 +37,15 @@ const Country = () => {
 
   useEffect(() => {
     // Simulate a delay (you can adjust the duration as needed)
-    const timer = setTimeout(() => {
+    const timer = setTimeout(async () => {
       // Hide the loading screen after a delay
+      const data = await fetchCountryData(id)
+      setCountry(data)
       setIsLoading(false);
     }, 1100); // Adjust the delay duration as needed (1000ms = 1 second)
 
     return () => clearTimeout(timer);
-  }, []);
+  }, [id]);
 
   return (
     <>
@@ -55,23 +59,23 @@ const Country = () => {
       </Helmet>
       <Navbar isCountryNav={true} />
       <Hero
-        country={id}
+        country={country}
         scrollToCities={scrollToCities}
         scrollToFood={scrollToFood}
         scrollToTransport={scrollToTransport}
         scrollToSummerReception={scrollToSummerReception}
       />
-      <EmergencyContacts country={id} />
-      <GeneralInformation country={id} />
-      <Committees country={id} />
+      <EmergencyContacts country={country} />
+      <GeneralInformation country={country} />
+      <Committees country={country} />
       {/* <ImageSection selectedCountry={id} /> */}
-      <Transport transportRef={transportRef} country={id} />
-      <Cities country={id} citiesRef={citiesRef} />
-      <SummerReception country={id} summerReceptionRef={summerReceptionRef} />
-      <Food country={id} foodRef={foodRef} />
-      <Facts country={id} />
-      <Other country={id} />
-      <Gallery country={id} />
+      <Transport transportRef={transportRef} country={country} />
+      <Cities country={country} citiesRef={citiesRef} />
+      <SummerReception country={country} summerReceptionRef={summerReceptionRef} />
+      <Food country={country} foodRef={foodRef} />
+      <Facts country={country} />
+      <Other country={country} />
+      <Gallery country={country} />
       <Footer />
       </div>
     )}

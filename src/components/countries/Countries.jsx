@@ -1,9 +1,21 @@
-import { useState } from "react";
-import { countries } from "./countries";
+import { useState, useEffect } from "react";
+// import { countries } from "./countries";
 import css from "../app.module.css"
+import { fetchDbData } from "../../service/CountriesService";
 
 const Countries = ({ passRef }) => {
-  const [displayedCountries, setDisplayedCountries] = useState(countries);
+  const [countries, setCountries] = useState([])
+  const [displayedCountries, setDisplayedCountries] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchDbData()
+        setCountries(data)
+        setDisplayedCountries(data)
+    }
+
+    fetchData()
+  }, [])
 
   const onFilterCountriesHandler = (e) => {
     const typedCountry = e.target.value;

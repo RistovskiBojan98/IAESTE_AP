@@ -1,4 +1,3 @@
-import { information } from "./information";
 import css from "../app.module.css"
 // logo images
 import voltage from "./images/voltage1.jpg"
@@ -25,7 +24,7 @@ const GeneralInformation = ({ country }) => {
       case "Climate":
         obj.imageUrl = climateImgUrl;
         break;
-      case "country dialing code":
+      case "Country dialing code":
         obj.imageUrl = country_code;
         break;
       case "SIM card providers":
@@ -35,13 +34,14 @@ const GeneralInformation = ({ country }) => {
         obj.imageUrl = population;
         break;
       default:
+        obj.imageUrl = country.imageSrc ?? country.imageAlt
         break;
     }
   }
 
-  const countryInfo = information.find((obj) => obj.country === country);
+  const countryInfo = country.information ?? []
   // Dynamically add imageUrl back to each object based on its name
-  countryInfo.data.forEach(addImgUrl);
+  countryInfo.forEach(addImgUrl);
 
   return (
     <div className={`${css.container}`}>
@@ -51,7 +51,7 @@ const GeneralInformation = ({ country }) => {
         </h2>
       </div>
       <ul className="mx-auto grid grid-cols-3 gap-8 lg:max-w-5xl">
-        {countryInfo.data.map((info) => (
+        {countryInfo.map((info) => (
           <li key={info.name}>
             <div className="space-y-5">
               <div className="mx-auto h-20 w-20 sm:h-40 sm:w-40">

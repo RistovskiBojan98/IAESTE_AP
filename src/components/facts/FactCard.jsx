@@ -1,7 +1,7 @@
 import React from "react";
 
 const FactCard = ({ fact }) =>
-  <div className="bg-[#F1F1E6] shadow-md p-8 relative min-h-32 rounded-lg">
+  <div className="bg-[#F1F1E6] shadow-md p-8 relative h-60 overflow-y-scroll rounded-lg" style={{ scrollbarWidth: 'thin'}}>
     {/* svg and path for the quotes*/}
     <svg
       height="40"

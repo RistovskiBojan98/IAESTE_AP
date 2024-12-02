@@ -32,3 +32,16 @@ export const TRANSPORT_CONSTANTS = {
     PUBLIC_TRANSPORT: 3,
     DISCOUNTS: 4
 }
+
+export const getCountryDbName = (country) => {
+    switch (country) {
+        case "Bosnia & Herzegovina":
+            return "Bosnia"
+        case "Czech Republic":
+            return "Czechia"
+        case "Turkiye":
+            return "Turkey"
+        default:
+            return country
+    }
+}
