@@ -50,7 +50,7 @@ const Transport = ({ transportRef, country }) => {
         icon
       }
 
-    }) ?? [];
+    })?.filter(tier => !!tier.features?.length) ?? [];
 
     setTransportProps(tiers);
   }, [country]);

@@ -5,7 +5,7 @@ import { Carousel } from "react-responsive-carousel";
 import css from "../app.module.css"
 import carouselCss from "./Gallery.module.css"
 
-const Gallery = ({ country }) => {
+const Gallery = ({ country, galleryRef }) => {
   const [images, setImages] = useState([]);
   const [currIndex, setCurrIndex] = useState(0);
 
@@ -36,7 +36,7 @@ const setDefaultArrowStyle = (event) =>{
 
   if (images?.length)
     return (
-      <section className={css.container}>
+      <section className={css.container} ref={galleryRef}>
         <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl mb-5">
           <h2 className={css.title}>
             Gallery
@@ -58,7 +58,7 @@ const setDefaultArrowStyle = (event) =>{
               <img
                 src={image}
                 alt=""
-                style={{ height: "700px", width: "auto" }}
+                style={{ height: "500px", width: "auto" }}
               />
             </div>
           ))}

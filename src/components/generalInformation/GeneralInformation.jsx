@@ -5,7 +5,7 @@ import country_code from "./images/country_dialing_code.jpg"
 import population from "./images/population2.jpg"
 import { langImgUrl, timeZoneImgUrl, currencyImgUrl, climateImgUrl, simImgUrl } from "./information";
 
-const GeneralInformation = ({ country }) => {
+const GeneralInformation = ({ country, infoRef }) => {
   // helper function
   const addImgUrl = (obj) => {
     switch (obj.name) {
@@ -44,7 +44,7 @@ const GeneralInformation = ({ country }) => {
   countryInfo.forEach(addImgUrl);
 
   return (
-    <div className={`${css.container}`}>
+    <div className={`${css.container}`} ref={infoRef}>
       <div className="mb-14 space-y-5 sm:mx-auto sm:max-w-xl lg:max-w-5xl">
         <h2 className={css.title}>
           General Information

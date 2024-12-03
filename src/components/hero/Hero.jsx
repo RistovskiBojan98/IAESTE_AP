@@ -7,6 +7,10 @@ const Hero = ({
     scrollToFood,
     scrollToTransport,
     scrollToSummerReception,
+    scrollToInfo,
+    scrollToLcs,
+    scrollToFacts,
+    scrollToGalery
 }) => {
     // get country image, if they don't have it, set the flag image
     const heroImg = country.banner ?? country.imageSrc
@@ -29,10 +33,14 @@ const Hero = ({
     socialLinks.push({ href: country.pdf, icon: 'fa-regular fa-file-pdf' })
     // Scroll buttons
     const buttons = [
-        {title: "Transport", function: scrollToTransport},
-        {title: "Travel", function: scrollToCities},
-        {title: "Cuisine", function: scrollToFood},
-        {title: "Summer Reception", function: scrollToSummerReception},
+        {icon: "fa fa-info-circle", title: "General Info", function: scrollToInfo},
+        {icon: "fa fa-city", title: "Local Committees", function: scrollToLcs},
+        {icon: "fa fa-train", title: "Transport", function: scrollToTransport},
+        {icon: "fa fa-location-dot", title: "Travel", function: scrollToCities},
+        {icon: "fa fa-utensils", title: "Cuisine", function: scrollToFood},
+        {icon: "fa fa-umbrella-beach", title: "Summer Reception", function: scrollToSummerReception},
+        {icon: "fa fa-brain", title: "Fun Facts", function: scrollToFacts},
+        {icon: "fa fa-images", title: "Gallery", function: scrollToGalery},
     ]
 
     return (
@@ -72,13 +80,15 @@ const Hero = ({
                         </div>
                         {/* Buttons for scrolling to each section*/}
                         <div className="mx-auto mt-10 flex justify-center">
-                            <div className="mx-auto inline-grid grid-cols-2 gap-3 sm:grid-cols-4 sm:gap-5">
+                            <div className="mx-auto inline-grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
                                 {buttons.map((button, index) => 
                                     <button 
                                         key={index}
                                         onClick={button.function}
                                         className="flex items-center justify-center border rounded-md bg-white p-3 text-base sm:text-lg font-bold text-[#0B3D59] shadow"
-                                    >{button.title}
+                                    >
+                                        <i className={button.icon} />
+                                        <span className='ml-2'>{button.title}</span>
                                     </button>
                                 )}
                             </div>
