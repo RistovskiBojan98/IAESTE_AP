@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-// import { countries } from "./countries";
 import css from "../app.module.css"
 import { fetchDbData } from "../../service/CountriesService";
 

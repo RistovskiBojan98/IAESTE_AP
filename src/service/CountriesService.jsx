@@ -1,13 +1,16 @@
-import { doc, getDoc, getDocs, collection, getFirestore, updateDoc } from "firebase/firestore";
+import { getDocs, collection } from "firebase/firestore";
 import { db } from "../firebase";
 import { getCountryDbName } from "../components/global/global_functions";
+import { isTokenValid } from "./AuthService";
 
 const COUNTRIES_CACHE_KEY = "countriesData"
 
 export async function fetchDbData() {
-    const storedData = localStorage.getItem(COUNTRIES_CACHE_KEY);
-
-    if (storedData) return JSON.parse(storedData)
+    const token = isTokenValid()
+    if (token) {
+        const storedData = localStorage.getItem(COUNTRIES_CACHE_KEY);
+        if (storedData) return JSON.parse(storedData)
+    }
 
     const fetchCountriesData = async () => {
         const querySnapshot = await getDocs(collection(db, "countries"))
@@ -25,5 +28,6 @@ export async function fetchDbData() {
 
 export async function fetchCountryData(country) {
     const countries = await fetchDbData()
-    return countries.find(data => data.name === country)
+    const countryDbName = getCountryDbName(country)
+    return countries.find(data => data.name === countryDbName)
 }
