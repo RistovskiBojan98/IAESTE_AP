@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-import { otherInfo } from "./other";
+import React, { useState, useEffect } from "react";
 import useWindowSize from "../../hooks/useScreenSize";
 import OtherInfoCard from "./InfoCard";
 import css from "../app.module.css"
@@ -8,20 +7,23 @@ import { leftArrow, rightArrow } from "../global/global_functions";
 const Other = ({ country }) => {
     const { width } = useWindowSize();
     const [startIndex, setStartIndex] = useState(0);
-    const countryOtherInfo = otherInfo.find((obj) => obj.country === country);
-
-    const arrayLength = countryOtherInfo?.info?.length
-    const maxItemsToShow = arrayLength >= 3 ? 3 : arrayLength
+    const [otherInfo, setOherInfo] = useState([])
+    const [arrayLength, setArrayLength] = useState(0)
+    const [maxItemsToShow, setMaxItemsToShow] = useState(3)
     // if the screen is small we show 1 object, otherwise 3
-    const showPrev = () => {
-        setStartIndex(Math.max(startIndex - (width >= 768 ? 3 : 1), 0));
-    };
 
-    const showNext = () => {
-        setStartIndex(Math.min(startIndex + (width >= 768 ? 3 : 1), arrayLength - 1));
-    };
+    useEffect(() => {
+        const data = country.otherInformation ?? []
+        setOherInfo(data)
+        setArrayLength(data.length)
+        setMaxItemsToShow(data.length >= 2 ? 2 : data.length)
+    }, [country])
 
-    return countryOtherInfo?.info?.length ? (
+
+    const showPrev = () => setStartIndex(Math.max(startIndex - (width >= 768 ? 3 : 1), 0));
+    const showNext = () => setStartIndex(Math.min(startIndex + (width >= 768 ? 3 : 1), arrayLength - 1));
+
+    return otherInfo?.length ? (
         <section className={css.container}>
             <div className="px-4 sm:px-6 lg:px-8">
                 <h1 className="text-3xl md:text-4xl font-bold ">
@@ -33,13 +35,13 @@ const Other = ({ country }) => {
                     </button>
                     <div className="relative grid z-1" style={{ gridTemplateColumns: width >= 768 ? `repeat(${maxItemsToShow}, 1fr)` : '' }}>
                         {arrayLength &&
-                            countryOtherInfo.info
+                            otherInfo
                                 .slice(startIndex, startIndex + (width >= 768 ? maxItemsToShow : 1))
                                 .map((item, index) => (
                                     <OtherInfoCard
                                         key={index}
                                         title={item.title}
-                                        description={item.desc}
+                                        description={item.description}
                                     />
                                 ))}
                     </div>

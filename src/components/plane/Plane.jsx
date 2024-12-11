@@ -1,13 +1,8 @@
 import React from "react";
+import { getCountryDbName } from "../global/global_functions";
 
 const Plane = ({ country }) => {
-  const strings = country.split('-')
-  let name = strings[0]
-  if (strings.length) 
-    for (let i = 1; i < strings.length; i++)
-      name = name + " " + strings[i]
-  
-
+  const name = getCountryDbName(country)
   return (
     <div
       className="absolute inset-0 flex justify-center items-center bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] mix-blend-multiply"

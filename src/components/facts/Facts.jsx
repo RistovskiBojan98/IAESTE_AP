@@ -1,13 +1,13 @@
-import { funfacts } from "./facts";
 import FactCard from "./FactCard";
 import css from "../app.module.css"
 
 
-const Facts = ({ country }) => {
-  const facts = funfacts.find((obj) => obj.country === country)?.facts ?? [];
+const Facts = ({ country, factsRef }) => {
+  const facts = country.facts ?? [];
 
   return facts?.length ? (
     <section
+      ref={factsRef}
       aria-labelledby="testimonial-heading"
       className={`${css.container} bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] shadow-xl sm:overflow-hidden sm:rounded-2xl sm:mb-10`}
     >

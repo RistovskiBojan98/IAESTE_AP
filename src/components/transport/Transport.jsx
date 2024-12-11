@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { transport } from "./transport";
 import css from "../app.module.css";
 import { Disclosure } from "@headlessui/react";
 import TransportFeatures from "./TransportFeatures";
@@ -10,7 +9,7 @@ const Transport = ({ transportRef, country }) => {
   const [countryTransport, setTransportProps] = useState([]);
 
   useEffect(() => {
-    const tiers = transport[country]?.tiers?.map(tier => {
+    const tiers = country.transport?.map(tier => {
       // helper function
       // set the title and icon of the feature tier
       // this is done to not repeat the same code in the transport.js
@@ -25,7 +24,7 @@ const Transport = ({ transportRef, country }) => {
           
           case NATIONAL_AND_INTERNATIONAL_TRANSPORT:
             return {
-              title: "National and international transport",
+              title: "National & international transport",
               icon: "fa fa-train-subway",
             };
 
@@ -51,7 +50,7 @@ const Transport = ({ transportRef, country }) => {
         icon
       }
 
-    }) ?? [];
+    })?.filter(tier => !!tier.features?.length) ?? [];
 
     setTransportProps(tiers);
   }, [country]);
@@ -65,8 +64,8 @@ const Transport = ({ transportRef, country }) => {
             {countryTransport.map((transport) => {
               // the first features (max 6) are always shown
               // if there are additional, they are covered in the see more tab
-              const firstFeatures = transport.features.slice(0, 6);
-              const remainingFeatures = transport.features.slice(6);
+              const firstFeatures = transport.features.slice(0, 5);
+              const remainingFeatures = transport.features.slice(5);
 
               return (
                 <div
@@ -76,6 +75,7 @@ const Transport = ({ transportRef, country }) => {
                   <div className="flex-1 text-start">
                       <div className="absolute top-0 -translate-y-1/2 transform rounded-full bg-[#0B3D59] py-2 px-4 font-semibold" style={{ color: 'white'}}>
                         <div className="flex items-center gap-2">
+                          <i className={transport.icon}></i>
                           {transport.title}
                         </div>
                       </div>

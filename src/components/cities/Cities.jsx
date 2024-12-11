@@ -1,5 +1,4 @@
 import React from "react";
-import { cities } from "./cities";
 import { Disclosure } from "@headlessui/react";
 import css from "../app.module.css"
 import { bgGradient } from "../global/global_functions";
@@ -7,11 +6,11 @@ import CityInfoPanel from "./CityInfoPanel";
 import ShowMore from "../global/ShowMore";
 
 const Cities = ({ country, citiesRef }) => {
-  const countryCities = cities.find((obj) => obj.country === country);
+  const countryCities = country.cities ?? []
   // the first cities (max 5) are always shown
   // if there are additional, they are covered in the see more tab
-  const firstCities = countryCities.cities.slice(0, 5)
-  const additionalCities = countryCities.cities.slice(5)
+  const firstCities = countryCities.slice(0, 5)
+  const additionalCities = countryCities.slice(5)
 
   return (
     <section ref={citiesRef}>
