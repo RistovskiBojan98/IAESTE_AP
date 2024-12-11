@@ -44,6 +44,7 @@ const setDefaultArrowStyle = (event) =>{
           <p className="text-center">Click on the right for more incredible views!</p>
         </div>
         <Carousel
+          className="rounded-lg shadow-2xl border bg-black"
           showArrows={true}
           infiniteLoop={true}
           interval={5000}
@@ -58,7 +59,7 @@ const setDefaultArrowStyle = (event) =>{
               <img
                 src={image}
                 alt=""
-                style={{ height: "500px", width: "auto" }}
+                style={{ height: "550px", width: "auto" }}
               />
             </div>
           ))}

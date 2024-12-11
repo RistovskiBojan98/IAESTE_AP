@@ -10,6 +10,7 @@ const Food = ({ country, foodRef }) => {
   const [startIndex, setStartIndex] = useState(0)
   const [dataLen, setDataLen] = useState(0)
   const [maxItemsToShow, setMaxItemsToShow] = useState(3)
+  const [disableNext, setDisableNext] = useState(false)
 
   useEffect(() => {
     const food = country.food ?? []
@@ -20,9 +21,19 @@ const Food = ({ country, foodRef }) => {
     setMaxItemsToShow(data.length >= 3 ? 3 : data.length)
   }, [country])
   // if the screen is small we show 1 object, otherwise 3
-  const showPrev = () => setStartIndex(Math.max(startIndex - (width >= 768 ? 3 : 1), 0));
+  const showPrev = () => {
+    setStartIndex(Math.max(startIndex - (width >= 768 ? 3 : 1), 0))
+    setDisableNext(false)
+  }
 
-  const showNext = () => setStartIndex(Math.min(startIndex + (width >= 768 ? 3 : 1), dataLen - 1));
+  const showNext = () => {
+    if (!disableNext) {
+      const itemsLength = width >= 768 ? 3 : 1
+      const newStartIndex = startIndex + itemsLength
+      setStartIndex(Math.min(newStartIndex, dataLen - 1))
+      setDisableNext(newStartIndex + itemsLength > dataLen - 1)
+    }
+  }
 
   return dataLen ? (
     <section ref={foodRef} className={`${css.container} sm:mt-10 sm:mb-16 pt-4`}>
@@ -45,7 +56,7 @@ const Food = ({ country, foodRef }) => {
                 />
               ))}
         </div>
-        <button onClick={showNext} className="flex items-center justify-end">
+        <button onClick={showNext} disabled={disableNext} className="flex items-center justify-end">
           {rightArrow}
         </button>
       </div>

@@ -44,7 +44,8 @@ const GeneralInformation = ({ country, infoRef }) => {
   countryInfo.forEach(addImgUrl);
 
   return (
-    <div className={`${css.container}`} ref={infoRef}>
+    !!countryInfo.length &&
+      <div className={`${css.container}`} ref={infoRef}>
       <div className="mb-14 space-y-5 sm:mx-auto sm:max-w-xl lg:max-w-5xl">
         <h2 className={css.title}>
           General Information

@@ -31,7 +31,7 @@ const Committees = ({ country, lcsRef }) => {
             <div>
               <p className="text-xl pt-2">You can check out the full list of the local committees here:</p>
               <a className="italic underline decoration-solid text-2xl hover:text-[#0B3D59]" href={"/"} target="_blank" rel="noopener noreferrer">
-                Local Committees {country}
+                Local Committees {country.name}
               </a>
             </div>
           }
