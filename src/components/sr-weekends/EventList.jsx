@@ -115,13 +115,13 @@ const EventList = () => {
                 }
                 if (filterValues.startDate) {
                     const startDate = new Date(filterValues.startDate);
-                    events = events.filter(event => new Date(event.start) >= startDate || new Date(event.end) >= startDate);
+                    events = events.filter(event => new Date(event.startDate) >= startDate || new Date(event.endDate) >= startDate);
                     filter.push({ "From date": formatDate(filterValues.startDate) })
                     date = filterValues.startDate
                 }
                 if (filterValues.endDate) {
                     const endDate = new Date(filterValues.endDate);
-                    events = events.filter(event => new Date(event.end) <= endDate || new Date(event.start) <= endDate);
+                    events = events.filter(event => new Date(event.endDate) <= endDate || new Date(event.startDate) <= endDate);
                     filter.push({ "To date": formatDate(filterValues.endDate) })
                     if (!date) date = filterValues.endDate
                 }
@@ -191,14 +191,14 @@ const EventList = () => {
             };
         }
 
-        if (moment(date).month() !== currentMonth) {
-            return {
-                style: {
-                    backgroundColor: '#6086A7',
-                    color: 'white'
-                }
-            };
-        }
+        // if (moment(date).month() !== currentMonth) {
+        //     return {
+        //         style: {
+        //             backgroundColor: '#6086A7',
+        //             color: 'white'
+        //         }
+        //     };
+        // }
 
         return {};
     };
