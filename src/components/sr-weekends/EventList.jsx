@@ -8,6 +8,8 @@ import FilterPopup from "./EventFilter/Filter"
 import MoreEventsPopup from "./MoreEventsPopup/MoreEvents"
 import useWindowSize from '../../hooks/useScreenSize';
 import css from "./sr-weekends.module.css"
+import { fetchDbData } from "../../service/CountriesService"
+import { mapSummerReceptionWeekend } from '../global/global_functions';
 
 // Customize localizer to make Monday the first day of the week
 moment.updateLocale('en', {
@@ -24,23 +26,9 @@ const customLocalizer = momentLocalizer(moment, {
 
 const EventList = () => {
     const { width } = useWindowSize();
-    // Transform the existing events data to match the new structure
-    const transformedEvents = Object.keys(summerReception).reduce((acc, country) => {
-        const countryEvents = summerReception[country].map(event => ({
-            ...event,
-            country,
-            location: event.location + ", " + country,
-            start: moment(event.date.split(' - ')[0], 'DD.MM').toDate(),
-            end: moment(event.date.split(' - ')[1], 'DD.MM').add(1, 'day').toDate(),
-            title: event.name
-        }));
-        return [...acc, ...countryEvents].sort((a, b) => a.start - b.start);
-    }, []);
-
-    const [filteredEvents, setFilteredEvents] = useState([...transformedEvents]);
-
+    const [transformedEvents, setTransformedEvents] = useState([])
+    const [filteredEvents, setFilteredEvents] = useState([]);
     const [filter, setFilter] = useState([])
-
     // State for controlling the index of the first event to be displayed
     const [startIndex, setStartIndex] = useState(0);
 
@@ -52,7 +40,6 @@ const EventList = () => {
 
     // Events to display based on the start and end index
     const eventsToShow = filteredEvents.slice(startIndex, endIndex);
-    // const eventsToShow = []
 
     // Function to handle the previous button click
     const handlePrevious = () => {
@@ -67,6 +54,23 @@ const EventList = () => {
     useEffect(() => {
         setStartIndex(0); // Reset startIndex when screen size changes
     }, [width]);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            const countries = await fetchDbData()
+            let weekends = []
+            countries?.forEach(country => {
+                const summerReception = country.summerReception?.map(weekend => mapSummerReceptionWeekend(weekend, country)) ?? []
+                if (summerReception.length) weekends = [...weekends, ...summerReception]
+            })
+            setTransformedEvents(weekends.sort((a, b) => a.startDate - b.startDate))
+          }
+          fetchData()
+    }, [])
+
+    useEffect(() => {
+        setFilteredEvents(transformedEvents)
+    }, [transformedEvents])
 
     // State for controlling the visibility of the filter popup
     const [isFilterPopupOpen, setIsFilterPopupOpen] = useState(false);
@@ -133,7 +137,7 @@ const EventList = () => {
     // Function to handle event click and open the popup
     const handleEventClick = (event) => {
         setSelectedEvent(event);
-        setCurrentDate(moment(event.start)); // Set the current date to the event's start date
+        setCurrentDate(moment(event.startDate)); // Set the current date to the event's start date
     };
 
 
@@ -295,7 +299,7 @@ const EventList = () => {
                                                     <h2 className="card-title font-semibold text-xl md:text-2xl border-b-2 pb-2">{event.name}</h2>
                                                     <div className='flex flex-col mt-2 sm:mt-0'>
                                                         <div className={css.cardText}>
-                                                            <i className="far fa-calendar-alt mr-2"></i> {event.date}
+                                                            <i className="far fa-calendar-alt mr-2"></i> {event.start} - {event.end}
                                                         </div>
                                                         <div className={css.cardText}>
                                                             <i className="fas fa-map-marker-alt mr-2"></i> {event.location}
@@ -371,8 +375,8 @@ const EventList = () => {
                                 className='bg-[#0B3D59] border-solid border-2 border-black text-white'
                                 localizer={customLocalizer} // Use the custom localizer
                                 events={filteredEvents}
-                                startAccessor="start"
-                                endAccessor="end"
+                                startAccessor="startDate"
+                                endAccessor="endDate"
                                 views={['month']} // Display only the month view
                                 toolbar={false}
                                 style={{ height: 800, width: '90%' }}
@@ -389,12 +393,6 @@ const EventList = () => {
                         </div>
 
                     </div>
-                    {/* Subscribe */}
-                    {/* <div className='w-full px-10 py-5'>
-                        <h2 className="text-3xl font-bold  text-white sm:text-4xl" style={{ textShadow: '0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5)' }}>
-                            Subscribe to our newsletter
-                        </h2>
-                    </div> */}
                 </div>
             </div>
         </div>

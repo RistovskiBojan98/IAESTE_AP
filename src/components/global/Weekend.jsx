@@ -10,19 +10,19 @@ const Weekend = ({ weekend }) => {
             <h3 className="text-2xl md:text-4xl font-bold">{weekend.name}</h3>
             <hr className='mt-4'></hr>
             <div className={css.info}>
-                <i className="far fa-calendar-alt mr-2"></i> {weekend.date}
+                <i className="far fa-calendar-alt mr-2"></i> {weekend.start} - {weekend.end}
             </div>
             <div className={css.info}>
                 <i className="fas fa-map-marker-alt mr-2"></i> {weekend.location}
             </div>
-            {weekend.link && (
+            {!!weekend.link && (
                 <div className={`${css.info} hover:text-sky-700`}>
                     <a href={weekend.link} target='_blank' rel="noreferrer">
                         <i className="fas fa-link mr-1"></i> Registration link
                     </a>
                 </div>
             )}
-            {weekend.limit && (
+            {!!weekend.limit && (
                 <div className={css.info}>
                     <i className="fas fa-users mr-3"></i> Maximum participants: {weekend.limit}
                 </div>

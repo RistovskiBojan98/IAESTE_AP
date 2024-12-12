@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import css from "../sr-weekends/EventPopup/event-popup.module.css"
 import appCss from "../app.module.css"
 import Weekend from '../global/Weekend';
-import { bgGradient } from "../global/global_functions";
+import { bgGradient, mapSummerReceptionWeekend } from "../global/global_functions";
 
 const SummerReception = ({ country, summerReceptionRef }) => {
   const [weekend, setWeekend] = useState({});
@@ -14,12 +14,9 @@ const SummerReception = ({ country, summerReceptionRef }) => {
     const data = country.summerReception ?? [];
     // set the weekends
     if (data?.length) {
-      const weekends = data.map(weekend => ({
-        ...weekend,
-        location: weekend.location + ", " + country
-      }))
-      setWeekends(weekends);
-      setWeekend(weekends[0]);
+      const mappedWeekends = data.map(weekend => mapSummerReceptionWeekend(weekend, country.name))
+      setWeekends(mappedWeekends);
+      setWeekend(mappedWeekends[0]);
       setSelectedButtonIndex(0);
     }
     setLoading(false); // Mark data as loaded
