@@ -64,8 +64,8 @@ const EventList = () => {
                 if (summerReception.length) weekends = [...weekends, ...summerReception]
             })
             setTransformedEvents(weekends.sort((a, b) => a.startDate - b.startDate))
-          }
-          fetchData()
+        }
+        fetchData()
     }, [])
 
     useEffect(() => {
@@ -76,61 +76,7 @@ const EventList = () => {
     const [isFilterPopupOpen, setIsFilterPopupOpen] = useState(false);
 
     // Function to toggle the visibility of the filter popup
-    const toggleFilterPopup = () => {
-        // helper function
-        const formatDate = (date) => {
-            const splitDateT = date.split('T')[0];
-            const splitDate = splitDateT.split('-');
-            // Create a Date object with the split date parts
-            const formattedDate = new Date(splitDate[0], splitDate[1] - 1, splitDate[2]);
-            // Increase the date by one day
-            formattedDate.setDate(formattedDate.getDate() + 1);
-            // Get the formatted date parts
-            const day = formattedDate.getDate();
-            const month = formattedDate.getMonth() + 1;
-            const year = formattedDate.getFullYear();
-            // Return the formatted date in the dd/mm/yy format
-            return `${day}/${month}/${year}`;
-        };
-
-        setIsFilterPopupOpen(!isFilterPopupOpen);
-        if (isFilterPopupOpen) {
-            const savedFilterValues = localStorage.getItem('filterValues');
-            let events = [...transformedEvents]
-            let filter = []
-            let date = null
-            if (savedFilterValues) {
-                const filterValues = JSON.parse(savedFilterValues);
-                if (filterValues.selectedCountries) {
-                    const selectedCountries = filterValues.selectedCountries;
-                    if (selectedCountries.length) {
-                        events = events.filter(event => selectedCountries.includes(event.country))
-                        let countriesInFilter = ""
-                        selectedCountries.forEach((country, index) => {
-                            countriesInFilter += country
-                            if (index < selectedCountries.length - 1) countriesInFilter += ", "
-                        })
-                        filter.push({ "Countries": countriesInFilter })
-                    }
-                }
-                if (filterValues.startDate) {
-                    const startDate = new Date(filterValues.startDate);
-                    events = events.filter(event => new Date(event.startDate) >= startDate || new Date(event.endDate) >= startDate);
-                    filter.push({ "From date": formatDate(filterValues.startDate) })
-                    date = filterValues.startDate
-                }
-                if (filterValues.endDate) {
-                    const endDate = new Date(filterValues.endDate);
-                    events = events.filter(event => new Date(event.endDate) <= endDate || new Date(event.startDate) <= endDate);
-                    filter.push({ "To date": formatDate(filterValues.endDate) })
-                    if (!date) date = filterValues.endDate
-                }
-            }
-            setFilteredEvents(events)
-            setFilter(filter)
-            if (date) setCurrentDate(moment(date))
-        }
-    };
+    const toggleFilterPopup = () => setIsFilterPopupOpen(!isFilterPopupOpen)
 
     const [selectedEvent, setSelectedEvent] = useState(null);
 
@@ -236,17 +182,18 @@ const EventList = () => {
         <div>
             {selectedEvent && (<EventPopup event={selectedEvent} onClose={closePopup} />)}
             {!!moreEvents.length && (<MoreEventsPopup events={moreEvents} date={moreEventsSelectedDate} onClose={closeMoreEvents} />)}
-            <div className="mx-auto max-w-7xl border-solid border-b-2 py-3 border-[#0B3D59]">
-                <div className="w-full px-10 flex justify-start items-center">
-                    <h2 className={css.titleText}>
-                        Summer Reception Weekends 2024
+            <div className="mx-auto max-w-7xl border-solid border-b-2 py-2 border-[#0B3D59]">
+                <div className="w-full px-3 sm:px-10 flex justify-start items-center">
+                    <h2 className="text-3xl sm:text-5xl font-bold ">
+                        <i className="fa-solid fa-umbrella-beach mr-3"></i>
+                        Summer Reception 2024
                     </h2>
                     <div className='ml-auto'>
-                        <button onClick={toggleFilterPopup} className="bg-[#0B3D59] hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] text-white font-bold py-3 px-6 text-lg md:text-xl rounded-full">
+                        <button onClick={toggleFilterPopup} className="bg-[#0B3D59] hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] text-white font-bold py-3 px-4 sm:px-6 text-sm md:text-xl rounded-full">
                             <i className="fa fa-filter"></i> {maxEventsToShow === 3 ? 'Filter' : ''}
                         </button>
                         {/* Filter Popup */}
-                        {isFilterPopupOpen && <FilterPopup onClose={toggleFilterPopup} events={transformedEvents} />}
+                        {isFilterPopupOpen && <FilterPopup onClose={toggleFilterPopup} events={transformedEvents} setFilteredEvents={setFilteredEvents} setFilter={setFilter} setCurrentDate={setCurrentDate} />}
                     </div>
                 </div>
                 {/* Filter values */}
@@ -267,32 +214,19 @@ const EventList = () => {
                     </div>
                 )}
             </div>
-            <div className="mb-10">
-                <div className='gap-5 mx-auto max-w-7xl'>
+            <div className="mb-10 px-1">
+                <div className='gap-5 mx-auto max-w-7xl flex flex-col sm:flex-row'>
                     {/* event list */}
-                    <div className='w-full' style={{ maxHeight: '650px' }}>
-                        <div className='py-10 px-1 mx-auto max-w-7xl'>
-                            {eventsToShow.length ? (
-                                <div className="flex justify-between items-center">
-                                    <button onClick={handlePrevious} disabled={startIndex === 0}
-                                        className={`${css.navButton} ${startIndex === 0 ? 'bg-[#9DADBC]' : 'bg-white'}`}
-                                    >
-                                        <svg
-                                            width="20"
-                                            height="20"
-                                            viewBox="0 0 30 35"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M4.76 17.6L19.448 32.288L17.672 34.304L0.872 17.6L17.432 0.847998L19.208 2.864L4.76 17.6Z"
-                                                fill={`${startIndex === 0 ? 'gray' : '#0B3D59'}`}
-                                            />
-                                        </svg>
-                                    </button>
-                                    <div className='flex gap-4 w-full px-5'>
-                                        {eventsToShow.map(event => (
-                                            <div key={event.name} className={`w-full card mb-3 rounded-lg shadow-md p-3 cursor-pointer h-auto md:h-40 
+                    <div className='w-full bg-[#0B3D59] mt-5 rounded-lg shadow-lg border border-black' style={{ maxHeight: '650px' }}>
+                        <div className='p-2 mx-auto max-w-7xl'>
+                            <span className='text-white text-3xl font-semibold'>
+                                IAESTE Weekends
+                            </span>
+                            {filteredEvents.length ? (
+                                <div className="flex justify-between items-center gap-2 mt-2">
+                                    <div className='flex flex-col gap-4 pr-2 w-full items-center overflow-y-scroll' style={{ scrollbarWidth: 'thin', height: 500 }}>
+                                        {filteredEvents.map(event => (
+                                            <div key={event.name} className={`w-full card rounded-lg shadow-md p-3 cursor-pointer h-auto md:h-40 
                                                 hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]
                                                 ${selectedEvent !== event ? 'bg-white' : 'bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]'}`}>
                                                 <div className="card-body text-[#0B3D59] flex flex-col justify-between h-full hover:text-white" onClick={() => handleEventClick(event)}>
@@ -309,22 +243,6 @@ const EventList = () => {
                                             </div>
                                         ))}
                                     </div>
-                                    <button onClick={handleNext} disabled={endIndex >= filteredEvents.length}
-                                        className={`${css.navButton} ${endIndex >= filteredEvents.length ? 'bg-[#9DADBC]' : 'bg-white'}`}
-                                    >
-                                        <svg
-                                            width="20"
-                                            height="20"
-                                            viewBox="0 0 15 35"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                        >
-                                            <path
-                                                d="M2.66588 0.847998L19.1779 17.6L2.42588 34.304L0.601875 32.288L15.3379 17.6L0.841875 2.864L2.66588 0.847998Z"
-                                                fill={`${endIndex >= filteredEvents.length ? 'gray' : '#0B3D59'}`}
-                                            />
-                                        </svg>
-                                    </button>
                                 </div>
                             ) : (
                                 <div className="flex justify-center items-center h-full">
@@ -379,19 +297,15 @@ const EventList = () => {
                                 endAccessor="endDate"
                                 views={['month']} // Display only the month view
                                 toolbar={false}
-                                style={{ height: 800, width: '90%' }}
+                                style={{ height: 500, width: '100%' }}
                                 onSelectEvent={handleEventClick} // Handle event click
                                 date={currentDate.toDate()}
                                 eventPropGetter={eventStyleGetter}
                                 dayPropGetter={dayStyleGetter}
-                                components={{
-                                    eventWrapper: CustomEventWrapper, // Use the custom event wrapper component
-                                }}
                                 onNavigate={handleNavigate}
                                 messages={customMessages}
                             />
                         </div>
-
                     </div>
                 </div>
             </div>

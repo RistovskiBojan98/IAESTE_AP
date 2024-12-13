@@ -32,7 +32,7 @@ export default function SRWeekends() {
             <meta charSet="utf-8" />
             <title>IAESTE | Across the Planet | Summer Reception </title>
           </Helmet>
-          <Navbar isCountryNav={false}/>
+          {/* <Navbar isCountryNav={false}/> */}
           <EventList />
           <Footer />
         </div>

@@ -41,7 +41,7 @@ const MoreEventsPopup = ({ events, date, onClose }) => {
                 <div className="w-full h-full p-6 text-white">
                     <h3 className="text-2xl md:text-4xl font-bold">All events on <br></br>{date}</h3>
                     <hr className='mt-4'></hr>
-                    <div className={css.overflow}>
+                    <div className={css.overflow} style={{ scrollbarWidth: 'thin'}}>
                         {events[0].map(event => (
                             <div key={event.name} className={`w-full card mb-3 rounded-lg shadow-md p-3 cursor-pointer h-auto md:h-40 bg-white
                                                 hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]`} onClick={() => handleEventClick(event)}>

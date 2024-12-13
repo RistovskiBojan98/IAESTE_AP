@@ -2,8 +2,9 @@ import React, { useRef, useEffect, useState } from 'react';
 import css from "./filter-popup.module.css";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import moment from 'moment';
 
-const FilterPopup = ({ onClose, events }) => {
+const FilterPopup = ({ onClose, events, setFilteredEvents, setFilter, setCurrentDate }) => {
     const popupRef = useRef(null);
     const [countries, setCountries] = useState([]);
     const [selectedCountries, setSelectedCountries] = useState([]);
@@ -49,13 +50,64 @@ const FilterPopup = ({ onClose, events }) => {
         };
     }, [onClose]);
 
+    const setFilterValues = () => {
+        // helper function
+        const formatDate = (date) => {
+            const splitDateT = date.split('T')[0];
+            const splitDate = splitDateT.split('-');
+            // Create a Date object with the split date parts
+            const formattedDate = new Date(splitDate[0], splitDate[1] - 1, splitDate[2]);
+            // Increase the date by one day
+            formattedDate.setDate(formattedDate.getDate() + 1);
+            // Get the formatted date parts
+            const day = formattedDate.getDate();
+            const month = formattedDate.getMonth() + 1;
+            const year = formattedDate.getFullYear();
+            // Return the formatted date in the dd/mm/yy format
+            return `${day}/${month}/${year}`;
+        };
+
+        const filter = []
+        let filteredEvents = [...events]
+        let date = null
+
+        if (selectedCountries.length) {
+            filteredEvents = filteredEvents.filter(event => selectedCountries.includes(event.country))
+            let countriesInFilter = ""
+            selectedCountries.forEach((country, index) => {
+                countriesInFilter += country
+                if (index < selectedCountries.length - 1) countriesInFilter += ", "
+            })
+            filter.push({ "Countries": countriesInFilter })
+        }
+
+        if (startDate) {
+            const newDate = new Date(startDate)
+            filteredEvents = filteredEvents.filter(event => new Date(event.startDate) >= newDate || new Date(event.endDate) >= newDate);
+            filter.push({ "From: ": formatDate(startDate) })
+            date = startDate
+        }
+
+        if (endDate) {
+            const newDate = new Date(endDate);
+            events = events.filter(event => new Date(event.endDate) <= newDate || new Date(event.startDate) <= newDate);
+            filter.push({ "To: ": formatDate(endDate) })
+            if (!date) date = endDate
+        }
+
+        setFilteredEvents(filteredEvents)
+        setFilter(filter)
+        if (date) setCurrentDate(moment(date))
+        onClose()
+    }
+
     const handleApplyFilter = () => {
         localStorage.setItem('filterValues', JSON.stringify({
             selectedCountries,
             startDate,
             endDate
         }));
-        onClose();
+        setFilterValues()
     };
 
     const handleCountryChange = (event) => {
@@ -88,8 +140,8 @@ const FilterPopup = ({ onClose, events }) => {
     };
 
     const handleResetFilter = () => {
-        localStorage.removeItem('filterValues');
-        onClose();
+        localStorage.removeItem('filterValues')
+        setFilterValues()
     }
 
     return (
@@ -141,13 +193,13 @@ const FilterPopup = ({ onClose, events }) => {
                                 <i className='fas fa-calendar-alt text-lg md:text-2xl px-2 py-1' />
                                 <h4>End Date:</h4>
                                 <div className={css.datepickerContainer}>
-                                <DatePicker selected={endDate} onChange={handleEndDateChange}
-                                    dateFormat="dd/MM/yyyy"
-                                    minDate={startDate ?? undefined}
-                                    className={css.datepicker} />
-                                <i className='fas fa-trash-can text-2xl text-red-500 px-2 py-1 ml-auto cursor-pointer' onClick={handleResetEndDate} />
+                                    <DatePicker selected={endDate} onChange={handleEndDateChange}
+                                        dateFormat="dd/MM/yyyy"
+                                        minDate={startDate ?? undefined}
+                                        className={css.datepicker} />
+                                    <i className='fas fa-trash-can text-2xl text-red-500 px-2 py-1 ml-auto cursor-pointer' onClick={handleResetEndDate} />
                                 </div>
-                                
+
                             </div>
                         </div>
                     </div>
