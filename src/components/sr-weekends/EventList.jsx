@@ -152,7 +152,7 @@ const EventList = () => {
             {!!moreEvents.length && (<MoreEventsPopup events={moreEvents} date={moreEventsSelectedDate} onClose={closeMoreEvents} />)}
             <div className="mx-auto max-w-7xl border-solid border-b-2 py-4 border-[#0B3D59]">
                 <div className="w-full px-3 sm:px-10 flex justify-center items-center">
-                    <h2 className="text-3xl sm:text-6xl font-bold" style={{ textShadow: '0 0 0.5px rgba(0,0,0,0.5), 0 0 0.5px rgba(0,0,0,0.5), 0 0 0.5px rgba(0,0,0,0.5)' }}>
+                    <h2 className={css.titleText}>
                         <i className="fa-solid fa-umbrella-beach mr-3"></i>
                         Summer Reception 2025
                     </h2>
