@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import { Calendar, momentLocalizer } from 'react-big-calendar';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import { summerReception } from '../summer-recepiton/summerReception';
 import EventPopup from './EventPopup/Event';
 import FilterPopup from "./EventFilter/Filter"
 import MoreEventsPopup from "./MoreEventsPopup/MoreEvents"
@@ -25,35 +24,17 @@ const customLocalizer = momentLocalizer(moment, {
 });
 
 const EventList = () => {
-    const { width } = useWindowSize();
+    const { width, height } = useWindowSize();
     const [transformedEvents, setTransformedEvents] = useState([])
     const [filteredEvents, setFilteredEvents] = useState([]);
     const [filter, setFilter] = useState([])
-    // State for controlling the index of the first event to be displayed
-    const [startIndex, setStartIndex] = useState(0);
-
-    // Maximum number of events to display at a time
-    const maxEventsToShow = width >= 768 ? 3 : 1;
-
-    // Calculate the end index based on the start index and maximum events to show
-    const endIndex = Math.min(startIndex + maxEventsToShow, filteredEvents.length);
-
-    // Events to display based on the start and end index
-    const eventsToShow = filteredEvents.slice(startIndex, endIndex);
-
-    // Function to handle the previous button click
-    const handlePrevious = () => {
-        setStartIndex(Math.max(startIndex - 1, 0));
-    };
-
-    // Function to handle the next button click
-    const handleNext = () => {
-        setStartIndex(Math.min(startIndex + 1, filteredEvents.length - 1));
-    };
+    const [calendarHeight, setCalendarHeight] = useState(0)
 
     useEffect(() => {
-        setStartIndex(0); // Reset startIndex when screen size changes
-    }, [width]);
+        setCalendarHeight(height - 250)
+    }, [height]);
+
+    
 
     useEffect(() => {
         const fetchData = async () => {
@@ -111,23 +92,10 @@ const EventList = () => {
         className: css.event
     });
 
-    // Function to handle the "+x events" indicator click
-    const handleMoreEventsClick = (events, date) => {
-        // Implement your action here
-        console.log("More events clicked:", events, date);
-    };
-
-    // Custom component for rendering the "+x events" indicator
-    const CustomEventWrapper = ({ children, events, date }) => (
-        <div className="custom-event-wrapper" onClick={() => handleMoreEventsClick(events, date)}>
-            {children}
-        </div>
-    );
-
     // Function to customize day style
     const dayStyleGetter = (date) => {
         const today = moment();
-        const currentMonth = currentDate.month();
+        // const currentMonth = currentDate.month();
 
         if (moment(date).isSame(today, 'day')) {
             return {
@@ -182,23 +150,16 @@ const EventList = () => {
         <div>
             {selectedEvent && (<EventPopup event={selectedEvent} onClose={closePopup} />)}
             {!!moreEvents.length && (<MoreEventsPopup events={moreEvents} date={moreEventsSelectedDate} onClose={closeMoreEvents} />)}
-            <div className="mx-auto max-w-7xl border-solid border-b-2 py-2 border-[#0B3D59]">
-                <div className="w-full px-3 sm:px-10 flex justify-start items-center">
-                    <h2 className="text-3xl sm:text-5xl font-bold ">
+            <div className="mx-auto max-w-7xl border-solid border-b-2 py-4 border-[#0B3D59]">
+                <div className="w-full px-3 sm:px-10 flex justify-center items-center">
+                    <h2 className="text-3xl sm:text-6xl font-bold" style={{ textShadow: '0 0 0.5px rgba(0,0,0,0.5), 0 0 0.5px rgba(0,0,0,0.5), 0 0 0.5px rgba(0,0,0,0.5)' }}>
                         <i className="fa-solid fa-umbrella-beach mr-3"></i>
-                        Summer Reception 2024
+                        Summer Reception 2025
                     </h2>
-                    <div className='ml-auto'>
-                        <button onClick={toggleFilterPopup} className="bg-[#0B3D59] hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] text-white font-bold py-3 px-4 sm:px-6 text-sm md:text-xl rounded-full">
-                            <i className="fa fa-filter"></i> {maxEventsToShow === 3 ? 'Filter' : ''}
-                        </button>
-                        {/* Filter Popup */}
-                        {isFilterPopupOpen && <FilterPopup onClose={toggleFilterPopup} events={transformedEvents} setFilteredEvents={setFilteredEvents} setFilter={setFilter} setCurrentDate={setCurrentDate} />}
-                    </div>
                 </div>
                 {/* Filter values */}
                 {!!filter.length && (
-                    <div className="flex justify-start items-center mt-3 max-w-7xl px-10 border-solid border-t-2 border-[#0B3D59] pt-3">
+                    <div className="flex justify-start items-center mt-3 max-w-7xl px-10 border-solid border-t-2 border-[#0B3D59] pt-4">
                         <span className="text-lg font-semibold text-[#0B3D59]"><i className="fa fa-filter"></i></span>
                         <div className='flex flex-col md:flex-row gap-3'>
                             {filter.map((filterItem, index) => (
@@ -217,14 +178,23 @@ const EventList = () => {
             <div className="mb-10 px-1">
                 <div className='gap-5 mx-auto max-w-7xl flex flex-col sm:flex-row'>
                     {/* event list */}
-                    <div className='w-full bg-[#0B3D59] mt-5 rounded-lg shadow-lg border border-black' style={{ maxHeight: '650px' }}>
+                    <div className='w-full bg-[#0B3D59] mt-5 rounded-lg shadow-lg border border-black' style={{ maxHeight: calendarHeight + 70 }}>
                         <div className='p-2 mx-auto max-w-7xl'>
-                            <span className='text-white text-3xl font-semibold'>
-                                IAESTE Weekends
-                            </span>
+                            <div className='flex flex-row justify-between items-center border-b pb-2 px-2'>
+                                <span className='text-white text-3xl font-semibold'>
+                                    IAESTE Weekends
+                                </span>
+                                <div className='ml-auto'>
+                                    <button onClick={toggleFilterPopup} className="hover:text-sky-100 text-white font-bold text-sm md:text-xl rounded-full">
+                                        <i className="fa fa-filter"></i> {width >= 768 ? 'Filter' : ''}
+                                    </button>
+                                    {/* Filter Popup */}
+                                    {isFilterPopupOpen && <FilterPopup onClose={toggleFilterPopup} events={transformedEvents} setFilteredEvents={setFilteredEvents} setFilter={setFilter} setCurrentDate={setCurrentDate} />}
+                                </div>
+                            </div>
                             {filteredEvents.length ? (
                                 <div className="flex justify-between items-center gap-2 mt-2">
-                                    <div className='flex flex-col gap-4 pr-2 w-full items-center overflow-y-scroll' style={{ scrollbarWidth: 'thin', height: 500 }}>
+                                    <div className='flex flex-col gap-4 pr-2 w-full items-center overflow-y-scroll' style={{ scrollbarWidth: 'thin', height: calendarHeight - 10 }}>
                                         {filteredEvents.map(event => (
                                             <div key={event.name} className={`w-full card rounded-lg shadow-md p-3 cursor-pointer h-auto md:h-40 
                                                 hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]
@@ -256,35 +226,13 @@ const EventList = () => {
                     <div className='w-full'>
                         <div className='w-full'>
                             {/* Custom toolbar */}
-                            <div className="flex justify-center gap-10 items-center py-5 px-1">
-                                <button onClick={handlePreviousMonth} className={`${css.navButton} bg-white`}>
-                                    <svg
-                                        width="20"
-                                        height="20"
-                                        viewBox="0 0 30 35"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M4.76 17.6L19.448 32.288L17.672 34.304L0.872 17.6L17.432 0.847998L19.208 2.864L4.76 17.6Z"
-                                            fill="blue"
-                                        />
-                                    </svg>
+                            <div className="flex justify-center gap-4 items-center py-5 px-1">
+                                <button onClick={handlePreviousMonth}>
+                                    <i className='fa fa-chevron-left text-xl' ></i>
                                 </button>
                                 <h2 className={`${css.titleText} w-60 text-center`}>{currentDate.format('MMMM YYYY')}</h2>
-                                <button onClick={handleNextMonth} className={`${css.navButton} bg-white`}>
-                                    <svg
-                                        width="20"
-                                        height="20"
-                                        viewBox="0 0 15 35"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                            d="M2.66588 0.847998L19.1779 17.6L2.42588 34.304L0.601875 32.288L15.3379 17.6L0.841875 2.864L2.66588 0.847998Z"
-                                            fill="blue"
-                                        />
-                                    </svg>
+                                <button onClick={handleNextMonth}>
+                                    <i className='fa fa-chevron-right text-xl' ></i>
                                 </button>
                             </div>
                         </div>
@@ -297,7 +245,7 @@ const EventList = () => {
                                 endAccessor="endDate"
                                 views={['month']} // Display only the month view
                                 toolbar={false}
-                                style={{ height: 500, width: '100%' }}
+                                style={{ height: calendarHeight, width: '100%' }}
                                 onSelectEvent={handleEventClick} // Handle event click
                                 date={currentDate.toDate()}
                                 eventPropGetter={eventStyleGetter}

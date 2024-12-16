@@ -2,7 +2,9 @@ import React, { useRef, useEffect } from 'react';
 import css from "./event-popup.module.css"
 import Weekend from '../../global/Weekend';
 
+
 const EventPopup = ({ event, onClose }) => {
+    
     const popupRef = useRef(null);
 
     useEffect(() => {

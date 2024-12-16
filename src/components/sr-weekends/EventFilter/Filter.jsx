@@ -141,7 +141,10 @@ const FilterPopup = ({ onClose, events, setFilteredEvents, setFilter, setCurrent
 
     const handleResetFilter = () => {
         localStorage.removeItem('filterValues')
-        setFilterValues()
+        setSelectedCountries([])
+        setStartDate(null)
+        setEndDate(null)
+        handleApplyFilter()
     }
 
     return (
