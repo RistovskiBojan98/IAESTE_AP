@@ -58,11 +58,12 @@
 }
 
 .overflow {
+    margin-top: 10px;
     display: flex;
     flex-direction: column;
     gap: 1rem;
     padding: 1rem;
     overflow-y: scroll;
-    max-height: 80%;
+    max-height: 90%;
 }
 

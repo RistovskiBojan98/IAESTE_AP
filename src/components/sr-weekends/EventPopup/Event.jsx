@@ -29,9 +29,6 @@ const EventPopup = ({ event, onClose }) => {
     return (
         <div className={css.overlay}>
             <div className={css.popup} ref={popupRef} style={{ maxWidth: '800px', maxHeight: '600px' }}>
-                <button onClick={onClose} className={css.closeButton}>
-                    <i className="fa-solid fa-x"></i>
-                </button>
                 <Weekend weekend={event}/>
             </div>
         </div>

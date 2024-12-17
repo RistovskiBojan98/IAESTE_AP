@@ -50,10 +50,11 @@ const FilterPopup = ({ onClose, events, setFilteredEvents, setFilter, setCurrent
         };
     }, [onClose]);
 
-    const setFilterValues = () => {
+    const setFilterValues = (countries, start, end) => {
         // helper function
         const formatDate = (date) => {
-            const splitDateT = date.split('T')[0];
+            const dateString = new Date(date).toISOString()
+            const splitDateT = dateString.split('T')[0];
             const splitDate = splitDateT.split('-');
             // Create a Date object with the split date parts
             const formattedDate = new Date(splitDate[0], splitDate[1] - 1, splitDate[2]);
@@ -71,28 +72,28 @@ const FilterPopup = ({ onClose, events, setFilteredEvents, setFilter, setCurrent
         let filteredEvents = [...events]
         let date = null
 
-        if (selectedCountries.length) {
-            filteredEvents = filteredEvents.filter(event => selectedCountries.includes(event.country))
+        if (countries.length) {
+            filteredEvents = filteredEvents.filter(event => countries.includes(event.country))
             let countriesInFilter = ""
-            selectedCountries.forEach((country, index) => {
+            countries.forEach((country, index) => {
                 countriesInFilter += country
-                if (index < selectedCountries.length - 1) countriesInFilter += ", "
+                if (index < countries.length - 1) countriesInFilter += ", "
             })
             filter.push({ "Countries": countriesInFilter })
         }
 
-        if (startDate) {
-            const newDate = new Date(startDate)
+        if (start) {
+            const newDate = new Date(start)
             filteredEvents = filteredEvents.filter(event => new Date(event.startDate) >= newDate || new Date(event.endDate) >= newDate);
-            filter.push({ "From: ": formatDate(startDate) })
-            date = startDate
+            filter.push({ "From: ": formatDate(start) })
+            date = start
         }
 
-        if (endDate) {
-            const newDate = new Date(endDate);
+        if (end) {
+            const newDate = new Date(end);
             events = events.filter(event => new Date(event.endDate) <= newDate || new Date(event.startDate) <= newDate);
-            filter.push({ "To: ": formatDate(endDate) })
-            if (!date) date = endDate
+            filter.push({ "To: ": formatDate(end) })
+            if (!date) date = end
         }
 
         setFilteredEvents(filteredEvents)
@@ -107,7 +108,7 @@ const FilterPopup = ({ onClose, events, setFilteredEvents, setFilter, setCurrent
             startDate,
             endDate
         }));
-        setFilterValues()
+        setFilterValues(selectedCountries, startDate, endDate)
     };
 
     const handleCountryChange = (event) => {
@@ -127,32 +128,17 @@ const FilterPopup = ({ onClose, events, setFilteredEvents, setFilter, setCurrent
         if (value > endDate) setEndDate(null);
     };
 
-    const handleEndDateChange = (event) => {
-        setEndDate(event);
-    };
-
-    const handleResetStartDate = () => {
-        setStartDate(null); // Reset startDate state to null
-    };
-
-    const handleResetEndDate = () => {
-        setEndDate(null); // Reset startDate state to null
-    };
-
     const handleResetFilter = () => {
         localStorage.removeItem('filterValues')
         setSelectedCountries([])
         setStartDate(null)
         setEndDate(null)
-        handleApplyFilter()
+        setFilterValues([], null, null)
     }
 
     return (
         <div className={css.overlay}>
             <div className={css.popup} ref={popupRef}>
-                <button onClick={onClose} className={css.closeButton}>
-                    <i className="fa-solid fa-x"></i>
-                </button>
                 <div className="w-full bg-[#0B3D59] p-2 md:p-4 text-white flex flex-col justify-between">
                     <h3 className="text-2xl md:text-4xl font-bold mb-1 md:mb-2">Filter Events</h3>
                     <h3 className="text-base">Select the properties to filter the events</h3>
@@ -186,7 +172,7 @@ const FilterPopup = ({ onClose, events, setFilteredEvents, setFilter, setCurrent
                                     <DatePicker selected={startDate} onChange={handleStartDateChange}
                                         dateFormat="dd/MM/yyyy"
                                         className={css.datepicker} />
-                                    <i className='fas fa-trash-can text-2xl text-red-500 px-2 py-1 ml-auto cursor-pointer' onClick={handleResetStartDate} />
+                                    <i className='fas fa-trash-can text-2xl text-red-500 px-2 py-1 ml-auto cursor-pointer' onClick={() => setStartDate(null)} />
                                 </div>
 
                             </div>
@@ -196,11 +182,11 @@ const FilterPopup = ({ onClose, events, setFilteredEvents, setFilter, setCurrent
                                 <i className='fas fa-calendar-alt text-lg md:text-2xl px-2 py-1' />
                                 <h4>End Date:</h4>
                                 <div className={css.datepickerContainer}>
-                                    <DatePicker selected={endDate} onChange={handleEndDateChange}
+                                    <DatePicker selected={endDate} onChange={(event) => setEndDate(event)}
                                         dateFormat="dd/MM/yyyy"
                                         minDate={startDate ?? undefined}
                                         className={css.datepicker} />
-                                    <i className='fas fa-trash-can text-2xl text-red-500 px-2 py-1 ml-auto cursor-pointer' onClick={handleResetEndDate} />
+                                    <i className='fas fa-trash-can text-2xl text-red-500 px-2 py-1 ml-auto cursor-pointer' onClick={() => setEndDate(null)} />
                                 </div>
 
                             </div>
