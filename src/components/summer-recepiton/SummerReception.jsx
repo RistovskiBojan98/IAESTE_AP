@@ -31,6 +31,7 @@ const SummerReception = ({ country, summerReceptionRef }) => {
           <div>
             <div className="lg:space-y-5 mx-auto max-w-xl sm:space-y-4 lg:max-w-5xl mb-5 text-center">
               <h2 className="text-2xl sm:text-4xl font-bold text-center text-[#1B75BB]">
+                <i className='fa fa-umbrella-beach mr-4'></i>
                 Summer Reception 2024
               </h2>
             </div>

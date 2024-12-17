@@ -48,6 +48,7 @@ const GeneralInformation = ({ country, infoRef }) => {
       <div className={`${css.container}`} ref={infoRef}>
       <div className="mb-14 space-y-5 sm:mx-auto sm:max-w-xl lg:max-w-5xl">
         <h2 className={css.title}>
+        <i className='fa fa-info-circle mr-4'></i>
           General Information
         </h2>
       </div>

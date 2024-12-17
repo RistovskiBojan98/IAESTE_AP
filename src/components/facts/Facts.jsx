@@ -12,10 +12,8 @@ const Facts = ({ country, factsRef }) => {
       className={`${css.container} bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] shadow-xl sm:overflow-hidden sm:rounded-2xl sm:mb-10`}
     >
       <div className="mx-auto max-w-2xl lg:max-w-none text-start">
-        <h2
-          id="testimonial-heading"
-          className={css.title2}
-        >
+        <h2 id="testimonial-heading" className={css.title2}>
+          <i className='fa fa-brain mr-4'></i>
           Did you know ?
         </h2>
 

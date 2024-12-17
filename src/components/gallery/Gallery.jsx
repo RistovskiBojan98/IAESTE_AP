@@ -39,6 +39,7 @@ const setDefaultArrowStyle = (event) =>{
       <section className={css.container} ref={galleryRef}>
         <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl mb-5">
           <h2 className={css.title}>
+            <i className='fa fa-images mr-4'></i>
             Gallery
           </h2>
           <p className="text-center">Click on the right for more incredible views!</p>

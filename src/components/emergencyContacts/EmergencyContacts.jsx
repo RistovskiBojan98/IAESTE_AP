@@ -27,6 +27,7 @@ const EmergencyContacts = ({ country }) => {
       <div className="bg-gray-100 pt-12">
         <div className={`${css.containerPosition} text-center px-4 sm:px-6 lg:px-8`}>
           <h2 className={css.title}>
+            <i className='fa fa-phone mr-4'></i>
             Emergency numbers
           </h2>
         </div>

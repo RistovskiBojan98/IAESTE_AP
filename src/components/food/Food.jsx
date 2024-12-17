@@ -38,6 +38,7 @@ const Food = ({ country, foodRef }) => {
   return dataLen ? (
     <section ref={foodRef} className={`${css.container} sm:mt-10 sm:mb-16 pt-4`}>
       <h2 className={`${css.title} pb-10`}>
+        <i className='fa fa-utensils mr-4'></i>
         Traditional cuisine
       </h2>
       <div className="grid" style={{ gridTemplateColumns: '1fr 10fr 1fr' }}>

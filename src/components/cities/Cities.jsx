@@ -17,6 +17,7 @@ const Cities = ({ country, citiesRef }) => {
       <div className={`${css.container} ${bgGradient} shadow-xl sm:overflow-hidden sm:rounded-2xl mb-10`}>
         <div className="mx-auto max-w-3xl divide-y-2 divide-gray-200">
           <h2 className={css.title2}>
+            <i className='fa fa-location-dot mr-4'></i>
             Places that we recommend visiting:
           </h2>
           <dl className="mt-6 space-y-6 divide-y divide-[#F1F1E6]">

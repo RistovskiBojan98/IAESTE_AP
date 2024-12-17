@@ -9,6 +9,7 @@ const Committees = ({ country, lcsRef }) => {
     <div className={`relative ${bgGradient} ${css.containerPosition} sm:px-6 lg:px-8 shadow-xl sm:overflow-hidden sm:rounded-2xl`} ref={lcsRef}>
       <div className="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl text-center">
         <h2 className="text-3xl md:text-4xl font-semibold text-[#F1F1E6]">
+        <i className='fa fa-city mr-4'></i>
           Cities with IAESTE LCs
         </h2>
         <p className="mt-2 text-[#F1F1E6] text-lg">

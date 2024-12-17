@@ -27,6 +27,7 @@ const Other = ({ country }) => {
         <section className={css.container}>
             <div className="px-4 sm:px-6 lg:px-8">
                 <h1 className="text-3xl md:text-4xl font-bold ">
+                    <i className='fa fa-file-circle-plus mr-4'></i>
                     Interesting and useful information
                 </h1>
                 <div className="grid mt-8 gap-2" style={{ gridTemplateColumns: '1fr 15fr 1fr' }}>

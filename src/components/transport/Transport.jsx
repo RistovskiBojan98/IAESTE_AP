@@ -59,7 +59,10 @@ const Transport = ({ transportRef, country }) => {
     <>
       {countryTransport?.length ? (
         <div className={css.container} ref={transportRef}>
-          <h1 className={css.title}>Transportation</h1>
+          <h1 className={css.title}>
+            <i className='fa fa-train mr-4'></i>
+            Transportation
+          </h1>
           <div className="my-16 grid grid-cols-1 md:grid-cols-2 gap-8">
             {countryTransport.map((transport) => {
               // the first features (max 6) are always shown
