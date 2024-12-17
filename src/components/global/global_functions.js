@@ -1,3 +1,5 @@
+import moment from 'moment';
+
 export const classNames = (...classes) => classes.filter(Boolean).join(" ");
 
 export const bgGradient = "bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]";
@@ -41,5 +43,21 @@ export const getCountryDbName = (country) => {
             return "Czech Republic"
         default:
             return country
+    }
+}
+
+export const mapSummerReceptionWeekend = (weekend, country) => {
+    const start = moment(weekend.startDate).format("DD-MM").replace("-", ".")
+    const end = moment(weekend.endDate).format("DD-MM").replace("-", ".")
+
+    return {
+        ...weekend,
+        country: country.name,
+        startDate: new Date(weekend.startDate),
+        endDate: new Date(weekend.endDate),
+        start,
+        end,
+        title: weekend.name,
+        date: `${start} - ${end}`
     }
 }

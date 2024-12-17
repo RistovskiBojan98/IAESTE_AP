@@ -2,7 +2,9 @@ import React, { useRef, useEffect } from 'react';
 import css from "./event-popup.module.css"
 import Weekend from '../../global/Weekend';
 
+
 const EventPopup = ({ event, onClose }) => {
+    
     const popupRef = useRef(null);
 
     useEffect(() => {
@@ -27,9 +29,6 @@ const EventPopup = ({ event, onClose }) => {
     return (
         <div className={css.overlay}>
             <div className={css.popup} ref={popupRef} style={{ maxWidth: '800px', maxHeight: '600px' }}>
-                <button onClick={onClose} className={css.closeButton}>
-                    <i className="fa-solid fa-x"></i>
-                </button>
                 <Weekend weekend={event}/>
             </div>
         </div>

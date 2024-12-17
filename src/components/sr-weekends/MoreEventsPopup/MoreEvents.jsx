@@ -35,17 +35,14 @@ const MoreEventsPopup = ({ events, date, onClose }) => {
     return (
         <div className={css.overlay}>
             <div className={css.popup} ref={popupRef} style={{ maxWidth: '800px', maxHeight: '600px' }}>
-                <button onClick={onClose} className={css.closeButton}>
-                    <i className="fa-solid fa-x"></i>
-                </button>
                 <div className="w-full h-full p-6 text-white">
-                    <h3 className="text-2xl md:text-4xl font-bold">All events on <br></br>{date}</h3>
+                    <h3 className="text-2xl md:text-4xl font-bold">All events on {date}</h3>
                     <hr className='mt-4'></hr>
-                    <div className={css.overflow}>
+                    <div className={css.overflow} style={{ scrollbarWidth: 'thin'}}>
                         {events[0].map(event => (
-                            <div key={event.name} className={`w-full card mb-3 rounded-lg shadow-md p-3 cursor-pointer h-auto md:h-40 bg-white
-                                                hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]`} onClick={() => handleEventClick(event)}>
-                                <div className="card-body text-[#0B3D59] flex flex-col justify-between h-full hover:text-white">
+                            <div key={event.name} className={`w-full card mb-3 rounded-lg shadow-md p-3 cursor-pointer h-auto md:h-40 bg-white text-[#0B3D59]
+                                                hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] hover:text-white`} onClick={() => handleEventClick(event)}>
+                                <div className="card-body flex flex-col justify-between h-full">
                                     <h2 className="card-title font-semibold text-xl md:text-2xl border-b-2 pb-2">{event.name}</h2>
                                     <div className='flex flex-col mt-2 sm:mt-0'>
                                         <div className={css.cardText}>

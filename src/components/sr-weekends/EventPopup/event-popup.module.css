@@ -16,6 +16,7 @@
     background-color: #0B3D59;
     /* background: linear-gradient(to right, #1B75BB, #27A9E1, #49C0B5); */
     border-radius: 8px;
+    border: 1px solid white;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     width: 80%;
     height: 80%;
