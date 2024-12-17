@@ -29,7 +29,7 @@ const EventPopup = ({ event, onClose }) => {
     return (
         <div className={css.overlay}>
             <div className={css.popup} ref={popupRef} style={{ maxWidth: '800px', maxHeight: '600px' }}>
-                <Weekend weekend={event}/>
+                <Weekend weekend={event} dialog={true}/>
             </div>
         </div>
     );

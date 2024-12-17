@@ -1,12 +1,34 @@
-import React from "react";
+import React, { useRef, useState, useEffect } from "react";
 import css from "./Weekend.module.css"
 
-const Weekend = ({ weekend }) => {
+const Weekend = ({ weekend, dialog }) => {
+    const parentRef = useRef(null)
+    const descRef = useRef(null)
+    const [descHeight, setDescHeight] = useState(320)
+
+    useEffect(() => {
+        if (dialog) {
+            const updateHeight = () => {
+                if (parentRef.current) {
+                    const parentHeight = parentRef.current.offsetHeight
+                    const otherElementsHeight = Array.from(parentRef.current.children)
+                        .filter(child => child !== descRef.current)
+                        .reduce((total, child) => total + child.offsetHeight, 0)
+                    const result = parentHeight - otherElementsHeight - 80 // padding
+                    setDescHeight(result > 0 ? result : 0)
+                }
+            }
+    
+            updateHeight()
+            window.addEventListener("resize", updateHeight)
+            return () => window.removeEventListener("resize", updateHeight)
+        }
+    }, [dialog])
     // to be fixed next year
     weekend.link = null;
 
     return (
-        <div className="w-full bg-[#0B3D59] p-3 sm:p-6 text-white">
+        <div ref={parentRef} className="w-full bg-[#1B75BB] p-3 sm:p-6 text-white">
             <h3 className="text-2xl md:text-4xl font-bold text-center">{weekend.name}</h3>
             <hr className='mt-4'></hr>
             <div className="grid sm:grid-cols-2">
@@ -30,9 +52,9 @@ const Weekend = ({ weekend }) => {
                 )}
             </div>
 
-            <hr className='mt-4'></hr>
-            <div className="overflow-y-hidden hover:overflow-y-scroll mt-4 max-h-64 sm:max-h-80" style={{ scrollbarWidth: 'thin' }}>
-                <p className='text-base md:text-xl mt-4 pb-10 px-2'> {weekend.description.split('\n').map((paragraph, index) => (
+            <hr className='my-4'></hr>
+            <div ref={descRef} className="overflow-y-hidden hover:overflow-y-scroll" style={{ scrollbarWidth: 'thin', maxHeight: descHeight }}>
+                <p className='text-base md:text-xl mt-4 px-2'> {weekend.description.split('\n').map((paragraph, index) => (
                     <span key={index}>{paragraph}<br></br></span>
                 ))}
                 </p>

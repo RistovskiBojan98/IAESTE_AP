@@ -151,8 +151,8 @@ const EventList = () => {
                                 <div className='flex flex-row justify-between gap-4 pr-2 w-full items-center'>
                                     {eventsToShow.map(event => (
                                         <div key={event.name} className={`w-full card rounded-lg shadow-md p-3 cursor-pointer h-auto md:h-40
-                                                hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] hover:text-white text-[#0B3D59]
-                                                ${selectedEvent !== event ? 'bg-white' : 'bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]'}`}>
+                                                hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] hover:text-white text-white
+                                                ${selectedEvent !== event ? 'bg-[#1B75BB]' : 'bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] '}`}>
                                             <div className="card-body  flex flex-col justify-between h-full" onClick={() => handleEventClick(event)}>
                                                 <h2 className="card-title font-semibold text-xl md:text-2xl border-b-2 pb-2">{event.name}</h2>
                                                 <div className='flex flex-col mt-2 sm:mt-0'>

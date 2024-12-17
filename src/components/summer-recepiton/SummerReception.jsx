@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import css from "../sr-weekends/EventPopup/event-popup.module.css"
-import appCss from "../app.module.css"
 import Weekend from '../global/Weekend';
 import { bgGradient, mapSummerReceptionWeekend } from "../global/global_functions";
 
@@ -31,7 +30,7 @@ const SummerReception = ({ country, summerReceptionRef }) => {
         {!!weekends.length ?
           <div>
             <div className="lg:space-y-5 mx-auto max-w-xl sm:space-y-4 lg:max-w-5xl mb-5 text-center">
-              <h2 className={appCss.title}>
+              <h2 className="text-2xl sm:text-4xl font-bold text-center text-[#1B75BB]">
                 Summer Reception 2024
               </h2>
             </div>
@@ -42,7 +41,7 @@ const SummerReception = ({ country, summerReceptionRef }) => {
                     key={index}
                     className={`flex p-1 rounded border border-solid border-gray-300 shadow-md 
                 hover:${bgGradient} hover:text-white w-40 h-20 justify-center items-center text-base
-                ${index === selectedButtonIndex ? 'bg-[#0B3D59] text-white' : 'text-[#0B3D59] bg-white-300'}`}
+                ${index === selectedButtonIndex ? 'bg-[#1B75BB] text-white' : 'text-[#0B3D59] bg-white-300'}`}
                     onClick={() => {
                       setSelectedButtonIndex(index)
                       setWeekend(weekends[index])
@@ -53,7 +52,7 @@ const SummerReception = ({ country, summerReceptionRef }) => {
                 ))}
               </div>
               <div className="border border-gray-300 w-full max-w-7xl shadow-xl overflow-hidden sm:rounded-2xl" style={{ maxHeight: '600px' }}>
-                <Weekend weekend={weekend} />
+                <Weekend weekend={weekend} dialog={false}/>
               </div>
             </div>
             <br></br>
