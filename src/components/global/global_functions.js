@@ -61,3 +61,5 @@ export const mapSummerReceptionWeekend = (weekend, country) => {
         date: `${start} - ${end}`
     }
 }
+
+export const scrollToSection = (ref) => ref.current.scrollIntoView({ behavior: "smooth" })

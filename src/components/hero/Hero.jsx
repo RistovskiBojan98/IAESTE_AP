@@ -1,50 +1,65 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import cerLogoWhite from "../footer/cer-logo-dark.png"
+import { scrollToSection } from '../global/global_functions';
 
 const Hero = ({
     country,
-    scrollToCities,
-    scrollToFood,
-    scrollToTransport,
-    scrollToSummerReception,
-    scrollToInfo,
-    scrollToLcs,
-    scrollToFacts,
-    scrollToGalery
+    citiesRef,
+    foodRef,
+    transportRef,
+    summerReceptionRef,
+    infoRef,
+    lcsRef,
+    factsRef,
+    galleryRef
 }) => {
     // get country image, if they don't have it, set the flag image
-    const heroImg = country.banner ?? country.imageSrc
+    const [heroImg, setHeroImg] = useState('')
     // set social links icons
-    const socialLinks = country.socialLinks?.map(link => {
-        const setIcon = () => {
-            switch(link.name) {
-                case 'Instagram':
-                    return "fab fa-instagram mt-2.5 sm: mt-1.5"
-                case 'Facebook':
-                    return "fab fa-facebook"
-                // case 'pdf':
-                //     return 'fa-regular fa-file-pdf'
-                default:
-                    return 'fas fa-globe' // website
-            }
-        }
-        return { href: link.value, icon: setIcon() }
-    }) ?? []
-    socialLinks.push({ href: country.pdf, icon: 'fa-regular fa-file-pdf' })
+    const [socialLinks, setSocialLinks] = useState([])
     // Scroll buttons
-    const buttons = [
-        {icon: "fa fa-info-circle", title: "General Info", function: scrollToInfo},
-        {icon: "fa fa-city", title: "Local Committees", function: scrollToLcs},
-        {icon: "fa fa-train", title: "Transport", function: scrollToTransport},
-        {icon: "fa fa-location-dot", title: "Travel", function: scrollToCities},
-        {icon: "fa fa-utensils", title: "Cuisine", function: scrollToFood},
-        {icon: "fa fa-umbrella-beach", title: "Summer Reception", function: scrollToSummerReception},
-        {icon: "fa fa-brain", title: "Fun Facts", function: scrollToFacts},
-        {icon: "fa fa-images", title: "Gallery", function: scrollToGalery},
-    ]
+    const [buttons, setButtons] = useState([])
+
+    useEffect(() => {
+        if (country) {
+            setHeroImg(country.banner ?? country.imageSrc)
+            const links = country.socialLinks?.map(link => {
+                const setIcon = () => {
+                    switch(link.name) {
+                        case 'Instagram':
+                            return "fab fa-instagram mt-3.5 sm:mt-1.5"
+                        case 'Facebook':
+                            return "fab fa-facebook"
+                        // case 'pdf':
+                        //     return 'fa-regular fa-file-pdf'
+                        default:
+                            return 'fas fa-globe' // website
+                    }
+                }
+                return { href: link.value, icon: setIcon() }
+            }) ?? []
+            if (country.pdf) links.push({ href: country.pdf, icon: 'fa-regular fa-file-pdf' })
+            setSocialLinks(links)
+        }
+    }, [country])
+
+    useEffect(() => {
+        setTimeout(() => {
+            setButtons([
+                {icon: "fa fa-info-circle", title: "General Info", ref: infoRef},
+                {icon: "fa fa-city", title: "Local Committees", ref: lcsRef},
+                {icon: "fa fa-train", title: "Transport", ref: transportRef},
+                {icon: "fa fa-location-dot", title: "Travel", ref: citiesRef},
+                {icon: "fa fa-utensils", title: "Cuisine", ref: foodRef},
+                {icon: "fa fa-umbrella-beach", title: "Summer Reception", ref: summerReceptionRef},
+                {icon: "fa fa-brain", title: "Fun Facts", ref: factsRef},
+                {icon: "fa fa-images", title: "Gallery", ref: galleryRef},
+            ])
+        }, 300)
+    }, [citiesRef, foodRef, transportRef, summerReceptionRef, infoRef, lcsRef, factsRef, galleryRef])
 
     return (
-        <div className="relative">
+        <div className="relative sm:mt-10">
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
             <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
@@ -54,12 +69,18 @@ const Hero = ({
                         <div className="absolute inset-0 bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] mix-blend-multiply" />
                     </div>
                     {/* CER logo has absolute position in the top right for mobile view, otherwise the navbar is activated*/}
-                    <div className="absolute inset-0 p-3 sm:hidden h-10 z-50">
+                    <div className="absolute inset-x-0 p-2 top-0 h-10 z-50">
                         <a href="/">
-                            <img alt="CER AP" src={cerLogoWhite} className="h-14 w-auto hover:scale-110"/>
+                            <img alt="CER AP" src={cerLogoWhite} className="h-14 mx-auto w-auto hover:scale-110"/>
                         </a>
                     </div>
-                    <div className="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+                    <a className="absolute inset-0 py-2 px-4 h-10 z-50 mt-4" href='/'>
+                        <div className='flex flex-row text-white font-semibold cursor-pointer hover:text-sky-200 items-center w-20'>
+                            <i className='fa fa-chevron-left'></i>
+                            <span className='ml-2'>Back</span>
+                        </div>            
+                    </a>
+                    <div className="relative max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
                         <h1 className="text-center text-white text-4xl font-bold pt-10 sm:pt-0 sm:text-5xl lg:text-6xl">
                             <span>Welcome to</span><br></br>
                             <span>IAESTE {country.name.replace(/-/g, ' ')}</span>
@@ -79,13 +100,14 @@ const Hero = ({
                             </div>
                         </div>
                         {/* Buttons for scrolling to each section*/}
-                        <div className="mx-auto mt-10 flex justify-center">
+                        <div className="mx-auto mt-10 flex justify-center md:p-5 rounded-3xl bg-transparent mix-blend-screen">
                             <div className="mx-auto inline-grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
                                 {buttons.map((button, index) => 
                                     <button 
                                         key={index}
-                                        onClick={button.function}
-                                        className="flex items-center justify-center border rounded-md bg-white p-3 text-base sm:text-lg font-bold text-[#0B3D59] shadow"
+                                        disabled={!button.ref.current}
+                                        onClick={() => scrollToSection(button.ref)}
+                                        className={`flex items-center justify-center border rounded-3xl p-3 text-base sm:text-lg font-bold text-white shadow ${!button.ref.current ? 'bg-gray-400' : 'bg-transparent hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]'}`}
                                     >
                                         <i className={button.icon} />
                                         <span className='ml-2'>{button.title}</span>

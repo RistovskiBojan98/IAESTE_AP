@@ -12,7 +12,7 @@ import Committees from "./committees/Committees.jsx";
 import EmergencyContacts from "./emergencyContacts/EmergencyContacts.jsx";
 import Hero from "./hero/Hero.jsx";
 // import ImageSection from "./imageSection/ImageSection.jsx";
-import Navbar from "./navbar/Navbar.jsx";
+// import Navbar from "./navbar/Navbar.jsx";
 import Plane from "./plane/Plane.jsx";
 import SummerReception from "./summer-recepiton/SummerReception.jsx"
 import Other from "./otherInformation/Other.jsx";
@@ -32,17 +32,6 @@ const Country = () => {
   const summerReceptionRef = useRef(null)
   const factsRef = useRef(null);
   const galleryRef = useRef(null);
-
-  const scrollToSection = (ref) => ref.current.scrollIntoView({ behavior: "smooth" });
-
-  const scrollToInfo = () => scrollToSection(infoRef)
-  const scrollToLcs = () => scrollToSection(lcsRef)
-  const scrollToTransport = () => scrollToSection(transportRef)
-  const scrollToCities = () => scrollToSection(citiesRef)
-  const scrollToFood = () => scrollToSection(foodRef)
-  const scrollToSummerReception = () => scrollToSection(summerReceptionRef)
-  const scrollToFacts = () => scrollToSection(factsRef)
-  const scrollToGalery = () => scrollToSection(galleryRef)
 
   useEffect(() => {
     // Simulate a delay (you can adjust the duration as needed)
@@ -66,17 +55,17 @@ const Country = () => {
         <meta charSet="utf-8" />
         <title>IAESTE | Across {id.replace(/-/g, " ")}</title>
       </Helmet>
-      <Navbar isCountryNav={true} />
+      {/* <Navbar isCountryNav={true} /> */}
       <Hero
         country={country}
-        scrollToCities={scrollToCities}
-        scrollToFood={scrollToFood}
-        scrollToTransport={scrollToTransport}
-        scrollToSummerReception={scrollToSummerReception}
-        scrollToInfo={scrollToInfo}
-        scrollToLcs={scrollToLcs}
-        scrollToFacts={scrollToFacts}
-        scrollToGalery={scrollToGalery}
+        citiesRef={citiesRef}
+        foodRef={foodRef}
+        transportRef={transportRef}
+        summerReceptionRef={summerReceptionRef}
+        infoRef={infoRef}
+        lcsRef={lcsRef}
+        factsRef={factsRef}
+        galleryRef={galleryRef}
       />
       <EmergencyContacts country={country} />
       <GeneralInformation country={country} infoRef={infoRef}/>
