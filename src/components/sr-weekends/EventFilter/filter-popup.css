@@ -1,0 +1,93 @@
+.filter-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent gray background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Ensure the modal is above other content */
+}
+
+.filter-popup {
+    /* max-width: 600px; */
+    max-height: 800px;
+    width: 400px;
+    /* height: 70%; */
+    position: relative;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 768px) {
+        flex-direction: row;
+        max-width: 350px;
+    }
+}
+
+.filter-overflow {
+    max-height: 90%;
+
+    @media (max-width: 768px) {
+        overflow-y: scroll;
+        max-height: 75%;
+    }
+}
+
+.filter-dateContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0.25rem;
+}
+
+.filter-datepickerContainer {
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.filter-datepicker {
+    color: black;
+    padding: 0.25rem;
+    font-weight: 600;
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+
+    @media(max-width: 768px) {
+        font-size: 1rem; /* 16px */
+        line-height: 1.5rem; /* 24px */
+    }
+}
+
+.filter-ConfirmButton {
+    background-color: white;
+    border: 2px solid;
+    font-size: 1.125rem; /* 18px */
+    line-height: 1.75rem; /* 28px */
+    border-radius: 9999px;
+    font-weight: 600;
+    padding: 0.25rem 0.75rem;
+
+    @media(max-width: 768px) {
+        font-size: 1rem; /* 16px */
+        line-height: 1.5rem; /* 24px */
+    }
+}
+
+h4 {
+    font-weight: bold;
+    font-size: 1.5rem; /* 24px */
+    line-height: 2rem; /* 32px */
+
+    @media(max-width: 768px) {
+        font-size: 1.125rem; /* 18px */
+        line-height: 1.75rem; /* 28px */
+    }
+}
