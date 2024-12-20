@@ -1,12 +1,10 @@
 import { Link } from "react-scroll";
 import Navbar from "./navbar/Navbar";
-import css from "./app.module.css"
-import { bgGradient } from "./global/global_functions";
 
 export default function Landing() {
   return (
     <div className="relative overflow-hidden bg-white">
-      <div className={css.containerPosition}>
+      <div className="containerPosition">
         <div className="relative bg-white lg:w-full xl:max-w-2xl pb-8">
           {/* Polygon*/}
           <svg
@@ -22,7 +20,7 @@ export default function Landing() {
           <Navbar />
 
           {/* Title, description and buttons*/}
-          <main className={`${css.containerPosition} px-4 mt-4 sm:mt-8 sm:mb-8 sm:px-6 lg:px-8`}>
+          <main className={`containerPosition px-4 mt-4 sm:mt-8 sm:mb-8 sm:px-6 lg:px-8`}>
             <div className="md:text-center xl:text-left w-full flex flex-col items-start md:items-center xl:items-start">
               <h1 className="text-5xl font-bold pb-3 text-gray-900 md:text-7xl leading-10">
                 Across the planet
@@ -32,14 +30,14 @@ export default function Landing() {
                 and this application will help you find all information needed
                 while travelling across the globe with IAESTE.
               </p>
-              <div className={css.landingBtnsContainer}>
-                <Link to="countries-div" smooth={true} className={`${css.landingBtns} hover:${bgGradient}`}>
+              <div className="landingBtnsContainer">
+                <Link to="countries-div" smooth={true} className="landingBtns hover-bgGradient">
                     DISCOVER A COUNTRY
                     <i className="fa-solid fa-magnifying-glass ml-3"></i>
                 </Link>
               </div>
-              <div className={css.landingBtnsContainer}>
-                <a href="/sr-weekends" className={`${css.landingBtns} hover:${bgGradient}`}>
+              <div className="landingBtnsContainer">
+                <a href="/sr-weekends" className="landingBtns hover-bgGradient">
                     SUMMER RECEPTION
                     <i className="fa-solid fa-umbrella-beach ml-3"></i>
                 </a>

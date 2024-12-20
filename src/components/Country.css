@@ -126,3 +126,11 @@
         display: block;
     }
 }
+
+.bgGradient {
+    background: linear-gradient(to right, #1B75BB, #27A9E1, #49C0B5)
+}
+
+.hover-bgGradient:hover {
+    background: linear-gradient(to right, #1B75BB, #27A9E1, #49C0B5)
+}

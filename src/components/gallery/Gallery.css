@@ -7,3 +7,9 @@
     height: 300px;
   }
 }
+
+.control-arrow {
+  background-color: #1B75BB;
+  margin: 0 2px;
+  border-radius: 5px;
+}

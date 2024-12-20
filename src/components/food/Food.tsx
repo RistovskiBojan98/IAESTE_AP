@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, forwardRef } from "react";
 import FoodCard from "./FoodCard";
 import useWindowSize from "../../hooks/useScreenSize";
-import css from "../app.module.css"
 import { OtherType, CountryComponent } from "../../types/Types";
 
-const Food: React.FC<CountryComponent> = ({ country, ref }) => {
+const Food = forwardRef<HTMLDivElement, CountryComponent>(({ country }, ref) => {
   const { width } = useWindowSize();
   const [cuisine, setCuisine] = useState<OtherType[]>([])
   const [startIndex, setStartIndex] = useState(0)
@@ -36,8 +35,8 @@ const Food: React.FC<CountryComponent> = ({ country, ref }) => {
   }
 
   return dataLen ? (
-    <section ref={ref} className={`${css.container} sm:mt-10 sm:mb-16 pt-4`}>
-      <h2 className={`${css.title} pb-10`}>
+    <section ref={ref} className="container sm:mt-10 sm:mb-16 pt-4">
+      <h2 className="title pb-10">
         <i className='fa fa-utensils mr-4'></i>
         Traditional cuisine
       </h2>
@@ -63,6 +62,6 @@ const Food: React.FC<CountryComponent> = ({ country, ref }) => {
       </div>
     </section>
   ) : null
-};
+});
 
 export default Food;

@@ -1,5 +1,4 @@
 import React from "react";
-import css from "../app.module.css";
 
 interface FoodCardProps {
   title: string
@@ -7,7 +6,7 @@ interface FoodCardProps {
 }
 
 const FoodCard: React.FC<FoodCardProps> = ({ title, description }) =>
-  <div className={css.cardContainer}>
+  <div className="cardContainer">
     <h3 className="pt-2">{title}</h3>
     { !!description && 
       <p className="border-t pt-5">{description}</p>

@@ -76,7 +76,7 @@ const Hero: React.FC<HeroProps> = ({
     }, [citiesRef, foodRef, transportRef, summerReceptionRef, infoRef, lcsRef, factsRef, galleryRef])
 
     return (
-        <div className="relative sm:mt-10">
+        <div className="relative sm:mt-5">
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
             <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
@@ -124,7 +124,7 @@ const Hero: React.FC<HeroProps> = ({
                                         key={index}
                                         disabled={!button.ref.current}
                                         onClick={() => scrollToSection(button.ref)}
-                                        className={`flex items-center justify-center border rounded-3xl p-3 text-base sm:text-lg font-bold text-white shadow ${!button.ref.current ? 'bg-gray-400' : 'bg-transparent hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]'}`}
+                                        className={`flex items-center justify-center border rounded-3xl p-3 text-base sm:text-lg font-bold text-white shadow bg-blend-normal ${!button.ref.current ? 'bg-gray-400' : 'bg-[#0B3D59] hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]'}`}
                                     >
                                         <i className={button.icon} />
                                         <span className='ml-2'>{button.title}</span>

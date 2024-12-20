@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useWindowSize from "../../hooks/useScreenSize";
 import OtherInfoCard from "./InfoCard";
-import css from "../app.module.css"
 import { OtherType, CountryComponent } from "../../types/Types";
 
 const Other: React.FC<CountryComponent> = ({ country }) => {
@@ -24,7 +23,7 @@ const Other: React.FC<CountryComponent> = ({ country }) => {
     const showNext = () => setStartIndex(Math.min(startIndex + (width >= 768 ? 2 : 1), arrayLength - 1));
 
     return otherInfo?.length ? (
-        <section className={css.container}>
+        <section className="container">
             <div className="px-4 sm:px-6 lg:px-8">
                 <h1 className="text-3xl md:text-4xl font-bold ">
                     <i className='fa fa-file-circle-plus mr-4'></i>

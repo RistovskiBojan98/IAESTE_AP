@@ -1,5 +1,4 @@
-import React, { useEffect } from "react"
-import css from "../app.module.css"
+import React, { useState, useEffect, forwardRef } from "react"
 import { InformationType, CountryComponent } from "../../types/Types"
 // logo images
 import voltage from "./images/voltage1.jpg"
@@ -7,8 +6,8 @@ import country_code from "./images/country_dialing_code.jpg"
 import population from "./images/population2.jpg"
 import { GENERAL_INFO_IMGS } from "../global/global_functions";
 
-const GeneralInformation: React.FC<CountryComponent> = ({ country, ref }) => {
-  const [info, setInfo] = React.useState<InformationType[]>([]);
+const GeneralInformation = forwardRef<HTMLDivElement, CountryComponent>(({ country }, ref) => {
+  const [info, setInfo] = useState<InformationType[]>([]);
   // helper function
   const addImgUrl = (obj: InformationType) => {
     switch (obj.name) {
@@ -51,9 +50,9 @@ const GeneralInformation: React.FC<CountryComponent> = ({ country, ref }) => {
 
   return (
     !!info.length ?
-      <div className={`${css.container}`} ref={ref}>
+      <div className="container" ref={ref}>
       <div className="mb-14 space-y-5 sm:mx-auto sm:max-w-xl lg:max-w-5xl">
-        <h2 className={css.title}>
+        <h2 className="title">
         <i className='fa fa-info-circle mr-4'></i>
           General Information
         </h2>
@@ -76,6 +75,6 @@ const GeneralInformation: React.FC<CountryComponent> = ({ country, ref }) => {
     </div>
     : <></>
   );
-};
+});
 
 export default GeneralInformation;

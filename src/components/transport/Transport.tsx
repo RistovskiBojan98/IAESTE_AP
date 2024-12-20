@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from "react";
-import css from "../app.module.css";
-import { Disclosure } from "@headlessui/react";
+import React, { useState, useEffect, forwardRef } from "react";
+import { Disclosure, DisclosurePanel } from "@headlessui/react";
 import TransportFeatures from "./TransportFeatures";
 import { TRANSPORT_CONSTANTS } from "../global/global_functions";
 import ShowMore from "../global/ShowMore";
 import { TransportType, CountryComponent } from "../../types/Types";
 
-const Transport: React.FC<CountryComponent> = ({ country, ref }) => {
+const Transport = forwardRef<HTMLDivElement, CountryComponent>(({ country }, ref) => {
   const [countryTransport, setTransportProps] = useState<TransportType[]>([]);
 
   useEffect(() => {
@@ -58,8 +57,8 @@ const Transport: React.FC<CountryComponent> = ({ country, ref }) => {
   return (
     <>
       {countryTransport?.length ? (
-        <div className={css.container} ref={ref}>
-          <h1 className={css.title}>
+        <div className="container" ref={ref}>
+          <h1 className="title">
             <i className='fa fa-train mr-4'></i>
             Transportation
           </h1>
@@ -84,7 +83,7 @@ const Transport: React.FC<CountryComponent> = ({ country, ref }) => {
                       </div>
 
                     {/* Feature list */}
-                    <ul className="mt-6 space-y-6">
+                    <ul className="mt-6">
                       <TransportFeatures features={firstFeatures} icon={transport.icon}/>
                     </ul>
 
@@ -92,9 +91,9 @@ const Transport: React.FC<CountryComponent> = ({ country, ref }) => {
                       <Disclosure as="div">
                         {({ open }) => (
                           <div>
-                            <Disclosure.Panel as="ul" className="mt-6 space-y-6">
+                            <DisclosurePanel as="ul" className="mt-3">
                               <TransportFeatures features={remainingFeatures} icon={transport.icon}/>
-                            </Disclosure.Panel>
+                            </DisclosurePanel>
                             <ShowMore textColors={["[#0B3D59]", "[#B2D8FB]"]} open={open}/>
                           </div>
                         )}
@@ -109,6 +108,6 @@ const Transport: React.FC<CountryComponent> = ({ country, ref }) => {
       ) : null}
     </>
   );
-};
+});
 
 export default Transport;

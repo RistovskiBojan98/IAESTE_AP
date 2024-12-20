@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, forwardRef } from 'react';
 import "../sr-weekends/EventPopup/event-popup.css"
 import Weekend from '../global/Weekend';
-import { bgGradient, mapSummerReceptionWeekend } from "../global/global_functions";
+import { mapSummerReceptionWeekend } from "../global/global_functions";
 import { CountryComponent, SummerReceptionWeekend } from '../../types/Types';
 
-const SummerReception: React.FC<CountryComponent> = ({ country, ref }) => {
+const SummerReception = forwardRef<HTMLDivElement, CountryComponent>(({ country }, ref) => {
   const [weekend, setWeekend] = useState<SummerReceptionWeekend>();
   const [weekends, setWeekends] = useState<SummerReceptionWeekend[]>([]);
   const [loading, setLoading] = useState(true);
@@ -42,7 +42,7 @@ const SummerReception: React.FC<CountryComponent> = ({ country, ref }) => {
                   <button
                     key={index}
                     className={`flex p-1 rounded border border-solid border-gray-300 shadow-md 
-                hover:${bgGradient} hover:text-white w-40 h-20 justify-center items-center text-base
+                hover-bgGradient hover:text-white w-40 h-20 justify-center items-center text-base
                 ${index === selectedButtonIndex ? 'bg-[#1B75BB] text-white' : 'text-[#0B3D59] bg-white-300'}`}
                     onClick={() => {
                       setSelectedButtonIndex(index)
@@ -54,7 +54,7 @@ const SummerReception: React.FC<CountryComponent> = ({ country, ref }) => {
                 ))}
               </div>
               <div className="border border-gray-300 w-full max-w-7xl shadow-xl overflow-hidden sm:rounded-2xl" style={{ maxHeight: '600px' }}>
-                <Weekend weekend={weekend} dialog={false}/>
+                <Weekend weekend={weekend} dialog={false} />
               </div>
             </div>
             <br></br>
@@ -65,6 +65,6 @@ const SummerReception: React.FC<CountryComponent> = ({ country, ref }) => {
       </section>
     );
   } return <></>
-};
+});
 
 export default SummerReception;

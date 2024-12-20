@@ -1,7 +1,6 @@
 import React from "react";
-import { Disclosure } from "@headlessui/react";
+import { Disclosure, DisclosureButton, DisclosurePanel } from "@headlessui/react";
 import DownIcon from "../global/DownIcon";
-import { bgGradient } from "../global/global_functions";
 
 interface StatsInfoProps {
   id: number;
@@ -30,20 +29,20 @@ const StatsInfo: React.FC<StatsInfoProps> = ({ id }) => {
       {({ open }) => (
         <div>
           <dt>
-            <Disclosure.Button className="flex w-64 items-start justify-between text-left text-gray-400 my-5">
-              <span className={`hover:${bgGradient} bg-clip-text text-white hover:text-transparent text-xl font-semibold`}>
+            <DisclosureButton className="flex w-64 items-start justify-between text-left text-gray-400 my-5">
+              <span className="hover-bgGradient bg-clip-text text-white hover:text-transparent text-xl font-semibold">
                 {data?.title}
               </span>
               <DownIcon isOpen={open} />
-            </Disclosure.Button>
+            </DisclosureButton>
           </dt>
-          <Disclosure.Panel as="dd" className="mt-2 pr-12">
+          <DisclosurePanel as="dd" className="mt-2 pr-12">
             <p className="mt-5 text-lg text-gray-300">
               {data?.info.split('\n').map((paragraph: string, index: number) => (
                 <span key={index}>{paragraph}<br></br></span>
               ))}
             </p>
-          </Disclosure.Panel>
+          </DisclosurePanel>
         </div>
       )}
     </Disclosure>

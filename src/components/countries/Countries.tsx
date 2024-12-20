@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import css from "../app.module.css"
 import { fetchDbData } from "../../service/CountriesService";
 import { CountryType } from "../../types/Types";
 
@@ -34,7 +33,7 @@ const Countries: React.FC<CountriesProps> = ({ passRef }) => {
 
   return (
     <div className="bg-white overflow-x-hidden" ref={passRef} id="countries-div">
-      <div className={`${css.containerPosition} py-8 px-4 sm:px-6 g:px-8`}>
+      <div className="containerPosition py-8 px-4 sm:px-6 g:px-8">
         <div>
           <h2 className="font-bold text-3xl">
             IAESTE CER & CoRe Member Countries

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Disclosure } from '@headlessui/react';
+import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/react';
 import { CityType } from '../../types/Types';
 import DownIcon from '../global/DownIcon'; // Ensure you have this component
 
@@ -14,16 +14,16 @@ const CityInfoPanel: React.FC<CityProps> = ({ cities }) => (
         {({ open }) => (
           <div>
             <dt className="text-[#F1F1E6] hover:text-[#B2D8FB]">
-              <Disclosure.Button className="flex w-full items-start justify-between text-left px-3">
+              <DisclosureButton className="flex w-full items-start justify-between text-left px-3">
                 <span className="font-semibold text-2xl">{city.name}</span>
                 <DownIcon isOpen={open} />
-              </Disclosure.Button>
+              </DisclosureButton>
             </dt>
-            <Disclosure.Panel as="dd" className="mt-2 pr-12">
+            <DisclosurePanel as="dd" className="mt-2 pr-12">
               <p className="p-4 text-lg" style={{ color: 'white', fontWeight: '300' }}>
                 {city.description}
               </p>
-            </Disclosure.Panel>
+            </DisclosurePanel>
           </div>
         )}
       </Disclosure>

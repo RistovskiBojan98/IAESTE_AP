@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import css from "../app.module.css"
 import { EmergencyContactsType, CountryComponent } from '../../types/Types';
 
 const EmergencyContacts: React.FC<CountryComponent> = ({ country }) => {
@@ -26,8 +25,8 @@ const EmergencyContacts: React.FC<CountryComponent> = ({ country }) => {
   if (!loading && contacts) {
     return (
       <div className="bg-gray-100 pt-12">
-        <div className={`${css.containerPosition} text-center px-4 sm:px-6 lg:px-8`}>
-          <h2 className={css.title}>
+        <div className="containerPosition text-center px-4 sm:px-6 lg:px-8">
+          <h2 className="title">
             <i className='fa fa-phone mr-4'></i>
             Emergency numbers
           </h2>
@@ -35,7 +34,7 @@ const EmergencyContacts: React.FC<CountryComponent> = ({ country }) => {
         <div className="mt-10 bg-white">
           <div className="relative">
             <div className="absolute inset-0 h-1/2 bg-gray-100" />
-            <div className={`relative ${css.containerPosition} px-4 sm:px-6 lg:px-8`}>
+            <div className="relative containerPosition} px-4 sm:px-6 lg:px-8">
               <div className="mx-auto max-w-4xl">
                 <dl className={`rounded-lg bg-white shadow-lg grid ${!secondRowContacts.length ? 'grid-cols-3' : 'grid-cols-2 sm:grid-cols-4'}`}>
                   {contacts.map((contact, index) =>

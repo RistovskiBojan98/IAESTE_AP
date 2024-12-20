@@ -7,7 +7,7 @@ interface TransportFeatureProps {
 }
 
 const TransportFeatures: React.FC<TransportFeatureProps> = ({features, icon}) =>
-  <ul>
+  <ul className="space-y-3">
     {features.map((feature, index) =>
         <li key={feature + "-" + index} className="flex items-center">
           <i

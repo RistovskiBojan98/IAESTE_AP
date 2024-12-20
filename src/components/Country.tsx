@@ -18,20 +18,21 @@ import Other from "./otherInformation/Other";
 import { fetchCountryData } from "../service/CountriesService";
 import ScrollToTop from "./scroll/ScrollToTop";
 import { CountryType } from "../types/Types";
+import "./Country.css"
 
 const Country = () => {
   const { id } = useParams();
   const [isLoading, setIsLoading] = useState(true);
   const [country, setCountry] = useState<CountryType>()
 
-  const infoRef = useRef(null);
-  const lcsRef = useRef(null);
-  const transportRef = useRef(null);
-  const citiesRef = useRef(null);
-  const foodRef = useRef(null);
-  const summerReceptionRef = useRef(null)
-  const factsRef = useRef(null);
-  const galleryRef = useRef(null);
+  const infoRef = useRef<HTMLDivElement>(null);
+  const lcsRef = useRef<HTMLDivElement>(null);
+  const transportRef = useRef<HTMLDivElement>(null);
+  const citiesRef = useRef<HTMLDivElement>(null);
+  const foodRef = useRef<HTMLDivElement>(null);
+  const summerReceptionRef = useRef<HTMLDivElement>(null)
+  const factsRef = useRef<HTMLDivElement>(null);
+  const galleryRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (id) {

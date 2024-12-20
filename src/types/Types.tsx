@@ -88,7 +88,7 @@ export interface SocialLinkType {
 
 export interface CountryComponent {
     country: CountryType
-    ref?: React.RefObject<null>
+    ref?: React.RefObject<HTMLDivElement>
 }
 
 export interface SummerReceptionWeekend {

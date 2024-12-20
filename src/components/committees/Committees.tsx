@@ -1,13 +1,11 @@
-import React from "react";
-import { bgGradient } from "../global/global_functions";
-import css from "../app.module.css"
+import React, { forwardRef } from "react";
 import { CountryComponent } from "../../types/Types";
 
-const Committees: React.FC<CountryComponent> = ({ country, ref }) => {
+const Committees = forwardRef<HTMLDivElement, CountryComponent>(({ country }, ref ) => {
   const countryCommittees = country.committees ?? []
 
   return (
-    <div className={`relative ${bgGradient} ${css.containerPosition} sm:px-6 lg:px-8 shadow-xl sm:overflow-hidden sm:rounded-2xl`} ref={ref}>
+    <div className="relative bgGradient containerPosition sm:px-6 lg:px-8 shadow-xl sm:overflow-hidden sm:rounded-2xl" ref={ref}>
       <div className="relative mx-auto max-w-md px-4 py-12 sm:max-w-7xl text-center">
         <h2 className="text-3xl md:text-4xl font-semibold text-[#F1F1E6]">
         <i className='fa fa-city mr-4'></i>
@@ -41,6 +39,6 @@ const Committees: React.FC<CountryComponent> = ({ country, ref }) => {
       </div>
     </div>
   );
-};
+});
 
 export default Committees;

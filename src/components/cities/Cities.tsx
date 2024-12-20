@@ -1,12 +1,10 @@
-import React from "react";
-import { Disclosure } from "@headlessui/react";
-import css from "../app.module.css"
-import { bgGradient } from "../global/global_functions";
+import React, { forwardRef } from "react";
+import { Disclosure, DisclosurePanel } from "@headlessui/react";
 import CityInfoPanel from "./CityInfoPanel";
 import ShowMore from "../global/ShowMore";
 import { CountryComponent } from "../../types/Types";
 
-const Cities: React.FC<CountryComponent> = ({ country, ref }) => {
+const Cities = forwardRef<HTMLDivElement, CountryComponent>(({ country }, ref) => {
   const countryCities = country.cities ?? []
   // the first cities (max 5) are always shown
   // if there are additional, they are covered in the see more tab
@@ -15,9 +13,9 @@ const Cities: React.FC<CountryComponent> = ({ country, ref }) => {
 
   return (
     <section ref={ref}>
-      <div className={`${css.container} ${bgGradient} shadow-xl sm:overflow-hidden sm:rounded-2xl mb-10`}>
+      <div className="container bgGradient shadow-xl sm:overflow-hidden sm:rounded-2xl mb-10">
         <div className="mx-auto max-w-3xl divide-y-2 divide-gray-200">
-          <h2 className={css.title2}>
+          <h2 className="title2">
             <i className='fa fa-location-dot mr-4'></i>
             Places that we recommend visiting:
           </h2>
@@ -28,9 +26,9 @@ const Cities: React.FC<CountryComponent> = ({ country, ref }) => {
               <Disclosure as="div" key="additionalCities">
                 {({ open }) => (
                   <div>
-                    <Disclosure.Panel as="dt" className="space-y-6 divide-y divide-[#F1F1E6]" key="additionalCitiesPanel">
+                    <DisclosurePanel as="dt" className="space-y-6 divide-y divide-[#F1F1E6]" key="additionalCitiesPanel">
                       <CityInfoPanel cities={additionalCities} />
-                    </Disclosure.Panel>
+                    </DisclosurePanel>
                     <ShowMore textColors={["[#F1F1E6]", "[#B2D8FB]"]} open={open}/>
                   </div>
                 )}
@@ -41,6 +39,6 @@ const Cities: React.FC<CountryComponent> = ({ country, ref }) => {
       </div>
     </section>
   );
-};
+});
 
 export default Cities;
