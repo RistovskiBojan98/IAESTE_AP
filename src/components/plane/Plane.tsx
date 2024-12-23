@@ -9,7 +9,7 @@ const Plane: React.FC<PlaneProps> = ({ country }) => {
   const name = getCountryDbName(country)
   return (
     <div
-      className="absolute inset-0 flex justify-center items-center bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] mix-blend-multiply"
+      className="absolute inset-0 flex justify-center items-center bgGradient mix-blend-multiply"
       aria-hidden="true"
     >
       <div className="text-white text-center space-y-4">

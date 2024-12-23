@@ -6,15 +6,18 @@ import { addClickEventListeners } from '../../global/global_functions';
 
 interface EventPopupProps {
     event: SummerReceptionWeekend;
-    onClose: () => void;
+    setSelectedEvent: (event: SummerReceptionWeekend | null) => void;
 }
 
-const EventPopup: React.FC<EventPopupProps> = ({ event, onClose }) => {
+const EventPopup: React.FC<EventPopupProps> = ({ event, setSelectedEvent }) => {
     const popupRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        addClickEventListeners(popupRef, onClose);
-    }, [onClose]);
+        addClickEventListeners(popupRef, () => {
+            setSelectedEvent(null)
+            localStorage.removeItem('selectedEvent');
+        });
+    }, [setSelectedEvent]);
 
     return (
         <div className="overlay">

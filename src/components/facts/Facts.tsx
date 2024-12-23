@@ -9,7 +9,7 @@ const Facts = forwardRef<HTMLDivElement, CountryComponent>(({ country }, ref) =>
     <section
       ref={ref}
       aria-labelledby="testimonial-heading"
-      className="container bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] shadow-xl sm:overflow-hidden sm:rounded-2xl sm:mb-10"
+      className="container bgGradient shadow-xl sm:overflow-hidden sm:rounded-2xl sm:mb-10"
     >
       <div className="mx-auto max-w-2xl lg:max-w-none text-start">
         <h2 id="testimonial-heading" className="title2">

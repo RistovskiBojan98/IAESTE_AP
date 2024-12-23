@@ -83,7 +83,7 @@ const Hero: React.FC<HeroProps> = ({
                     {/* Hero image has absolute position in the middle*/}
                     <div className="absolute inset-0">
                         <img className="h-full w-full object-cover" src={heroImg} alt="IAESTE" />
-                        <div className="absolute inset-0 bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] mix-blend-multiply" />
+                        <div className="absolute inset-0 bgGradient mix-blend-multiply" />
                     </div>
                     {/* CER logo has absolute position in the top right for mobile view, otherwise the navbar is activated*/}
                     <div className="absolute inset-x-0 p-2 top-0 h-10 z-50">

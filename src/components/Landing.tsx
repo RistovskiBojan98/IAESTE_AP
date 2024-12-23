@@ -54,7 +54,7 @@ export default function Landing() {
           alt=""
         />
         <div
-          className="xl:absolute inset-0 bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] mix-blend-multiply"
+          className="xl:absolute inset-0 bgGradient mix-blend-multiply"
           aria-hidden="true"
         />
       </div>

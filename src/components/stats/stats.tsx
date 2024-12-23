@@ -22,7 +22,7 @@ export default function Stats() {
             />
             <div
               aria-hidden="true"
-              className="absolute inset-0 bg-gradient-to-r to-[#49C0B5] mix-blend-multiply"
+              className="absolute inset-0 bgGradient mix-blend-multiply"
             />
           </div>
         </div>

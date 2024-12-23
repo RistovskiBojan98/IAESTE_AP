@@ -3,7 +3,7 @@ import React from "react";
 const Loader = () => {
     return (
         <div
-            className="absolute inset-0 flex justify-center items-center bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]"
+            className="absolute inset-0 flex justify-center items-center bgGradient"
             aria-hidden="true"
         >
             <div className="text-white text-center space-y-4">

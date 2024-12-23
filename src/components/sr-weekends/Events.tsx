@@ -1,35 +1,24 @@
 import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-import EventPopup from './EventPopup/Event';
 import FilterPopup from "./EventFilter/Filter"
-import MoreEventsPopup from "./MoreEventsPopup/MoreEvents"
 import useWindowSize from '../../hooks/useScreenSize';
 import "./sr-weekends.css"
 import { fetchDbData } from "../../service/CountriesService"
 import { mapSummerReceptionWeekend } from '../global/global_functions';
 import EventCalendar from './EventCalendar/Calendar';
 import { SummerReceptionWeekend, FilterType } from '../../types/Types';
+import WeekendList from '../global/WeekendList';
 
-const EventList = () => {
+const Events = () => {
     const { width } = useWindowSize();
     const [transformedEvents, setTransformedEvents] = useState<SummerReceptionWeekend[]>([])
     const [filteredEvents, setFilteredEvents] = useState<SummerReceptionWeekend[]>([]);
-    const [eventsToShow, setEventsToShow] = useState<SummerReceptionWeekend[]>([])
-    const [selectedEvent, setSelectedEvent] = useState(null);
-    const [moreEvents, setMoreEvents] = useState<SummerReceptionWeekend[]>([])
-    const [moreEventsSelectedDate, setMoreEventsSelectedDate] = useState<string>("")
     const [filter, setFilter] = useState<FilterType[]>([])
-    const [maxEvents, setMaxEvents] = useState(1)
-    const [startIndex, setStartIndex] = useState(0)
     // State for controlling the visibility of the filter popup
     const [isFilterPopupOpen, setIsFilterPopupOpen] = useState(false);
     // Define state variables for current date
     const [currentDate, setCurrentDate] = useState(moment());
-
-    useEffect(() => {
-        setMaxEvents(width >= 768 ? 3 : 1)
-    }, [width])
 
     useEffect(() => {
         const fetchData = async () => {
@@ -49,57 +38,11 @@ const EventList = () => {
         setFilteredEvents(transformedEvents)
     }, [transformedEvents])
 
-    useEffect(() => {
-        setEventsToShow(filteredEvents.slice(startIndex, maxEvents + startIndex))
-    }, [startIndex, filteredEvents, maxEvents])
-
     // Function to toggle the visibility of the filter popup
     const toggleFilterPopup = () => setIsFilterPopupOpen(!isFilterPopupOpen)
 
-    // Function to handle event click and open the popup
-    const handleEventClick = (event: any) => {
-        setSelectedEvent(event);
-        setCurrentDate(moment(event.startDate)); // Set the current date to the event's start date
-    };
-
-    // Function to close the popup
-    const closePopup = () => {
-        setSelectedEvent(null);
-        localStorage.removeItem('selectedEvent')
-    };
-
-    // event list buttons
-    const handlePreviousEvents = () => {
-        setStartIndex(startIndex - maxEvents)
-    }
-
-    const handleNextEvents = () => {
-        setStartIndex(startIndex + maxEvents)
-    }
-
-    // Customizing the 'Show More' button
-    const showMoreEvents = (events: SummerReceptionWeekend[]) => {
-        const date = currentDate.toDate().toLocaleDateString('en-GB', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'short',
-            day: 'numeric'
-        });
-        setMoreEvents(events)
-        setMoreEventsSelectedDate(date)
-    }
-
-    const closeMoreEvents = () => {
-        setMoreEvents([])
-        setMoreEventsSelectedDate("")
-        const selectedEvent = localStorage.getItem('selectedEvent');
-        if (selectedEvent) handleEventClick(JSON.parse(selectedEvent))
-    }
-
     return (
         <div>
-            {selectedEvent && (<EventPopup event={selectedEvent} onClose={closePopup} />)}
-            {!!moreEvents.length && (<MoreEventsPopup events={moreEvents} date={moreEventsSelectedDate} onClose={closeMoreEvents} />)}
             <div className="mx-auto w-full bg-[#0B3D59] py-4">
                 <div className="w-full px-3 sm:px-10 relative justify-center items-center text-center">
                     <h2 className="titleText text-white">
@@ -146,33 +89,7 @@ const EventList = () => {
                             </div>
                         )}
                         {filteredEvents.length ? (
-                            <div className="flex flex-row justify-between items-center gap-4 mt-2">
-                                <button onClick={handlePreviousEvents} disabled={!startIndex}>
-                                    <i className='fa fa-chevron-left text-xl text-[#0B3D59]' ></i>
-                                </button>
-                                <div className='flex flex-row justify-between gap-4 pr-2 w-full items-center'>
-                                    {eventsToShow.map(event => (
-                                        <div key={event.name} className={`w-full card rounded-lg shadow-md p-3 cursor-pointer h-auto md:h-40
-                                                hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] hover:text-white text-white
-                                                ${selectedEvent !== event ? 'bg-[#1B75BB]' : 'bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] '}`}>
-                                            <div className="card-body  flex flex-col justify-between h-full" onClick={() => handleEventClick(event)}>
-                                                <h2 className="card-title font-semibold text-xl md:text-2xl border-b-2 pb-2">{event.name}</h2>
-                                                <div className='flex flex-col mt-2 sm:mt-0'>
-                                                    <div className="cardText">
-                                                        <i className="far fa-calendar-alt mr-2"></i> {event.start} - {event.end}
-                                                    </div>
-                                                    <div className="cardText">
-                                                        <i className="fas fa-map-marker-alt mr-2"></i> {event.location}
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                                <button onClick={handleNextEvents} disabled={filteredEvents.length - 1 <= startIndex + maxEvents}>
-                                    <i className='fa fa-chevron-right text-xl text-[#0B3D59]' ></i>
-                                </button>
-                            </div>
+                            <WeekendList weekends={filteredEvents} setCurrentDate={setCurrentDate} />
                         ) : (
                             <div className="flex justify-center items-center h-full mt-2">
                                 <h2 className="titleText text-center">
@@ -181,14 +98,13 @@ const EventList = () => {
                                 </h2>
                             </div>
                         )}
-
                     </div>
                     {/* calendar */}
-                    <EventCalendar filteredEvents={filteredEvents} handleEventClick={handleEventClick} currentDate={currentDate} setCurrentDate={setCurrentDate} showMoreEvents={showMoreEvents} />
+                    <EventCalendar filteredEvents={filteredEvents} currentDate={currentDate} setCurrentDate={setCurrentDate} />
                 </div>
             </div>
         </div>
     );
 }
 
-export default EventList;
+export default Events;

@@ -2,8 +2,6 @@ import moment from 'moment';
 import { CountryType, WeekendType, SummerReceptionWeekend } from '../../types/Types';
 
 // global constants
-export const bgGradient = "bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]";
-
 export const TRANSPORT_CONSTANTS = {
     AIRPORTS: 1,
     NATIONAL_AND_INTERNATIONAL_TRANSPORT: 2,

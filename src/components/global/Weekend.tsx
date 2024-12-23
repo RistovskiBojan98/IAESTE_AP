@@ -64,11 +64,11 @@ const Weekend: React.FC<WeekendProps> = ({ weekend, dialog }) => {
             </div>
 
             <hr className='my-4'></hr>
-            <div ref={descRef} className="overflow-y-hidden hover:overflow-y-scroll" style={{ scrollbarWidth: 'thin', maxHeight: descHeight }}>
-                <p className='text-base md:text-xl mt-4 px-2'> {weekend.description.split('\n').map((paragraph: string, index: number) => (
+            <div ref={descRef} className="overflow-y-hidden hover:overflow-y-scroll" style={{ scrollbarWidth: 'thin', maxHeight: descHeight, textAlign: 'start' }}>
+                <div className='text-base md:text-xl mt-4 px-2'> {weekend.description.split('\n').map((paragraph: string, index: number) => (
                     <span key={index}>{paragraph}<br></br></span>
                 ))}
-                </p>
+                </div>
             </div>
             {/* <div className="w-full md:w-1/2">
                 <img

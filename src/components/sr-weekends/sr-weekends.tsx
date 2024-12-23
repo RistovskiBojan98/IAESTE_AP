@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet";
 import Footer from "../footer/Footer";
-import EventList from "./EventList";
+import Events from "./Events";
 import Loader from "./Loader";
 import "./sr-weekends.css";
 
@@ -31,7 +31,7 @@ export default function SRWeekends() {
             <meta charSet="utf-8" />
             <title>IAESTE | Across the Planet | Summer Reception </title>
           </Helmet>
-          <EventList />
+          <Events />
           <Footer />
         </div>
       )}
