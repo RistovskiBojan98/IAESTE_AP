@@ -19,9 +19,9 @@ const SummerReception = forwardRef<HTMLDivElement, CountryComponent>(({ country 
     return (
       weekends.length ?
         <section className="mt-10" ref={ref}>
-          <div className='container bg-[#0B3D59] rounded-lg shadow-lg'>
+          <div className='container bg-[#d2f5ff] rounded-lg shadow-lg'>
             <div className="lg:space-y-5 mx-auto max-w-xl sm:space-y-4 lg:max-w-5xl mb-5 ">
-              <h2 className="text-2xl sm:text-4xl font-bold text-white">
+              <h2 className="text-2xl sm:text-4xl font-bold text-[#1B7198]">
                 <i className='fa fa-umbrella-beach mr-4 mb-4'></i>
                 Summer Reception 2024
               </h2>
