@@ -31,7 +31,7 @@ const Weekend: React.FC<WeekendProps> = ({ weekend, dialog }) => {
         }
     }, [dialog])
     // to be fixed next year
-    weekend.link = "";
+    // weekend.link = "";
 
     return (
         <div ref={parentRef} className="w-full bg-[#1B75BB] p-3 sm:p-6 text-white">

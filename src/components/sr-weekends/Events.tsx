@@ -19,6 +19,7 @@ const Events = () => {
     const [isFilterPopupOpen, setIsFilterPopupOpen] = useState(false);
     // Define state variables for current date
     const [currentDate, setCurrentDate] = useState(moment());
+    const currentYear = new Date().getFullYear()
 
     useEffect(() => {
         const fetchData = async () => {
@@ -29,7 +30,7 @@ const Events = () => {
                 if (summerReception.length) weekends = [...weekends, ...summerReception]
             })
             weekends.sort((a, b) => new Date(a.startDate).getTime() - new Date(b.startDate).getTime())
-            setTransformedEvents(weekends)
+            setTransformedEvents(weekends.filter(weekend => weekend.startDate.getFullYear() === currentYear))
         }
         fetchData()
     }, [])
@@ -40,6 +41,7 @@ const Events = () => {
 
     // Function to toggle the visibility of the filter popup
     const toggleFilterPopup = () => setIsFilterPopupOpen(!isFilterPopupOpen)
+    
 
     return (
         <div>
@@ -47,7 +49,7 @@ const Events = () => {
                 <div className="w-full px-3 sm:px-10 relative justify-center items-center text-center">
                     <h2 className="titleText text-white">
                         <i className="fa-solid fa-umbrella-beach mr-3"></i>
-                        Summer Reception 2024
+                        Summer Reception {currentYear}
                     </h2>
                     <a className="absolute top-2 left-4 items-center flex flex-row text-white font-semibold cursor-pointer hover:text-sky-200" href='/'>
                         <i className='fa fa-chevron-left'></i>
