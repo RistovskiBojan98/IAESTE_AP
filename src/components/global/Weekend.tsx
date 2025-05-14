@@ -44,19 +44,14 @@ const Weekend: React.FC<WeekendProps> = ({ weekend, dialog }) => {
                 <div className="info">
                     <i className="fas fa-map-marker-alt mr-2"></i> {weekend.location}
                 </div>
-                <div className="info hover:text-sky-700">
-                    {weekend.link ? (
+                {!!weekend.link && (
+                    <div className="info hover:text-blue-900 hover:underline">
                         <a href={weekend.link} target='_blank' rel="noreferrer">
                             <i className="fas fa-link mr-1"></i> Registration link
                         </a>
-                    ) : (
-                        <span className="cursor-not-allowed">
-                            <i className="fas fa-link mr-1"></i> Registration over
-                        </span>
-                    )}
-                </div>
-
-                {!!weekend.limit && (
+                    </div>
+                )}
+                {!!weekend.link && !!weekend.limit && (
                     <div className="info">
                         <i className="fas fa-users mr-3"></i> Max. spots: {weekend.limit}
                     </div>
