@@ -33,7 +33,7 @@ const Events = () => {
             setTransformedEvents(weekends.filter(weekend => weekend.startDate.getFullYear() === currentYear))
         }
         fetchData()
-    }, [])
+    }, [currentYear])
 
     useEffect(() => {
         setFilteredEvents(transformedEvents)
