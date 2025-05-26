@@ -30,7 +30,7 @@ const StatsInfo: React.FC<StatsInfoProps> = ({ id }) => {
         <div>
           <dt>
             <DisclosureButton className="flex w-64 items-start justify-between text-left text-gray-400 my-5">
-              <span className="hover-bgGradient bg-clip-text text-white hover:text-transparent text-xl font-semibold">
+              <span className="bg-clip-text text-white hover:text-gray-100 text-xl font-semibold">
                 {data?.title}
               </span>
               <DownIcon isOpen={open} />
