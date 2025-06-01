@@ -6,11 +6,14 @@ import Layout from "./components/Layout";
 import Country from "./components/Country";
 import Plane from "./components/plane/Plane";
 import SRWeekends from "./components/sr-weekends/sr-weekends";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   const queryClient = new QueryClient();
   return (
     <div className="App ">
+      <ToastContainer />
       <BrowserRouter>
         <QueryClientProvider client={queryClient}>
           <header className="max-w-full">

@@ -27,6 +27,7 @@
     "react-scripts": "^5.0.1",
     "react-scroll": "^1.9.0",
     "react-slick": "^0.30.3",
+    "react-toastify": "^11.0.5",
     "slick-carousel": "^1.8.1",
     "summer-app-cer": "file:",
     "typescript": "^4.9.5",

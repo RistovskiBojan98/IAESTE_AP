@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import cerLogoWhite from "../footer/cer-logo-dark.png"
 import { scrollToSection } from '../global/global_functions';
 import { CountryType, SocialLinkType } from '../../types/Types';
+import { toast } from 'react-toastify';
 
 interface HeroProps {
     country: CountryType,
@@ -39,6 +40,11 @@ const Hero: React.FC<HeroProps> = ({
     // Scroll buttons
     const [buttons, setButtons] = useState<HeroButton[]>([])
 
+    const handleEmailCopyToClipboard = (emailAddress: string) => {
+        navigator.clipboard.writeText(emailAddress)
+        toast.success(`Email address: ${emailAddress} copied to clipboard!`)
+    }
+
     useEffect(() => {
         setHeroImg(country.banner ?? country.imageSrc)
         const links: SocialLinkType[] = country.socialLinks?.map(link => {
@@ -48,6 +54,10 @@ const Hero: React.FC<HeroProps> = ({
                         return "fab fa-instagram mt-3.5 sm:mt-1.5"
                     case 'Facebook':
                         return "fab fa-facebook"
+                    case "WhatsApp":
+                        return "fab fa-whatsapp"
+                    case "Email Address":
+                        return "fas fa-envelope"
                     // case 'pdf':
                     //     return 'fa-regular fa-file-pdf'
                     default:
@@ -108,10 +118,17 @@ const Hero: React.FC<HeroProps> = ({
                                 style={{ textShadow: '0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5)' }}
                             >
                                 {socialLinks.map((link, index) =>
+                                    link && link.value !== "" &&
                                     <ul key={index} className="flex items-center">
-                                        <a href={link.value} target="_blank" rel="noopener noreferrer">
-                                            <i className={`${link.icon} mx-2 hover:scale-110`}></i>
-                                        </a>
+                                        {link.name !== "Email Address" ? (
+                                            <a href={link.value} target="_blank" rel="noopener noreferrer">
+                                                <i className={`${link.icon} mx-2 hover:scale-110`}></i>
+                                            </a>
+                                        ) : (
+                                            <div onClick={() => handleEmailCopyToClipboard(link.value)}>
+                                                <i className={`${link.icon} mx-2 hover:scale-110 cursor-pointer`}></i>
+                                            </div>
+                                        )}
                                     </ul>
                                 )}
                             </div>
