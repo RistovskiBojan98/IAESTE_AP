@@ -10033,7 +10033,6 @@ sucrase@^3.35.0:
     "@types/node" "^22.10.2"
     "@types/react" "^19.0.2"
     "@types/react-dom" "^19.0.2"
-    caniuse-lite "^1.0.30001720"
     firebase "^11.1.0"
     heroicons-react "^1.4.1"
     moment "^2.30.1"

@@ -55,9 +55,9 @@ const WeekendList: React.FC<WeekendListProps> = ({ weekends, setCurrentDate }) =
                 <button onClick={handlePreviousEvents} disabled={!startIndex}>
                     <i className={`fa fa-chevron-left text-xl ${!startIndex ? 'text-gray-300' : 'text-[#1B75BB]'}`}></i>
                 </button>
-                <div className='flex flex-row justify-between gap-4 pr-2 w-full items-center'>
+                <div className='flex flex-row justify-center gap-4 pr-2 w-full items-center'>
                     {eventsToShow.map(event => (
-                        <div key={event.name} className={`w-full card rounded-lg shadow-md p-3 cursor-pointer h-auto md:h-40
+                        <div key={event.name} className={`w-full card rounded-lg shadow-md p-3 cursor-pointer h-auto md:h-40 max-w-[400px]
                                                 hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] hover:text-white text-white
                                                 ${selectedEvent !== event ? 'bg-[#1B75BB]' : 'bgGradient '}`}>
                             <div className="card-body  flex flex-col justify-between h-full" onClick={() => handleEventClick(event)}>
