@@ -1,0 +1,15 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Optional: slight slide up */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards; /* Adjust duration and easing as needed */
+  /* 'forwards' ensures the element stays at the end state of the animation */
+}

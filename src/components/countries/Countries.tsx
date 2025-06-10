@@ -1,6 +1,7 @@
 import { useState, useEffect, useCallback } from "react";
 import { fetchDbData } from "../../service/CountriesService";
 import { CountryType } from "../../types/Types";
+import './Countries.css';
 
 interface CountriesProps {
   passRef: React.RefObject<null>
@@ -91,7 +92,7 @@ const Countries: React.FC<CountriesProps> = ({ passRef }) => {
         </div>
         <div className="mt-12 grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-4 xl:gap-8">
           {displayedCountries.map((country, index) => (
-            <div className="text-center" key={index}>
+            <div className="text-center opacity-0 animate-fade-in" key={index}>
               <a key={country.id} className="group items-center" href={country.href}>
                   <div className="mx-auto h-20 w-20 sm:h-40 sm:w-40">
                     <img
