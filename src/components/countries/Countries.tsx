@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { fetchDbData } from "../../service/CountriesService";
 import { CountryType } from "../../types/Types";
 
@@ -22,14 +22,15 @@ const Countries: React.FC<CountriesProps> = ({ passRef }) => {
     fetchData()
   }, [])
 
-  const filterCountiresByRegion = () => countries.filter(country => selectedRegion === 1 ? 
+  const filterCountiresByRegion = useCallback(() => { 
+    return countries.filter(country => selectedRegion === 1 ? 
     country.region === "cer" || country.region === "core"
     : country.region !== "cer" && country.region !== "core"
-  )
+  )}, [selectedRegion, countries])
 
   useEffect(() => {
     setDisplayedCountries(filterCountiresByRegion)
-  }, [selectedRegion])
+  }, [selectedRegion, filterCountiresByRegion])
 
   const onFilterCountriesHandler = (e: any) => {
     const typedCountry = e.target.value;
