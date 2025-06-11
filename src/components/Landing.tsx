@@ -30,17 +30,19 @@ export default function Landing() {
                 and this application will help you find all information needed
                 while travelling across the globe with IAESTE.
               </p>
-              <div className="landingBtnsContainer">
-                <Link to="countries-div" smooth={true} className="landingBtns hover-bgGradient">
-                    DISCOVER A COUNTRY
-                    <i className="fa-solid fa-magnifying-glass ml-3"></i>
-                </Link>
-              </div>
-              <div className="landingBtnsContainer">
-                <a href="/sr-weekends" className="landingBtns hover-bgGradient">
-                    SUMMER RECEPTION
-                    <i className="fa-solid fa-umbrella-beach ml-3"></i>
-                </a>
+              <div className="flex flex-col sm:flex-row w-full justify-start sm:justify-center xl:justify-start">
+                <div className="landingBtnsContainer">
+                  <Link to="countries-div" smooth={true} className="landingBtns hover-bgGradient">
+                    <i className="fa-solid fa-magnifying-glass mr-2"></i>
+                      DISCOVER A COUNTRY
+                  </Link>
+                </div>
+                <div className="landingBtnsContainer sm:ml-4">
+                  <a href="/sr-weekends" className="landingBtns hover-bgGradient">
+                      <i className="fa-solid fa-umbrella-beach mr-2"></i>
+                      SUMMER RECEPTION
+                  </a>
+                </div>
               </div>
             </div>
           </main>

@@ -32,7 +32,7 @@
 
 .landingBtnsContainer {
     margin-top: 2rem;
-    width: 20rem;
+    width: 17rem;
     display: flex;
     flex: start;
     box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
@@ -91,8 +91,8 @@
 @media (min-width: 768px) {
     .landingBtns {
         padding: 1rem 2.5rem;
-        font-size: 1.125rem; /* 18px */
-        line-height: 1.75rem; /* 28px */
+        font-size: 1rem;
+        line-height: 1.5rem;
     }
 }
 
