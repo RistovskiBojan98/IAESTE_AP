@@ -1,6 +1,7 @@
 import React from "react"
 import logoImg from "./cer-logo-dark.png"
 import footerImg from "./footer_img.png"
+import { toast } from 'react-toastify';
 
 const socialLinks = [
     {
@@ -24,6 +25,11 @@ const socialLinks = [
     },
 ]
 
+const handleEmailCopyToClipboard = (emailAddress: string) => {
+    navigator.clipboard.writeText(emailAddress)
+    toast.success(`Email address: ${emailAddress} copied to clipboard!`)
+}
+
 export default function Footer() {
     return (
         <footer className="bg-[#0A3D58]">
@@ -34,11 +40,18 @@ export default function Footer() {
                     </a>
                     <div className="flex flex-col justify-start py-4">
                         {socialLinks.map((item) => (
-                            // eslint-disable-next-line react/jsx-no-target-blank
-                            <a key={item.name} href={item.href ?? ''} target="_blank" className="text-white hover:text-sky-300 flex flex-row justify-between">
-                                <span className="font-semibold">{item.name}</span>
-                                <span className="">{item.mask}</span>
-                            </a>
+                            item.name !== "email" ? (
+                                // eslint-disable-next-line react/jsx-no-target-blank
+                                <a key={item.name} href={item.href ?? ''} target="_blank" className="text-white hover:text-sky-300 flex flex-row justify-between">
+                                    <span className="font-semibold">{item.name}</span>
+                                    <span className="">{item.mask}</span>
+                                </a>
+                            ) : (
+                                <div className="text-white hover:text-sky-300 flex flex-row justify-between cursor-pointer" onClick={() => handleEmailCopyToClipboard(item.mask)}>
+                                    <span className="font-semibold">{item.name}</span>
+                                    <span className="">{item.mask}</span>
+                                </div>
+                            )      
                         ))}
                     </div>
                     <img src={footerImg} alt="" className="hidden lg:block" />
