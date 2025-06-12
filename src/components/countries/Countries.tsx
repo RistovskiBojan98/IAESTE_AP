@@ -82,8 +82,7 @@ const Countries: React.FC<CountriesProps> = ({ passRef }) => {
           <hr></hr>
           <div className="flex flex-col md:flex-row justify-center w-full mt-4">
              <h2 className="font-bold text-2xl sm:text-4xl text-center w-full">
-              { selectedRegion === 1 ? "IAESTE CER & CoRe Members" : "IAESTE Global Members"}
-              
+              { selectedRegion === 1 ? "IAESTE CER & CoRe Members" : "IAESTE Global Members" }
             </h2>
             <div className="flex justify-center md:justify-end w-full mt-4 md:mt-0">
               <input
