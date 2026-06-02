@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import cerLogoWhite from "../footer/cer-logo-dark.png"
 import { scrollToSection } from '../global/global_functions';
 import { CountryType, SocialLinkType } from '../../types/Types';
-import { toast } from 'react-toastify';
 import useWindowSize from "../../hooks/useScreenSize";
 
 interface HeroProps {
@@ -43,14 +42,9 @@ const Hero: React.FC<HeroProps> = ({
     // get country image, if they don't have it, set the flag image
     const [heroImg, setHeroImg] = useState('')
     // set social links icons
-    const [socialLinks, setSocialLinks] = useState<SocialLinkType[]>([])
+    // const [socialLinks, setSocialLinks] = useState<SocialLinkType[]>([])
     // Scroll buttons
     const [buttons, setButtons] = useState<HeroButton[]>([])
-
-    const handleEmailCopyToClipboard = (emailAddress: string) => {
-        navigator.clipboard.writeText(emailAddress)
-        toast.success(`Email address: ${emailAddress} copied to clipboard!`)
-    }
 
     useEffect(() => {
         setHeroImg(country.banner ?? country.imageSrc)
@@ -74,7 +68,7 @@ const Hero: React.FC<HeroProps> = ({
             return { ...link, icon: setIcon() }
         }) ?? []
         if (country.pdf) links.push({ name: "pdf", value: country.pdf, icon: 'fa-regular fa-file-pdf' })
-        setSocialLinks(links)
+        // setSocialLinks(links)
     }, [country])
 
     useEffect(() => {

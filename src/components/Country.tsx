@@ -9,7 +9,7 @@ import Facts from "./facts/Facts";
 import Food from "./food/Food";
 import GeneralInformation from "./generalInformation/GeneralInformation";
 import Committees from "./committees/Committees";
-import EmergencyContacts from "./emergencyContacts/EmergencyContacts";
+// import EmergencyContacts from "./emergencyContacts/EmergencyContacts";
 import Hero from "./hero/Hero";
 // import Navbar from "./navbar/Navbar";
 import Plane from "./plane/Plane";

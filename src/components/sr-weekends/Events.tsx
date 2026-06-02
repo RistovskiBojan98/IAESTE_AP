@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import moment from 'moment';
 import 'react-big-calendar/lib/css/react-big-calendar.css';
 import FilterPopup from "./EventFilter/Filter"
-import useWindowSize from '../../hooks/useScreenSize';
 import "./sr-weekends.css"
 import { fetchDbData } from "../../service/CountriesService"
 import { mapSummerReceptionWeekend } from '../global/global_functions';
@@ -11,7 +10,6 @@ import { SummerReceptionWeekend, FilterType } from '../../types/Types';
 import WeekendList from '../global/WeekendList';
 
 const Events = () => {
-    const { width } = useWindowSize();
     const [transformedEvents, setTransformedEvents] = useState<SummerReceptionWeekend[]>([])
     const [filteredEvents, setFilteredEvents] = useState<SummerReceptionWeekend[]>([]);
     const [filter, setFilter] = useState<FilterType[]>([])
