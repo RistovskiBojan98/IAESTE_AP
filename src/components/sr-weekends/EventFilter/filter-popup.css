@@ -1,14 +1,13 @@
 .filter-overlay {
     position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent gray background */
+    inset: 0;
+    z-index: 9999;
     display: flex;
-    justify-content: center;
     align-items: center;
-    z-index: 9999; /* Ensure the modal is above other content */
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(15, 23, 42, 0.55);
+    backdrop-filter: blur(6px);
 }
 
 .filter-popup {
@@ -57,37 +56,49 @@
     color: black;
     padding: 0.25rem;
     font-weight: 600;
-    font-size: 1.125rem; /* 18px */
-    line-height: 1.75rem; /* 28px */
+    font-size: 1.125rem;
+    /* 18px */
+    line-height: 1.75rem;
+    /* 28px */
 
     @media(max-width: 768px) {
-        font-size: 1rem; /* 16px */
-        line-height: 1.5rem; /* 24px */
+        font-size: 1rem;
+        /* 16px */
+        line-height: 1.5rem;
+        /* 24px */
     }
 }
 
 .filter-ConfirmButton {
     background-color: white;
     border: 2px solid;
-    font-size: 1.125rem; /* 18px */
-    line-height: 1.75rem; /* 28px */
+    font-size: 1.125rem;
+    /* 18px */
+    line-height: 1.75rem;
+    /* 28px */
     border-radius: 9999px;
     font-weight: 600;
     padding: 0.25rem 0.75rem;
 
     @media(max-width: 768px) {
-        font-size: 1rem; /* 16px */
-        line-height: 1.5rem; /* 24px */
+        font-size: 1rem;
+        /* 16px */
+        line-height: 1.5rem;
+        /* 24px */
     }
 }
 
 h4 {
     font-weight: bold;
-    font-size: 1.5rem; /* 24px */
-    line-height: 2rem; /* 32px */
+    font-size: 1.5rem;
+    /* 24px */
+    line-height: 2rem;
+    /* 32px */
 
     @media(max-width: 768px) {
-        font-size: 1.125rem; /* 18px */
-        line-height: 1.75rem; /* 28px */
+        font-size: 1.125rem;
+        /* 18px */
+        line-height: 1.75rem;
+        /* 28px */
     }
 }

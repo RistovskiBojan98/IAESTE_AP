@@ -6,6 +6,25 @@ import country_code from "./images/country_dialing_code.jpg"
 import population from "./images/population2.jpg"
 import { GENERAL_INFO_IMGS } from "../global/global_functions";
 
+interface EmergencyItemProps {
+  icon: string;
+  label: string;
+  value: string;
+}
+
+const EmergencyItem: React.FC<EmergencyItemProps> = ({ icon, label, value }) => (
+  <div className="flex items-center gap-4 rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100">
+    <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1B75BB]/10 text-[#1B75BB]">
+      <i className={icon} />
+    </span>
+
+    <div>
+      <p className="text-3xl font-bold text-[#0B3D59]">{value}</p>
+      <p className="text-sm text-slate-500">{label}</p>
+    </div>
+  </div>
+);
+
 const GeneralInformation = forwardRef<HTMLDivElement, CountryComponent>(({ country }, ref) => {
   const [info, setInfo] = useState<InformationType[]>([]);
 
@@ -50,31 +69,70 @@ const GeneralInformation = forwardRef<HTMLDivElement, CountryComponent>(({ count
   }, [country])
 
   return (
-    !!info.length ?
-      <div className="container" ref={ref}>
-        <div className="mb-14 space-y-5 sm:mx-auto sm:max-w-xl lg:max-w-5xl">
-          <h2 className="title">
-            <i className='fa fa-info-circle mr-4'></i>
+    !!info.length ? (
+      <section ref={ref} className="mx-auto max-w-7xl px-4 py-20">
+        <div className="mb-10 text-center">
+          <span className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1B75BB]/10 text-2xl text-[#1B75BB]">
+            <i className="fa fa-info-circle" />
+          </span>
+          <h2 className="text-3xl font-bold text-[#143D59] sm:text-4xl">
             General Information
           </h2>
+          <p className="mt-3 text-slate-500">
+            Useful basics to know before arriving.
+          </p>
         </div>
-        <ul className="mx-auto grid grid-cols-3 gap-8 lg:max-w-5xl">
+
+        {/* Info cards */}
+        <ul className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {info.map((info) => (
-            <li key={info.name}>
-              <div className="space-y-5">
-                <div className="mx-auto h-20 w-20 sm:h-40 sm:w-40">
-                  <img className="rounded-full w-full h-full" src={info.imageUrl} alt="" />
+            <li
+              key={info.name}
+              className="group rounded-[2rem] bg-white p-5 shadow-md ring-1 ring-slate-100 transition hover:-translate-y-1 hover:shadow-xl hover:ring-[#27A9E1]/30"
+            >
+              <div className="flex items-center gap-4">
+                <div className="h-16 w-16 shrink-0 overflow-hidden rounded-2xl bg-slate-100 ring-1 ring-slate-100 sm:h-20 sm:w-20">
+                  <img
+                    className="h-full w-full object-cover transition duration-500 group-hover:scale-110"
+                    src={info.imageUrl}
+                    alt={info.name}
+                  />
                 </div>
-                <div className="text-lg leading-6">
-                  <h3 className="text-[#38607F]">{info.name}</h3>
-                  <p className="text-[#0B3D59] font-semibold">{info.role}</p>
+
+                <div>
+                  <h3 className="text-sm font-bold uppercase tracking-wide text-slate-400">
+                    {info.name}
+                  </h3>
+                  <p className="mt-1 text-lg font-bold text-[#0B3D59]">
+                    {info.role}
+                  </p>
                 </div>
               </div>
             </li>
           ))}
         </ul>
-      </div>
-      : <></>
+
+        {/* Emergency numbers */}
+        <div className="my-10 rounded-[2rem] bg-white p-5 shadow-lg ring-1 ring-slate-100">
+          <div className="mb-4 flex items-center gap-3 text-[#0B3D59]">
+            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#1B75BB]/10 text-[#1B75BB]">
+              <i className="fa fa-phone" />
+            </span>
+
+            <div>
+              <h3 className="text-xl font-bold">Emergency numbers</h3>
+              <p className="text-sm text-slate-500">Quick access numbers in {country.name.replace(/-/g, " ")}</p>
+            </div>
+          </div>
+
+          <div className="grid gap-3 sm:grid-cols-3">
+            <EmergencyItem icon="fa-solid fa-truck-medical" label="Ambulance" value="144" />
+            <EmergencyItem icon="fa-solid fa-shield-halved" label="Police" value="133" />
+            <EmergencyItem icon="fa-solid fa-fire-extinguisher" label="Fire Dept." value="122" />
+          </div>
+        </div>
+      </section>
+    ) : null
   );
 });
 

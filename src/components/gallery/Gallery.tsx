@@ -8,61 +8,82 @@ const Gallery = forwardRef<HTMLDivElement, CountryComponent>(({ country }, ref) 
   const [images, setImages] = useState<string[]>([]);
   const [currIndex, setCurrIndex] = useState(0);
 
-const handleArrowStyle = (event: any) =>{
-  let arrow = event.target
-  arrow.style.backgroundColor = '#1B75BB'; 
-}
-const setDefaultArrowStyle = (event: any) =>{
-  let arrow = event.target
-  arrow.style.backgroundColor = '#1B75BB'; 
-}
-
   useEffect(() => {
     setImages(country.gallery ?? []);
+    setCurrIndex(0);
   }, [country]);
 
-  const handleChange = (index: number) => setCurrIndex(index);
+  if (!images.length) return null;
 
-  if (images?.length)
-    return (
-      <section className="container" ref={ref}>
-        <div className="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl mb-5">
-          <h2 className="title">
-            <i className='fa fa-images mr-4'></i>
-            Gallery
-          </h2>
-          <p className="text-center">Click on the right for more incredible views!</p>
-        </div>
+  return (
+    <section
+      ref={ref}
+      className="
+        mx-auto max-w-7xl rounded-[2rem] px-4 py-20 my-10
+        bg-gradient-to-r from-[#111827] via-[#0F172A]/80 to-[#111827]
+      "
+    >
+      <div className="mb-10 flex flex-col items-center text-center">
+        <span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#49C0B5]/10 text-2xl text-white">
+          <i className="fa fa-images" />
+        </span>
+
+        <h2 className="text-3xl font-bold text-white sm:text-4xl">
+          Gallery
+        </h2>
+
+        <p className="mt-3 max-w-2xl text-white">
+          Explore some of the places, views and moments from this country.
+        </p>
+      </div>
+
+      <div className="overflow-hidden rounded-[2rem] bg-slate-600 p-4 shadow-2xl ring-1 ring-white/10">
         <Carousel
-          className="rounded-lg shadow-2xl bg-[#0B3D59] max-h-[305px] md:max-h-[560px]"
-          showArrows={true}
-          infiniteLoop={true}
+          className="country-gallery"
+          showArrows
+          infiniteLoop
           interval={5000}
           selectedItem={currIndex}
-          onChange={handleChange}
-          renderThumbs={() => []}
-          renderArrowNext={(handleNext) => <button type="button" onClick={handleNext} className="control-arrow control-next" onMouseOver={handleArrowStyle} onMouseOut={setDefaultArrowStyle}></button>}
-          renderArrowPrev={(handlePrev) => <button type="button" onClick={handlePrev} className="control-arrow control-prev" onMouseOver={handleArrowStyle} onMouseOut={setDefaultArrowStyle}></button>}
+          onChange={setCurrIndex}
+          showStatus={false}
+          showThumbs={false}
+          showIndicators={images.length > 1}
+          swipeable
+          emulateTouch
+          renderArrowNext={(handleNext, hasNext) =>
+            hasNext && (
+              <button
+                type="button"
+                onClick={handleNext}
+                className="gallery-arrow gallery-arrow-next"
+                aria-label="Next image"
+              >
+                <i className="fa fa-chevron-right" />
+              </button>
+            )
+          }
+          renderArrowPrev={(handlePrev, hasPrev) =>
+            hasPrev && (
+              <button
+                type="button"
+                onClick={handlePrev}
+                className="gallery-arrow gallery-arrow-prev"
+                aria-label="Previous image"
+              >
+                <i className="fa fa-chevron-left" />
+              </button>
+            )
+          }
         >
           {images.map((image, index) => (
-            <div key={index} className="slide p-1">
-              <img src={image} alt="" style={{ height: "550px", width: "auto", border: '1px solid white'}} />
+            <div key={`${image}-${index}`} className="gallery-slide">
+              <img src={image} alt={`${country.name} gallery ${index + 1}`} />
             </div>
           ))}
         </Carousel>
-        {/* <button className="bg-[#1B75BB] rounded-lg" onClick={handlePrev}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" />
-          </svg>
-        </button>
-        <button className="bg-[#1B75BB]" onClick={handleNext}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-            <path d="M8.59 16.59L10 18l6-6-6-6-1.41 1.41L13.17 12z" />
-          </svg>
-        </button> */}
-      </section>
-    );
-    return <></>
+      </div>
+    </section>
+  );
 });
 
 export default Gallery;

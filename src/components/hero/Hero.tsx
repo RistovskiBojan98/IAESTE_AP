@@ -3,6 +3,7 @@ import cerLogoWhite from "../footer/cer-logo-dark.png"
 import { scrollToSection } from '../global/global_functions';
 import { CountryType, SocialLinkType } from '../../types/Types';
 import { toast } from 'react-toastify';
+import useWindowSize from "../../hooks/useScreenSize";
 
 interface HeroProps {
     country: CountryType,
@@ -13,12 +14,15 @@ interface HeroProps {
     infoRef: React.RefObject<null | HTMLDivElement>,
     lcsRef: React.RefObject<null | HTMLDivElement>,
     factsRef: React.RefObject<null | HTMLDivElement>,
-    galleryRef: React.RefObject<null | HTMLDivElement>
+    galleryRef: React.RefObject<null | HTMLDivElement>,
+    socialsRef: React.RefObject<null | HTMLDivElement>,
+    otherRef: React.RefObject<null | HTMLDivElement>
 }
 
 interface HeroButton {
     icon: string,
     title: string,
+    shortTitle: string,
     ref: React.RefObject<null | HTMLDivElement>
 }
 
@@ -31,8 +35,11 @@ const Hero: React.FC<HeroProps> = ({
     infoRef,
     lcsRef,
     factsRef,
-    galleryRef
+    galleryRef,
+    socialsRef,
+    otherRef
 }) => {
+    const { width } = useWindowSize();
     // get country image, if they don't have it, set the flag image
     const [heroImg, setHeroImg] = useState('')
     // set social links icons
@@ -73,14 +80,16 @@ const Hero: React.FC<HeroProps> = ({
     useEffect(() => {
         setTimeout(() => {
             setButtons([
-                { icon: "fa fa-info-circle", title: "General Info", ref: infoRef },
-                { icon: "fa fa-city", title: "Local Committees", ref: lcsRef },
-                { icon: "fa fa-train", title: "Transport", ref: transportRef },
-                { icon: "fa fa-location-dot", title: "Travel", ref: citiesRef },
-                { icon: "fa fa-utensils", title: "Cuisine", ref: foodRef },
-                { icon: "fa fa-umbrella-beach", title: "Summer Reception", ref: summerReceptionRef },
-                { icon: "fa fa-brain", title: "Fun Facts", ref: factsRef },
-                { icon: "fa fa-images", title: "Gallery", ref: galleryRef },
+                { icon: "fa fa-info-circle", title: "General Information", shortTitle: "Gen. Info", ref: infoRef },
+                { icon: "fa fa-city", title: "Local Committees", shortTitle: "LCs", ref: lcsRef },
+                { icon: "fa fa-share-nodes", title: "Socials", shortTitle: "Socials", ref: socialsRef },
+                { icon: "fa fa-train", title: "Transport", shortTitle: "Transport", ref: transportRef },
+                { icon: "fa fa-location-dot", title: "Travel", shortTitle: "Travel", ref: citiesRef },
+                { icon: "fa fa-utensils", title: "Cuisine", shortTitle: "Cuisine", ref: foodRef },
+                { icon: "fa fa-umbrella-beach", title: "Summer Reception", shortTitle: "SR Weekends", ref: summerReceptionRef },
+                { icon: "fa fa-brain", title: "Fun Facts", shortTitle: "Fun Facts", ref: factsRef },
+                { icon: "fa fa-file-circle-plus", title: "Extra info", shortTitle: "Extra", ref: otherRef },
+                { icon: "fa fa-images", title: "Gallery", shortTitle: "Gallery", ref: galleryRef },
             ])
         }, 300)
     }, [citiesRef, foodRef, transportRef, summerReceptionRef, infoRef, lcsRef, factsRef, galleryRef])
@@ -88,7 +97,7 @@ const Hero: React.FC<HeroProps> = ({
     return (
         <div className="relative sm:mt-5">
             <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100" />
-            <div className="mx-auto max-w-7xl sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-full sm:px-6 lg:px-8">
                 <div className="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
                     {/* Hero image has absolute position in the middle*/}
                     <div className="absolute inset-0">
@@ -96,23 +105,22 @@ const Hero: React.FC<HeroProps> = ({
                         <div className="absolute inset-0 bgGradient mix-blend-multiply" />
                     </div>
                     {/* CER logo has absolute position in the top right for mobile view, otherwise the navbar is activated*/}
-                    <div className="absolute inset-x-0 p-2 top-0 h-10 z-50">
-                        <a href="/">
-                            <img alt="CER AP" src={cerLogoWhite} className="h-14 mx-auto w-auto hover:scale-110" />
+                    <header className="absolute top-0 inset-x-0 flex justify-between items-center px-6 py-4 z-50 bg-gradient-to-b from-black/40 to-transparent">
+                        <a href="/" className="flex items-center text-white hover:text-sky-200">
+                            <i className="fa fa-chevron-left mr-2"></i> Back
                         </a>
-                    </div>
-                    <a className="absolute inset-0 py-2 px-4 h-10 z-50 mt-4" href='/'>
-                        <div className='flex flex-row text-white font-semibold cursor-pointer hover:text-sky-200 items-center w-20'>
-                            <i className='fa fa-chevron-left'></i>
-                            <span className='ml-2'>Back</span>
+                        <img src={cerLogoWhite} alt="CER Logo" className="h-10 w-auto" />
+                    </header>
+
+                    <div className="relative mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8" style={{ minHeight: "600px" }}>
+                        <div className="relative flex flex-col items-center justify-center text-center min-h-[400px]">
+                            <h1 className="text-white text-5xl lg:text-6xl flex flex-col space-y-5">
+                                <span className="text-4xl font-light">Welcome to</span>
+                                <span className="text-7xl font-bold">IAESTE {country.name.replace(/-/g, ' ')}</span>
+                            </h1>
                         </div>
-                    </a>
-                    <div className="relative max-w-4xl mx-auto px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
-                        <h1 className="text-center text-white text-4xl font-bold pt-10 sm:pt-0 sm:text-5xl lg:text-6xl">
-                            <span>Welcome to</span><br></br>
-                            <span>IAESTE {country.name.replace(/-/g, ' ')}</span>
-                        </h1>
-                        <div className="mx-auto mt-10 sm:flex justify-center">
+
+                        {/* <div className="mx-auto mt-10 sm:flex justify-center">
                             <div
                                 className="justify-center space-y-2 flex sm:space-y-0 sm:space-x-2 gap-5 font-bold text-white text-4xl"
                                 style={{ textShadow: '0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5), 0 0 5px rgba(0,0,0,0.5)' }}
@@ -132,23 +140,89 @@ const Hero: React.FC<HeroProps> = ({
                                     </ul>
                                 )}
                             </div>
-                        </div>
+                        </div> */}
                         {/* Buttons for scrolling to each section*/}
-                        <div className="mx-auto mt-10 flex justify-center md:p-5 rounded-3xl bg-transparent mix-blend-screen">
-                            <div className="mx-auto inline-grid grid-cols-2 gap-3 md:grid-cols-4 md:gap-5">
-                                {buttons.map((button, index) =>
-                                    <button
-                                        key={index}
-                                        disabled={!button.ref.current}
-                                        onClick={() => scrollToSection(button.ref)}
-                                        className={`flex items-center justify-center border rounded-3xl p-3 text-base sm:text-lg font-bold text-white shadow bg-blend-normal ${!button.ref.current ? 'bg-gray-400' : 'bg-[#0B3D59] hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5]'}`}
+
+                        {/* Carousel navigation buttons */}
+                        {/* Docked card bar 
+                        [grid-template-columns:repeat(auto-fit,minmax(100px,1fr))]
+                        */}
+                        {/* <div className="absolute inset-x-0 bottom-0">
+                            <div className="mx-auto w-full  px-3 sm:px-4 pb-[max(12px,env(safe-area-inset-bottom))] pt-3">
+                                <div className="backdrop-blur-sm bg-white/10 border border-white/20 shadow-2xl rounded-2xl p-2 sm:p-3"
+                                    aria-label="Jump to section">
+                                    <div className="grid gap-2 sm:gap-3
+                                        
+                                        grid-cols-3 
+                                        overflow-x-auto sm:overflow-visible scrollbar-hide"
                                     >
-                                        <i className={button.icon} />
-                                        <span className='ml-2'>{button.title}</span>
-                                    </button>
-                                )}
+                                        {buttons.map((button, index) => (
+                                            <button
+                                                key={index}
+                                                onClick={() => scrollToSection(button.ref)}
+                                                disabled={!button.ref.current}
+                                                className={`group relative flex items-center justify-center gap-2
+                                                    rounded-xl px-1 py-1 sm:py-2 text-sm sm:text-base font-semibold tracking-tight
+                                                    ring-1 ring-white/10 transition
+                                                    ${!button.ref.current
+                                                        ? "bg-white/20 text-white/60 cursor-not-allowed"
+                                                        : "bg-white/10 text-white hover:bg-white/20 hover:ring-white/20 active:scale-[.98]"}
+                                                            focus:outline-none focus:ring-2 focus:ring-sky-300/60`}
+                                            >
+                                                <i className={`${button.icon} text-xs sm:text-sm opacity-80`} />
+                                                <span className="truncate hidden sm:block">{button.title}</span>
+                                                <span className="truncate block sm:hidden">{button.shortTitle}</span>
+
+                                                <span className="pointer-events-none absolute inset-x-0 bottom-0 h-0.5 bg-gradient-to-r from-sky-400/0 via-sky-400/50 to-sky-400/0 opacity-0 group-hover:opacity-100 transition" />
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </div> */}
+
+                        {buttons.length > 0 && (
+                            <div className="absolute inset-x-0 bottom-0">
+                                <div className="mx-auto w-full px-3 pb-[max(12px,env(safe-area-inset-bottom))] sm:px-4">
+                                    <div className="grid grid-cols-5 gap-2 rounded-2xl border border-white/20 bg-white/10 p-3 shadow-2xl backdrop-blur-md"
+                                        aria-label="Jump to section"
+                                    >
+                                        {buttons.map((button) => (
+                                            <button
+                                                key={button.title}
+                                                onClick={() => scrollToSection(button.ref)}
+                                                className="group relative flex flex-col items-center justify-center gap-1 rounded-xl bg-white/10 p-3
+                                                    text-white ring-1 ring-white/10  transition-all duration-200
+                                                    hover:-translate-y-1 hover:bg-white/20 hover:shadow-lg active:scale-[0.98]"
+                                            >
+                                                <i
+                                                    className={`${button.icon} text-lg opacity-90 transition-transform duration-200 group-hover:scale-110`}
+                                                />
+
+                                                <span className="text-center text-xs font-semibold leading-tight sm:text-sm">
+                                                    {width > 768 ? button.title : button.shortTitle}
+                                                </span>
+
+                                                <span
+                                                    className="
+                                pointer-events-none
+                                absolute
+                                inset-x-3
+                                bottom-1
+                                h-0.5
+                                rounded-full
+                                bg-white/60
+                                opacity-0
+                                transition
+                                group-hover:opacity-100
+                            "
+                                                />
+                                            </button>
+                                        ))}
+                                    </div>
+                                </div>
+                            </div>
+                        )}
                     </div>
                 </div>
             </div>

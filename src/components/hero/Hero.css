@@ -1,0 +1,9 @@
+#hero-carousel {
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 20px;
+  -webkit-overflow-scrolling: touch;
+}
+
+#hero-carousel > button {
+  scroll-snap-align: start;
+}

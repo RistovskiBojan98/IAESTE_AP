@@ -19,6 +19,7 @@ import { fetchCountryData } from "../service/CountriesService";
 import ScrollToTop from "./scroll/ScrollToTop";
 import { CountryType } from "../types/Types";
 import "./Country.css"
+import Socials from "./social/Socials";
 
 const Country = () => {
   const { id } = useParams();
@@ -27,12 +28,14 @@ const Country = () => {
 
   const infoRef = useRef<HTMLDivElement>(null);
   const lcsRef = useRef<HTMLDivElement>(null);
+  const socialsRef = useRef<HTMLDivElement>(null);
   const transportRef = useRef<HTMLDivElement>(null);
   const citiesRef = useRef<HTMLDivElement>(null);
   const foodRef = useRef<HTMLDivElement>(null);
   const summerReceptionRef = useRef<HTMLDivElement>(null)
   const factsRef = useRef<HTMLDivElement>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
+  const otherRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     if (id) {
@@ -66,16 +69,19 @@ const Country = () => {
             lcsRef={lcsRef}
             factsRef={factsRef}
             galleryRef={galleryRef}
+            socialsRef={socialsRef}
+            otherRef={otherRef}
           />
-          <EmergencyContacts country={country} />
+          {/* <EmergencyContacts country={country} /> */}
           <GeneralInformation country={country} ref={infoRef} />
           <Committees country={country} ref={lcsRef} />
+          <Socials country={country} ref={socialsRef} />
           <Transport country={country} ref={transportRef} />
           <Cities country={country} ref={citiesRef} />
           <SummerReception country={country} ref={summerReceptionRef} />
           <Food country={country} ref={foodRef} />
           <Facts country={country} ref={factsRef} />
-          <Other country={country} />
+          <Other country={country} ref={otherRef}/>
           <Gallery country={country} ref={galleryRef} />
           <Footer />
           <ScrollToTop />

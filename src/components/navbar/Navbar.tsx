@@ -10,7 +10,7 @@ const Navbar = () =>
           <div className="flex items-center flex-grow-0">
             <div className="flex w-full items-center">
               <a href="/">
-                <img alt="CER Summer App" className="mt-2 sm:mt-10 sm:h-24 h-16 w-auto hover:scale-105" src={cerLogo}/>
+                <img alt="CER Summer App" className="mt-2 sm:mt-10 sm:h-24 h-16 w-auto hover:scale-105 transition-all duration-300" src={cerLogo}/>
               </a>
             </div>
           </div>

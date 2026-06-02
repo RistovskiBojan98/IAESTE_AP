@@ -20,7 +20,7 @@ const Transport = forwardRef<HTMLDivElement, CountryComponent>(({ country }, ref
               title: "Airports",
               icon: "fa fa-plane-departure",
             };
-          
+
           case NATIONAL_AND_INTERNATIONAL_TRANSPORT:
             return {
               title: "National & international transport",
@@ -32,7 +32,7 @@ const Transport = forwardRef<HTMLDivElement, CountryComponent>(({ country }, ref
               title: "Public transport",
               icon: "fa fa-bus",
             }
-          
+
           default:
             return {
               title: "Discounts",
@@ -41,8 +41,8 @@ const Transport = forwardRef<HTMLDivElement, CountryComponent>(({ country }, ref
         }
       }
 
-      const {title, icon} = setTitleAndIcon(tier.id)
-      
+      const { title, icon } = setTitleAndIcon(tier.id)
+
       return {
         ...tier,
         title,
@@ -54,60 +54,68 @@ const Transport = forwardRef<HTMLDivElement, CountryComponent>(({ country }, ref
     setTransportProps(tiers);
   }, [country]);
 
-  return (
-    <>
-      {countryTransport?.length ? (
-        <div className="container" ref={ref}>
-          <h1 className="title">
-            <i className='fa fa-train mr-4'></i>
-            Transportation
-          </h1>
-          <div className="my-16 grid grid-cols-1 md:grid-cols-2 gap-8">
-            {countryTransport.map((transport) => {
-              // the first features (max 6) are always shown
-              // if there are additional, they are covered in the see more tab
-              const firstFeatures = transport.features.slice(0, 5);
-              const remainingFeatures = transport.features.slice(5);
+  return countryTransport?.length ? (
+    <section ref={ref} className="mx-auto max-w-7xl px-4 py-20">
+      <div className="mb-12 text-center">
+        <span className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#1B75BB]/10 text-2xl text-[#1B75BB]">
+          <i className="fa fa-train" />
+        </span>
 
-              return (
-                <div
-                  key={transport.title}
-                  className="relative flex flex-col rounded-2xl border border-gray-200 bg-white p-8 shadow-sm"
-                >
-                  <div className="flex-1 text-start">
-                      <div className="absolute top-0 -translate-y-1/2 transform rounded-full bg-[#0B3D59] py-2 px-4 font-semibold" style={{ color: 'white'}}>
-                        <div className="flex items-center gap-2">
-                          <i className={transport.icon}></i>
-                          {transport.title}
-                        </div>
-                      </div>
+        <h2 className="text-3xl font-bold text-[#143D59] sm:text-4xl">
+          Transportation
+        </h2>
 
-                    {/* Feature list */}
-                    <ul className="mt-6">
-                      <TransportFeatures features={firstFeatures} icon={transport.icon}/>
-                    </ul>
+        <p className="mx-auto mt-3 max-w-2xl text-slate-500">
+          Useful transport options and links for getting around.
+        </p>
+      </div>
 
-                    {!!remainingFeatures.length && (
-                      <Disclosure as="div">
-                        {({ open }) => (
-                          <div>
-                            <DisclosurePanel as="ul" className="mt-3">
-                              <TransportFeatures features={remainingFeatures} icon={transport.icon}/>
-                            </DisclosurePanel>
-                            <ShowMore textColors={["[#0B3D59]", "[#B2D8FB]"]} open={open}/>
-                          </div>
-                        )}
-                      </Disclosure>
-                    )}
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      ) : null}
-    </>
-  );
+      <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        {countryTransport.map((transport) => {
+          const firstFeatures = transport.features.slice(0, 5);
+          const remainingFeatures = transport.features.slice(5);
+
+          return (
+            <div
+              key={transport.title}
+              className="group relative flex flex-col rounded-[2rem] bg-white p-6 shadow-lg ring-1 ring-slate-100 transition hover:-translate-y-1 hover:shadow-xl hover:ring-[#27A9E1]/30 sm:p-8"
+            >
+              <div className="mb-6 flex items-center gap-4">
+                <span className="flex h-12 w-12 items-center justify-center rounded-2xl bg-gradient-to-br from-[#143D59] via-[#1B75BB] to-[#49C0B5] text-white shadow-md transition group-hover:scale-105">
+                  <i className={transport.icon} />
+                </span>
+
+                <h3 className="text-xl font-bold text-[#143D59]">
+                  {transport.title}
+                </h3>
+              </div>
+
+              <ul>
+                <TransportFeatures features={firstFeatures} icon={transport.icon} />
+              </ul>
+
+              {!!remainingFeatures.length && (
+                <Disclosure as="div">
+                  {({ open }) => (
+                    <div>
+                      <DisclosurePanel as="ul" className="mt-3">
+                        <TransportFeatures
+                          features={remainingFeatures}
+                          icon={transport.icon}
+                        />
+                      </DisclosurePanel>
+
+                      <ShowMore textColors={["[#1B75BB]", "[#49C0B5]"]} open={open} />
+                    </div>
+                  )}
+                </Disclosure>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </section>
+  ) : null;
 });
 
 export default Transport;

@@ -20,6 +20,7 @@ const Events = () => {
     // Define state variables for current date
     const [currentDate, setCurrentDate] = useState(moment());
     const currentYear = new Date().getFullYear()
+    const [view, setView] = useState<"list" | "calendar">("list");
 
     useEffect(() => {
         const fetchData = async () => {
@@ -41,72 +42,145 @@ const Events = () => {
 
     // Function to toggle the visibility of the filter popup
     const toggleFilterPopup = () => setIsFilterPopupOpen(!isFilterPopupOpen)
-    
+
 
     return (
-        <div>
-            <div className="mx-auto w-full bg-[#0B3D59] py-4">
-                <div className="w-full px-3 sm:px-10 relative justify-center items-center text-center">
-                    <h2 className="titleText text-white">
-                        <i className="fa-solid fa-umbrella-beach mr-3"></i>
-                        Summer Reception {currentYear}
-                    </h2>
-                    <a className="absolute top-2 left-4 items-center flex flex-row text-white font-semibold cursor-pointer hover:text-sky-200" href='/'>
-                        <i className='fa fa-chevron-left'></i>
-                        <span className='hidden sm:block ml-2'>Back</span>
-                    </a>
+        <div className="min-h-screen bg-[#F4F8FB]">
+            <div className="min-h-screen bg-white/75 backdrop-blur-[1px]">
+                {/* HERO */}
+                <div className="bg-gradient-to-r from-[#143D59] via-[#1B75BB] to-[#27A9E1] text-white shadow-lg">
+                    <div className="mx-auto max-w-7xl px-4 py-6 sm:px-8">
+                        <div className="relative flex flex-col items-center justify-center">
+                            <a
+                                className="hidden md:flex absolute left-0 top-1/2  -translate-y-1/2 items-center gap-2 rounded-full bg-white/10 px-4 py-2 font-semibold backdrop-blur-sm transition hover:bg-white/20"
+                                href="/"
+                            >
+                                <i className="fa fa-chevron-left"></i>
+                                <span className="block">Back</span>
+                            </a>
+
+                            <h1 className="text-center text-3xl font-bold sm:text-5xl">
+                                <i className="fa-solid fa-umbrella-beach mr-4 text-[#49C0B5]"></i>
+                                Summer Reception {currentYear}
+                            </h1>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div className="mb-10 px-1 mt-2">
-                <div className='gap-5 mx-auto max-w-7xl flex flex-col'>
-                    {/* event list */}
-                    <div className='p-2 mx-auto max-w-7xl w-full text-[#0B3D59]'>
-                        <div className='flex flex-row justify-between items-center border-b border-[#0B3D59] pb-2 px-2'>
-                            <span className='text-3xl font-bold' style={{ textShadow: '0 0 5px rgba(255,255,255,1' }}>
+                {/* CONTENT */}
+                <div className="mx-auto mt-8 max-w-7xl gap-4 px-4 pb-8 flex flex-col">
+                    {/* Toolbar */}
+                    <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
+                        <div>
+                            <h2 className="text-3xl font-bold text-[#143D59]">
                                 IAESTE Weekends
-                            </span>
-                            <div className='ml-auto'>
-                                <button onClick={toggleFilterPopup} className="bg-[#0B3D59] text-white hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] py-2 px-3 font-bold text-sm md:text-xl rounded-full">
-                                    <i className="fa fa-filter"></i> {width >= 768 ? 'Filter' : ''}
+                            </h2>
+
+                            <p className="mt-1 text-slate-500">
+                                Browse upcoming events and experiences.
+                            </p>
+                        </div>
+                        <div className='flex flex-row gap-4 justify-between md:justify-start'>
+                            <button
+                                onClick={toggleFilterPopup}
+                                className="rounded-2xl bg-[#1B75BB] px-5 font-semibold text-white transition hover:bg-[#143D59] flex flex-row items-center"
+                            >
+                                <i className="fa fa-filter mr-0 lg:mr-2"></i>
+                                <span className="hidden lg:block">Filters</span>
+                            </button>
+                            <div className="inline-flex rounded-2xl bg-slate-100 p-1 shadow-inner">
+                                <button
+                                    onClick={() => setView("list")}
+                                    className={`px-5 py-2 rounded-xl font-semibold transition flex flex-row items-center 
+                                        ${view === "list"
+                                            ? "bg-white text-[#143D59] shadow-sm"
+                                            : "text-slate-500 hover:text-[#143D59]"
+                                        }`}
+                                >
+                                    <i className="fas fa-th mr-0 lg:mr-2"></i>
+                                    <span className="hidden lg:block">Cards</span>
                                 </button>
-                                {/* Filter Popup */}
-                                {isFilterPopupOpen && <FilterPopup onClose={toggleFilterPopup} events={transformedEvents} setFilteredEvents={setFilteredEvents} setFilter={setFilter} setCurrentDate={setCurrentDate} />}
+
+                                <button
+                                    onClick={() => setView("calendar")}
+                                    className={`px-5 py-2 rounded-xl font-semibold transition flex flex-row items-center 
+                                        ${view === "calendar"
+                                            ? "bg-white text-[#143D59] shadow-sm"
+                                            : "text-slate-500 hover:text-[#143D59]"
+                                        }`}
+                                >
+                                    <i className="fa fa-calendar mr-0 lg:mr-2"></i>
+                                    <span className="hidden lg:block">Calendar</span>
+                                </button>
                             </div>
                         </div>
-                        {/* Filter values */}
-                        {!!filter.length && (
-                            <div className="flex justify-start items-center mt-3 border-b border-[#0B3D59] pb-2">
-                                <span className="text-lg font-semibold text-[#0B3D59]"><i className="fa fa-filter"></i></span>
-                                <div className='flex flex-col md:flex-row gap-3'>
-                                    {filter.map((filterItem, index) => (
-                                        <div key={index} onClick={toggleFilterPopup} className="flex flex-row items-center bg-[#0B3D59] hover:bg-gradient-to-r from-[#1B75BB] via-[#27A9E1] to-[#49C0B5] cursor-pointer text-white rounded-full px-3 py-1 ml-2">
-                                            {Object.entries(filterItem).map(([key, value]: [key: string, value: string]) => (
-                                                <span key={key}>
-                                                    {key}: <b className='font-semibold'>{value}</b>
-                                                </span>
-                                            ))}
-                                        </div>
-                                    ))}
+
+                    </div>
+                    {/* FILTER CHIPS */}
+                    {!!filter.length && (
+                        <div className="flex flex-wrap gap-3 border-t border-[#1B75BB] pt-4">
+                            <button
+                                onClick={toggleFilterPopup}
+                                className="hidden lg:block rounded-2xl bg-[#1B75BB] px-3 font-semibold text-white transition hover:bg-[#143D59]"
+                            >
+                                <i className="fa fa-filter"></i>
+                            </button>
+                            {filter.map((filterItem, index) => (
+                                <button
+                                    key={index}
+                                    onClick={toggleFilterPopup}
+                                    className="rounded-full bg-[#1B75BB]/10 px-4 py-2 text-sm font-semibold text-[#1B75BB] transition hover:bg-[#1B75BB] hover:text-white"
+                                >
+                                    {Object.entries(filterItem).map(([key, value]) => {
+                                        const icon =
+                                            key === "Countries"
+                                                ? "fa-solid fa-globe"
+                                                : "fa-solid fa-calendar-days";
+                                        return (
+                                            <span key={key} className="flex items-center gap-2">
+                                                <i className={icon}></i>
+                                                <b className='font-semibold'>{value}</b>
+                                            </span>
+                                        )
+                                    })}
+                                </button>
+                            ))}
+                        </div>
+                    )}
+                    <div className="relative">
+                        {view === "list" ? (
+                            filteredEvents.length ? (
+                                <WeekendList
+                                    weekends={filteredEvents}
+                                    setCurrentDate={setCurrentDate}
+                                />
+                            ) : (
+                                <div className="flex min-h-[300px] flex-col items-center justify-center text-center">
+                                    <i className="fa-solid fa-circle-exclamation text-5xl text-slate-300"></i>
+
+                                    <h2 className="mt-5 text-2xl font-bold text-[#143D59]">
+                                        No events found
+                                    </h2>
+
+                                    <p className="mt-2 text-slate-500">
+                                        Try changing your filters.
+                                    </p>
                                 </div>
-                            </div>
-                        )}
-                        {filteredEvents.length ? (
-                            <WeekendList weekends={filteredEvents} setCurrentDate={setCurrentDate} />
+                            )
                         ) : (
-                            <div className="flex justify-center items-center h-full mt-2">
-                                <h2 className="titleText text-center">
-                                    <i className="fa-solid fa-circle-exclamation"></i>
-                                    No events found from the filter parameters!
-                                </h2>
-                            </div>
+                            <EventCalendar
+                                filteredEvents={filteredEvents}
+                                currentDate={currentDate}
+                                setCurrentDate={setCurrentDate}
+                            />
                         )}
                     </div>
-                    {/* calendar */}
-                    <EventCalendar filteredEvents={filteredEvents} currentDate={currentDate} setCurrentDate={setCurrentDate} />
                 </div>
+
+                {/* Filter Popup */}
+                {isFilterPopupOpen && <FilterPopup onClose={toggleFilterPopup} events={transformedEvents} setFilteredEvents={setFilteredEvents} setFilter={setFilter} setCurrentDate={setCurrentDate} />}
             </div>
         </div>
-    );
+    )
 }
 
 export default Events;

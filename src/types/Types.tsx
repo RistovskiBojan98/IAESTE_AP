@@ -84,6 +84,7 @@ export interface SocialLinkType {
     name: string
     icon?: string
     value: string
+    isSocial?: boolean;
 }
 
 export interface CountryComponent {

@@ -1,57 +1,88 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, forwardRef } from "react";
 import useWindowSize from "../../hooks/useScreenSize";
 import OtherInfoCard from "./InfoCard";
 import { OtherType, CountryComponent } from "../../types/Types";
 
-const Other: React.FC<CountryComponent> = ({ country }) => {
-    const { width } = useWindowSize();
-    const [startIndex, setStartIndex] = useState(0);
-    const [otherInfo, setOherInfo] = useState<OtherType[]>([])
-    const [arrayLength, setArrayLength] = useState(0)
-    const [maxItemsToShow, setMaxItemsToShow] = useState(2)
-    // if the screen is small we show 1 object, otherwise 2
+const Other = forwardRef<HTMLDivElement, CountryComponent>(({ country }, ref) => {
+  const { width } = useWindowSize();
+  const [otherInfo, setOtherInfo] = useState<OtherType[]>([]);
+  const [page, setPage] = useState(0);
 
-    useEffect(() => {
-        const data = country.otherInformation ?? []
-        setOherInfo(data)
-        setArrayLength(data.length)
-        setMaxItemsToShow(data.length >= 2 ? 2 : data.length)
-    }, [country])
+  useEffect(() => {
+    const data = country.otherInformation ?? [];
+    setOtherInfo(data);
+    setPage(0);
+  }, [country]);
 
+  if (!otherInfo.length) return null;
 
-    const showPrev = () => setStartIndex(Math.max(startIndex - (width >= 768 ? 2 : 1), 0));
-    const showNext = () => setStartIndex(Math.min(startIndex + (width >= 768 ? 2 : 1), arrayLength - 1));
+  const itemsPerPage = width >= 1024 ? 4 : width >= 768 ? 2 : 1;
+  const totalPages = Math.ceil(otherInfo.length / itemsPerPage);
 
-    return otherInfo?.length ? (
-        <section className="container">
-            <div className="px-4 sm:px-6 lg:px-8">
-                <h1 className="text-3xl md:text-4xl font-bold ">
-                    <i className='fa fa-file-circle-plus mr-4'></i>
-                    Interesting and useful information
-                </h1>
-                <div className="grid mt-8 gap-2" style={{ gridTemplateColumns: '1fr 15fr 1fr' }}>
-                    <button onClick={showPrev} disabled={startIndex === 0}>
-                        <i className='fa fa-chevron-left text-xl text-[#0B3D59]' ></i>
-                    </button>
-                    <div className="relative grid z-1" style={{ gridTemplateColumns: width >= 768 ? `repeat(${maxItemsToShow}, 1fr)` : '' }}>
-                        {arrayLength &&
-                            otherInfo
-                                .slice(startIndex, startIndex + (width >= 768 ? maxItemsToShow : 1))
-                                .map((item, index) => (
-                                    <OtherInfoCard
-                                        key={index}
-                                        title={item.title}
-                                        description={item.description}
-                                    />
-                                ))}
-                    </div>
-                    <button onClick={showNext} className="flex items-center justify-end"                    >
-                        <i className='fa fa-chevron-right text-xl text-[#0B3D59]' ></i>
-                    </button>
-                </div>
-            </div>
-        </section>
-    ) : (<></>)
-};
+  const visibleItems = otherInfo.slice(
+    page * itemsPerPage,
+    page * itemsPerPage + itemsPerPage
+  );
+
+  const showPrev = () => {
+    setPage((current) => Math.max(current - 1, 0));
+  };
+
+  const showNext = () => {
+    setPage((current) => Math.min(current + 1, totalPages - 1));
+  };
+
+  return (
+    <section
+      ref={ref}
+      className="
+        mx-auto max-w-7xl rounded-[2rem] px-4 py-20
+        bg-gradient-to-r from-transparent via-[#8B5CF6]/20 to-transparent
+      "
+    >
+      <div className="mb-10 flex flex-col items-center text-center">
+        <span className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-[#8B5CF6]/10 text-2xl text-[#8B5CF6]">
+          <i className="fa fa-file-circle-plus" />
+        </span>
+
+        <h2 className="text-3xl font-bold text-[#143D59] sm:text-4xl">
+          Interesting & Useful Information
+        </h2>
+
+        <p className="mt-3 max-w-2xl text-slate-500">
+          Additional tips, recommendations and useful information for your stay.
+        </p>
+      </div>
+
+      <div className="grid grid-cols-[auto_1fr_auto] items-center gap-3">
+        <button
+          onClick={showPrev}
+          disabled={page === 0}
+          className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#143D59] shadow-md ring-1 ring-slate-100 transition hover:bg-[#8B5CF6] hover:text-white disabled:cursor-not-allowed disabled:opacity-30"
+        >
+          <i className="fa fa-chevron-left" />
+        </button>
+
+        <div className="grid gap-5 md:grid-cols-2">
+          {visibleItems.map((item, index) => (
+            <OtherInfoCard
+              key={`${item.title}-${page}-${index}`}
+              title={item.title}
+              description={item.description}
+            />
+          ))}
+        </div>
+
+        <button
+          onClick={showNext}
+          disabled={page >= totalPages - 1}
+          className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#143D59] shadow-md ring-1 ring-slate-100 transition hover:bg-[#8B5CF6] hover:text-white disabled:cursor-not-allowed disabled:opacity-30"
+        >
+          <i className="fa fa-chevron-right" />
+        </button>
+      </div>
+    </section>
+  );
+});
 
 export default Other;

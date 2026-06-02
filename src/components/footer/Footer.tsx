@@ -35,19 +35,19 @@ export default function Footer() {
         <footer className="bg-[#0A3D58]">
             <div className="mx-auto max-w-md overflow-hidden px-4 sm:max-w-3xl sm:px-6 lg:max-w-7xl lg:px-8">
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-20">
-                    <a href="/" className="hover:scale-110">
+                    <a href="/" className="hover:scale-110 transition-all duration-300">
                         <img src={logoImg} alt="" />
                     </a>
                     <div className="flex flex-col justify-start py-4">
                         {socialLinks.map((item) => (
                             item.name !== "email" ? (
                                 // eslint-disable-next-line react/jsx-no-target-blank
-                                <a key={item.name} href={item.href ?? ''} target="_blank" className="text-white hover:text-sky-300 flex flex-row justify-between">
+                                <a key={item.name} href={item.href ?? ''} target="_blank" className="text-white hover:text-sky-300 flex flex-row justify-between transition-all duration-300">
                                     <span className="font-semibold">{item.name}</span>
                                     <span className="">{item.mask}</span>
                                 </a>
                             ) : (
-                                <div className="text-white hover:text-sky-300 flex flex-row justify-between cursor-pointer" onClick={() => handleEmailCopyToClipboard(item.mask)}>
+                                <div key={item.name} className="text-white hover:text-sky-300 flex flex-row justify-between cursor-pointer transition-all duration-300" onClick={() => handleEmailCopyToClipboard(item.mask)}>
                                     <span className="font-semibold">{item.name}</span>
                                     <span className="">{item.mask}</span>
                                 </div>

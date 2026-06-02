@@ -5,31 +5,47 @@ import ShowMore from "../global/ShowMore";
 import { CountryComponent } from "../../types/Types";
 
 const Cities = forwardRef<HTMLDivElement, CountryComponent>(({ country }, ref) => {
-  const countryCities = country.cities ?? []
-  // the first cities (max 5) are always shown
-  // if there are additional, they are covered in the see more tab
-  const firstCities = countryCities.slice(0, 5)
-  const additionalCities = countryCities.slice(5)
+  const countryCities = country.cities ?? [];
+
+  if (!countryCities.length) return null;
+
+  const firstCities = countryCities.slice(0, 5);
+  const additionalCities = countryCities.slice(5);
+  const countryName = country.name.replace(/-/g, " ");
 
   return (
-    <section ref={ref}>
-      <div className="container bgGradient shadow-xl sm:overflow-hidden sm:rounded-2xl mb-10">
-        <div className="mx-auto max-w-3xl divide-y-2 divide-gray-200">
-          <h2 className="title2">
-            <i className='fa fa-location-dot mr-4'></i>
-            Places that we recommend visiting:
-          </h2>
-          <dl className="mt-6 space-y-6 divide-y divide-[#F1F1E6]">
+    <section ref={ref} className="mx-auto max-w-7xl px-4 py-20">
+      <div className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-[#143D59] via-[#1B75BB] to-[#49C0B5] p-6 text-white shadow-xl sm:p-10">
+        <div className="absolute -right-16 -top-16 h-56 w-56 rounded-full bg-white/10 blur-3xl" />
+        <div className="absolute -bottom-20 left-10 h-56 w-56 rounded-full bg-white/10 blur-3xl" />
+
+        <div className="relative mx-auto max-w-4xl">
+          <div className="mb-10 text-center">
+            <span className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-white/15 text-2xl backdrop-blur">
+              <i className="fa fa-location-dot" />
+            </span>
+
+            <h2 className="text-3xl font-bold sm:text-4xl">
+              Places to Visit
+            </h2>
+
+            <p className="mx-auto mt-3 max-w-2xl text-white/80">
+              Recommended places to explore while visiting {countryName}.
+            </p>
+          </div>
+
+          <dl className="space-y-4">
             <CityInfoPanel cities={firstCities} />
-            {/* if there are more cities then generate them and the see more button*/}
-            {!!additionalCities?.length && (
-              <Disclosure as="div" key="additionalCities">
+
+            {!!additionalCities.length && (
+              <Disclosure as="div">
                 {({ open }) => (
                   <div>
-                    <DisclosurePanel as="dt" className="space-y-6 divide-y divide-[#F1F1E6]" key="additionalCitiesPanel">
+                    <DisclosurePanel as="dt" className="space-y-4">
                       <CityInfoPanel cities={additionalCities} />
                     </DisclosurePanel>
-                    <ShowMore textColors={["[#F1F1E6]", "[#B2D8FB]"]} open={open}/>
+
+                    <ShowMore textColors={["white", "[#B2D8FB]"]} open={open} />
                   </div>
                 )}
               </Disclosure>
