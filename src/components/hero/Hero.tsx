@@ -86,7 +86,7 @@ const Hero: React.FC<HeroProps> = ({
                 { icon: "fa fa-images", title: "Gallery", shortTitle: "Gallery", ref: galleryRef },
             ])
         }, 300)
-    }, [citiesRef, foodRef, transportRef, summerReceptionRef, infoRef, lcsRef, factsRef, galleryRef])
+    }, [citiesRef, foodRef, transportRef, summerReceptionRef, infoRef, lcsRef, factsRef, galleryRef, otherRef, socialsRef])
 
     return (
         <div className="relative sm:mt-5">
