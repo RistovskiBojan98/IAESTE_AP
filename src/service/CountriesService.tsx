@@ -1,6 +1,6 @@
 import { getDocs, collection } from "firebase/firestore";
 import { db } from "../firebase";
-import { getCountryDbName } from "../components/global/global_functions";
+import { getCountryDbName, setCountryFlagImg } from "../components/global/global_functions";
 import { isTokenValid } from "./AuthService";
 import { CountryType } from "../types/Types";
 
@@ -18,6 +18,10 @@ export async function fetchDbData(): Promise<CountryType[]> {
         const result: CountryType[] = []
         querySnapshot.forEach((doc) => {
             const countryData = doc.data() as CountryType
+            // TODO: DB FIX - remove image src set
+            const countryName = getCountryDbName(countryData.name)
+            countryData.imageSrc = setCountryFlagImg(countryName)
+
             result.push(countryData)
         })
         localStorage.setItem(COUNTRIES_CACHE_KEY, JSON.stringify(result))

@@ -47,7 +47,8 @@ const Hero: React.FC<HeroProps> = ({
     const [buttons, setButtons] = useState<HeroButton[]>([])
 
     useEffect(() => {
-        setHeroImg(country.banner ?? country.imageSrc)
+        // setHeroImg(country.banner ?? country.imageSrc) - TODO: DB FIX
+        setHeroImg(country.imageSrc)
         const links: SocialLinkType[] = country.socialLinks?.map(link => {
             const setIcon = () => {
                 switch (link.name) {
